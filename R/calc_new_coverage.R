@@ -1,6 +1,6 @@
 #' Function to combine two coverages for the same cohort
 #'
-#' This function to calculate the resulting coverage if coverages of
+#' This function calculates the resulting coverage if coverages of
 #' two separate vaccination activities are combined, and returns this
 #' single value.
 #'
@@ -18,7 +18,7 @@
 #'     larger of the two inputs. For skew = -1, doses are targeted at
 #'     unvaccinated people, resulting in the sum of both coverages,
 #'     though capped by 1 (full coverage).
-#' @return combined coverage
+#' @return A scalar: combined coverage
 #' @export
 #'
 calc_new_coverage <- function(cov1,cov2,skew=0) {

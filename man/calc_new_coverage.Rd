@@ -25,10 +25,10 @@ unvaccinated people, resulting in the sum of both coverages,
 though capped by 1 (full coverage).}
 }
 \value{
-combined coverage
+A scalar: combined coverage
 }
 \description{
-This function to calculate the resulting coverage if coverages of
+This function calculates the resulting coverage if coverages of
 two separate vaccination activities are combined, and returns this
 single value.
 }
