@@ -23,6 +23,8 @@
 #'
 calc_new_coverage <- function(cov1,cov2,skew=0) {
 
+    stopifnot(is.scalar(cov1), is.scalar(cov2), is.scalar(skew))
+
     if(cov1 < 0 | cov1 > 1) stop("invalid coverage value cov1 supplied")
     if(cov2 < 0 | cov2 > 1) stop("invalid coverage value cov2 supplied")
     if(!(skew %in% c(-1,0,1))) stop("invalid value for parameter skew")
