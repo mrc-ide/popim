@@ -7,7 +7,7 @@
 #' @param x argument to be tested for scalar-ness.
 #' @return logical - TRUE for a scalar, FALSE otherwise.
 #' 
-is.scalar <- function(x) {
+is_scalar <- function(x) {
     is.atomic(x) && length(x) == 1L && is.numeric(x) 
 }
 
@@ -21,6 +21,6 @@ is.scalar <- function(x) {
 ##' @return logical - TRUE for a scalar integer, FALSE otherwise.
 ##' @author Tini Garske
 ##' 
-is.scalar.integer <- function(x) {
-    is.scalar(x) && x == round(x)
+is_scalar_integer <- function(x) {
+    is_scalar(x) && x == round(x)
 }
