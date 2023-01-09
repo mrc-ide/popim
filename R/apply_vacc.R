@@ -12,7 +12,7 @@
 
 apply_vacc <- function(pop_df, vacc_act) {
     ## TO DO: tests on the input parameters
-
+    stopifnot(is_population(pop_df))
     
     cohorts <- vacc_act$year - (vacc_act$age_last:vacc_act$age_first)
     
@@ -22,7 +22,6 @@ apply_vacc <- function(pop_df, vacc_act) {
             dplyr::rowwise() %>% 
             dplyr::mutate(immunity = ifelse(cohort == j & 
                                      (year-1)>=vaccination$year[i] & 
-                                     country %in% vaccination$country[i], 
                                      calc_new_coverage(immunity, 
                                                        vaccination$coverage[i], 
                                                        skew = 1),
