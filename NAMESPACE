@@ -2,4 +2,5 @@
 
 export(apply_vacc)
 export(calc_new_coverage)
+export(is_population)
 export(setup_population)
