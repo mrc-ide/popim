@@ -10,12 +10,20 @@
 ##' @author Tini Garske
 ##' @export
 is_population <- function(x) {
-    
-    class(pop) == "data.frame" &
-        ncol(pop) >= 4 &
-        "year" %in% names(pop) &
-        "age" %in% names(pop) &
-        "cohort" %in% names(pop) &
-        "immunity" %in% names(pop)
 
+    if(!(class(x) == "data.frame" &
+         ncol(x) >= 4 &
+         "year" %in% names(x) &
+         "age" %in% names(x) &
+         "cohort" %in% names(x) &
+         "immunity" %in% names(x)))
+        return(FALSE)
+
+    if(class(x$year) != "integer" |
+       class(x$age) != "integer" |
+       class(x$cohort) != "integer" |
+       class(x$immunity) != "numeric")
+        return(FALSE)
+
+    return(TRUE)
 }
