@@ -1,31 +1,32 @@
-#' Function to apply a single vaccination activity to the population
-#'
-#' @param pop_df a population dataframe object such as created by
-#'     function setup_population
-#' @param vacc_act details of the vaccination activity to be
-#'     implemented as a named list containing the elements "year",
-#'     "age_first", "age_last", "country", "coverage".
-#' @return The original pop_df dataframe with column "immunity"
-#'     updated to reflect the vaccination activity applied
-#' @export
-#' 
-
-apply_vacc <- function(pop_df, vacc_act) {
-    ## TO DO: tests on the input parameters
+##' Function to apply a single vaccination activity to the population
+##'
+##' @param pop_df population dataframe object such as created by
+##'     function setup_population
+##' @param year year of the vaccination activity
+##' @param age_first age of the youngest age group targeted
+##' @param age_last age of the oldest age group targeted
+##' @param coverage proportion of the population to be vaccinated in
+##'     the activity
+##' @param skew parameter to determine how successive activities are
+##'     targeted: see function calc_new_coverage for more details
+##' @return pop_df: the supplied population dataframe object with
+##'     updated immunity to reflect the vaccination activity.
+##' @export
+##' @author Tini Garske
+apply_vacc <- function(pop_df, year, age_first, age_last, coverage, skew = 0) {
     stopifnot(is_population(pop_df))
-    
-    cohorts <- vacc_act$year - (vacc_act$age_last:vacc_act$age_first)
-    
+    ## TO DO: checks on the other input parameters
+
+    cohorts <- year - (age_last:age_first)
+
     for(j in cohorts) {
-        ## year-1 as vaccination occurs at the end of the year
-        df <- df %>% 
-            dplyr::rowwise() %>% 
-            dplyr::mutate(immunity = ifelse(cohort == j & 
-                                     (year-1)>=vaccination$year[i] & 
-                                     calc_new_coverage(immunity, 
-                                                       vaccination$coverage[i], 
-                                                       skew = 1),
-                                     immunity))
+        i_vec <- which(pop_df$cohort == j & pop_df$year > year)
+        ## vaccination is implemented at the end of the year, so
+        ## doesn't change immunity until the next year.
+        for(i in i_vec) {
+            pop_df$immunity[i] <-
+                calc_new_coverage(pop_df$immunity[i], coverage, skew = skew)
+        }
     }
-    return(df)
+    return(pop_df)
 }

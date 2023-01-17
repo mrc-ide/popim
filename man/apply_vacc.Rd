@@ -4,20 +4,31 @@
 \alias{apply_vacc}
 \title{Function to apply a single vaccination activity to the population}
 \usage{
-apply_vacc(pop_df, vacc_act)
+apply_vacc(pop_df, year, age_first, age_last, coverage, skew = 0)
 }
 \arguments{
-\item{pop_df}{a population dataframe object such as created by
+\item{pop_df}{population dataframe object such as created by
 function setup_population}
 
-\item{vacc_act}{details of the vaccination activity to be
-implemented as a named list containing the elements "year",
-"age_first", "age_last", "country", "coverage".}
+\item{year}{year of the vaccination activity}
+
+\item{age_first}{age of the youngest age group targeted}
+
+\item{age_last}{age of the oldest age group targeted}
+
+\item{coverage}{proportion of the population to be vaccinated in
+the activity}
+
+\item{skew}{parameter to determine how successive activities are
+targeted: see function calc_new_coverage for more details}
 }
 \value{
-The original pop_df dataframe with column "immunity"
-updated to reflect the vaccination activity applied
+pop_df: the supplied population dataframe object with
+updated immunity to reflect the vaccination activity.
 }
 \description{
 Function to apply a single vaccination activity to the population
+}
+\author{
+Tini Garske
 }
