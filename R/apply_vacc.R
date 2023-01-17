@@ -13,9 +13,15 @@
 ##'     updated immunity to reflect the vaccination activity.
 ##' @export
 ##' @author Tini Garske
-apply_vacc <- function(pop_df, year, age_first, age_last, coverage, skew = 0) {
+apply_vacc <- function(pop_df, year, age_first = 0, age_last = Inf,
+                       coverage = 0, skew = 0) {
     stopifnot(is_population(pop_df))
-    ## TO DO: checks on the other input parameters
+
+    stopifnot(is_scalar_integer(age_first),
+              is_scalar_integer(age_last),
+              age_first >=0, age_last >= age_first)
+    stopifnot(is_scalar(coverage), coverage >= 0, coverage <= 1)
+    stopifnot(skew %in% c(0, 1, -1))
 
     cohorts <- year - (age_last:age_first)
 

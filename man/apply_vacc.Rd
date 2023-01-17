@@ -4,7 +4,7 @@
 \alias{apply_vacc}
 \title{Function to apply a single vaccination activity to the population}
 \usage{
-apply_vacc(pop_df, year, age_first, age_last, coverage, skew = 0)
+apply_vacc(pop_df, year, age_first = 0, age_last = Inf, coverage = 0, skew = 0)
 }
 \arguments{
 \item{pop_df}{population dataframe object such as created by
