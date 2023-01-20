@@ -14,7 +14,7 @@ plot_population <- function(pop_df) {
     ## option to pass a colour scheme
 
     g <- ggplot2::ggplot(pop_df) +
-        ggplot2::aes(x = year, y = age, fill = immunity) +
+        ggplot2::aes(x = pop_df$year, y = pop_df$age, fill = pop_df$immunity) +
         ggplot2::geom_tile() +
         ggplot2::scale_fill_gradient(low = "white",
                                      high = pal[5],
