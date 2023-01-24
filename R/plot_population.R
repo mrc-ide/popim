@@ -19,6 +19,7 @@ plot_population <- function(pop_df) {
         ggplot2::scale_fill_gradient(low = "white",
                                      high = pal[5],
                                      limits = c(0,1)) +
+        ggplot2::labs(x = "year", y = "age", fill = "immunity") +
         ggplot2::theme_minimal()
     
     return(g)

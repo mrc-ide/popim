@@ -86,10 +86,16 @@ pop <- pop %>%
 ```
 
 The vaccine-derived immunity of the population can be visualised with
-the function “plot\_population()”.
+the function “plot\_population()”. This is based on ggplot2, and the
+returned graph object can be further modified - here in order to achieve
+tick marks that suit the data better.
 
 ``` r
-plot_population(pop)
+library(ggplot2) ## needed to amend the plot returned from plot_population()
+
+g <- plot_population(pop)
+g + scale_x_continuous(breaks = seq(2000, 2010, by = 2)) +
+    scale_y_continuous(breaks = seq(0, 10, by = 2))
 ```
 
 <img src="man/figures/README-plot_population-1.png" width="100%" />
