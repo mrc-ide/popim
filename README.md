@@ -7,9 +7,7 @@
 
 <!-- badges: end -->
 
-Vaccine Immunity Propagation
-
-The goal of vip is to …
+**Vaccine Immunity Propagation**
 
 This repository contains functions to run a demographic model of vaccine
 exposure over time, tracking the vaccine-derived immunity by age through
@@ -42,12 +40,29 @@ library(vip)
 
 pop <- setup_population(year_min = 2000, year_max = 2010,
                         age_min = 0, age_max = 10)
+
+dim(pop)
+#> [1] 121   4
+head(pop)
+#>   year age cohort immunity
+#> 1 2000   0   2000        0
+#> 2 2001   0   2001        0
+#> 3 2002   0   2002        0
+#> 4 2003   0   2003        0
+#> 5 2004   0   2004        0
+#> 6 2005   0   2005        0
 ```
 
-Next we apply a number of vaccination activities to this population.
-Note that the first one takes place before we started tracking the
-population - but the effects to individuals vaccinated in this initial
-campaign is still tracked onwards through time.
+This dataframe has 121 columns (11 age groups 0 - 10 x 11 years 2000 -
+2020).
+
+Next we apply a number of vaccination activities to this population. The
+first is a campaign targeting all age groups of our dummy population,
+which took place 5 years before the dawn of time. As immunity is assumed
+not to wane, the effects of this are still there, and therefore the
+functions here keep track of this. The remaining vaccination activities
+are routine vaccination of infants (restricted to age 0) with an
+increasing population of the target cohort to be vaccinated.
 
 ``` r
 library(dplyr) ## needed for the pipe %>%
@@ -78,6 +93,12 @@ plot_population(pop)
 ```
 
 <img src="man/figures/README-plot_population-1.png" width="100%" />
+
+In the top left corner it shows the immunity remaining in the older age
+groups from the initial campaign, while the infant vaccination from 2005
+onwards results in immuity in the lower right corner - and the
+increasing coverage highlights how cohorts age through time and
+therefore move through the plot in a diagonal fashion.
 
 <!-- You'll still need to render `README.Rmd` regularly, to keep -->
 
