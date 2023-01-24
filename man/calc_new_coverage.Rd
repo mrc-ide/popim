@@ -4,14 +4,16 @@
 \alias{calc_new_coverage}
 \title{Function to combine two coverages for the same cohort}
 \usage{
-calc_new_coverage(cov1, cov2, skew = 0)
+calc_new_coverage(coverage, prev_immunity, skew = 0)
 }
 \arguments{
-\item{cov1}{first coverage value as a proportion - needs to be
-between 0 and 1}
+\item{coverage}{coverage value of the new campaign as a proportion
+- needs to be between 0 and 1.}
 
-\item{cov2}{second coverage value as a proportion - needs to be
-between 0 and 1}
+\item{prev_immunity}{pre-existing immunity of the cohort to be
+vaccinated as a proportion. Can be a vector (e.g. for
+calculation of resulting immunity in the same cohort forward in
+time). All entries need to be between 0 and 1.}
 
 \item{skew}{integer to determine the assumption used to combine
 coverages. Valid values are 1, 0 and -1. For skew = 0 (the

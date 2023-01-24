@@ -4,10 +4,12 @@
 #' two separate vaccination activities are combined, and returns this
 #' single value.
 #'
-#' @param cov1 first coverage value as a proportion - needs to be
-#'     between 0 and 1
-#' @param cov2 second coverage value as a proportion - needs to be
-#'     between 0 and 1
+#' @param coverage coverage value of the new campaign as a proportion
+#'     - needs to be between 0 and 1.
+#' @param prev_immunity pre-existing immunity of the cohort to be
+#'     vaccinated as a proportion. Can be a vector (e.g. for
+#'     calculation of resulting immunity in the same cohort forward in
+#'     time). All entries need to be between 0 and 1.
 #' @param skew integer to determine the assumption used to combine
 #'     coverages. Valid values are 1, 0 and -1. For skew = 0 (the
 #'     default), allocation of vaccine is random within the
@@ -21,23 +23,35 @@
 #' @return A scalar: combined coverage
 #' @export
 #'
-calc_new_coverage <- function(cov1,cov2,skew=0) {
+calc_new_coverage <- function(coverage, prev_immunity, skew = 0) {
 
-    stopifnot(is_scalar(cov1), is_scalar(cov2), is_scalar(skew))
+    stopifnot(is_scalar(coverage), is_scalar(skew))
+    stopifnot(is.atomic(prev_immunity),
+              is.numeric(prev_immunity),
+              is.null(dim(prev_immunity)))
+    ## Bizarrely this does allow prev_immunity to be an "atomic"
+    ## vector - but not a list or a matrix.
 
-    if(cov1 < 0 | cov1 > 1) stop("invalid coverage value cov1 supplied")
-    if(cov2 < 0 | cov2 > 1) stop("invalid coverage value cov2 supplied")
-    if(!(skew %in% c(-1,0,1))) stop("invalid value for parameter skew")
+    stopifnot(coverage >= 0, coverage <=1)
+    stopifnot(min(prev_immunity, na.rm = TRUE) >= 0,
+              max(prev_immunity, na.rm = TRUE) <= 1)
+    stopifnot(skew %in% c(-1, 0, 1))
 
-  if(skew == 0){
-    return(cov1 + cov2 - cov1*cov2) # allocation is random
-  } 
-  
-  if(skew == 1){
-    return(max(c(cov1, cov2), na.rm = TRUE)) # 100% correlation
-  } 
-  
-  if(skew == -1){
-    return(min(c(1, cov1 + cov2), na.rm = TRUE)) # doses are targeted at unvaccinated
-  }
+
+    if(skew == 0) {
+        ## random allocation
+        return(coverage + prev_immunity - coverage*prev_immunity)
+    }
+
+    if(skew == 1) {
+        ## 100% correlation
+        return(sapply(prev_immunity,
+                      function(x) max(x, coverage, na.rm = TRUE)))
+    }
+
+    if(skew == -1) {
+        ## doses are targeted at unvaccinated individuals
+        return(sapply(prev_immunity,
+                      function(x) min(1, coverage + x, na.rm = TRUE)))
+    }
 }
