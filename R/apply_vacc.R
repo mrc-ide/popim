@@ -29,10 +29,11 @@ apply_vacc <- function(pop_df, year, age_first = 0, age_last = Inf,
         i_vec <- which(pop_df$cohort == j & pop_df$year > year)
         ## vaccination is implemented at the end of the year, so
         ## doesn't change immunity until the next year.
-        for(i in i_vec) {
-            pop_df$immunity[i] <-
-                calc_new_coverage(pop_df$immunity[i], coverage, skew = skew)
+        if(length(i_vec) > 0) {
+            pop_df$immunity[i_vec] <-
+                calc_new_coverage(coverage, pop_df$immunity[i_vec], skew = skew)
         }
     }
+
     return(pop_df)
 }
