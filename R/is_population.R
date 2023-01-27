@@ -9,27 +9,27 @@
 ##' @author Tini Garske
 is_population <- function(x) {
 
-    if(!(class(x) == "data.frame" &
-         ncol(x) >= 4 &
-         "year" %in% names(x) &
-         "age" %in% names(x) &
-         "cohort" %in% names(x) &
+    if(!(class(x) == "data.frame" &&
+         ncol(x) >= 4 &&
+         "year" %in% names(x) &&
+         "age" %in% names(x) &&
+         "cohort" %in% names(x) &&
          "immunity" %in% names(x)))
         return(FALSE)
 
-    if(class(x$year) != "integer" |
-       class(x$age) != "integer" |
-       class(x$cohort) != "integer" |
+    if(class(x$year) != "integer" ||
+       class(x$age) != "integer" ||
+       class(x$cohort) != "integer" ||
        class(x$immunity) != "numeric")
         return(FALSE)
 
-    if(!(min(x$age) >= 0 &
-         min(x$immunity) >= 0 &
+    if(!(min(x$age) >= 0 &&
+         min(x$immunity) >= 0 &&
          max(x$immunity) <= 1))
         return(FALSE)
 
     ## currently not testing if cohort = year - age (which it should
     ## be) - do I want to, or would that make the function too slow?
 
-    return(TRUE)
+    TRUE
 }
