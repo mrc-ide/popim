@@ -35,5 +35,5 @@ apply_vacc <- function(pop_df, year, age_first = 0, age_last = Inf,
         }
     }
 
-    return(pop_df)
+    pop_df
 }

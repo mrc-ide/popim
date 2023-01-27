@@ -1,5 +1,7 @@
 test_that("setup_population returns a dataframe of expected dimensions", {
-  expect_equal(dim(setup_population(2000, 2005)), c(606, 4))
+
+    pop <- setup_population(2000, 2005)
+    expect_equal(dim(pop), c(606, 4))
 })
 
 test_that("setup_population fails for invalid inputs", {
