@@ -7,7 +7,6 @@
 ##'     a population dataframe.
 ##' @return logical
 ##' @author Tini Garske
-##' @export
 is_population <- function(x) {
 
     if(!(class(x) == "data.frame" &

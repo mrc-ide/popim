@@ -21,7 +21,6 @@
 #'     unvaccinated people, resulting in the sum of both coverages,
 #'     though capped by 1 (full coverage).
 #' @return A scalar: combined coverage
-#' @export
 #'
 calc_new_coverage <- function(coverage, prev_immunity, skew = 0) {
 
