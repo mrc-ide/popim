@@ -30,7 +30,7 @@ whole population.
 }
 \description{
 This function is intended for developer use only and therefore
-doesn't perform any checks on input parameters.
+only performs minimal type checks on input parameters.
 }
 \author{
 Tini Garske

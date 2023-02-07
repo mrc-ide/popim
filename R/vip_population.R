@@ -1,7 +1,7 @@
 ##' Low-level constructor of an object of the "vip_population" class
 ##'
 ##' This function is intended for developer use only and therefore
-##' doesn't perform any checks on input parameters.
+##' only performs minimal type checks on input parameters.
 ##' 
 ##' @param year_min integer, first year to be considered.
 ##' @param year_max integer, last year to be considered.
@@ -16,6 +16,11 @@
 ##' @author Tini Garske
 new_population <- function(year_min = integer(), year_max = integer(),
                            age_min = integer(), age_max = integer()) {
+
+    stopifnot(is_scalar_integer(year_min))
+    stopifnot(is_scalar_integer(year_max))
+    stopifnot(is_scalar_integer(age_min))
+    stopifnot(is_scalar_integer(age_max))
 
     df <- expand.grid(year = year_min:year_max, age = age_min:age_max) |>
         as.data.frame()

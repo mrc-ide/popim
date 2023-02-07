@@ -22,5 +22,17 @@ is_scalar <- function(x) {
 ##' @author Tini Garske
 ##' 
 is_scalar_integer <- function(x) {
-    is_scalar(x) && x == round(x)
+    is_scalar(x) && is_wholenumber(x)
 }
+
+##' Function to test if the argument is a whole number
+##'
+##' Doing what one would expect is.integer to do...
+##'
+##' @param x argument to be tested for whole-ness.
+##' @param tol tolerance for deviation from a whole number, by default
+##'     set to the square root of Machine precision.
+##' @return logical (of the same dimensions as the input)
+##' @author R-help for is.integer
+is_wholenumber <- function(x, tol = .Machine$double.eps^0.5)
+    abs(x - round(x)) < tol
