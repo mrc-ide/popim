@@ -36,3 +36,9 @@ is_scalar_integer <- function(x) {
 ##' @author R-help for is.integer
 is_wholenumber <- function(x, tol = .Machine$double.eps^0.5)
     abs(x - round(x)) < tol
+
+assert_population <- function(x) {
+
+    all(class(x) == c("vip_population", "data.frame"))
+
+}

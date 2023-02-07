@@ -9,8 +9,10 @@
 ##' @author Tini Garske
 is_population <- function(x) {
 
-    if(!(class(x) == "data.frame" &&
-         ncol(x) >= 4 &&
+    if(!assert_population(x))
+        return(FALSE)
+
+    if(!(ncol(x) >= 4 &&
          "year" %in% names(x) &&
          "age" %in% names(x) &&
          "cohort" %in% names(x) &&

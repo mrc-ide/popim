@@ -31,7 +31,7 @@ new_population <- function(year_min = integer(), year_max = integer(),
     ## starting with a fully susceptible population:
     df$immunity <- 0
 
-    class(df) <- "vip_population"
+    class(df) <- c("vip_population", "data.frame")
 
     df
 }
