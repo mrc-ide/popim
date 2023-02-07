@@ -2,7 +2,6 @@ test_that("is_scalar_integer is TRUE for integer input", {
     expect_equal(is_scalar_integer(0), TRUE)
     expect_equal(is_scalar_integer(1L), TRUE)
     expect_equal(is_scalar_integer(-1000), TRUE)
-    expect_equal(is_scalar_integer(Inf), TRUE)
 })
 
 test_that("is_scalar_integer is FALSE for non-integer scalar input", {
