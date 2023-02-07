@@ -15,6 +15,7 @@
 ##' @author Tini Garske
 apply_vacc <- function(pop_df, year, age_first = 0, age_last = Inf,
                        coverage = 0, skew = 0) {
+
     stopifnot(is_population(pop_df))
 
     stopifnot(is_scalar_integer(age_first),

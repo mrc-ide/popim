@@ -1,6 +1,6 @@
 test_that("apply_vacc modifies the correct rows", {
 
-    df <- setup_population(2000, 2005, 0, 5)
+    df <- vip_population(2000, 2005, 0, 5)
     df <- apply_vacc(df, year = 2000, age_first = 0, age_last = 0,
                      coverage = 0.2, skew = 0)
 
