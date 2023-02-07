@@ -2,4 +2,4 @@
 
 export(apply_vacc)
 export(plot_population)
-export(setup_population)
+export(vip_population)
