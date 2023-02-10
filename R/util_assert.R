@@ -103,12 +103,12 @@ assert_is <- function(x, what, name = deparse(substitute(x))) {
   }
 }
 
-assert_population <- function(x) {
-
-    all(class(x) == c("vip_population", "data.frame"))
-
+assert_population <- function(x, name = deparse(substitute(x))) {
+    if(!all(class(x) == c("vip_population", "data.frame"))) {
+        stop(sprintf("'%s' must be of class 'vip_population'", name),
+             call. = FALSE)
+    }
 }
-
 
 
 assert_file_exists <- function(x, check_case = TRUE, workdir = NULL,
