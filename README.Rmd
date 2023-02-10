@@ -38,19 +38,19 @@ devtools::install_github("mrc-ide/vip")
 
 ## Example
 
-The population is the central object, a dataframe with at least the
-columns year, age, cohort (the year of birth for the individuals
-tracked in this row), and immunity (as a proportion of this
-cohort). Year, age and cohort are tracked as annual time steps and age
-groups.
+This package defines an S3 class "vip_population" which is a dataframe
+with at least the columns year, age, cohort (the year of birth for the
+individuals tracked in this row), and immunity (as a proportion of
+this cohort). Year, age and cohort are tracked as annual time steps
+and age groups.
 
 A basic, totally naive population dataframe can be setup using the
-function "setup_population":
+function "vip_population":
 
 ```{r example}
 library(vip)
 
-pop <- setup_population(year_min = 2000, year_max = 2010,
+pop <- vip_population(year_min = 2000, year_max = 2010,
                         age_min = 0, age_max = 10)
 
 dim(pop)
