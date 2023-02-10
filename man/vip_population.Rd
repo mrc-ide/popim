@@ -2,35 +2,44 @@
 % Please edit documentation in R/vip_population.R
 \name{vip_population}
 \alias{vip_population}
-\title{Function to generate an initial population object of S3 class
-"vip_population"}
+\title{Constructor of an object of the "vip_population" class}
 \usage{
-vip_population(year_min, year_max, age_min = 0, age_max = 100)
+vip_population(
+  year_min = integer(),
+  year_max = integer(),
+  age_min = 0,
+  age_max = 100
+)
 }
 \arguments{
-\item{year_min}{integer, determines the first year considered.}
+\item{year_min}{integer, first year to be considered.}
 
-\item{year_max}{integer, determines the last year considered.}
+\item{year_max}{integer, last year to be considered.}
 
-\item{age_min}{integer, determines the youngest age (in years)
-considered. Defaults to 0}
+\item{age_min}{integer, youngest age to be considered, defaults to 0.}
 
-\item{age_max}{integer, determines the oldest age (in years)
-considered. Defaults to 100.}
+\item{age_max}{integer, oldest age to be considered, defaults to 100.}
 }
 \value{
-vip_population object: a dataframe containing the columns
-year, age, cohort, immunity. Year and age are defined by the
-input parameters, cohort = year - age, immunity is set to a
-starting value of 0 throughout.
+S3 object of class "vip_population": a dataframe with
+columns year, age, cohort, immunity where year and age cover
+the ranges given by the input parameters. Cohort = year - age
+and gives the year of birth. It is redundant but included for
+ease of handling. Immunity is initialised as 0 throughout the
+whole population.
 }
 \description{
 The "vip_population" object is a dataframe used to track
-vaccination coverage by age through time for a single location.
+vaccination coverage by age through time for a single
+location. The dataframe has at least the 4 columns year, age,
+cohort and immunity.
 }
 \details{
-This function generates a dataframe used to track the vaccination
-status of a population through time. Each age and year is tracked
-in a row and the proportion of the population that is immune is
-recorded. Immunity is initialised as 0 throughout by this function.
+This function generates a such a dataframe.  Each age and year is
+tracked in a row and the proportion of the population that is
+immune is recorded. Immunity is initialised as 0 throughout by
+this function.
+}
+\author{
+Tini Garske
 }

@@ -7,7 +7,7 @@
 ##' @author Tini Garske
 plot_population <- function(pop_df) {
 
-    stopifnot(is_population(pop_df))
+    assert_population(pop_df)
     
     pal <- MetBrewer::met.brewer("VanGogh3", 5, "discrete")
     ## might want to get rid of this dependency and implement the
