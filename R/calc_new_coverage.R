@@ -27,6 +27,9 @@ calc_new_coverage <- function(coverage, prev_immunity, skew = 0) {
     assert_scalar(coverage)
     assert_0_to_1(coverage)
     assert_0_to_1(prev_immunity)
+    assert_1d(prev_immunity) ## technically, a matrix would work - but
+                             ## it probably wouldn't be sensible, so
+                             ## more likely an error...
 
     stopifnot(skew %in% c(-1, 0, 1))
 

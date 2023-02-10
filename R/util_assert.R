@@ -4,6 +4,12 @@ assert_scalar <- function(x, name = deparse(substitute(x))) {
   }
 }
 
+assert_1d <- function(x, name = deparse(substitute(x))) {
+  if (!is.null(dim(x))) {
+    stop(sprintf("'%s' must not be 2d or more", name), call. = FALSE)
+  }
+}
+
 assert_character <- function(x, name = deparse(substitute(x))) {
   if (!is.character(x)) {
     stop(sprintf("'%s' must be character", name), call. = FALSE)
