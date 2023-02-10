@@ -24,18 +24,11 @@
 #'
 calc_new_coverage <- function(coverage, prev_immunity, skew = 0) {
 
-    stopifnot(is_scalar(coverage), is_scalar(skew))
-    stopifnot(is.atomic(prev_immunity),
-              is.numeric(prev_immunity),
-              is.null(dim(prev_immunity)))
-    ## Bizarrely this does allow prev_immunity to be an "atomic"
-    ## vector - but not a list or a matrix.
+    assert_scalar(coverage)
+    assert_0_to_1(coverage)
+    assert_0_to_1(prev_immunity)
 
-    stopifnot(coverage >= 0, coverage <=1)
-    stopifnot(min(prev_immunity, na.rm = TRUE) >= 0,
-              max(prev_immunity, na.rm = TRUE) <= 1)
     stopifnot(skew %in% c(-1, 0, 1))
-
 
     if(skew == 0) {
         ## random allocation

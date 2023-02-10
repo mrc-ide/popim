@@ -1,5 +1,5 @@
 test_that("calc_new_coverage combines two coverages correctly", {
-    expect_equal(calc_new_coverage(0.5,0.5), 0.75)
+    expect_equal(calc_new_coverage(0.5, 0.5), 0.75)
     expect_equal(calc_new_coverage(0.3, 0.5, 1), 0.5)
     expect_equal(calc_new_coverage(0.3, 0.5, -1), 0.8)
 })
