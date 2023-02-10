@@ -17,10 +17,14 @@
 new_population <- function(year_min = integer(), year_max = integer(),
                            age_min = integer(), age_max = integer()) {
 
-    stopifnot(is_scalar_integer(year_min))
-    stopifnot(is_scalar_integer(year_max))
-    stopifnot(is_scalar_integer(age_min))
-    stopifnot(is_scalar_integer(age_max))
+    assert_scalar_wholenumber(year_min)
+    assert_scalar_wholenumber(year_max)
+    assert_non_negative(year_max - year_min)
+
+    assert_scalar_wholenumber(age_min)
+    assert_scalar_wholenumber(age_max)
+    assert_non_negative(age_min)
+    assert_non_negative(age_max - age_min)
 
     df <- expand.grid(year = year_min:year_max, age = age_min:age_max) |>
         as.data.frame()
@@ -60,16 +64,15 @@ new_population <- function(year_min = integer(), year_max = integer(),
 #' @export
 #' 
 vip_population <- function(year_min, year_max, age_min = 0, age_max = 100) {
-    
-    stopifnot(is_scalar_integer(year_min),
-              is_scalar_integer(year_max),
-              is_scalar_integer(age_min),
-              is_scalar_integer(age_max))
 
-    ## test if the ranges given make sense
-    stopifnot(year_min <= year_max,
-              age_min >= 0,
-              age_min <= age_max)
+    assert_scalar_wholenumber(year_min)
+    assert_scalar_wholenumber(year_max)
+    assert_non_negative(year_max - year_min)
+
+    assert_scalar_wholenumber(age_min)
+    assert_scalar_wholenumber(age_max)
+    assert_non_negative(age_min)
+    assert_non_negative(age_max - age_min)
 
     new_population(year_min = year_min, year_max = year_max,
                     age_min = age_min,   age_max = age_max)
