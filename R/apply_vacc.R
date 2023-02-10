@@ -7,14 +7,23 @@
 ##' @param age_last age of the oldest age group targeted
 ##' @param coverage proportion of the population to be vaccinated in
 ##'     the activity
-##' @param skew parameter to determine how successive activities are
-##'     targeted: see function calc_new_coverage for more details
+##' @param skew character to determine how successive activities are
+##'     targeted. Valid values are "random", "correlated", "targeted".
+##'     For skew = "random" (the default), allocation of vaccine is
+##'     random within the population, therefore the resulting coverage
+##'     will be smaller than the sum of the coverages. For skew =
+##'     "correlated", there is a 100% correlation between who will get
+##'     the vaccine in either vaccination activitiy, the resulting
+##'     coverage is simply the larger of the two inputs. For skew =
+##'     "targeted", doses are targeted at unvaccinated people,
+##'     resulting in the sum of both coverages, though capped by 1
+##'     (full coverage).
 ##' @return pop_df: the supplied population dataframe object with
 ##'     updated immunity to reflect the vaccination activity.
 ##' @export
 ##' @author Tini Garske
 apply_vacc <- function(pop_df, year, age_first = 0, age_last = Inf,
-                       coverage = 0, skew = 0) {
+                       coverage = 0, skew = "random") {
 
     stopifnot(is_population(pop_df))
 
@@ -25,7 +34,7 @@ apply_vacc <- function(pop_df, year, age_first = 0, age_last = Inf,
     assert_non_negative(age_first)
     assert_non_negative(age_last - age_first)
 
-    stopifnot(skew %in% c(0, 1, -1))
+    assert_valid_skew(skew)
 
     cohorts <- year - (age_last:age_first)
 

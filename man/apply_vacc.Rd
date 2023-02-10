@@ -4,7 +4,14 @@
 \alias{apply_vacc}
 \title{Function to apply a single vaccination activity to the population}
 \usage{
-apply_vacc(pop_df, year, age_first = 0, age_last = Inf, coverage = 0, skew = 0)
+apply_vacc(
+  pop_df,
+  year,
+  age_first = 0,
+  age_last = Inf,
+  coverage = 0,
+  skew = "random"
+)
 }
 \arguments{
 \item{pop_df}{population dataframe object such as created by
@@ -19,8 +26,17 @@ function setup_population}
 \item{coverage}{proportion of the population to be vaccinated in
 the activity}
 
-\item{skew}{parameter to determine how successive activities are
-targeted: see function calc_new_coverage for more details}
+\item{skew}{character to determine how successive activities are
+targeted. Valid values are "random", "correlated", "targeted".
+For skew = "random" (the default), allocation of vaccine is
+random within the population, therefore the resulting coverage
+will be smaller than the sum of the coverages. For skew =
+"correlated", there is a 100\% correlation between who will get
+the vaccine in either vaccination activitiy, the resulting
+coverage is simply the larger of the two inputs. For skew =
+"targeted", doses are targeted at unvaccinated people,
+resulting in the sum of both coverages, though capped by 1
+(full coverage).}
 }
 \value{
 pop_df: the supplied population dataframe object with
