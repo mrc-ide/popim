@@ -16,6 +16,13 @@ assert_numeric <- function(x, name = deparse(substitute(x))) {
   }
 }
 
+assert_wholenumber <- function(x, name = deparse(substitute(x))) {
+    assert_numeric(x, name)
+    if(!(abs(x - round(x)) < tol)) {
+        stop(sprintf("'%s' must be a whole number", name, call. = FALSE))
+    }
+}
+
 assert_logical <- function(x, name = deparse(substitute(x))) {
   if (!is.logical(x)) {
     stop(sprintf("'%s' must be logical", name), call. = FALSE)
@@ -38,6 +45,11 @@ assert_scalar_numeric <- function(x, name = deparse(substitute(x))) {
   assert_numeric(x, name)
 }
 
+assert_scalar_wholenumber <- function(x, name = deparse(substitute(x))) {
+    assert_scalar(x, name)
+    assert_wholenumber(x, name)
+}
+
 assert_scalar_character <- function(x, name = deparse(substitute(x))) {
   assert_scalar(x, name)
   assert_character(x, name)
@@ -58,6 +70,14 @@ assert_is <- function(x, what, name = deparse(substitute(x))) {
                  paste(what, collapse = " / ")), call. = FALSE)
   }
 }
+
+assert_population <- function(x) {
+
+    all(class(x) == c("vip_population", "data.frame"))
+
+}
+
+
 
 assert_file_exists <- function(x, check_case = TRUE, workdir = NULL,
                                name = "File") {
