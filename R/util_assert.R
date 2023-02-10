@@ -44,9 +44,16 @@ assert_0_to_1 <- function(x, name = deparse(substitute(x))) {
     }
 }
 
-assert_scalar_logical <- function(x, name = deparse(substitute(x))) {
+assert_non_negative <- function(x, name = deparse(substitute(x))) {
+    assert_numeric(x, name)
+    if(any(x < 0)) {
+        stop(sprintf("'%s' must be non-negative", name), call. = FALSE)
+    }
+}
+
+assert_scalar_character <- function(x, name = deparse(substitute(x))) {
   assert_scalar(x, name)
-  assert_logical(x, name)
+  assert_character(x, name)
 }
 
 assert_scalar_numeric <- function(x, name = deparse(substitute(x))) {
@@ -59,9 +66,19 @@ assert_scalar_wholenumber <- function(x, name = deparse(substitute(x))) {
     assert_wholenumber(x, name)
 }
 
-assert_scalar_character <- function(x, name = deparse(substitute(x))) {
+assert_scalar_0_to_1 <- function(x, name = deparse(substitute(x))) {
+    assert_scalar(x, name)
+    assert_0_to_1(x, name)
+}
+
+assert_scalar_non_negative <- function(x, name = deparse(substitute(x))) {
+    assert_scalar(x, name)
+    assert_non_negative(x, name)
+}
+
+assert_scalar_logical <- function(x, name = deparse(substitute(x))) {
   assert_scalar(x, name)
-  assert_character(x, name)
+  assert_logical(x, name)
 }
 
 assert_named <- function(x, unique = FALSE, name = deparse(substitute(x))) {

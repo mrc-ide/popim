@@ -18,10 +18,13 @@ apply_vacc <- function(pop_df, year, age_first = 0, age_last = Inf,
 
     stopifnot(is_population(pop_df))
 
-    stopifnot(is_scalar_integer(age_first),
-              is_scalar_integer(age_last),
-              age_first >=0, age_last >= age_first)
-    stopifnot(is_scalar(coverage), coverage >= 0, coverage <= 1)
+    assert_scalar_wholenumber(age_first)
+    assert_scalar_wholenumber(age_last)
+    assert_scalar_0_to_1(coverage)
+
+    assert_non_negative(age_first)
+    assert_non_negative(age_last - age_first)
+
     stopifnot(skew %in% c(0, 1, -1))
 
     cohorts <- year - (age_last:age_first)
