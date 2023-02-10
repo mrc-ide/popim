@@ -61,7 +61,7 @@ assert_is <- function(x, what, name = deparse(substitute(x))) {
 
 assert_file_exists <- function(x, check_case = TRUE, workdir = NULL,
                                name = "File") {
-  err <- !file_exists(x, check_case = check_case, workdir = workdir)
+  err <- !file.exists(x, check_case = check_case, workdir = workdir)
   if (any(err)) {
     i <- attr(err, "incorrect_case")
     if (!is.null(i)) {
