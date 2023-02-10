@@ -16,13 +16,6 @@ assert_numeric <- function(x, name = deparse(substitute(x))) {
   }
 }
 
-assert_wholenumber <- function(x, name = deparse(substitute(x))) {
-    assert_numeric(x, name)
-    if(!(abs(x - round(x)) < tol)) {
-        stop(sprintf("'%s' must be a whole number", name, call. = FALSE))
-    }
-}
-
 assert_logical <- function(x, name = deparse(substitute(x))) {
   if (!is.logical(x)) {
     stop(sprintf("'%s' must be logical", name), call. = FALSE)
@@ -33,6 +26,22 @@ assert_hash <- function(x, name = deparse(substitute(x))) {
   if (!all(grepl("^[[:xdigit:]]{32}$", x))) {
     stop(sprintf("'%s' must be a hash", name), call. = FALSE)
   }
+}
+
+assert_wholenumber <- function(x, name = deparse(substitute(x)),
+                               tol = .Machine$double.eps^0.5) {
+    assert_numeric(x, name)
+    if(!(all(abs(x - round(x)) < tol))) {
+        stop(sprintf("'%s' must be a (vector of) whole number(s)", name),
+             call. = FALSE)
+    }
+}
+
+assert_0_to_1 <- function(x, name = deparse(substitute(x))) {
+    assert_numeric(x, name)
+    if(any(x < 0 | x > 1)) {
+        stop(sprintf("'%s' must be between 0 and 1", name), call. = FALSE)
+    }
 }
 
 assert_scalar_logical <- function(x, name = deparse(substitute(x))) {
