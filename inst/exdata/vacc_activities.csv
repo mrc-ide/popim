@@ -1,0 +1,8 @@
+year,age_first,age_last,coverage,target
+1998,0,10,0.5,random
+2005,0,0,0.5,random
+2006,0,0,0.6,random
+2007,0,0,0.7,random
+2008,0,0,0.8,random
+2009,0,0,0.9,random
+2010,0,0,0.95,random
