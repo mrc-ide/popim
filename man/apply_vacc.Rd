@@ -10,7 +10,7 @@ apply_vacc(
   age_first = 0,
   age_last = Inf,
   coverage = 0,
-  skew = "random"
+  target = "random"
 )
 }
 \arguments{
@@ -26,14 +26,14 @@ function setup_population}
 \item{coverage}{proportion of the population to be vaccinated in
 the activity}
 
-\item{skew}{character to determine how successive activities are
+\item{target}{character to determine how successive activities are
 targeted. Valid values are "random", "correlated", "targeted".
-For skew = "random" (the default), allocation of vaccine is
+For target = "random" (the default), allocation of vaccine is
 random within the population, therefore the resulting coverage
-will be smaller than the sum of the coverages. For skew =
+will be smaller than the sum of the coverages. For target =
 "correlated", there is a 100\% correlation between who will get
 the vaccine in either vaccination activitiy, the resulting
-coverage is simply the larger of the two inputs. For skew =
+coverage is simply the larger of the two inputs. For target =
 "targeted", doses are targeted at unvaccinated people,
 resulting in the sum of both coverages, though capped by 1
 (full coverage).}
