@@ -1,3 +1,19 @@
+## low level constructor for a new "vip_vacc_activities" object from
+## the inputs provided. This is for internal use only, so doesn't
+## currently do any checks on the inputs - it may therefore fail
+## ungracefully, or generate an invalid object.
+new_vacc_activities <- function(year = integer(),
+                                age_first = integer(), age_last = integer(),
+                                coverage = double(), target = character()) {
+
+    x <- data.frame(year = year,
+                    age_first = age_first, age_last = age_last,
+                    coverage = coverage, target = target)
+    class(x) <- c("vip_vacc_activities", "data.frame")
+
+    x
+}
+
 validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
     assert_vacc_activities(x)
 
@@ -23,6 +39,7 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
         stop(sprintf("%s has an invalid entry in column 'target'", name))
 
 }
+
 
 
 ##' Reading vaccination activities from a .csv file
