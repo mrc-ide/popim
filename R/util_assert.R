@@ -104,12 +104,16 @@ assert_is <- function(x, what, name = deparse(substitute(x))) {
 }
 
 assert_population <- function(x, name = deparse(substitute(x))) {
-    if(!all(class(x) == c("vip_population", "data.frame"))) {
+    if(!all(class(x) == c("vip_population", "data.frame")))
         stop(sprintf("'%s' must be of class 'vip_population'", name),
              call. = FALSE)
-    }
 }
 
+assert_vacc_activities <- function(x, name = deparse(substitute(x))) {
+    if(!all(class(x) == c("vip_vacc_activities", "data.frame")))
+        stop(sprintf("'%s' must be of class 'vip_vacc_activities'", name),
+             call. = FALSE)
+}
 
 assert_file_exists <- function(x, check_case = TRUE, workdir = NULL,
                                name = "File") {
@@ -159,4 +163,10 @@ assert_type <- function(x, type, name = deparse(substitute(x))) {
          logical = assert_scalar_logical(x, name),
          numeric = assert_scalar_numeric(x, name),
          character = assert_scalar_character(x, name))
+}
+
+assert_column_exists <- function(x, col, name = deparse(substitute(x))) {
+    if(!(col %in% names(x)))
+        stop(sprintf("%s is missing column %s", name, col),
+             call. = FALSE)
 }
