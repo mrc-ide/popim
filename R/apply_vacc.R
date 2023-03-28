@@ -1,7 +1,7 @@
 ##' Function to apply a single vaccination activity to the population
 ##'
 ##' @param pop_df population dataframe object such as created by
-##'     function setup_population
+##'     function 'vip_population'
 ##' @param year year of the vaccination activity
 ##' @param age_first age of the youngest age group targeted
 ##' @param age_last age of the oldest age group targeted
@@ -49,5 +49,33 @@ apply_vacc <- function(pop_df, year, age_first = 0, age_last = Inf,
         }
     }
 
+    pop_df
+}
+##' Function to apply vaccination activities to a population
+##'
+##' Takes the vaccination activities listed in the input object
+##' vaccs_df (a data.frame object of class vip_vacc_activities), and
+##' applies them to the vip_population object pop_df, then returns
+##' that updated object.
+##'
+##' @param pop_df object of class vip_population such as created by
+##'     function 'vip_population'
+##' @param vaccs_df object of class 'vip_vacc_activities' such as
+##'     created by reading from file with function
+##'     'read_vacc_activities'
+##' @return pop_df: the supplied population dataframe object with
+##'     updated immunity to reflect the vaccination activities
+##'     supplied in vaccs_df.
+##' @export
+##' @author Tini Garske
+apply_vaccs <- function(pop_df, vaccs_df) {
+    for(i in seq_len(nrow(vaccs_df))) {
+
+        pop_df <- apply_vacc(pop_df, vaccs_df$year[i],
+                          age_first = vaccs_df$age_first[i],
+                          age_last = vaccs_df$age_last[i],
+                          coverage = vaccs_df$coverage[i],
+                          target = vaccs_df$target[i])
+    }
     pop_df
 }

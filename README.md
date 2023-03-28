@@ -93,13 +93,7 @@ vaccs
 #> 6 2009         0        0     0.90 random
 #> 7 2010         0        0     0.95 random
 
-for(i in seq_len(nrow(vaccs))) {
-    pop <- apply_vacc(pop, vaccs$year[i],
-                      age_first = vaccs$age_first[i],
-                      age_last = vaccs$age_last[i],
-                      coverage = vaccs$coverage[i],
-                      target = vaccs$target[i])
-}
+pop <- apply_vaccs(pop, vaccs)
 ```
 
 The resulting vaccine-derived immunity of the population can be

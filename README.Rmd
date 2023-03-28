@@ -78,13 +78,7 @@ library(dplyr) ## needed for the pipe %>%
 vaccs <- read_vacc_activities("inst/exdata/vacc_activities.csv")
 vaccs
 
-for(i in seq_len(nrow(vaccs))) {
-    pop <- apply_vacc(pop, vaccs$year[i],
-                      age_first = vaccs$age_first[i],
-                      age_last = vaccs$age_last[i],
-                      coverage = vaccs$coverage[i],
-                      target = vaccs$target[i])
-}
+pop <- apply_vaccs(pop, vaccs)
 
 ```
 

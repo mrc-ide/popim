@@ -15,7 +15,7 @@ apply_vacc(
 }
 \arguments{
 \item{pop_df}{population dataframe object such as created by
-function setup_population}
+function 'vip_population'}
 
 \item{year}{year of the vaccination activity}
 
