@@ -75,7 +75,7 @@ population using the function 'apply_vacc'.
 ```{r apply_vacc}
 library(dplyr) ## needed for the pipe %>%
 
-vaccs <- read_vacc_activities("inst/exdata/vacc_activities.csv")
+vaccs <- read_vacc_activities("inst/extdata/vacc_activities.csv")
 vaccs
 
 pop <- apply_vaccs(pop, vaccs)

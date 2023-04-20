@@ -82,7 +82,7 @@ library(dplyr) ## needed for the pipe %>%
 #> 
 #>     intersect, setdiff, setequal, union
 
-vaccs <- read_vacc_activities("inst/exdata/vacc_activities.csv")
+vaccs <- read_vacc_activities("inst/extdata/vacc_activities.csv")
 vaccs
 #>   year age_first age_last coverage target
 #> 1 1998         0       10     0.50 random
