@@ -15,14 +15,16 @@ is_population <- function(x, tol = .Machine$double.eps^0.5) {
 
     assert_population(x)
 
-    if(!(ncol(x) >= 4 &&
+    if(!(ncol(x) >= 5 &&
+         "region" %in% names(x) &&
          "year" %in% names(x) &&
          "age" %in% names(x) &&
          "cohort" %in% names(x) &&
          "immunity" %in% names(x)))
         return(FALSE)
 
-    if(class(x$year) != "integer" ||
+    if(class(x$region) != "character" ||
+       class(x$year) != "integer" ||
        class(x$age) != "integer" ||
        class(x$cohort) != "integer" ||
        class(x$immunity) != "numeric")

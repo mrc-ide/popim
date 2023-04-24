@@ -6,6 +6,7 @@
 \usage{
 apply_vacc(
   pop_df,
+  region,
   year,
   age_first = 0,
   age_last = Inf,
@@ -16,6 +17,8 @@ apply_vacc(
 \arguments{
 \item{pop_df}{population dataframe object such as created by
 function 'vip_population'}
+
+\item{region}{region of the vaccination activity}
 
 \item{year}{year of the vaccination activity}
 

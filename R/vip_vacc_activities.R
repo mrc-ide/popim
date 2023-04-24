@@ -2,11 +2,11 @@
 ## the inputs provided. This is for internal use only, so doesn't
 ## currently do any checks on the inputs - it may therefore fail
 ## ungracefully, or generate an invalid object.
-new_vacc_activities <- function(year = integer(),
+new_vacc_activities <- function(region = character(), year = integer(),
                                 age_first = integer(), age_last = integer(),
                                 coverage = double(), targeting = character()) {
 
-    x <- data.frame(year = year,
+    x <- data.frame(region = region, year = year,
                     age_first = age_first, age_last = age_last,
                     coverage = coverage, targeting = targeting)
     class(x) <- c("vip_vacc_activities", "data.frame")
@@ -17,12 +17,14 @@ new_vacc_activities <- function(year = integer(),
 validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
     assert_vacc_activities(x)
 
+    assert_column_exists(x, "region")
     assert_column_exists(x, "year")
     assert_column_exists(x, "age_first")
     assert_column_exists(x, "age_last")
     assert_column_exists(x, "coverage")
     assert_column_exists(x, "targeting")
 
+    assert_character(x$region)
     assert_wholenumber(x$year)
     assert_wholenumber(x$age_first)
     assert_wholenumber(x$age_last)

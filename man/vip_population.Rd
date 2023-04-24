@@ -5,6 +5,7 @@
 \title{Constructor of an object of the "vip_population" class}
 \usage{
 vip_population(
+  region = character(),
   year_min = integer(),
   year_max = integer(),
   age_min = 0,
@@ -12,6 +13,8 @@ vip_population(
 )
 }
 \arguments{
+\item{region}{character vector, list of regions considered.}
+
 \item{year_min}{integer, first year to be considered.}
 
 \item{year_max}{integer, last year to be considered.}
@@ -22,11 +25,11 @@ vip_population(
 }
 \value{
 S3 object of class "vip_population": a dataframe with
-columns year, age, cohort, immunity where year and age cover
-the ranges given by the input parameters. Cohort = year - age
-and gives the year of birth. It is redundant but included for
-ease of handling. Immunity is initialised as 0 throughout the
-whole population.
+columns region, year, age, cohort, immunity where year and age
+cover the ranges given by the input parameters. Cohort = year
+- age and gives the year of birth. It is redundant but
+included for ease of handling. Immunity is initialised as 0
+throughout the whole population.
 }
 \description{
 The "vip_population" object is a dataframe used to track

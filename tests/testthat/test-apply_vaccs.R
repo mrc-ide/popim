@@ -1,15 +1,15 @@
 test_that("apply_vaccs correctly uses apply_vacc for a single vacc_activity", {
     ## get a population object
-    pop <- vip_population(year_min = 2000, year_max = 2010,
+    pop <- vip_population(region = "UK", year_min = 2000, year_max = 2010,
                           age_min = 0, age_max = 10)
     ## get a vaccine object
-    vacc <- new_vacc_activities(year = 2001,
+    vacc <- new_vacc_activities(region = "UK", year = 2001,
                                 age_first = 0, age_last = 0,
                                 coverage = 0.5, targeting = "random")
 
     ## applying a single vacc activity - does apply_vaccs give the
     ## same as apply_vacc?
-    pop_sing <- apply_vacc(pop_df = pop, year = vacc$year,
+    pop_sing <- apply_vacc(pop_df = pop, region = "UK", year = vacc$year,
                            age_first = vacc$age_first,
                            age_last = vacc$age_last,
                            coverage = vacc$coverage,
@@ -20,19 +20,19 @@ test_that("apply_vaccs correctly uses apply_vacc for a single vacc_activity", {
 })
 test_that("apply_vaccs gives the same result as apply_vacc used twice for two activities", {
     ## get a population object
-    pop <- vip_population(year_min = 2000, year_max = 2010,
+    pop <- vip_population(region = "UK", year_min = 2000, year_max = 2010,
                           age_min = 0, age_max = 10)
     ## get a vaccine object
-    vacc <- new_vacc_activities(year = c(2001, 2003),
+    vacc <- new_vacc_activities(region = "UK", year = c(2001, 2003),
                                 age_first = 0, age_last = 0,
                                 coverage = 0.5, targeting = "random")
 
-    pop_sing <- apply_vacc(pop_df = pop, year = vacc$year[1],
+    pop_sing <- apply_vacc(pop_df = pop, region = "UK", year = vacc$year[1],
                            age_first = vacc$age_first[1],
                            age_last = vacc$age_last[1],
                            coverage = vacc$coverage[1],
                            targeting = vacc$targeting[1])
-    pop_sing <- apply_vacc(pop_df = pop_sing, year = vacc$year[2],
+    pop_sing <- apply_vacc(pop_df = pop_sing, region = "UK", year = vacc$year[2],
                            age_first = vacc$age_first[2],
                            age_last = vacc$age_last[2],
                            coverage = vacc$coverage[2],

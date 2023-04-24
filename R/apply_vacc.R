@@ -2,6 +2,7 @@
 ##'
 ##' @param pop_df population dataframe object such as created by
 ##'     function 'vip_population'
+##' @param region region of the vaccination activity
 ##' @param year year of the vaccination activity
 ##' @param age_first age of the youngest age group targeted
 ##' @param age_last age of the oldest age group targeted
@@ -22,11 +23,12 @@
 ##'     updated immunity to reflect the vaccination activity.
 ##' @export
 ##' @author Tini Garske
-apply_vacc <- function(pop_df, year, age_first = 0, age_last = Inf,
+apply_vacc <- function(pop_df, region, year, age_first = 0, age_last = Inf,
                        coverage = 0, targeting = "random") {
 
     stopifnot(is_population(pop_df))
 
+    assert_character(region)
     assert_scalar_wholenumber(age_first)
     assert_scalar_wholenumber(age_last)
     assert_scalar_0_to_1(coverage)
@@ -39,7 +41,8 @@ apply_vacc <- function(pop_df, year, age_first = 0, age_last = Inf,
     cohorts <- year - (age_last:age_first)
 
     for(j in cohorts) {
-        i_vec <- which(pop_df$cohort == j & pop_df$year > year)
+        i_vec <- which(pop_df$region == region & pop_df$cohort == j &
+                       pop_df$year > year)
         ## vaccination is implemented at the end of the year, so
         ## doesn't change immunity until the next year.
         if(length(i_vec) > 0) {
@@ -71,11 +74,12 @@ apply_vacc <- function(pop_df, year, age_first = 0, age_last = Inf,
 apply_vaccs <- function(pop_df, vaccs_df) {
     for(i in seq_len(nrow(vaccs_df))) {
 
-        pop_df <- apply_vacc(pop_df, vaccs_df$year[i],
-                          age_first = vaccs_df$age_first[i],
-                          age_last = vaccs_df$age_last[i],
-                          coverage = vaccs_df$coverage[i],
-                          targeting = vaccs_df$targeting[i])
+        pop_df <- apply_vacc(pop_df, vaccs_df$region[i],
+                             vaccs_df$year[i],
+                             age_first = vaccs_df$age_first[i],
+                             age_last = vaccs_df$age_last[i],
+                             coverage = vaccs_df$coverage[i],
+                             targeting = vaccs_df$targeting[i])
     }
     pop_df
 }
