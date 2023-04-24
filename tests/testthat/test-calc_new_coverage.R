@@ -5,15 +5,18 @@ test_that("calc_new_coverage combines two coverages correctly", {
 })
 
 test_that("calc_new_coverage works for an input vector of prev_immunity", {
-    expect_equal(calc_new_coverage(0.5, c(0.3, 0.5, 0.8), target = "targeted"),
+    expect_equal(calc_new_coverage(0.5, c(0.3, 0.5, 0.8),
+                                   targeting = "targeted"),
                  c(0.8, 1, 1))
-    expect_equal(calc_new_coverage(0.5, c(0.3, 0.5, 0.8), target = "random"),
+    expect_equal(calc_new_coverage(0.5, c(0.3, 0.5, 0.8),
+                                   targeting = "random"),
                  c(0.65, 0.75, 0.9))
-    expect_equal(calc_new_coverage(0.5, c(0.3, 0.5, 0.8), target = "correlated"),
+    expect_equal(calc_new_coverage(0.5, c(0.3, 0.5, 0.8),
+                                   targeting = "correlated"),
                  c(0.5, 0.5, 0.8))
 })
 
-test_that("calc_new_coverage fails for undefined target value", {
+test_that("calc_new_coverage fails for undefined targeting value", {
     expect_error(calc_new_coverage(0.5, 0.5, -0.5))
     expect_error(calc_new_coverage(0.5, 0.5, "blue"))
 })

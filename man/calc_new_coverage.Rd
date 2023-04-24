@@ -4,7 +4,7 @@
 \alias{calc_new_coverage}
 \title{Function to combine two coverages for the same cohort}
 \usage{
-calc_new_coverage(coverage, prev_immunity, target)
+calc_new_coverage(coverage, prev_immunity, targeting)
 }
 \arguments{
 \item{coverage}{coverage value of the new campaign as a proportion
@@ -15,14 +15,14 @@ vaccinated as a proportion. Can be a vector (e.g. for
 calculation of resulting immunity in the same cohort forward in
 time). All entries need to be between 0 and 1.}
 
-\item{target}{char to determine the assumption used to combine
+\item{targeting}{char to determine the assumption used to combine
 coverages. Valid values are "random", "correlated", "targeted".
-For target = "random" (the default), allocation of vaccine is
+For targeting = "random" (the default), allocation of vaccine is
 random within the population, therefore the resulting coverage
-will be smaller than the sum of the coverages. For target =
+will be smaller than the sum of the coverages. For targeting =
 "correlated", there is a 100\% correlation between who will get
 the vaccine in either vaccination activitiy, the resulting
-coverage is simply the larger of the two inputs. For target =
+coverage is simply the larger of the two inputs. For targeting =
 "targeted", doses are targeted at unvaccinated people,
 resulting in the sum of both coverages, though capped by 1
 (full coverage).}

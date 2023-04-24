@@ -10,7 +10,7 @@ apply_vacc(
   age_first = 0,
   age_last = Inf,
   coverage = 0,
-  target = "random"
+  targeting = "random"
 )
 }
 \arguments{
@@ -26,14 +26,14 @@ function 'vip_population'}
 \item{coverage}{proportion of the population to be vaccinated in
 the activity}
 
-\item{target}{character to determine how successive activities are
+\item{targeting}{character to determine how successive activities are
 targeted. Valid values are "random", "correlated", "targeted".
-For target = "random" (the default), allocation of vaccine is
+For targeting = "random" (the default), allocation of vaccine is
 random within the population, therefore the resulting coverage
-will be smaller than the sum of the coverages. For target =
+will be smaller than the sum of the coverages. For targeting =
 "correlated", there is a 100\% correlation between who will get
 the vaccine in either vaccination activitiy, the resulting
-coverage is simply the larger of the two inputs. For target =
+coverage is simply the larger of the two inputs. For targeting =
 "targeted", doses are targeted at unvaccinated people,
 resulting in the sum of both coverages, though capped by 1
 (full coverage).}

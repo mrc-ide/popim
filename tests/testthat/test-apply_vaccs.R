@@ -5,7 +5,7 @@ test_that("apply_vaccs correctly uses apply_vacc for a single vacc_activity", {
     ## get a vaccine object
     vacc <- new_vacc_activities(year = 2001,
                                 age_first = 0, age_last = 0,
-                                coverage = 0.5, target = "random")
+                                coverage = 0.5, targeting = "random")
 
     ## applying a single vacc activity - does apply_vaccs give the
     ## same as apply_vacc?
@@ -13,7 +13,7 @@ test_that("apply_vaccs correctly uses apply_vacc for a single vacc_activity", {
                            age_first = vacc$age_first,
                            age_last = vacc$age_last,
                            coverage = vacc$coverage,
-                           target = vacc$target)
+                           targeting = vacc$targeting)
     pop_multi <- apply_vaccs(pop_df = pop, vaccs_df = vacc)
     
     expect_equal(pop_sing, pop_multi)
@@ -25,18 +25,18 @@ test_that("apply_vaccs gives the same result as apply_vacc used twice for two ac
     ## get a vaccine object
     vacc <- new_vacc_activities(year = c(2001, 2003),
                                 age_first = 0, age_last = 0,
-                                coverage = 0.5, target = "random")
+                                coverage = 0.5, targeting = "random")
 
     pop_sing <- apply_vacc(pop_df = pop, year = vacc$year[1],
                            age_first = vacc$age_first[1],
                            age_last = vacc$age_last[1],
                            coverage = vacc$coverage[1],
-                           target = vacc$target[1])
+                           targeting = vacc$targeting[1])
     pop_sing <- apply_vacc(pop_df = pop_sing, year = vacc$year[2],
                            age_first = vacc$age_first[2],
                            age_last = vacc$age_last[2],
                            coverage = vacc$coverage[2],
-                           target = vacc$target[2])
+                           targeting = vacc$targeting[2])
     pop_multi <- apply_vaccs(pop_df = pop, vaccs_df = vacc)
     
     expect_equal(pop_sing, pop_multi)

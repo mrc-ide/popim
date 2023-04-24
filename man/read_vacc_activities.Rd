@@ -14,7 +14,7 @@ the file name is relative to the current working directory.}
 \value{
 object of class "vip_vacc_activities", a dataframe with
 one row per vaccination activity, with columns "year",
-"age_first", "age_last", "coverage", "target".
+"age_first", "age_last", "coverage", "targeting".
 }
 \description{
 Reads a list of vaccination activities from a .csv file, checks if
@@ -23,12 +23,12 @@ object, and if so returns this object.
 }
 \details{
 The requirements are that the data contain the columns "year",
-"age_first", "age_last", "coverage" and "target", of types
+"age_first", "age_last", "coverage" and "targeting", of types
 integer, integer, integer, double, character, respectively.
 
 0 <= age_first <= age_last
 0 <= coverage <= 1
-target must be one of "random", "correlated", "targeted".
+targeting must be one of "random", "correlated", "targeted".
 }
 \author{
 Tini Garske

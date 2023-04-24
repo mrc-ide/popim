@@ -6,7 +6,7 @@ test_that("read_vacc_activities reads well", {
     expect_null(validate_vacc_activities(vaccs))
 
     ## error for reading a bad file
-    vaccs$target <- NULL
+    vaccs$targeting <- NULL
     write.csv(vaccs, "tmp.csv")
 
     expect_error(vaccs <- read_vacc_activities("tmp.csv"))

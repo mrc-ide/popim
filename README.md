@@ -84,14 +84,14 @@ library(dplyr) ## needed for the pipe %>%
 
 vaccs <- read_vacc_activities("inst/extdata/vacc_activities.csv")
 vaccs
-#>   year age_first age_last coverage target
-#> 1 1998         0       10     0.50 random
-#> 2 2005         0        0     0.50 random
-#> 3 2006         0        0     0.60 random
-#> 4 2007         0        0     0.70 random
-#> 5 2008         0        0     0.80 random
-#> 6 2009         0        0     0.90 random
-#> 7 2010         0        0     0.95 random
+#>   year age_first age_last coverage targeting
+#> 1 1998         0       10     0.50    random
+#> 2 2005         0        0     0.50    random
+#> 3 2006         0        0     0.60    random
+#> 4 2007         0        0     0.70    random
+#> 5 2008         0        0     0.80    random
+#> 6 2009         0        0     0.90    random
+#> 7 2010         0        0     0.95    random
 
 pop <- apply_vaccs(pop, vaccs)
 ```

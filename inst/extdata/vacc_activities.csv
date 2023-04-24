@@ -1,4 +1,4 @@
-year,age_first,age_last,coverage,target
+year,age_first,age_last,coverage,targeting
 1998,0,10,0.5,random
 2005,0,0,0.5,random
 2006,0,0,0.6,random
