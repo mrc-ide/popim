@@ -50,16 +50,18 @@ function "vip_population":
 ```{r example}
 library(vip)
 
-pop <- vip_population(year_min = 2000, year_max = 2010,
+pop <- vip_population(region = c("UK", "FRA"), year_min = 2000, year_max = 2010,
                         age_min = 0, age_max = 10)
 
 dim(pop)
 head(pop)
 
 ```
-This dataframe has 121 columns (11 age groups 0 - 10 x 11 years 2000 - 2020). 
+This dataframe has 121 columns (1 region x 11 age groups 0 - 10 x 11
+years 2000 - 2020).
 
-Next, we read in a file containing some vaccination activites into an object of the class 'vip_vacc_activities'. 
+Next, we read in a file containing some vaccination activites into an
+object of the class 'vip_vacc_activities'.
 
 The first is a campaign targeting all age groups of our
 dummy population, which took place 5 years before the dawn of time. As
@@ -73,8 +75,6 @@ We now apply these vaccination activities sequentially to the
 population using the function 'apply_vacc'.
 
 ```{r apply_vacc}
-library(dplyr) ## needed for the pipe %>%
-
 vaccs <- read_vacc_activities("inst/extdata/vacc_activities.csv")
 vaccs
 

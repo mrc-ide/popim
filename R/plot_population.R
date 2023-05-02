@@ -16,6 +16,7 @@ plot_population <- function(pop_df) {
     g <- ggplot2::ggplot(pop_df) +
         ggplot2::aes(x = pop_df$year, y = pop_df$age, fill = pop_df$immunity) +
         ggplot2::geom_tile() +
+        ggplot2::facet_wrap(~region) +
         ggplot2::scale_fill_gradient(low = "white",
                                      high = pal[5],
                                      limits = c(0,1)) +
@@ -24,4 +25,3 @@ plot_population <- function(pop_df) {
     
     return(g)
 }
-    
