@@ -41,6 +41,39 @@ vip_pop_wide <- function(region = character(),
     pop_wide
 }
 
-## convert_pop_to_wide <- function(pop_long) {
+## adds dependencies on dplyr and tidyr.
+convert_pop_to_wide <- function(pop_long) {
 
-## }
+    assert_population(pop_long)
+
+    ## setting up the structure:
+    pop_wide <- vip_pop_wide(region = attributes(pop_long)$region,
+                             year_min = attributes(pop_long)$year_min,
+                             year_max = attributes(pop_long)$year_max,
+                             age_min = attributes(pop_long)$age_min,
+                             age_max = attributes(pop_long)$age_max)
+
+    ## filling the vacc_data array:
+    for(reg in attributes(pop_long)$region) {
+
+        pop_wide$vacc_data[reg,,] <-
+        pop_long |> dplyr::filter(region == reg) |>
+            dplyr::select(year, age, immunity) |>
+            tidyr::pivot_wider(names_from = age, values_from = immunity) |>
+            dplyr::arrange(year) |>
+            dplyr::select(-year) |> as.matrix()
+
+    }
+    ## filling in the pop_data array if pop_long has a population column:
+    if("population" %in% names(pop_long)) {
+        for(reg in attributes(pop_long)$region) {
+            pop_wide$pop_data[reg,,] <-
+                pop_long |> dplyr::filter(region == reg) |>
+                dplyr::select(year, age, population) |>
+                tidyr::pivot_wider(names_from = age, values_from = population) |>
+                dplyr::arrange(year) |>
+                dplyr::select(-year) |> as.matrix()
+        }
+    }
+    pop_wide
+}

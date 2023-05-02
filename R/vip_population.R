@@ -47,7 +47,15 @@ vip_population <- function(region = character(),
     ## starting with a fully susceptible population:
     df$immunity <- 0
 
-    class(df) <- c("vip_population", "data.frame")
+    df <- structure(
+        df,
+        region = region,
+        year_min = year_min,
+        year_max = year_max,
+        age_min = age_min,
+        age_max = age_max,
+        class = c("vip_population", "data.frame")
+    )
 
     df
 }
