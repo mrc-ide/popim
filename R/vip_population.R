@@ -28,6 +28,7 @@ vip_population <- function(region = character(),
                            age_min = 0, age_max = 100) {
 
     assert_character(region)
+
     assert_scalar_wholenumber(year_min)
     assert_scalar_wholenumber(year_max)
     assert_non_negative(year_max - year_min)
