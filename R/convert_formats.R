@@ -23,6 +23,8 @@ vip_pop_wide <- function(region = character(),
     my_dims <- c(length(region), length(year), length(age))
     my_dimnames <- list(region = region, year = year, age = age)
 
+    ## the arrays containing the immunity and population data are
+    ## initialised to NA.
     vacc_data <- array(data = rep(NA, length(region)*length(year)*length(age)),
                        dim = my_dims, dimnames = my_dimnames)
     pop_data <- array(data = rep(NA, length(region)*length(year)*length(age)),
