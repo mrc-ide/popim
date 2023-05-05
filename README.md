@@ -87,19 +87,19 @@ pop <- apply_vaccs(pop, vaccs)
 ```
 
 The resulting vaccine-derived immunity of the population can be
-visualised with the function “plot\_population()”. This is based on
+visualised with the function “plot\_immunity()”. This is based on
 ggplot2, and the returned graph object can be further modified - here in
 order to achieve tick marks that suit the data better.
 
 ``` r
 library(ggplot2) ## needed to amend the plot returned from plot_population()
 
-g <- plot_population(pop)
+g <- plot_immunity(pop)
 g + scale_x_continuous(breaks = seq(2000, 2010, by = 2)) +
     scale_y_continuous(breaks = seq(0, 10, by = 2))
 ```
 
-<img src="man/figures/README-plot_population-1.png" width="100%" />
+<img src="man/figures/README-plot_immunity-1.png" width="100%" />
 
 In the top left corner it shows the immunity remaining in the older age
 groups from the initial campaign, while the infant vaccination from 2005
