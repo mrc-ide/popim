@@ -43,15 +43,15 @@ pop <- vip_population(region = c("UK", "FRA"), year_min = 2000, year_max = 2010,
                         age_min = 0, age_max = 10)
 
 dim(pop)
-#> [1] 242   5
+#> [1] 242   6
 head(pop)
-#>   region year age cohort immunity
-#> 1     UK 2000   0   2000        0
-#> 2    FRA 2000   0   2000        0
-#> 3     UK 2001   0   2001        0
-#> 4    FRA 2001   0   2001        0
-#> 5     UK 2002   0   2002        0
-#> 6    FRA 2002   0   2002        0
+#>   region year age cohort immunity pop_size
+#> 1     UK 2000   0   2000        0        0
+#> 2    FRA 2000   0   2000        0        0
+#> 3     UK 2001   0   2001        0        0
+#> 4    FRA 2001   0   2001        0        0
+#> 5     UK 2002   0   2002        0        0
+#> 6    FRA 2002   0   2002        0        0
 ```
 
 This dataframe has 121 columns (1 region x 11 age groups 0 - 10 x 11

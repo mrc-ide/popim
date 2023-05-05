@@ -13,13 +13,16 @@
 ##' @param region character vector, list of regions considered.
 ##' @param year_min integer, first year to be considered.
 ##' @param year_max integer, last year to be considered.
-##' @param age_min integer, youngest age to be considered, defaults to 0.
-##' @param age_max integer, oldest age to be considered, defaults to 100.
+##' @param age_min integer, youngest age to be considered, defaults to
+##'     0.
+##' @param age_max integer, oldest age to be considered, defaults to
+##'     100.
 ##' @return S3 object of class "vip_population": a dataframe with
-##'     columns region, year, age, cohort, immunity where year and age
-##'     cover the ranges given by the input parameters. Cohort = year
-##'     - age and gives the year of birth. It is redundant but
-##'     included for ease of handling. Immunity is initialised as 0
+##'     columns region, year, age, cohort, immunity and pop_size,
+##'     where year and age cover the ranges given by the input
+##'     parameters. Cohort = year - age and gives the year of
+##'     birth. It is redundant but included for ease of
+##'     handling. Immunity and pop_size are initialised as 0
 ##'     throughout the whole population.
 ##' @export
 ##' @author Tini Garske
@@ -46,6 +49,7 @@ vip_population <- function(region = character(),
 
     ## starting with a fully susceptible population:
     df$immunity <- 0
+    df$pop_size <- 0
 
     df <- structure(
         df,

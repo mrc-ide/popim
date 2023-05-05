@@ -1,7 +1,7 @@
 test_that("vip_population returns a dataframe of expected dimensions", {
 
     pop <- vip_population("UK", 2000, 2005)
-    expect_equal(dim(pop), c(606, 5))
+    expect_equal(dim(pop), c(606, 6))
 })
 
 test_that("vip_population fails for invalid inputs", {

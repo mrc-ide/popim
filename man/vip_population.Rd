@@ -19,16 +19,19 @@ vip_population(
 
 \item{year_max}{integer, last year to be considered.}
 
-\item{age_min}{integer, youngest age to be considered, defaults to 0.}
+\item{age_min}{integer, youngest age to be considered, defaults to
+0.}
 
-\item{age_max}{integer, oldest age to be considered, defaults to 100.}
+\item{age_max}{integer, oldest age to be considered, defaults to
+100.}
 }
 \value{
 S3 object of class "vip_population": a dataframe with
-columns region, year, age, cohort, immunity where year and age
-cover the ranges given by the input parameters. Cohort = year
-- age and gives the year of birth. It is redundant but
-included for ease of handling. Immunity is initialised as 0
+columns region, year, age, cohort, immunity and pop_size,
+where year and age cover the ranges given by the input
+parameters. Cohort = year - age and gives the year of
+birth. It is redundant but included for ease of
+handling. Immunity and pop_size are initialised as 0
 throughout the whole population.
 }
 \description{
