@@ -64,13 +64,13 @@ convert_pop_to_wide <- function(pop_long) {
             dplyr::select(-year) |> as.matrix()
 
     }
-    ## filling in the pop_data array if pop_long has a population column:
-    if("population" %in% names(pop_long)) {
+    ## filling in the pop_data array if pop_long has a pop_size column:
+    if("pop_size" %in% names(pop_long)) {
         for(reg in attributes(pop_long)$region) {
             pop_wide$pop_data[reg,,] <-
                 pop_long |> dplyr::filter(region == reg) |>
-                dplyr::select(year, age, population) |>
-                tidyr::pivot_wider(names_from = age, values_from = population) |>
+                dplyr::select(year, age, pop_size) |>
+                tidyr::pivot_wider(names_from = age, values_from = pop_size) |>
                 dplyr::arrange(year) |>
                 dplyr::select(-year) |> as.matrix()
         }
