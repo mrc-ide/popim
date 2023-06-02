@@ -77,3 +77,38 @@ convert_pop_to_wide <- function(pop_long) {
     }
     pop_wide
 }
+
+convert_pop_to_long <- function(pop_wide) {
+
+    assert_vip_pop_wide(pop_wide) ## just checking the class is correct.
+
+    ## setting up the structure:
+    pop_long <- vip_population(region = pop_wide$region_labels,
+                               year_min = pop_wide$years_labels |> min(),
+                               year_max = pop_wide$years_labels |> max(),
+                               age_min = pop_wide$age_labels |> min(),
+                               age_max = pop_wide$age_labels |> max())
+    ## take off the columns to be filled in with data from pop_wide:
+    pop_long <- pop_long |> dplyr::select(-immunity, -pop_size)
+
+    ## filling in the data:
+    ## local conversion function as I don't want to check for valid inputs...
+    array_to_df <- function(pv_data, col_name = "Freq") {
+        ## data format conversion:
+        pl <- as.data.frame.table(pv_data, stringsAsFactors = FALSE)
+        pl$year = as.integer(pl$year)
+        pl$age = as.integer(pl$age)
+
+        names(pl)[names(pl) == "Freq"] = col_name
+
+        pl
+    }
+
+    pl <- array_to_df(pop_wide$vacc_data, col_name = "immunity")
+    pop_long <- dplyr::left_join(pop_long, pl, by = c("region", "year", "age"))
+
+    pl <- array_to_df(pop_wide$pop_data, col_name = "pop_size")
+    pop_long <- dplyr::left_join(pop_long, pl, by = c("region", "year", "age"))
+
+    pop_long
+}
