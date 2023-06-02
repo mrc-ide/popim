@@ -1,41 +1,55 @@
 test_that("convert_pop_to_wide fails for invalid inputs", {
 
-    pw <- vip_pop_wide(region = c("FRA", "UK"),
-                       year_min = 2001, year_max = 2003,
-                       age_min = 0, age_max = 3)
-    expect_error(convert_pop_to_wide(pw))
-
-    pl <- vip_population(region = c("FRA", "UK"),
-                         year_min = 2001, year_max = 2003,
-                         age_min = 0, age_max = 3)
-    class(pl) <- "data.frame" ## stripping the vip_population class attribute
-    
-    expect_error(convert_pop_to_wide(pl))
-})
-
-test_that("convert_pop_to_wide converts a vip_population initialised to 0 correctly", {
-    pl <- vip_population(region = c("FRA", "UK"),
-                         year_min = 2001, year_max = 2003,
-                         age_min = 0, age_max = 3)
-    
-    pw <- vip_pop_wide(region = c("FRA", "UK"),
-                       year_min = 2001, year_max = 2003,
-                       age_min = 0, age_max = 3)
-
-    expect_equal(pw, convert_pop_to_wide(pl)) 
-})
-
-test_that("convert_pop_to_wide converts a vip_population with non-zero data correctly", {
     my_regions <- c("FRA", "UK")
     year_min = 2001
     year_max = 2003
     age_min = 0
     age_max = 3
-    
+
+    pw <- vip_pop_wide(region = my_regions,
+                       year_min = year_min, year_max = year_max,
+                       age_min = age_min, age_max = age_max)
+    expect_error(convert_pop_to_wide(pw))
+
     pl <- vip_population(region = my_regions,
                          year_min = year_min, year_max = year_max,
                          age_min = age_min, age_max = age_max)
-    
+    class(pl) <- "data.frame" ## stripping the vip_population class attribute
+
+    expect_error(convert_pop_to_wide(pl))
+})
+
+test_that("convert_pop_to_wide converts a vip_population initialised to 0 correctly", {
+
+    my_regions <- c("FRA", "UK")
+    year_min = 2001
+    year_max = 2003
+    age_min = 0
+    age_max = 3
+
+    pl <- vip_population(region = my_regions,
+                         year_min = year_min, year_max = year_max,
+                         age_min = age_min, age_max = age_max)
+
+    pw <- vip_pop_wide(region = my_regions,
+                       year_min = year_min, year_max = year_max,
+                       age_min = age_min, age_max = age_max)
+
+    expect_equal(pw, convert_pop_to_wide(pl)) 
+})
+
+test_that("convert_pop_to_wide converts a vip_population with non-zero data correctly", {
+
+    my_regions <- c("FRA", "UK")
+    year_min = 2001
+    year_max = 2003
+    age_min = 0
+    age_max = 3
+
+    pl <- vip_population(region = my_regions,
+                         year_min = year_min, year_max = year_max,
+                         age_min = age_min, age_max = age_max)
+
     pl$immunity <- (1:length(pl$region))/100
     pl$pop_size <- 1:length(pl$region)
 
