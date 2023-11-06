@@ -110,5 +110,22 @@ convert_pop_to_long <- function(pop_wide) {
     pl <- array_to_df(pop_wide$pop_data, col_name = "pop_size")
     pop_long <- dplyr::left_join(pop_long, pl, by = c("region", "year", "age"))
 
+    ## set the attributes:
+    region <- pop_wide$region_labels
+    year_min <- pop_wide$years_labels |> min()
+    year_max <- pop_wide$years_labels |> max()
+    age_min <- pop_wide$age_labels |> min()
+    age_max <- pop_wide$age_labels |> max()
+
+    pop_long <- structure(
+        pop_long,
+        region = region,
+        year_min = year_min,
+        year_max = year_max,
+        age_min = age_min,
+        age_max = age_max,
+        class = c("vip_population", "data.frame")
+    )
+
     pop_long
 }
