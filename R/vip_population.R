@@ -13,13 +13,16 @@
 ##' @param region character vector, list of regions considered.
 ##' @param year_min integer, first year to be considered.
 ##' @param year_max integer, last year to be considered.
-##' @param age_min integer, youngest age to be considered, defaults to 0.
-##' @param age_max integer, oldest age to be considered, defaults to 100.
+##' @param age_min integer, youngest age to be considered, defaults to
+##'     0.
+##' @param age_max integer, oldest age to be considered, defaults to
+##'     100.
 ##' @return S3 object of class "vip_population": a dataframe with
-##'     columns region, year, age, cohort, immunity where year and age
-##'     cover the ranges given by the input parameters. Cohort = year
-##'     - age and gives the year of birth. It is redundant but
-##'     included for ease of handling. Immunity is initialised as 0
+##'     columns region, year, age, cohort, immunity and pop_size,
+##'     where year and age cover the ranges given by the input
+##'     parameters. Cohort = year - age and gives the year of
+##'     birth. It is redundant but included for ease of
+##'     handling. Immunity and pop_size are initialised as 0
 ##'     throughout the whole population.
 ##' @export
 ##' @author Tini Garske
@@ -28,6 +31,7 @@ vip_population <- function(region = character(),
                            age_min = 0, age_max = 100) {
 
     assert_character(region)
+
     assert_scalar_wholenumber(year_min)
     assert_scalar_wholenumber(year_max)
     assert_non_negative(year_max - year_min)
@@ -39,14 +43,25 @@ vip_population <- function(region = character(),
 
     df <- expand.grid(region = region, year = year_min:year_max,
                       age = age_min:age_max, stringsAsFactors = FALSE)
+    attr(df, "out.attrs") <- NULL ## removing the spurious attributes
+                                  ## set by expand.grid
 
     ## easier handling via cohorts, defined by birth year:
     df$cohort <- df$year - df$age
 
     ## starting with a fully susceptible population:
     df$immunity <- 0
+    df$pop_size <- 0
 
-    class(df) <- c("vip_population", "data.frame")
+    df <- structure(
+        df,
+        region = region,
+        year_min = year_min,
+        year_max = year_max,
+        age_min = age_min,
+        age_max = age_max,
+        class = c("vip_population", "data.frame")
+    )
 
     df
 }

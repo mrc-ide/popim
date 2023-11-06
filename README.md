@@ -39,23 +39,23 @@ function “vip\_population”:
 ``` r
 library(vip)
 
-pop <- vip_population(year_min = 2000, year_max = 2010,
+pop <- vip_population(region = c("UK", "FRA"), year_min = 2000, year_max = 2010,
                         age_min = 0, age_max = 10)
 
 dim(pop)
-#> [1] 121   4
+#> [1] 242   6
 head(pop)
-#>   year age cohort immunity
-#> 1 2000   0   2000        0
-#> 2 2001   0   2001        0
-#> 3 2002   0   2002        0
-#> 4 2003   0   2003        0
-#> 5 2004   0   2004        0
-#> 6 2005   0   2005        0
+#>   region year age cohort immunity pop_size
+#> 1     UK 2000   0   2000        0        0
+#> 2    FRA 2000   0   2000        0        0
+#> 3     UK 2001   0   2001        0        0
+#> 4    FRA 2001   0   2001        0        0
+#> 5     UK 2002   0   2002        0        0
+#> 6    FRA 2002   0   2002        0        0
 ```
 
-This dataframe has 121 columns (11 age groups 0 - 10 x 11 years 2000 -
-2020).
+This dataframe has 121 columns (1 region x 11 age groups 0 - 10 x 11
+years 2000 - 2020).
 
 Next, we read in a file containing some vaccination activites into an
 object of the class ‘vip\_vacc\_activities’.
@@ -72,44 +72,34 @@ We now apply these vaccination activities sequentially to the population
 using the function ‘apply\_vacc’.
 
 ``` r
-library(dplyr) ## needed for the pipe %>%
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
-
 vaccs <- read_vacc_activities("inst/extdata/vacc_activities.csv")
 vaccs
-#>   year age_first age_last coverage targeting
-#> 1 1998         0       10     0.50    random
-#> 2 2005         0        0     0.50    random
-#> 3 2006         0        0     0.60    random
-#> 4 2007         0        0     0.70    random
-#> 5 2008         0        0     0.80    random
-#> 6 2009         0        0     0.90    random
-#> 7 2010         0        0     0.95    random
+#>   region year age_first age_last coverage targeting
+#> 1     UK 1998         0       10     0.50    random
+#> 2     UK 2005         0        0     0.50    random
+#> 3     UK 2006         0        0     0.60    random
+#> 4     UK 2007         0        0     0.70    random
+#> 5     UK 2008         0        0     0.80    random
+#> 6     UK 2009         0        0     0.90    random
+#> 7     UK 2010         0        0     0.95    random
 
 pop <- apply_vaccs(pop, vaccs)
 ```
 
 The resulting vaccine-derived immunity of the population can be
-visualised with the function “plot\_population()”. This is based on
+visualised with the function “plot\_immunity()”. This is based on
 ggplot2, and the returned graph object can be further modified - here in
 order to achieve tick marks that suit the data better.
 
 ``` r
 library(ggplot2) ## needed to amend the plot returned from plot_population()
 
-g <- plot_population(pop)
+g <- plot_immunity(pop)
 g + scale_x_continuous(breaks = seq(2000, 2010, by = 2)) +
     scale_y_continuous(breaks = seq(0, 10, by = 2))
 ```
 
-<img src="man/figures/README-plot_population-1.png" width="100%" />
+<img src="man/figures/README-plot_immunity-1.png" width="100%" />
 
 In the top left corner it shows the immunity remaining in the older age
 groups from the initial campaign, while the infant vaccination from 2005
