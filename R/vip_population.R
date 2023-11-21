@@ -65,3 +65,86 @@ vip_population <- function(region = character(),
 
     df
 }
+
+##' Reading population data from a .csv file
+##'
+##' Reads a population data from a .csv file, checks if
+##' the data fulfils the requirements for a "vip_population"
+##' object, and if so returns this object.
+##'
+##' The requirements are that the data contain the columns "region",
+##' "age", "year", "pop_size". A column "immunity" is optional. The
+##' columns will be coerced to character, integer, integer, numeric,
+##' double, respectively.  If the column "immunity" exists, it will be
+##' used to initialise the immunity data, if it doesn't exist,
+##' immunity will be initialised to zero.
+##'
+##' 0 <= age
+##' 0 <= immunity <= 1
+##' 0 <= pop_size
+##'
+##' @param file Name of the file from which the population data are to
+##'     be read. If it does not contain an absolute path, the file
+##'     name is relative to the current working directory.
+##' @return object of class "vip_population", a dataframe with one row
+##'     per birth cohort/year/region, with columns "region", "year",
+##'     "age", "cohort", "immunity", "pop_size".
+##' @author Tini Garske
+##' @export
+read_population <- function(file) {
+
+    ## assert_file_exists(file)
+    if(!file.exists(file))
+        stop(sprintf("%s does not exist", file), call. = FALSE)
+
+    df <- utils::read.csv(file, stringsAsFactors = FALSE)
+
+    assert_column_exists(df, "region")
+    assert_column_exists(df, "age")
+    assert_column_exists(df, "year")
+    assert_column_exists(df, "pop_size")
+
+    if(!("immunity" %in% names(df))) {
+        df$immunity <- 0
+    }
+
+    assert_character(df$region)
+
+    assert_wholenumber(df$age)
+    assert_non_negative(df$age)
+
+    assert_wholenumber(df$year)
+
+    assert_non_negative(df$pop_size)
+
+    assert_0_to_1(df$immunity)
+
+
+    region <- df$region |> unique()
+
+    age_min <- min(df$age)
+    age_max <- max(df$age)
+
+    year_min <- min(df$year)
+    year_max <- max(df$year)
+
+    df <- df |> dplyr::relocate(tidyselect::all_of(
+                           c("region", "year", "age", "immunity", "pop_size")))
+
+    ## here I'm generating a consecutive population from year_min to
+    ## year_max, age_min to age_max in all regions - there's no checks
+    ## that the input data are fully consecutive across all
+    ## regions. If they aren't, this will generate missing data in the
+    ## pop_size and immunity columns.
+    ## Haven't implemented any warnings for this.
+    out <- vip_population(region, year_min, year_max, age_min, age_max) |>
+        dplyr::select(!tidyselect::any_of(c("pop_size", "immunity"))) |>
+        dplyr::left_join(df, by = c("region", "year", "age"))
+
+    if(!is_population(out)) {
+        stop(sprintf("cannot generate valid vip_population from file '%s'",
+                     file))
+    }
+
+    out
+}
