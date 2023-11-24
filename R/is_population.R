@@ -31,8 +31,8 @@ is_population <- function(x, tol = .Machine$double.eps^0.5) {
         return(FALSE)
 
     if(!(min(x$age) >= 0 &&
-         min(x$immunity) >= 0 &&
-         max(x$immunity) <= 1))
+         min(x$immunity, na.rm = TRUE) >= 0 &&
+         max(x$immunity, na.rm = TRUE) <= 1))
         return(FALSE)
 
     if(any(x$year - x$age - x$cohort > tol))
@@ -40,7 +40,7 @@ is_population <- function(x, tol = .Machine$double.eps^0.5) {
 
     if("pop_size" %in% names(x)) {
         if(!is.numeric(x$pop_size)) return(FALSE)
-        if(min(x$pop_size) < 0) return(FALSE)
+        if(min(x$pop_size, na.rm = TRUE) < 0) return(FALSE)
     }
 
     TRUE
