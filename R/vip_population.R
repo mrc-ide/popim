@@ -125,7 +125,15 @@ convert_df_to_pop <- function(df) {
 
     assert_0_to_1(df$immunity)
 
+    ## check for duplicated rows in input dataframe:
+    n_dup_rows <- df |>
+        dplyr::select(tidyselect::all_of(c("region", "year", "age"))) |>
+        duplicated() |> sum()
+    if(n_dup_rows > 0)
+        stop(sprintf("Input dataframe has %d duplicated rows with respect to columns region, year, age.", n_dup_rows))
 
+
+    ## establish the extent of the population:
     region <- df$region |> unique()
 
     age_min <- min(df$age)
@@ -137,15 +145,21 @@ convert_df_to_pop <- function(df) {
     df <- df |> dplyr::relocate(tidyselect::all_of(
                            c("region", "year", "age", "immunity", "pop_size")))
 
+
     ## here I'm generating a consecutive population from year_min to
-    ## year_max, age_min to age_max in all regions - there's no checks
-    ## that the input data are fully consecutive across all
-    ## regions. If they aren't, this will generate missing data in the
-    ## pop_size and immunity columns.
-    ## Haven't implemented any warnings for this.
+    ## year_max, age_min to age_max in all regions. However, there is
+    ## no guarantee that the input data are fully consecutive across
+    ## all regions. If they aren't, this will generate missing data in
+    ## the pop_size and immunity columns.
     out <- vip_population(region, year_min, year_max, age_min, age_max) |>
         dplyr::select(!tidyselect::any_of(c("pop_size", "immunity"))) |>
         dplyr::left_join(df, by = c("region", "year", "age"))
+
+    if(nrow(out) > nrow(df)) {
+        warning(sprintf("Input dataframe has fewer rows than the vip_population generated from it (%d vs %d). This may be due to non-consecutive years or ages, or different year/age ranges for different regions.", nrow(df), nrow(out)))
+    } else if(nrow(out) < nrow(df)) {
+        stop(sprintf("Input dataframe has more rows than the vip_population generated from it (%d vs %d).", nrow(df), nrow(out)))
+    }
 
     if(!is_population(out)) {
         stop(sprintf("cannot generate valid vip_population from file '%s'",
