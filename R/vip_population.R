@@ -2,13 +2,13 @@
 ##'
 ##' The "vip_population" object is a dataframe used to track
 ##' vaccination coverage by age through time for a single
-##' location. The dataframe has at least the 4 columns year, age,
-##' cohort and immunity.
+##' location. The dataframe has at least the 5 columns region, year,
+##' age, cohort and immunity.
 ##'
 ##' This function generates a such a dataframe.  Each age and year is
 ##' tracked in a row and the proportion of the population that is
 ##' immune is recorded. Immunity is initialised as 0 throughout by
-##' this function.
+##' this function, and pop_size to NA_real_.
 ##' 
 ##' @param region character vector, list of regions considered.
 ##' @param year_min integer, first year to be considered.
@@ -51,7 +51,7 @@ vip_population <- function(region = character(),
 
     ## starting with a fully susceptible population:
     df$immunity <- 0
-    df$pop_size <- 0
+    df$pop_size <- NA_real_
 
     df <- structure(
         df,
@@ -73,11 +73,12 @@ vip_population <- function(region = character(),
 ##' object, and if so returns this object.
 ##'
 ##' The requirements are that the data contain the columns "region",
-##' "age", "year", "pop_size". A column "immunity" is optional. The
+##' "age", "year". Columns "pop_size" and "immunity" are optional. The
 ##' columns will be coerced to character, integer, integer, numeric,
 ##' double, respectively.  If the column "immunity" exists, it will be
 ##' used to initialise the immunity data, if it doesn't exist,
-##' immunity will be initialised to zero.
+##' immunity will be initialised to zero. If colunn pop_size doesn't
+##' exist, it will be initialised to NA.
 ##'
 ##' 0 <= age
 ##' 0 <= immunity <= 1

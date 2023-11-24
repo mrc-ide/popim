@@ -23,11 +23,12 @@ object, and if so returns this object.
 }
 \details{
 The requirements are that the data contain the columns "region",
-"age", "year", "pop_size". A column "immunity" is optional. The
+"age", "year". Columns "pop_size" and "immunity" are optional. The
 columns will be coerced to character, integer, integer, numeric,
 double, respectively.  If the column "immunity" exists, it will be
 used to initialise the immunity data, if it doesn't exist,
-immunity will be initialised to zero.
+immunity will be initialised to zero. If colunn pop_size doesn't
+exist, it will be initialised to NA.
 
 0 <= age
 0 <= immunity <= 1

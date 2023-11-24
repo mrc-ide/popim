@@ -37,14 +37,14 @@ throughout the whole population.
 \description{
 The "vip_population" object is a dataframe used to track
 vaccination coverage by age through time for a single
-location. The dataframe has at least the 4 columns year, age,
-cohort and immunity.
+location. The dataframe has at least the 5 columns region, year,
+age, cohort and immunity.
 }
 \details{
 This function generates a such a dataframe.  Each age and year is
 tracked in a row and the proportion of the population that is
 immune is recorded. Immunity is initialised as 0 throughout by
-this function.
+this function, and pop_size to NA_real_.
 }
 \author{
 Tini Garske
