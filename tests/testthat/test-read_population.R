@@ -16,5 +16,4 @@ test_that("read_population reads well", {
     infile_bad <- paste0(infile, "bad")
     expect_error(pop <- read_population(infile_bad))
 
-
 })

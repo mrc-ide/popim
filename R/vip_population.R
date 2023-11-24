@@ -99,6 +99,12 @@ read_population <- function(file) {
 
     df <- utils::read.csv(file, stringsAsFactors = FALSE)
 
+    pop <- convert_df_to_pop(df)
+    pop
+}
+
+convert_df_to_pop <- function(df) {
+
     assert_column_exists(df, "region")
     assert_column_exists(df, "age")
     assert_column_exists(df, "year")
