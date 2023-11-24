@@ -6,7 +6,7 @@ test_that("read_population reads well", {
     expect_true(is_population(pop))
 
     ## error for reading a bad file
-    pop$pop_size <- NULL
+    pop$region <- NULL
     write.csv(pop, "tmp.csv")
 
     expect_error(pop <- read_population("tmp.csv"))
