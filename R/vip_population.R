@@ -103,12 +103,39 @@ read_population <- function(file) {
     pop
 }
 
+##' Convert a dataframe to a vip_population object
+##'
+##' `convert_df_to_pop` converts a suitable dataframe to a vip
+##' population object and returns this object.
+##'
+##' The input dataframe has to have at least the columns region, age,
+##' and year. The output vip_population object is generated via
+##' expand.grid to have consecutive year and age ranges that are
+##' identical for all regions.
+##'
+##' If the input dataframe contains a column `pop_size`, this must be
+##' numeric and non-negative. If it is missing, this column is
+##' generated and initialised to NA.
+##'
+##' If the input dataframe contains a colum `immunity`, this must be
+##' numeric, with values between 0 and 1. If it is missing, this
+##' column is generated and initialised to 0.
+##'
+##' Any further colunms are simply carried over into the vip_population object.
+##'
+##' @param df a dataframe with at least columns region, age, year and pop_size.
+##' @return an object of class vip_populaiton
+##' @author Tini Garske
 convert_df_to_pop <- function(df) {
 
     assert_column_exists(df, "region")
     assert_column_exists(df, "age")
     assert_column_exists(df, "year")
     assert_column_exists(df, "pop_size")
+
+    if(!("pop_size" %in% names(df))) {
+        df$pop_size <- NA
+    }
 
     if(!("immunity" %in% names(df))) {
         df$immunity <- 0
