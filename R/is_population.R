@@ -38,5 +38,10 @@ is_population <- function(x, tol = .Machine$double.eps^0.5) {
     if(any(x$year - x$age - x$cohort > tol))
         return(FALSE)
 
+    if("pop_size" %in% names(x)) {
+        if(!is.numeric(x$pop_size)) return(FALSE)
+        if(min(x$pop_size) < 0) return(FALSE)
+    }
+
     TRUE
 }
