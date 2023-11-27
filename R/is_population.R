@@ -40,7 +40,8 @@ is_population <- function(x, tol = .Machine$double.eps^0.5) {
 
     if("pop_size" %in% names(x)) {
         if(!is.numeric(x$pop_size)) return(FALSE)
-        if(min(x$pop_size, na.rm = TRUE) < 0) return(FALSE)
+        if(sum(!is.na(x$pop_size)) > 0 &&
+           min(x$pop_size, na.rm = TRUE) < 0) return(FALSE)
     }
 
     TRUE

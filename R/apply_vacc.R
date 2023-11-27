@@ -51,7 +51,6 @@ apply_vacc <- function(pop_df, region, year, age_first = 0, age_last = Inf,
                                   targeting = targeting)
         }
     }
-
     pop_df
 }
 ##' Function to apply vaccination activities to a population
