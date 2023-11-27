@@ -109,19 +109,26 @@ coverage_from_doses <- function(pop_df, doses, region, year, age_first = 0,
 
     stopifnot(is_population(pop_df))
 
+    assert_scalar_non_negative(doses)
+
     assert_character(region)
     assert_scalar_wholenumber(age_first)
     assert_scalar_wholenumber(age_last)
-    assert_scalar_non_negative(doses)
 
     assert_non_negative(age_first)
     assert_non_negative(age_last - age_first)
 
-    target_pop <- pop_df |>
-        dplyr::filter(.data$region %in% region, .data$year == year,
-                      .data$age >= age_first, .data$age <= age_last) |>
-        dplyr::select(tidyselect::all_of("pop_size")) |>
-        sum()
+    if(age_last == Inf) age_last <- max(pop_df$age)
+
+    ## check that pop_df contains relevant info for the proposed
+    ## vaccination activity:
+    pop_targeted <- expand.grid(region = region, year = year,
+                                age = age_first:age_last) |>
+        dplyr::left_join(pop_df, by = c("region", "year", "age"))
+
+    target_pop <- sum(pop_targeted$pop_size)
+    if(is.na(target_pop))
+        stop("pop_df does is missing pop_size information for at least some targeted cohorts.")
 
     coverage <- min(doses / target_pop, 1)
     assert_scalar_0_to_1(coverage)
