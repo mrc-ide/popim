@@ -27,14 +27,14 @@ devtools::install_github("mrc-ide/vip")
 
 ## Example
 
-This package defines an S3 class “vip\_population” which is a dataframe
+This package defines an S3 class `vip_population` which is a dataframe
 with at least the columns year, age, cohort (the year of birth for the
 individuals tracked in this row), and immunity (as a proportion of this
 cohort). Year, age and cohort are tracked as annual time steps and age
 groups.
 
 A basic, totally naive population dataframe can be setup using the
-function “vip\_population”:
+function `vip_population()`:
 
 ``` r
 library(vip)
@@ -46,19 +46,19 @@ dim(pop)
 #> [1] 242   6
 head(pop)
 #>   region year age cohort immunity pop_size
-#> 1     UK 2000   0   2000        0        0
-#> 2    FRA 2000   0   2000        0        0
-#> 3     UK 2001   0   2001        0        0
-#> 4    FRA 2001   0   2001        0        0
-#> 5     UK 2002   0   2002        0        0
-#> 6    FRA 2002   0   2002        0        0
+#> 1     UK 2000   0   2000        0       NA
+#> 2    FRA 2000   0   2000        0       NA
+#> 3     UK 2001   0   2001        0       NA
+#> 4    FRA 2001   0   2001        0       NA
+#> 5     UK 2002   0   2002        0       NA
+#> 6    FRA 2002   0   2002        0       NA
 ```
 
-This dataframe has 121 columns (1 region x 11 age groups 0 - 10 x 11
+This dataframe has 242 columns (2 regions x 11 age groups 0 - 10 x 11
 years 2000 - 2020).
 
 Next, we read in a file containing some vaccination activites into an
-object of the class ‘vip\_vacc\_activities’.
+object of the class `vip_vacc_activities`.
 
 The first is a campaign targeting all age groups of our dummy
 population, which took place 5 years before the dawn of time. As
@@ -69,7 +69,7 @@ age 0) with an increasing population of the target cohort to be
 vaccinated.
 
 We now apply these vaccination activities sequentially to the population
-using the function ‘apply\_vacc’.
+using the function `apply_vacc()`.
 
 ``` r
 vaccs <- read_vacc_activities("inst/extdata/vacc_activities.csv")
@@ -87,7 +87,7 @@ pop <- apply_vaccs(pop, vaccs)
 ```
 
 The resulting vaccine-derived immunity of the population can be
-visualised with the function “plot\_immunity()”. This is based on
+visualised with the function `plot_immunity()`. This is based on
 ggplot2, and the returned graph object can be further modified - here in
 order to achieve tick marks that suit the data better.
 
