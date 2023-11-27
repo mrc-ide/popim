@@ -82,3 +82,49 @@ apply_vaccs <- function(pop_df, vaccs_df) {
     }
     pop_df
 }
+
+##' Calculate the coverage of a vaccination activity achieved with a
+##' given number of doses
+##'
+##' The coverage for a vaccination activity is calculated as the
+##' proportion of the target population that can be vaccinated by the
+##' given number of doses. The target population is the sum of the
+##' population of the targeted age groups in the targeted region(s).
+##'
+##' @param pop_df object of class vip_population such as created by
+##'     function `vip_population`
+##' @param doses number of vaccine doses available for the vaccination
+##'     activity
+##' @param region region to be targeted
+##' @param year year of vaccination activity
+##' @param age_first youngest age group to be targeted
+##' @param age_last oldest age group to be targeted
+##' @return coverage: a number between 0 and 1 indicating what
+##'     proportion of the target population can be covered with the
+##'     given number of doses.
+##' @author Tini Garske
+##' @importFrom rlang .data
+coverage_from_doses <- function(pop_df, doses, region, year, age_first = 0,
+                                age_last = Inf) {
+
+    stopifnot(is_population(pop_df))
+
+    assert_character(region)
+    assert_scalar_wholenumber(age_first)
+    assert_scalar_wholenumber(age_last)
+    assert_scalar_non_negative(doses)
+
+    assert_non_negative(age_first)
+    assert_non_negative(age_last - age_first)
+
+    target_pop <- pop_df |>
+        dplyr::filter(.data$region %in% region, .data$year == year,
+                      .data$age >= age_first, .data$age <= age_last) |>
+        dplyr::select(tidyselect::all_of("pop_size")) |>
+        sum()
+
+    coverage <- min(doses / target_pop, 1)
+    assert_scalar_0_to_1(coverage)
+
+    coverage
+}
