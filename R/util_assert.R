@@ -37,7 +37,7 @@ assert_hash <- function(x, name = deparse(substitute(x))) {
 assert_wholenumber <- function(x, name = deparse(substitute(x)),
                                tol = .Machine$double.eps^0.5) {
     assert_numeric(x, name)
-    if(!(all(abs(x - round(x)) < tol))) {
+    if(any(is.finite(x) & !(abs(x - round(x)) < tol))) {
         stop(sprintf("'%s' must be a (vector of) whole number(s)", name),
              call. = FALSE)
     }
