@@ -135,3 +135,55 @@ coverage_from_doses <- function(pop_df, doses, region, year, age_first = 0,
 
     coverage
 }
+
+##' Calculate the number of doses needed to achieve a given coverage
+##' in a vaccination activity
+##'
+##' The number of doses needed to achieve the given coverage is
+##' calculated as coverage * target population. The target population
+##' is the sum of the population of the targeted age groups in the
+##' targeted region(s).
+##'
+##' @param pop_df object of class vip_population such as created by
+##'     function `vip_population`
+##' @param coverage proportion of the target population to be covered,
+##'     0 <= coverage <= 1
+##' @param region region to be targeted
+##' @param year year of vaccination activity
+##' @param age_first youngest age group to be targeted
+##' @param age_last oldest age group to be targeted
+##' @return doses: a non-negative number between indicating how many
+##'     doses will be needed to achieve the given coverage in the
+##'     target population.
+##' @author Tini Garske
+##' @importFrom rlang .data
+doses_from_coverage <- function(pop_df, coverage, region, year, age_first = 0, age_last = Inf) {
+
+    stopifnot(is_population(pop_df))
+
+    assert_scalar_0_to_1(coverage)
+
+    assert_character(region)
+    assert_scalar_wholenumber(age_first)
+    assert_scalar_wholenumber(age_last)
+
+    assert_non_negative(age_first)
+    assert_non_negative(age_last - age_first)
+
+    if(age_last == Inf) age_last <- max(pop_df$age)
+
+    ## check that pop_df contains relevant info for the proposed
+    ## vaccination activity:
+    pop_targeted <- expand.grid(region = region, year = year,
+                                age = age_first:age_last) |>
+        dplyr::left_join(pop_df, by = c("region", "year", "age"))
+
+    target_pop <- sum(pop_targeted$pop_size)
+    if(is.na(target_pop))
+        stop("pop_df does is missing pop_size information for at least some targeted cohorts.")
+
+    doses <- coverage*target_pop
+    assert_scalar_non_negative(doses)
+
+    doses
+}
