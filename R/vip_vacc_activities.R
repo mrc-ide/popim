@@ -4,11 +4,12 @@
 ## ungracefully, or generate an invalid object.
 new_vacc_activities <- function(region = character(), year = integer(),
                                 age_first = integer(), age_last = integer(),
-                                coverage = double(), targeting = character()) {
+                                coverage = double(), doses = double(),
+                                targeting = character()) {
 
     x <- data.frame(region = region, year = year,
                     age_first = age_first, age_last = age_last,
-                    coverage = coverage, targeting = targeting)
+                    coverage = coverage, doses = doses, targeting = targeting)
     class(x) <- c("vip_vacc_activities", "data.frame")
 
     x
@@ -22,6 +23,7 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
     assert_column_exists(x, "age_first")
     assert_column_exists(x, "age_last")
     assert_column_exists(x, "coverage")
+    assert_column_exists(x, "doses")
     assert_column_exists(x, "targeting")
 
     assert_character(x$region)
@@ -30,8 +32,13 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
     assert_wholenumber(x$age_last)
     assert_non_negative(x$age_first)
     assert_non_negative(x$age_last - x$age_first)
-    assert_0_to_1(x$coverage)
+    assert_0_to_1_or_missing(x$coverage[!is.na(x$coverage)])
+    assert_non_negative_or_missing(x$doses)
     assert_character(x$targeting)
+
+    ## assert at most one of coverage and doses is missing
+    if(any(is.na(x$coverage) & is.na(x$doses)))
+        stop(sprintf("coverage and doses must not both be missing"))
 
     is_valid_targeting <- function(x) {
         ifelse(x %in% c("random", "correlated", "targeted"), TRUE, FALSE)

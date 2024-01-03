@@ -5,7 +5,7 @@ test_that("apply_vaccs correctly uses apply_vacc for a single vacc_activity", {
     ## get a vaccine object
     vacc <- new_vacc_activities(region = "UK", year = 2001,
                                 age_first = 0, age_last = 0,
-                                coverage = 0.5, targeting = "random")
+                                coverage = 0.5, doses = NA, targeting = "random")
 
     ## applying a single vacc activity - does apply_vaccs give the
     ## same as apply_vacc?
@@ -25,7 +25,7 @@ test_that("apply_vaccs gives the same result as apply_vacc used twice for two ac
     ## get a vaccine object
     vacc <- new_vacc_activities(region = "UK", year = c(2001, 2003),
                                 age_first = 0, age_last = 0,
-                                coverage = 0.5, targeting = "random")
+                                coverage = 0.5, doses = NA, targeting = "random")
 
     pop_sing <- apply_vacc(pop_df = pop, region = "UK", year = vacc$year[1],
                            age_first = vacc$age_first[1],
