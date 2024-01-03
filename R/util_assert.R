@@ -50,11 +50,21 @@ assert_0_to_1 <- function(x, name = deparse(substitute(x))) {
     }
 }
 
+assert_0_to_1_or_missing <- function(x, name = deparse(substitute(x))) {
+    xval <- x[!is.na(x)]
+    if(length(xval) > 0) assert_0_to_1(xval, name)
+}
+
 assert_non_negative <- function(x, name = deparse(substitute(x))) {
     assert_numeric(x, name)
     if(any(x < 0)) {
         stop(sprintf("'%s' must be non-negative", name), call. = FALSE)
     }
+}
+
+assert_non_negative_or_missing <- function(x, name = deparse(substitute(x))) {
+    xval <- x[!is.na(x)]
+    if(length(xval) > 0) assert_non_negative(xval, name)
 }
 
 assert_scalar_character <- function(x, name = deparse(substitute(x))) {
