@@ -49,8 +49,6 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 
 }
 
-
-
 ##' Reading vaccination activities from a .csv file
 ##'
 ##' Reads a list of vaccination activities from a .csv file, checks if

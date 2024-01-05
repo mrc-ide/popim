@@ -23,7 +23,7 @@
 #'     (full coverage).
 #' @return A scalar: combined coverage
 #'
-calc_new_coverage <- function(coverage, prev_immunity, targeting) {
+calc_new_immunity <- function(coverage, prev_immunity, targeting) {
 
     assert_scalar(coverage)
     assert_0_to_1(coverage)

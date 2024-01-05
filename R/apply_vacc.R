@@ -61,7 +61,7 @@ apply_vacc <- function(pop_df, region, year, age_first = 0, age_last = Inf,
         ## doesn't change immunity until the next year.
         if(length(i_vec) > 0) {
             pop_df$immunity[i_vec] <-
-                calc_new_coverage(coverage, pop_df$immunity[i_vec],
+                calc_new_immunity(coverage, pop_df$immunity[i_vec],
                                   targeting = targeting)
         }
     }
