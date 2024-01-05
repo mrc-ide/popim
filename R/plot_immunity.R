@@ -5,6 +5,7 @@
 ##' @return ggplot object
 ##' @export
 ##' @author Tini Garske
+##' @importFrom rlang .data
 plot_immunity <- function(pop_df) {
 
     assert_population(pop_df)
@@ -14,7 +15,7 @@ plot_immunity <- function(pop_df) {
     ## option to pass a colour scheme
 
     g <- ggplot2::ggplot(pop_df) +
-        ggplot2::aes(x = pop_df$year, y = pop_df$age, fill = pop_df$immunity) +
+        ggplot2::aes(x = .data$year, y = .data$age, fill = .data$immunity) +
         ggplot2::geom_tile() +
         ggplot2::facet_wrap(~region) +
         ggplot2::scale_fill_gradient(low = "white",
