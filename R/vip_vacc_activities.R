@@ -84,3 +84,54 @@ read_vacc_activities <- function(file) {
 
     df
 }
+
+##' Adding coverage or doses information (whichever is missing) to the
+##' vip_vacc_activities object
+##'
+##' For each line in the vip_vaccination_activities object the given
+##' information of coverage is converted to doses, or vice versa,
+##' using the target population size implied by the vip_population
+##' object supplied. If both coverage and doses are given for any
+##' activity, the function checks if they are consistent with the
+##' population size, and fails if there are any inconsistencies.
+##'
+##' @param vaccs vip_vaccination_activities object
+##' @param pop_df vip_population object
+##' @return vip_vaccination_activities object, updated to have both
+##'     doses and coverage information
+##' @author Tini Garske
+##' @export
+complete_vacc_activities <- function(vaccs, pop_df) {
+    validate_vacc_activities(vaccs)
+    stopifnot(is_population(pop_df))
+
+    ## double check coverage and doses are compatible:
+    ii <- which(!is.na(vaccs$coverage) & !is.na(vaccs$doses))
+    if(length(ii) > 0) {
+        new_doses <- sapply(ii, function(i)
+            doses_from_coverage(pop_df, vaccs$coverage[i], vaccs$region[i],
+                                vaccs$year[i],
+                                vaccs$age_first[i], vaccs$age_last[i]))
+
+        stopifnot(isTRUE(all.equal(vaccs$doses[ii], new_doses)))
+    }
+    ## missing coverage:
+    ii <- which(is.na(vaccs$coverage))
+    if(length(ii) > 0) {
+        vaccs$coverage[ii] <- sapply(ii, function(i)
+            coverage_from_doses(pop_df, vaccs$doses[i], vaccs$region[i],
+                                vaccs$year[i],
+                                vaccs$age_first[i], vaccs$age_last[i]))
+    }
+
+    ## missing doses:
+    ii <- which(is.na(vaccs$doses))
+    if(length(ii) > 0) {
+        vaccs$doses[ii] <- sapply(ii, function(i)
+            doses_from_coverage(pop_df, vaccs$coverage[i], vaccs$region[i],
+                                vaccs$year[i],
+                                vaccs$age_first[i], vaccs$age_last[i]))
+    }
+
+    vaccs
+}
