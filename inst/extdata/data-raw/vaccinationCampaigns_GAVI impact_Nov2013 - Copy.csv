@@ -1,0 +1,1549 @@
+vac.id,year,country,country.code,adm1,adm2,adm3,adm2.prop,target.pop,doses,planned.coverage,adm.coverage,survey.coverage,agemin,agemax,campaign.type,scenario,skew,adm1_consistency,adm2_consistency
+135,1969,Ghana,GHA,1051,na,na,na,na,233500,na,na,na,na,na,response,base,na,0,0
+135,1969,Ghana,GHA,1052,na,na,na,na,233500,na,na,na,na,na,response,base,na,0,0
+135,1969,Ghana,GHA,1053,na,na,na,na,233500,na,na,na,na,na,response,base,na,0,0
+129,1969,Nigeria,NGA,2017,na,na,na,na,400000,na,na,na,na,na,response,base,na,0,0
+129,1969,Nigeria,NGA,2020,na,na,na,na,400000,na,na,na,na,na,response,base,na,0,0
+129,1969,Nigeria,NGA,2022,na,na,na,na,400000,na,na,na,na,na,response,base,na,0,0
+129,1969,Nigeria,NGA,2023,na,na,na,na,400000,na,na,na,na,na,response,base,na,0,0
+129,1969,Nigeria,NGA,2031,na,na,na,na,400000,na,na,na,na,na,response,base,na,0,0
+129,1969,Nigeria,NGA,2034,na,na,na,na,400000,na,na,na,na,na,response,base,na,0,0
+129,1969,Nigeria,NGA,2036,na,na,na,na,400000,na,na,na,na,na,response,base,na,0,0
+129,1969,Nigeria,NGA,2041,na,na,na,na,400000,na,na,na,na,na,response,base,na,0,0
+129,1969,Nigeria,NGA,2047,na,na,na,na,400000,na,na,na,na,na,response,base,na,0,0
+129,1969,Nigeria,NGA,2050,na,na,na,na,400000,na,na,na,na,na,response,base,na,0,0
+129,1969,Nigeria,NGA,2052,na,na,na,na,400000,na,na,na,na,na,response,base,na,0,0
+136,1970,Ghana,GHA,1051,na,na,na,na,364000,na,na,na,na,na,response,base,na,0,0
+136,1970,Ghana,GHA,1052,na,na,na,na,364000,na,na,na,na,na,response,base,na,0,0
+136,1970,Ghana,GHA,1053,na,na,na,na,364000,na,na,na,na,na,response,base,na,0,0
+130,1971,Democratic Republic of the Congo,COD,635,na,na,na,na,350000,na,na,na,na,na,response,base,na,0,0
+145,1971,Nigeria,NGA,2022,23437,na,na,na,1496674,na,na,na,na,na,response,base,na,0,0
+145,1971,Nigeria,NGA,2022,23441,na,na,na,1496674,na,na,na,na,na,response,base,na,0,0
+145,1971,Nigeria,NGA,2022,23445,na,na,na,1496674,na,na,na,na,na,response,base,na,0,0
+145,1971,Nigeria,NGA,2022,23451,na,na,na,1496674,na,na,na,na,na,response,base,na,0,0
+145,1971,Nigeria,NGA,2050,24055,na,na,na,1496674,na,na,na,na,na,response,base,na,0,0
+131,1974,Nigeria,NGA,2024,na,na,na,na,1100000,na,na,na,na,na,response,base,na,0,0
+92,1979,Gambia,GMB,1068,na,na,na,na,na,na,0.95,na,na,na,response,base,na,0,0
+92,1979,Gambia,GMB,1069,na,na,na,na,na,na,0.95,na,na,na,response,base,na,0,0
+92,1979,Gambia,GMB,1070,na,na,na,na,na,na,0.95,na,na,na,response,base,na,0,0
+92,1979,Gambia,GMB,1071,na,na,na,na,na,na,0.95,na,na,na,response,base,na,0,0
+92,1979,Gambia,GMB,1072,na,na,na,na,na,na,0.95,na,na,na,response,base,na,0,0
+92,1979,Gambia,GMB,1073,na,na,na,na,na,na,0.95,na,na,na,response,base,na,0,0
+132,1979,Ghana,GHA,1054,na,na,na,na,177567,na,na,na,na,na,response,base,na,0,0
+133,1979,Ghana,GHA,1049,na,na,na,na,173881,na,na,na,na,na,response,base,na,0,0
+134,1979,Ghana,GHA,1052,na,na,na,na,76998,na,na,na,na,na,response,base,na,0,0
+134,1979,Ghana,GHA,1053,na,na,na,na,76998,na,na,na,na,na,response,base,na,0,0
+103,1980,Cameroon,CMR,626,10178,na,na,na,60000,na,na,na,na,na,response,base,na,0,0
+28,1980,Ghana,GHA,1047,na,na,na,na,1587356,na,na,na,na,na,response,base,na,0,0
+28,1980,Ghana,GHA,1049,na,na,na,na,1587356,na,na,na,na,na,response,base,na,0,0
+28,1980,Ghana,GHA,1052,na,na,na,na,1587356,na,na,na,na,na,response,base,na,0,0
+28,1980,Ghana,GHA,1053,na,na,na,na,1587356,na,na,na,na,na,response,base,na,0,0
+28,1980,Ghana,GHA,1054,na,na,na,na,1587356,na,na,na,na,na,response,base,na,0,0
+95,1981,Ghana,GHA,1046,na,na,na,na,292037,na,na,na,0,14,preventive,base,na,0,0
+95,1981,Ghana,GHA,1048,na,na,na,na,292037,na,na,na,0,14,preventive,base,na,0,0
+95,1981,Ghana,GHA,1049,na,na,na,na,292037,na,na,na,0,14,preventive,base,na,0,0
+85,1981,Senegal,SEN,2640,na,na,na,na,700000,na,na,na,na,na,response,base,na,0,0
+1,1982,Cote d'Ivoire,CIV,615,10141,22605,0.484096878,na,12000,na,na,na,na,na,response,base,na,0,0
+13,1983,Burkina Faso,BFA,286,2830,na,na,na,1600000,na,na,na,na,na,response,base,na,0,0
+13,1983,Burkina Faso,BFA,290,2861,na,na,na,1600000,na,na,na,na,na,response,base,na,0,0
+13,1983,Burkina Faso,BFA,291,2867,na,na,na,1600000,na,na,na,na,na,response,base,na,0,0
+13,1983,Burkina Faso,BFA,305,2958,na,na,na,1600000,na,na,na,na,na,response,base,na,0,0
+13,1983,Burkina Faso,BFA,324,3093,na,na,na,1600000,na,na,na,na,na,response,base,na,0,0
+29,1983,Ghana,GHA,1051,na,na,na,na,300000,na,na,na,na,na,response,base,na,0,0
+29,1983,Ghana,GHA,1052,na,na,na,na,300000,na,na,na,na,na,response,base,na,0,0
+137,1987,Cameroon,CMR,626,10182,na,na,na,148975,na,na,na,na,na,response,base,na,0,0
+137,1987,Cameroon,CMR,626,10183,na,na,na,148975,na,na,na,na,na,response,base,na,0,0
+79,1987,Mali,MLI,1844,na,na,na,3000000,na,na,0.84,na,0,14,response,base,na,0,0
+79,1987,Mali,MLI,1846,na,na,na,3000000,na,na,0.84,na,0,14,response,base,na,0,0
+79,1987,Mali,MLI,1848,na,na,na,3000000,na,na,0.84,na,0,14,response,base,na,0,0
+79,1987,Mali,MLI,1849,na,na,na,3000000,na,na,0.84,na,0,14,response,base,na,0,0
+79,1987,Mali,MLI,1850,na,na,na,3000000,na,na,0.84,na,0,14,response,base,na,0,0
+79,1987,Mali,MLI,1851,na,na,na,3000000,na,na,0.84,na,0,14,response,base,na,0,0
+80,1987,Mali,MLI,1846,22092,na,na,400000,na,na,0.84,na,15,100,response,base,na,0,0
+80,1987,Mali,MLI,1848,22101,na,na,400000,na,na,0.84,na,15,100,response,base,na,0,0
+80,1987,Mali,MLI,1848,22102,na,na,400000,na,na,0.84,na,15,100,response,base,na,0,0
+80,1987,Mali,MLI,1848,22103,na,na,400000,na,na,0.84,na,15,100,response,base,na,0,0
+93,1987,Mauritania,MRT,1936,na,na,na,na,na,na,na,na,na,na,response,base,na,0,0
+96,1987,Nigeria,NGA,2022,na,na,na,na,17000000,na,na,na,na,na,response,base,na,0,0
+96,1987,Nigeria,NGA,2024,na,na,na,na,17000000,na,na,na,na,na,response,base,na,0,0
+96,1987,Nigeria,NGA,2034,na,na,na,na,17000000,na,na,na,na,na,response,base,na,0,0
+96,1987,Nigeria,NGA,2039,na,na,na,na,17000000,na,na,na,na,na,response,base,na,0,0
+96,1987,Nigeria,NGA,2040,na,na,na,na,17000000,na,na,na,na,na,response,base,na,0,0
+96,1987,Nigeria,NGA,2042,na,na,na,na,17000000,na,na,na,na,na,response,base,na,0,0
+96,1987,Nigeria,NGA,2043,na,na,na,na,17000000,na,na,na,na,na,response,base,na,0,0
+96,1987,Nigeria,NGA,2044,na,na,na,na,17000000,na,na,na,na,na,response,base,na,0,0
+96,1987,Nigeria,NGA,2046,na,na,na,na,17000000,na,na,na,na,na,response,base,na,0,0
+96,1987,Nigeria,NGA,2049,na,na,na,na,17000000,na,na,na,na,na,response,base,na,0,0
+124,1988,Angola,AGO,43,na,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+97,1989,Nigeria,NGA,2019,na,na,na,na,14000000,na,na,na,na,na,response,base,na,0,0
+97,1989,Nigeria,NGA,2020,na,na,na,na,14000000,na,na,na,na,na,response,base,na,0,0
+97,1989,Nigeria,NGA,2023,na,na,na,na,14000000,na,na,na,na,na,response,base,na,0,0
+97,1989,Nigeria,NGA,2025,na,na,na,na,14000000,na,na,na,na,na,response,base,na,0,0
+97,1989,Nigeria,NGA,2027,na,na,na,na,14000000,na,na,na,na,na,response,base,na,0,0
+97,1989,Nigeria,NGA,2032,na,na,na,na,14000000,na,na,na,na,na,response,base,na,0,0
+97,1989,Nigeria,NGA,2035,na,na,na,na,14000000,na,na,na,na,na,response,base,na,0,0
+97,1989,Nigeria,NGA,2036,na,na,na,na,14000000,na,na,na,na,na,response,base,na,0,0
+97,1989,Nigeria,NGA,2047,na,na,na,na,14000000,na,na,na,na,na,response,base,na,0,0
+104,1990,Cameroon,CMR,626,10182,na,na,na,214000,na,na,na,na,na,response,base,na,0,0
+104,1990,Cameroon,CMR,626,10183,na,na,na,214000,na,na,na,na,na,response,base,na,0,0
+128,1993,Kenya,KEN,1524,18974,na,na,na,1000000,na,na,na,na,na,response,base,na,0,0
+128,1993,Kenya,KEN,1524,18976,na,na,na,1000000,na,na,na,na,na,response,base,na,0,0
+105,1994,Cameroon,CMR,623,10163,na,na,na,2000,na,na,na,na,na,response,base,na,0,0
+30,1994,Ghana,GHA,1051,na,na,na,na,100000,na,na,na,na,na,response,base,na,0,0
+30,1994,Ghana,GHA,1052,na,na,na,na,100000,na,na,na,na,na,response,base,na,0,0
+30,1994,Ghana,GHA,1053,na,na,na,na,100000,na,na,na,na,na,response,base,na,0,0
+98,1994,Nigeria,NGA,2032,23627,na,na,na,42000,na,0.42,na,na,na,response,base,na,0,0
+122,1995,Gabon,GAB,1021,na,na,na,na,na,0.95,na,na,na,na,response,base,na,0,0
+122,1995,Gabon,GAB,1022,na,na,na,na,na,0.95,na,na,na,na,response,base,na,0,0
+122,1995,Gabon,GAB,1023,na,na,na,na,na,0.95,na,na,na,na,response,base,na,0,0
+122,1995,Gabon,GAB,1024,na,na,na,na,na,0.95,na,na,na,na,response,base,na,0,0
+122,1995,Gabon,GAB,1025,na,na,na,na,na,0.95,na,na,na,na,response,base,na,0,0
+122,1995,Gabon,GAB,1026,na,na,na,na,na,0.95,na,na,na,na,response,base,na,0,0
+122,1995,Gabon,GAB,1027,na,na,na,na,na,0.95,na,na,na,na,response,base,na,0,0
+122,1995,Gabon,GAB,1028,na,na,na,na,na,0.95,na,na,na,na,response,base,na,0,0
+122,1995,Gabon,GAB,1029,na,na,na,na,na,0.95,na,na,na,na,response,base,na,0,0
+55,1995,Liberia,LBR,1627,19616,na,na,120000,100000,na,0.8,na,na,na,response,base,na,0,0
+141,1995,Liberia,LBR,1624,na,na,na,na,180000,na,na,na,na,na,response,base,na,0,0
+141,1995,Liberia,LBR,1631,na,na,na,na,180000,na,na,na,na,na,response,base,na,0,0
+142,1995,Liberia,LBR,1633,19640,na,na,na,150000,na,na,na,na,na,response,base,na,0,0
+86,1995,Senegal,SEN,2634,31086,na,na,na,121000,na,na,na,na,na,response,base,na,0,0
+66,1995,Sierra Leone,SLE,2655,31117,na,na,320000,na,na,na,na,na,na,response,base,na,0,0
+10,1996,Benin,BEN,270,na,na,na,na,220000,na,na,na,na,na,response,base,na,0,0
+10,1996,Benin,BEN,272,na,na,na,na,220000,na,na,na,na,na,response,base,na,0,0
+14,1996,Burkina Faso,BFA,318,na,na,na,na,na,na,na,na,na,na,response,base,na,0,0
+31,1996,Ghana,GHA,1051,14276,na,na,na,140000,na,na,na,na,100,response,base,na,0,0
+31,1996,Ghana,GHA,1051,14287,na,na,na,140000,na,na,na,na,100,response,base,na,0,0
+31,1996,Ghana,GHA,1052,14290,na,na,na,140000,na,na,na,na,100,response,base,na,0,0
+94,1996,Niger,NER,2014,23307,na,na,na,15211,na,na,na,na,na,response,base,na,0,0
+87,1996,Senegal,SEN,2634,na,na,na,160000,na,na,na,na,na,na,response,base,na,0,0
+146,1996,Sierra Leone,SLE,2655,na,na,na,na,150000,na,na,na,na,na,response,base,na,0,0
+146,1996,Sierra Leone,SLE,2656,na,na,na,na,150000,na,na,na,na,na,response,base,na,0,0
+146,1996,Sierra Leone,SLE,2657,na,na,na,na,150000,na,na,na,na,na,response,base,na,0,0
+146,1996,Sierra Leone,SLE,2658,na,na,na,na,150000,na,na,na,na,na,response,base,na,0,0
+56,1997,Liberia,LBR,1630,na,na,na,na,na,na,0.54,na,na,na,response,base,na,0,0
+144,1997,Mali,MLI,1846,22092,na,na,na,na,na,0.5,na,na,na,preventive,base,na,0,0
+15,1998,Burkina Faso,BFA,311,2996,na,na,na,30000,na,na,na,na,na,response,base,na,0,0
+139,1998,Burkina Faso,BFA,289,2853,na,na,na,na,0.97,na,na,0.5,5,preventive,base,na,0,0
+57,1998,Liberia,LBR,1634,na,na,na,na,180000,na,na,na,na,na,response,base,na,0,0
+138,2000,Burkina Faso,BFA,285,2820,na,na,na,200000,na,na,na,na,na,response,base,na,0,0
+138,2000,Burkina Faso,BFA,292,2874,na,na,na,200000,na,na,na,na,na,response,base,na,0,0
+138,2000,Burkina Faso,BFA,311,2996,na,na,na,200000,na,na,na,na,na,response,base,na,0,0
+58,2000,Liberia,LBR,1626,na,na,na,150000,na,na,na,na,na,na,response,base,na,0,0
+2,2001,Cote d'Ivoire,CIV,607,10119,na,na,na,na,na,na,na,na,na,response,base,na,0,0
+2,2001,Cote d'Ivoire,CIV,613,10134,na,na,na,na,na,na,na,na,na,response,base,na,0,0
+3,2001,Cote d'Ivoire,CIV,611,10128,na,na,na,2610994,na,na,na,1,100,response,base,na,0,0
+3,2001,Cote d'Ivoire,CIV,605,10113,na,na,na,2610994,na,na,na,1,100,response,base,na,0,0
+3,2001,Cote d'Ivoire,CIV,608,10121,na,na,na,2610994,na,na,na,1,100,response,base,na,0,0
+3,2001,Cote d'Ivoire,CIV,609,10124,na,na,na,2610994,na,na,na,1,100,response,base,na,0,0
+3,2001,Cote d'Ivoire,CIV,613,10135,22587,0.279747373,na,2610994,na,na,na,1,100,response,base,na,0,0
+3,2001,Cote d'Ivoire,CIV,613,10135,22588,0.37318099,na,2610994,na,na,na,1,100,response,base,na,0,0
+3,2001,Cote d'Ivoire,CIV,613,10135,22589,0.183444988,na,2610994,na,na,na,1,100,response,base,na,0,0
+3,2001,Cote d'Ivoire,CIV,617,10147,na,na,na,2610994,na,na,na,1,100,response,base,na,0,0
+59,2001,Liberia,LBR,1632,na,na,na,na,na,1,na,na,na,na,response,base,na,0,0
+140,2002,Guinea,GIN,1058,14339,na,na,na,1700000,na,0.95,na,na,na,response,base,na,0,0
+140,2002,Guinea,GIN,1061,14349,na,na,na,1700000,na,0.95,na,na,na,response,base,na,0,0
+88,2002,Senegal,SEN,2631,31077,na,na,na,5000000,na,na,na,na,na,response,base,na,0,0
+88,2002,Senegal,SEN,2632,na,na,na,na,5000000,na,na,na,na,na,response,base,na,0,0
+88,2002,Senegal,SEN,2633,31083,na,na,na,5000000,na,na,na,na,na,response,base,na,0,0
+88,2002,Senegal,SEN,2633,31085,na,na,na,5000000,na,na,na,na,na,response,base,na,0,0
+88,2002,Senegal,SEN,2636,31092,na,na,na,5000000,na,na,na,na,na,response,base,na,0,0
+88,2002,Senegal,SEN,2639,31100,na,na,na,5000000,na,na,na,na,na,response,base,na,0,0
+88,2002,Senegal,SEN,2640,na,na,na,na,5000000,na,na,na,na,na,response,base,na,0,0
+16,2003,Burkina Faso,BFA,311,2996,na,na,na,65000,na,na,na,na,na,response,base,na,0,0
+72,2003,Guinea,GIN,1060,14345,na,na,600000,na,na,na,na,na,na,response,base,na,0,0
+72,2003,Guinea,GIN,1064,14365,na,na,600000,na,na,na,na,na,na,response,base,na,0,0
+143,2003,Liberia,LBR,1624,19600,na,na,na,26498,na,na,na,na,na,response,base,na,0,0
+67,2003,Sierra Leone,SLE,2656,31114,na,na,na,250000,na,na,na,na,na,response,base,na,0,0
+101,2003,Sudan,SDN,2625,31063,na,na,185000,na,na,na,na,na,na,response,base,na,0,0
+17,2004,Burkina Faso,BFA,311,na,na,na,80000,na,na,na,na,na,na,response,base,na,0,0
+18,2004,Burkina Faso,BFA,283,na,na,na,1227138,na,na,0.97,na,0.5,100,response,base,na,0,0
+18,2004,Burkina Faso,BFA,291,na,na,na,1227138,na,na,0.97,na,0.5,100,response,base,na,0,0
+18,2004,Burkina Faso,BFA,294,2890,na,na,1227138,na,na,0.97,na,0.5,100,response,base,na,0,0
+18,2004,Burkina Faso,BFA,298,na,na,na,1227138,na,na,0.97,na,0.5,100,response,base,na,0,0
+19,2004,Burkina Faso,BFA,302,na,na,na,126937,na,na,na,na,na,na,response,base,na,0,0
+73,2004,Guinea,GIN,1059,14340,na,na,475500,na,na,na,na,na,na,response,base,na,0,0
+73,2004,Guinea,GIN,1059,14341,na,na,475500,na,na,na,na,na,na,response,base,na,0,0
+73,2004,Guinea,GIN,1059,14342,na,na,475500,na,na,na,na,na,na,response,base,na,0,0
+60,2004,Liberia,LBR,1624,na,na,na,na,49395,na,na,na,na,na,response,base,na,0,0
+61,2004,Liberia,LBR,1634,19648,na,na,na,32318,na,na,na,na,na,response,base,na,0,0
+81,2004,Mali,MLI,1846,22092,na,na,14000,na,na,na,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,269,2719,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,269,2721,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,269,2723,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,270,2726,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,270,2728,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,270,2731,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,272,2741,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,272,2742,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,272,2744,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,272,2748,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,273,2754,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,274,2755,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+11,2005,Benin,BEN,274,2757,na,na,na,na,na,0.85,na,na,na,response,base,na,0,0
+20,2005,Burkina Faso,BFA,295,na,na,na,na,640414,na,na,na,na,na,response,base,na,0,0
+20,2005,Burkina Faso,BFA,311,na,na,na,na,640414,na,na,na,na,na,response,base,na,0,0
+23,2005,Burkina Faso,BFA,285,na,na,na,na,na,0.9,na,na,na,na,na,base,na,0,0
+23,2005,Burkina Faso,BFA,304,na,na,na,na,na,0.9,na,na,na,na,na,base,na,0,0
+4,2005,Cote d'Ivoire,CIV,621,10156,na,na,na,316114,na,na,na,1,100,response,base,na,0,0
+4,2005,Cote d'Ivoire,CIV,621,10157,na,na,na,316114,na,na,na,1,100,response,base,na,0,0
+32,2005,Ghana,GHA,1048,14248,na,na,115506,115125,na,0.99670147,1,na,na,response,base,na,0,0
+33,2005,Ghana,GHA,1053,14298,na,na,102190,19797,na,0.193727371,0.9,na,na,response,base,na,0,0
+34,2005,Ghana,GHA,1048,14241,na,na,84328,67511,na,0.800576321,0.8,na,na,response,base,na,0,0
+35,2005,Ghana,GHA,1048,14240,na,na,116283,144160,na,1.239734097,1.24,na,na,response,base,na,0,0
+36,2005,Ghana,GHA,1048,14246,na,na,122436,120380,na,0.983207553,0.98,na,na,response,base,na,0,0
+37,2005,Ghana,GHA,1055,14324,na,na,116326,112854,na,0.970152846,0.97,na,na,response,base,na,0,0
+38,2005,Ghana,GHA,1055,14332,na,na,54353,54084,na,0.995050871,1,na,na,response,base,na,0,0
+39,2005,Ghana,GHA,1055,14331,na,na,106648,85470,na,0.801421499,0.8,na,na,response,base,na,0,0
+40,2005,Ghana,GHA,1053,14300,na,na,87290,81026,na,0.928239203,0.93,na,na,response,base,na,0,0
+41,2005,Ghana,GHA,1053,14303,na,na,236101,208525,na,0.883202528,0.88,na,na,response,base,na,0,0
+42,2005,Ghana,GHA,1053,14302,na,na,36608,25286,na,0.690723339,0.69,na,na,response,base,na,0,0
+43,2005,Ghana,GHA,1053,14301,na,na,53560,41393,na,0.772834205,0.77,na,na,response,base,na,0,0
+44,2005,Ghana,GHA,1053,14299,na,na,92365,71370,na,0.772695285,0.77,na,na,response,base,na,0,0
+74,2005,Guinea,GIN,1057,14334,na,na,na,900000,na,na,na,na,na,response,base,na,0,0
+74,2005,Guinea,GIN,1057,14335,na,na,na,900000,na,na,na,na,na,response,base,na,0,0
+74,2005,Guinea,GIN,1057,14337,na,na,na,900000,na,na,na,na,na,response,base,na,0,0
+74,2005,Guinea,GIN,1057,14338,na,na,na,900000,na,na,na,na,na,response,base,na,0,0
+82,2005,Mali,MLI,1846,22088,na,na,na,2400000,na,na,na,na,na,response,base,na,0,0
+82,2005,Mali,MLI,1846,22090,na,na,na,2400000,na,na,na,na,na,response,base,na,0,0
+82,2005,Mali,MLI,1846,22091,na,na,na,2400000,na,na,na,na,na,response,base,na,0,0
+82,2005,Mali,MLI,1846,22092,na,na,na,2400000,na,na,na,na,na,response,base,na,0,0
+82,2005,Mali,MLI,1848,22101,na,na,na,2400000,na,na,na,na,na,response,base,na,0,0
+82,2005,Mali,MLI,1848,22102,na,na,na,2400000,na,na,na,na,na,response,base,na,0,0
+82,2005,Mali,MLI,1851,22127,na,na,na,2400000,na,na,na,na,na,response,base,na,0,0
+89,2005,Senegal,SEN,2639,na,na,na,na,150000,na,na,na,na,na,response,base,na,0,0
+102,2005,Sudan,SDN,2628,31070,na,na,1600000,na,na,0.91,na,na,na,response,base,na,0,0
+106,2006,Cameroon,CMR,623,10163,na,na,823649,na,na,na,na,na,na,response,base,na,0,0
+106,2006,Cameroon,CMR,624,10167,na,na,823649,na,na,na,na,na,na,response,base,na,0,0
+106,2006,Cameroon,CMR,625,10175,na,na,823649,na,na,na,na,na,na,response,base,na,0,0
+106,2006,Cameroon,CMR,626,10178,na,na,823649,na,na,na,na,na,na,response,base,na,0,0
+113,2006,Central African Republic,CAF,512,9398,na,na,6000,na,na,na,na,na,na,response,base,na,0,0
+5,2006,Cote d'Ivoire,CIV,608,10121,na,na,na,860000,na,na,na,1,100,response,base,na,0,0
+5,2006,Cote d'Ivoire,CIV,616,10144,na,na,na,860000,na,na,na,1,100,response,base,na,0,0
+45,2006,Ghana,GHA,1047,14230,na,na,91476,81962.496,na,na,na,na,na,response,base,na,0,0
+46,2006,Ghana,GHA,1055,14332,na,na,175054,149889,na,0.856244359,0.94,na,na,response,base,na,0,0
+47,2006,Ghana,GHA,1055,14326,na,na,161053,152064,na,0.944186075,0.86,na,na,response,base,na,0,0
+48,2006,Ghana,GHA,1046,14208,na,na,110586,78640,na,0.711120757,0.71,na,na,response,base,na,0,0
+49,2006,Ghana,GHA,1051,14273,na,na,100835,78640,na,0.779887936,0.85,na,na,response,base,na,0,0
+50,2006,Ghana,GHA,1051,14281,na,na,113038,110569,na,0.978157788,0.98,na,na,response,base,na,0,0
+51,2006,Ghana,GHA,1051,14289,na,na,93390,85918,na,0.919991434,0.92,na,na,response,base,na,0,0
+83,2006,Mali,MLI,1846,22088,na,na,na,1930667,0.97,na,na,na,na,response,base,na,0,0
+83,2006,Mali,MLI,1846,22090,na,na,na,1930667,0.97,na,na,na,na,response,base,na,0,0
+83,2006,Mali,MLI,1846,22091,na,na,na,1930667,0.97,na,na,na,na,response,base,na,0,0
+83,2006,Mali,MLI,1846,22092,na,na,na,1930667,0.97,na,na,na,na,response,base,na,0,0
+83,2006,Mali,MLI,1848,22101,na,na,na,1930667,0.97,na,na,na,na,response,base,na,0,0
+83,2006,Mali,MLI,1848,22102,na,na,na,1930667,0.97,na,na,na,na,response,base,na,0,0
+83,2006,Mali,MLI,1851,22127,na,na,na,1930667,0.97,na,na,na,na,response,base,na,0,0
+107,2007,Cameroon,CMR,624,10169,na,na,129099,146800,na,na,na,na,na,response,base,na,0,0
+90,2007,Senegal,SEN,2633,31084,na,na,3130000,3108090,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+90,2007,Senegal,SEN,2634,31087,na,na,3130000,3108090,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+90,2007,Senegal,SEN,2636,31093,na,na,3130000,3108090,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+90,2007,Senegal,SEN,2636,31094,na,na,3130000,3108090,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+90,2007,Senegal,SEN,2638,31096,na,na,3130000,3108090,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+90,2007,Senegal,SEN,2638,31097,na,na,3130000,3108090,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+90,2007,Senegal,SEN,2639,31099,na,na,3130000,3108090,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+90,2007,Senegal,SEN,2640,31101,na,na,3130000,3108090,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+90,2007,Senegal,SEN,2640,31102,na,na,3130000,3108090,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+90,2007,Senegal,SEN,2640,31103,na,na,3130000,3108090,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+24,2007,Togo,TGO,2817,na,na,na,1302257,1550000,na,na,na,na,na,response,base,na,0,0
+24,2007,Togo,TGO,2820,na,na,na,1302257,1550000,na,na,na,na,na,response,base,na,0,0
+25,2007,Togo,TGO,2818,32307,na,na,na,433000,na,na,na,na,na,response,base,na,0,0
+26,2007,Togo,TGO,2816,na,na,na,3640000,3581760,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+26,2007,Togo,TGO,2818,32304,na,na,3640000,3581760,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+26,2007,Togo,TGO,2818,32305,na,na,3640000,3581760,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+26,2007,Togo,TGO,2818,32306,na,na,3640000,3581760,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+26,2007,Togo,TGO,2818,32308,na,na,3640000,3581760,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+26,2007,Togo,TGO,2819,na,na,na,3640000,3581760,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+21,2008,Burkina Faso,BFA,321,na,na,na,366052,388000,na,na,na,na,na,response,base,na,0,0
+22,2008,Burkina Faso,BFA,281,2794,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,281,2795,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,281,2796,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,281,2797,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,281,2798,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,281,2799,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,281,2800,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,281,2801,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,284,2814,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,284,2815,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,284,2816,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,284,2817,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,284,2818,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,284,2819,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,285,2822,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,286,2824,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,286,2825,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,286,2826,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,286,2827,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,286,2828,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,286,2829,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,286,2830,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,286,2831,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2832,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2833,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2834,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2835,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2836,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2837,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2838,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2839,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2840,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2841,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2842,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2843,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,287,2844,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,288,2845,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,288,2846,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,288,2847,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,288,2848,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,288,2849,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,288,2850,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,288,2851,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,289,2852,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,289,2853,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,289,2854,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,289,2855,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,289,2856,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,289,2857,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,289,2858,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,290,2859,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,290,2860,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,290,2861,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,290,2862,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,290,2863,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,290,2864,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,292,2874,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,292,2876,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,292,2877,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,292,2878,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,292,2879,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,293,2881,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,293,2882,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,293,2883,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,293,2884,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,293,2885,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,293,2886,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,293,2887,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,294,2888,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,294,2889,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,294,2891,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,294,2892,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,294,2893,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,294,2894,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,294,2895,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,294,2896,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,294,2897,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,296,2907,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,297,2908,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,299,2917,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,299,2918,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,299,2919,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,299,2920,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,299,2921,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,299,2922,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,299,2923,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,299,2924,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,300,2925,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,300,2926,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,300,2927,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,300,2928,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,300,2930,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,300,2931,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,300,2932,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,300,2933,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,301,2934,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,301,2935,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,301,2936,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,301,2937,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,301,2938,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,302,2944,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,305,2957,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,305,2958,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,305,2959,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,305,2960,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,305,2961,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,307,2968,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,307,2969,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,307,2970,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,307,2971,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,307,2972,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,307,2973,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,308,2974,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,308,2975,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,308,2976,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,308,2977,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,308,2978,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,310,2984,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,310,2985,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,310,2986,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,310,2987,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,310,2988,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,310,2989,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,310,2990,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,310,2991,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,310,2992,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,312,3006,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,312,3007,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,312,3008,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,312,3009,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,312,3010,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,312,3011,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,312,3012,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,312,3013,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,312,3014,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,315,3032,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,315,3033,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,315,3034,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,315,3035,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,315,3036,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,315,3037,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,315,3038,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,317,3047,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,317,3048,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,317,3049,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,317,3050,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,317,3051,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,317,3052,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,317,3053,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,317,3054,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,318,3055,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,318,3056,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,318,3057,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,318,3058,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,318,3059,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,318,3060,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,318,3061,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,318,3062,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,319,3063,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,319,3064,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,319,3065,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,319,3066,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,319,3067,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,319,3068,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,322,3081,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,322,3082,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,322,3083,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,324,3088,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,324,3089,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,324,3090,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,324,3091,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,324,3092,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,324,3093,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+22,2008,Burkina Faso,BFA,324,3094,na,na,7550000,7565100,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+108,2008,Cameroon,CMR,625,10169,na,na,122780,0,na,na,na,na,na,response,base,na,0,0
+114,2008,Central African Republic,CAF,515,9412,na,na,55035,64391,na,0.92,na,na,na,response,base,na,0,0
+115,2008,Central African Republic,CAF,507,na,na,na,183992,215270,na,0.784,na,na,na,response,base,na,0,0
+115,2008,Central African Republic,CAF,516,9414,na,na,183992,215270,na,0.784,na,na,na,response,base,na,0,0
+6,2008,Cote d'Ivoire,CIV,611,10128,22568,0.777299594,1938161,2300000,na,na,na,1,100,response,base,na,0,0
+6,2008,Cote d'Ivoire,CIV,611,10128,22569,0.026161591,1938161,2300000,na,na,na,1,100,response,base,na,0,0
+6,2008,Cote d'Ivoire,CIV,611,10128,22571,0.031890574,1938161,2300000,na,na,na,1,100,response,base,na,0,0
+6,2008,Cote d'Ivoire,CIV,611,10128,22577,0.015130561,1938161,2300000,na,na,na,1,100,response,base,na,0,0
+75,2008,Guinea,GIN,1064,14365,na,na,140342,165800,na,na,na,na,na,response,base,na,0,0
+75,2008,Guinea,GIN,1064,14366,na,na,140342,165800,na,na,na,na,na,response,base,na,0,0
+62,2008,Liberia,LBR,1634,na,na,na,294613,345000,na,na,na,na,na,response,base,na,0,0
+84,2008,Mali,MLI,1848,na,na,na,5940000,5862780,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+84,2008,Mali,MLI,1849,22107,na,na,5940000,5862780,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+84,2008,Mali,MLI,1849,22108,na,na,5940000,5862780,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+84,2008,Mali,MLI,1849,22110,na,na,5940000,5862780,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+84,2008,Mali,MLI,1850,22114,na,na,5940000,5862780,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+84,2008,Mali,MLI,1850,22115,na,na,5940000,5862780,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+84,2008,Mali,MLI,1850,22116,na,na,5940000,5862780,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+84,2008,Mali,MLI,1850,22117,na,na,5940000,5862780,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+84,2008,Mali,MLI,1850,22119,na,na,5940000,5862780,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+84,2008,Mali,MLI,1850,22120,na,na,5940000,5862780,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+84,2008,Mali,MLI,1850,22121,na,na,5940000,5862780,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+84,2008,Mali,MLI,1851,na,na,na,5940000,5862780,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+68,2008,Sierra Leone,SLE,2657,31115,na,na,527978,580800,na,0.84,na,na,na,response,base,na,0,0
+12,2009,Benin,BEN,269,2718,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,269,2720,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,269,2722,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,270,2724,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,270,2725,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,270,2727,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,270,2729,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,270,2730,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,270,2732,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,271,2733,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,271,2734,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,271,2735,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,271,2736,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,271,2737,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,271,2738,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,271,2739,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,271,2740,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,272,2743,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,272,2745,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,272,2746,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,272,2747,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,273,2750,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,273,2751,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,273,2752,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,273,2753,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,274,2756,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,274,2758,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,275,2759,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,275,2761,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,275,2762,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,276,2764,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,277,2765,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,277,2766,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,277,2767,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,277,2768,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,277,2769,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,277,2770,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,278,2771,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,278,2772,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,278,2773,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,278,2774,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,278,2775,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,278,2776,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,278,2777,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,278,2778,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,278,2779,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,279,2780,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,279,2781,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,279,2782,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,279,2783,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,279,2784,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,280,2785,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,280,2786,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,280,2787,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,280,2788,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,280,2789,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,280,2790,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,280,2791,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,280,2792,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+12,2009,Benin,BEN,280,2793,na,na,6330000,6317340,na,na,na,1,100,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,623,10159,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,623,10161,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,623,10162,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,623,10163,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,624,10164,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,624,10165,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,624,10166,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,624,10168,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,624,10170,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,625,10175,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,626,na,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,627,10184,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,627,10187,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,628,10189,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,628,10191,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,630,10205,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+109,2009,Cameroon,CMR,631,10207,na,na,7470000,7507350,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+110,2009,Cameroon,CMR,632,10211,na,na,165138,na,na,na,na,na,na,response,base,na,0,0
+116,2009,Central African Republic,CAF,512,9398,na,na,201608,na,na,0.947,na,na,na,response,base,na,0,0
+116,2009,Central African Republic,CAF,512,9399,na,na,201608,na,na,0.947,na,na,na,response,base,na,0,0
+117,2009,Central African Republic,CAF,504,9374,na,na,297127,326840,na,0.76,na,na,na,response,base,na,0,0
+117,2009,Central African Republic,CAF,504,9375,na,na,297127,326840,na,0.76,na,na,na,response,base,na,0,0
+117,2009,Central African Republic,CAF,504,9376,na,na,297127,326840,na,0.76,na,na,na,response,base,na,0,0
+118,2009,Central African Republic,CAF,507,na,na,na,327877,363943,na,na,na,na,na,response,base,na,0,0
+118,2009,Central African Republic,CAF,512,9400,na,na,327877,363943,na,na,na,na,na,response,base,na,0,0
+7,2009,Cote d'Ivoire,CIV,606,10116,na,na,154941,187641,na,na,na,1,100,response,base,na,0,0
+76,2009,Guinea,GIN,1059,14342,na,na,60485,66600,na,na,na,na,na,response,base,na,0,0
+63,2009,Liberia,LBR,1630,19631,na,na,187076,105800,na,na,na,na,na,response,base,na,0,0
+63,2009,Liberia,LBR,1630,19632,na,na,187076,105800,na,na,na,na,na,response,base,na,0,0
+64,2009,Liberia,LBR,1623,19594,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1623,19595,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1624,19596,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1624,19597,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1624,19598,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1624,19599,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1624,19600,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1624,19601,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1624,19602,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1624,19603,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1625,19604,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1625,19605,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1625,19606,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1625,19607,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1625,19608,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1626,19609,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1626,19610,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1626,19611,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1626,19612,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1626,19613,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1627,19614,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1627,19615,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1627,19617,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1627,19618,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1627,19619,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1628,19620,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1628,19621,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1629,19623,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1629,19624,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1629,19625,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1629,19626,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1630,19627,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1630,19628,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1630,19629,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1630,19630,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1631,19633,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1631,19634,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1631,19635,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1631,19636,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1632,19637,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1632,19638,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1633,19639,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1633,19640,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1633,19641,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1633,19642,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1634,19643,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1634,19645,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1634,19647,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1634,19648,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1635,19650,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1636,19651,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1636,19652,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1637,19653,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1637,19654,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1637,19655,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1637,19656,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1637,19657,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1637,19658,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+64,2009,Liberia,LBR,1637,19659,na,na,2910000,2889630,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+123,2009,Republic of the Congo,COG,644,na,na,na,73011,80400,na,0.715,na,na,na,response,base,na,0,0
+69,2009,Sierra Leone,SLE,2655,31107,na,na,4110000,3962040,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+69,2009,Sierra Leone,SLE,2655,31108,na,na,4110000,3962040,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+69,2009,Sierra Leone,SLE,2655,31109,na,na,4110000,3962040,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+69,2009,Sierra Leone,SLE,2656,31111,na,na,4110000,3962040,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+69,2009,Sierra Leone,SLE,2656,31112,na,na,4110000,3962040,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+69,2009,Sierra Leone,SLE,2656,31113,na,na,4110000,3962040,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+69,2009,Sierra Leone,SLE,2656,31114,na,na,4110000,3962040,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+69,2009,Sierra Leone,SLE,2657,31115,na,na,4110000,3962040,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+69,2009,Sierra Leone,SLE,2657,31117,na,na,4110000,3962040,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+69,2009,Sierra Leone,SLE,2657,31118,na,na,4110000,3962040,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+69,2009,Sierra Leone,SLE,2658,31119,na,na,4110000,3962040,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+69,2009,Sierra Leone,SLE,2658,31120,na,na,4110000,3962040,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+111,2010,Cameroon,CMR,630,10204,na,na,234007,232791,na,na,na,na,na,response,base,na,0,0
+111,2010,Cameroon,CMR,630,10206,na,na,234007,232791,na,na,na,na,na,response,base,na,0,0
+112,2010,Cameroon,CMR,632,10211,na,na,345592,na,na,na,na,na,na,response,base,na,0,0
+119,2010,Central African Republic,CAF,502,na,na,na,1078873,1018905,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+119,2010,Central African Republic,CAF,508,na,na,na,1078873,1018905,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+119,2010,Central African Republic,CAF,511,na,na,na,1078873,1018905,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+119,2010,Central African Republic,CAF,516,9415,na,na,1078873,1018905,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+120,2010,Central African Republic,CAF,506,na,na,na,1283518,1085387,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+120,2010,Central African Republic,CAF,510,na,na,na,1283518,1085387,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+120,2010,Central African Republic,CAF,512,9397,na,na,1283518,1085387,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+120,2010,Central African Republic,CAF,513,na,na,na,1283518,1085387,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+120,2010,Central African Republic,CAF,514,na,na,na,1283518,1085387,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+120,2010,Central African Republic,CAF,515,9411,na,na,1283518,1085387,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+120,2010,Central African Republic,CAF,515,9413,na,na,1283518,1085387,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+126,2010,Democratic Republic of the Congo,COD,641,10250,na,na,64718,59803,na,na,na,na,na,response,base,na,0,0
+77,2010,Guinea,GIN,1060,14347,na,na,278681,276918,na,0.994,0.948,na,na,response,base,na,0,0
+78,2010,Guinea,GIN,1057,14336,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1058,14339,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1060,14344,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1060,14345,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1060,14346,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1060,14347,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1060,14348,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1061,14349,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1061,14350,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1061,14352,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1062,14354,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1062,14355,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1062,14356,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1062,14357,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1062,14358,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1063,14359,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1063,14360,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1063,14361,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1064,14364,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1064,14365,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+78,2010,Guinea,GIN,1064,14367,na,na,6010000,5348900,na,na,na,na,na,preventive,GAVI.AD,na,0,0
+121,2011,Central African Republic,CAF,501,na,na,na,337609,325709,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+121,2011,Central African Republic,CAF,503,na,na,na,337609,325709,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+121,2011,Central African Republic,CAF,504,na,na,na,337609,325709,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+121,2011,Central African Republic,CAF,505,na,na,na,337609,325709,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+121,2011,Central African Republic,CAF,509,na,na,na,337609,325709,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+121,2011,Central African Republic,CAF,517,na,na,na,337609,325709,na,na,na,na,na,preventive,GAVI.ACD,na,0,0
+8,2011,Cote d'Ivoire,CIV,619,10149,na,na,801070,707032,na,0.88,0.925,1,100,response,base,na,0,0
+8,2011,Cote d'Ivoire,CIV,619,10152,na,na,801070,707032,na,0.88,0.925,1,100,response,base,na,0,0
+8,2011,Cote d'Ivoire,CIV,620,na,na,na,801070,707032,na,0.88,0.925,1,100,response,base,na,0,0
+9,2011,Cote d'Ivoire,CIV,604,na,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,605,10112,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,605,10113,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,605,10114,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,605,10115,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,607,10117,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,607,10118,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,607,10119,22542,0.092525153,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,607,10119,22544,0.300355479,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,607,10120,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,608,10121,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,608,10122,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,609,10123,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,609,10124,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,609,10125,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,610,10127,22564,0.11323019,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,610,10127,22566,0.03965103,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,610,10127,22567,0.65465821,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,612,10133,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,615,10140,22602,0.420424282,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,615,10140,22604,0.105236943,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,616,10142,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,616,10143,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,616,10145,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,618,10148,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,619,10149,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,619,10150,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,619,10152,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,620,10154,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+9,2011,Cote d'Ivoire,CIV,620,10155,na,na,8300000,6972600,na,na,na,1,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1046,14198,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1046,14207,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1046,14212,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1047,14218,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1047,14223,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1047,14224,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1047,14225,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1047,14229,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1047,14232,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1048,14246,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1049,14255,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1049,14261,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1049,14263,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1050,14266,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1051,14272,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1051,14274,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1051,14275,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1051,14283,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1051,14286,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1051,14287,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1055,14321,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1055,14322,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1055,14323,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1055,14325,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1055,14326,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1055,14327,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1055,14328,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1055,14329,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1055,14330,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+52,2011,Ghana,GHA,1055,14333,na,na,5800000,5858000,na,na,na,10,100,preventive,GAVI.A,na,0,0
+65,2011,Liberia,LBR,1628,na,na,na,133033,142345,na,na,na,na,na,response,base,na,0,0
+65,2011,Liberia,LBR,1632,na,na,na,133033,142345,na,na,na,na,na,response,base,na,0,0
+65,2011,Liberia,LBR,1634,na,na,na,133033,142345,na,na,na,na,na,response,base,na,0,0
+65,2011,Liberia,LBR,1636,na,na,na,133033,142345,na,na,na,na,na,response,base,na,0,0
+91,2011,Senegal,SEN,2639,31099,na,na,na,160000,na,na,na,0,100,response,base,na,0,0
+70,2011,Sierra Leone,SLE,2657,31116,na,na,144479,na,na,na,na,1,100,response,base,na,0,0
+125,2011,Uganda,UGA,3104,na,na,na,905618,724972,na,0.8,na,na,na,response,base,na,0,0
+125,2011,Uganda,UGA,3105,33866,na,na,905618,724972,na,0.8,na,na,na,response,base,na,0,0
+125,2011,Uganda,UGA,3126,na,na,na,905618,724972,na,0.8,na,na,na,response,base,na,0,0
+202,2012,Cote d'Ivoire,CIV,603,na,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,607,10119,22543,0.607119368,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,610,10126,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,610,10127,22565,0.19246057,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,611,10128,22569,0.026161591,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,611,10128,22573,0.041037409,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,611,10128,22575,0.014559342,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,611,10128,22576,0.013524288,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,611,10129,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,611,10130,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,612,10131,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,612,10132,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,613,na,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,614,na,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,615,10138,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,615,10139,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,615,10140,22603,0.474338775,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,615,10141,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,617,na,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,619,10151,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,619,10153,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,621,10156,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+202,2012,Cote d'Ivoire,CIV,621,10158,na,na,6535427,6535427,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+53,2012,Ghana,GHA,1047,14277,na,na,235000,na,na,na,na,1,100,response,base,na,0,0
+53,2012,Ghana,GHA,1052,14294,na,na,235000,na,na,na,na,1,100,response,base,na,0,0
+53,2012,Ghana,GHA,1052,14296,na,na,235000,na,na,na,na,1,100,response,base,na,0,0
+179,2012,Ghana,GHA,1046,na,na,na,998522,878885,na,na,na,na,na,preventive,GAVI.A,na,0,0
+180,2012,Ghana,GHA,1047,na,na,na,225204,187661,na,na,na,na,na,preventive,GAVI.A,na,0,0
+181,2012,Ghana,GHA,1054,na,na,na,240082,188469,na,na,na,na,na,preventive,GAVI.A,na,0,0
+148,2012,Republic of the Congo,COG,644,10267,na,na,na,35000,na,na,na,na,na,response,base,na,0,0
+147,2012,Sudan,SDN,2624,na,na,na,3400000,na,na,na,na,na,na,response,base,na,0,0
+182,2013,Chad,TCD,2811,32284,na,na,1167800,1129200,na,na,na,na,na,response,base,na,0,0
+182,2013,Chad,TCD,2815,32292,na,na,1167800,1129200,na,na,na,na,na,response,base,na,0,0
+182,2013,Chad,TCD,2815,32293,na,na,1167800,1129200,na,na,na,na,na,response,base,na,0,0
+182,2013,Chad,TCD,2815,32294,na,na,1167800,1129200,na,na,na,na,na,response,base,na,0,0
+222,2013,Nigeria,NGA,2016,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2017,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2018,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2019,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2020,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2021,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2022,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2023,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2024,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2025,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2026,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2027,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2028,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2029,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2030,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2031,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2032,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2033,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2034,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2035,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2036,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2037,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2038,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2039,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2040,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2041,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2042,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2043,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2044,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2045,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2046,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2047,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2048,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2049,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2050,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2051,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2052,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+222,2013,Nigeria,NGA,2053,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,na,0,0
+152,2014,Nigeria,NGA,2016,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2017,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2018,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2019,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2020,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2021,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2022,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2023,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2024,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2025,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2026,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2027,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2028,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2029,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2030,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2031,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2032,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2033,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2034,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2035,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2036,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2037,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2038,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2039,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2040,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2041,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2042,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2043,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2044,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2045,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2046,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2047,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2048,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2049,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2050,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2051,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2052,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+152,2014,Nigeria,NGA,2053,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+149,2014,Sudan,SDN,2623,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,na,0,0
+149,2014,Sudan,SDN,2624,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,na,0,0
+149,2014,Sudan,SDN,2626,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,na,0,0
+149,2014,Sudan,SDN,2627,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,na,0,0
+149,2014,Sudan,SDN,2628,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,na,0,0
+149,2014,Sudan,SDN,2629,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,na,0,0
+158,2015,Cameroon,CMR,623,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,na,0,0
+158,2015,Cameroon,CMR,624,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,na,0,0
+158,2015,Cameroon,CMR,625,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,na,0,0
+158,2015,Cameroon,CMR,626,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,na,0,0
+158,2015,Cameroon,CMR,627,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,na,0,0
+158,2015,Cameroon,CMR,628,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,na,0,0
+158,2015,Cameroon,CMR,629,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,na,0,0
+158,2015,Cameroon,CMR,630,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,na,0,0
+158,2015,Cameroon,CMR,631,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,na,0,0
+158,2015,Cameroon,CMR,632,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,na,0,0
+153,2015,Nigeria,NGA,2016,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2017,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2018,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2019,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2020,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2021,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2022,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2023,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2024,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2025,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2026,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2027,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2028,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2029,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2030,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2031,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2032,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2033,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2034,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2035,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2036,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2037,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2038,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2039,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2040,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2041,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2042,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2043,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2044,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2045,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2046,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2047,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2048,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2049,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2050,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2051,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2052,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+153,2015,Nigeria,NGA,2053,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+150,2015,Sudan,SDN,2623,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+150,2015,Sudan,SDN,2624,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+150,2015,Sudan,SDN,2626,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+150,2015,Sudan,SDN,2627,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+150,2015,Sudan,SDN,2628,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+150,2015,Sudan,SDN,2629,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+160,2015,Uganda,UGA,3078,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3079,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3080,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3081,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3082,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3083,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3084,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3085,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3086,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3087,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3088,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3089,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3090,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3091,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3092,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3093,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3094,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3095,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3096,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3097,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3098,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3099,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3100,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3101,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3102,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3103,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3104,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3105,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3106,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3107,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3108,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3109,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3110,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3111,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3112,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3113,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3114,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3115,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3116,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3117,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3118,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3119,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3120,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3121,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3122,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3123,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3124,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3125,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3126,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3127,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3128,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3129,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3130,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3131,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3132,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3133,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3134,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+160,2015,Uganda,UGA,3135,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+159,2016,Cameroon,CMR,623,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+159,2016,Cameroon,CMR,624,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+159,2016,Cameroon,CMR,625,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+159,2016,Cameroon,CMR,626,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+159,2016,Cameroon,CMR,627,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+159,2016,Cameroon,CMR,628,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+159,2016,Cameroon,CMR,629,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+159,2016,Cameroon,CMR,630,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+159,2016,Cameroon,CMR,631,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+159,2016,Cameroon,CMR,632,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2016,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2017,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2018,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2019,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2020,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2021,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2022,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2023,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2024,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2025,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2026,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2027,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2028,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2029,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2030,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2031,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2032,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2033,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2034,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2035,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2036,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2037,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2038,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2039,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2040,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2041,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2042,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2043,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2044,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2045,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2046,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2047,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2048,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2049,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2050,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2051,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2052,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+154,2016,Nigeria,NGA,2053,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+151,2016,Sudan,SDN,2623,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+151,2016,Sudan,SDN,2624,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+151,2016,Sudan,SDN,2626,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+151,2016,Sudan,SDN,2627,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+151,2016,Sudan,SDN,2628,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+151,2016,Sudan,SDN,2629,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3078,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3079,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3080,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3081,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3082,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3083,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3084,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3085,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3086,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3087,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3088,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3089,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3090,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3091,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3092,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3093,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3094,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3095,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3096,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3097,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3098,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3099,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3100,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3101,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3102,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3103,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3104,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3105,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3106,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3107,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3108,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3109,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3110,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3111,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3112,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3113,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3114,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3115,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3116,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3117,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3118,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3119,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3120,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3121,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3122,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3123,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3124,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3125,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3126,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3127,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3128,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3129,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3130,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3131,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3132,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3133,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3134,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+161,2016,Uganda,UGA,3135,na,na,na,3650000,3650000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+186,2017,Cameroon,CMR,623,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+186,2017,Cameroon,CMR,624,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+186,2017,Cameroon,CMR,625,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+186,2017,Cameroon,CMR,626,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+186,2017,Cameroon,CMR,627,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+186,2017,Cameroon,CMR,628,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+186,2017,Cameroon,CMR,629,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+186,2017,Cameroon,CMR,630,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+186,2017,Cameroon,CMR,631,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+186,2017,Cameroon,CMR,632,na,na,na,3179298,2956747,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+171,2017,Kenya,KEN,1518,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,na,0,0
+171,2017,Kenya,KEN,1519,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,na,0,0
+171,2017,Kenya,KEN,1520,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,na,0,0
+171,2017,Kenya,KEN,1521,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,na,0,0
+171,2017,Kenya,KEN,1522,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,na,0,0
+171,2017,Kenya,KEN,1523,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,na,0,0
+171,2017,Kenya,KEN,1524,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,na,0,0
+171,2017,Kenya,KEN,1525,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,na,0,0
+155,2017,Nigeria,NGA,2016,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2017,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2018,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2019,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2020,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2021,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2022,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2023,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2024,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2025,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2026,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2027,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2028,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2029,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2030,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2031,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2032,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2033,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2034,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2035,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2036,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2037,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2038,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2039,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2040,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2041,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2042,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2043,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2044,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2045,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2046,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2047,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2048,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2049,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2050,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2051,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2052,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+155,2017,Nigeria,NGA,2053,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+234,2017,Sudan,SDN,2623,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+234,2017,Sudan,SDN,2624,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+234,2017,Sudan,SDN,2626,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+234,2017,Sudan,SDN,2627,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+234,2017,Sudan,SDN,2628,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+234,2017,Sudan,SDN,2629,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+183,2018,Angola,AGO,33,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,34,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,35,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,36,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,37,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,38,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,39,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,40,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,41,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,42,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,43,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,44,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,45,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,46,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,47,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,48,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,49,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+183,2018,Angola,AGO,50,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+172,2018,Kenya,KEN,1518,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+172,2018,Kenya,KEN,1519,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+172,2018,Kenya,KEN,1520,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+172,2018,Kenya,KEN,1521,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+172,2018,Kenya,KEN,1522,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+172,2018,Kenya,KEN,1523,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+172,2018,Kenya,KEN,1524,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+172,2018,Kenya,KEN,1525,na,na,na,5000000,4897275,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2016,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2017,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2018,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2019,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2020,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2021,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2022,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2023,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2024,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2025,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2026,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2027,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2028,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2029,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2030,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2031,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2032,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2033,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2034,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2035,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2036,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2037,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2038,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2039,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2040,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2041,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2042,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2043,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2044,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2045,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2046,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2047,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2048,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2049,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2050,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2051,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2052,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+156,2018,Nigeria,NGA,2053,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+235,2018,Sudan,SDN,2623,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+235,2018,Sudan,SDN,2624,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+235,2018,Sudan,SDN,2626,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+235,2018,Sudan,SDN,2627,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+235,2018,Sudan,SDN,2628,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+235,2018,Sudan,SDN,2629,na,na,na,6141025.8,6141026,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,33,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,34,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,35,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,36,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,37,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,38,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,39,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,40,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,41,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,42,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,43,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,44,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,45,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,46,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,47,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,48,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,49,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+184,2019,Angola,AGO,50,na,na,na,6500000,6175000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+167,2019,Democratic Republic of the Congo,COD,633,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+167,2019,Democratic Republic of the Congo,COD,634,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+167,2019,Democratic Republic of the Congo,COD,635,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+167,2019,Democratic Republic of the Congo,COD,636,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+167,2019,Democratic Republic of the Congo,COD,637,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+167,2019,Democratic Republic of the Congo,COD,638,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+167,2019,Democratic Republic of the Congo,COD,639,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+167,2019,Democratic Republic of the Congo,COD,640,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+167,2019,Democratic Republic of the Congo,COD,641,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+173,2019,Ethiopia,ETH,968,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+173,2019,Ethiopia,ETH,969,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+173,2019,Ethiopia,ETH,970,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+173,2019,Ethiopia,ETH,971,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+173,2019,Ethiopia,ETH,972,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+173,2019,Ethiopia,ETH,973,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+173,2019,Ethiopia,ETH,974,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+173,2019,Ethiopia,ETH,975,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+173,2019,Ethiopia,ETH,976,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+173,2019,Ethiopia,ETH,977,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+173,2019,Ethiopia,ETH,978,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14197,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14199,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14200,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14201,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14202,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14203,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14204,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14205,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14206,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14207,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14209,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14210,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14211,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14213,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14215,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14216,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1046,14217,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1047,14219,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1047,14220,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1047,14221,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1047,14222,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1047,14226,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1047,14228,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1047,14231,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1047,14233,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1047,14234,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1047,14235,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1048,14236,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1048,14237,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1048,14238,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1048,14239,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1048,14242,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1048,14243,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1048,14244,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1048,14245,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1048,14247,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14250,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14251,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14252,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14253,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14254,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14256,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14257,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14258,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14259,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14260,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14262,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14264,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1049,14265,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1050,14267,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1050,14268,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1050,14269,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1050,14270,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1051,14276,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1051,14277,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1051,14278,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1051,14279,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1051,14280,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1051,14282,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1051,14284,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1051,14285,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1051,14288,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1052,14290,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1052,14291,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1052,14292,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1052,14293,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1052,14295,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1052,14297,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14306,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14307,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14308,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14309,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14310,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14311,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14312,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14313,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14314,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14315,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14316,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14317,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14318,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14319,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+185,2019,Ghana,GHA,1054,14320,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,na,0,0
+157,2019,Nigeria,NGA,2016,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2017,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2018,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2019,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2020,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2021,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2022,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2023,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2024,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2025,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2026,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2027,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2028,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2029,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2030,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2031,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2032,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2033,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2034,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2035,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2036,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2037,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2038,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2039,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2040,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2041,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2042,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2043,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2044,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2045,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2046,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2047,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2048,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2049,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2050,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2051,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2052,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+157,2019,Nigeria,NGA,2053,na,na,na,9428571,9145714,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+164,2019,South Sudan,SDN,2622,na,na,na,2900000,2842000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+164,2019,South Sudan,SDN,2625,na,na,na,2900000,2842000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+164,2019,South Sudan,SDN,2630,na,na,na,2900000,2842000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2798,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2799,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2800,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2801,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2802,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2803,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2804,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2805,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2806,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2807,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2808,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2809,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2810,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2811,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2812,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2813,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2814,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+162,2020,Chad,TCD,2815,na,na,na,4100000,4100000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+168,2020,Democratic Republic of the Congo,COD,633,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+168,2020,Democratic Republic of the Congo,COD,634,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+168,2020,Democratic Republic of the Congo,COD,635,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+168,2020,Democratic Republic of the Congo,COD,636,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+168,2020,Democratic Republic of the Congo,COD,637,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+168,2020,Democratic Republic of the Congo,COD,638,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+168,2020,Democratic Republic of the Congo,COD,639,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+168,2020,Democratic Republic of the Congo,COD,640,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+168,2020,Democratic Republic of the Congo,COD,641,na,na,na,5000000,5000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+174,2020,Ethiopia,ETH,968,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+174,2020,Ethiopia,ETH,969,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+174,2020,Ethiopia,ETH,970,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+174,2020,Ethiopia,ETH,971,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+174,2020,Ethiopia,ETH,972,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+174,2020,Ethiopia,ETH,973,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+174,2020,Ethiopia,ETH,974,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+174,2020,Ethiopia,ETH,975,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+174,2020,Ethiopia,ETH,976,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+174,2020,Ethiopia,ETH,977,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+174,2020,Ethiopia,ETH,978,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14197,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14199,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14200,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14201,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14202,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14203,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14204,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14205,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14206,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14207,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14209,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14210,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14211,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14213,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14215,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14216,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1046,14217,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1047,14219,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1047,14220,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1047,14221,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1047,14222,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1047,14226,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1047,14228,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1047,14231,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1047,14233,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1047,14234,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1047,14235,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1048,14236,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1048,14237,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1048,14238,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1048,14239,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1048,14242,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1048,14243,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1048,14244,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1048,14245,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1048,14247,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14250,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14251,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14252,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14253,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14254,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14256,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14257,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14258,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14259,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14260,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14262,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14264,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1049,14265,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1050,14267,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1050,14268,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1050,14269,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1050,14270,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1051,14276,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1051,14277,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1051,14278,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1051,14279,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1051,14280,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1051,14282,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1051,14284,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1051,14285,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1051,14288,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1052,14290,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1052,14291,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1052,14292,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1052,14293,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1052,14295,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1052,14297,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14306,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14307,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14308,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14309,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14310,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14311,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14312,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14313,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14314,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14315,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14316,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14317,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14318,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14319,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+212,2020,Ghana,GHA,1054,14320,na,na,6442573,6442573,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+165,2020,South Sudan,SDN,2622,na,na,na,2900000,2842000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+165,2020,South Sudan,SDN,2625,na,na,na,2900000,2842000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+165,2020,South Sudan,SDN,2630,na,na,na,2900000,2842000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+169,2021,Democratic Republic of the Congo,COD,633,na,na,na,10000000,10000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+169,2021,Democratic Republic of the Congo,COD,634,na,na,na,10000000,10000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+169,2021,Democratic Republic of the Congo,COD,635,na,na,na,10000000,10000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+169,2021,Democratic Republic of the Congo,COD,636,na,na,na,10000000,10000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+169,2021,Democratic Republic of the Congo,COD,637,na,na,na,10000000,10000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+169,2021,Democratic Republic of the Congo,COD,638,na,na,na,10000000,10000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+169,2021,Democratic Republic of the Congo,COD,639,na,na,na,10000000,10000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+169,2021,Democratic Republic of the Congo,COD,640,na,na,na,10000000,10000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+169,2021,Democratic Republic of the Congo,COD,641,na,na,na,10000000,10000000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+175,2021,Ethiopia,ETH,968,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+175,2021,Ethiopia,ETH,969,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+175,2021,Ethiopia,ETH,970,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+175,2021,Ethiopia,ETH,971,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+175,2021,Ethiopia,ETH,972,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+175,2021,Ethiopia,ETH,973,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+175,2021,Ethiopia,ETH,974,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+175,2021,Ethiopia,ETH,975,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+175,2021,Ethiopia,ETH,976,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+175,2021,Ethiopia,ETH,977,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+175,2021,Ethiopia,ETH,978,na,na,na,4000000,3934000,na,na,na,na,na,preventive,GAVI.A,-1,0,0
+177,2021,Guinea-Bissau,GNB,1074,na,na,na,800000,730288,na,na,na,na,na,preventive,GAVI.A,na,0,0
+177,2021,Guinea-Bissau,GNB,1075,na,na,na,800000,730288,na,na,na,na,na,preventive,GAVI.A,na,0,0
+177,2021,Guinea-Bissau,GNB,1076,na,na,na,800000,730288,na,na,na,na,na,preventive,GAVI.A,na,0,0
+177,2021,Guinea-Bissau,GNB,1077,na,na,na,800000,730288,na,na,na,na,na,preventive,GAVI.A,na,0,0
+177,2021,Guinea-Bissau,GNB,1078,na,na,na,800000,730288,na,na,na,na,na,preventive,GAVI.A,na,0,0
+177,2021,Guinea-Bissau,GNB,1079,na,na,na,800000,730288,na,na,na,na,na,preventive,GAVI.A,na,0,0
+177,2021,Guinea-Bissau,GNB,1080,na,na,na,800000,730288,na,na,na,na,na,preventive,GAVI.A,na,0,0
+177,2021,Guinea-Bissau,GNB,1081,na,na,na,800000,730288,na,na,na,na,na,preventive,GAVI.A,na,0,0
+177,2021,Guinea-Bissau,GNB,1082,na,na,na,800000,730288,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1924,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1925,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1926,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1927,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1928,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1929,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1930,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1931,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1932,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1933,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1934,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1935,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+178,2021,Mauritania,MRT,1936,na,na,na,360000,360000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+176,2021,Niger,NER,2008,na,na,na,410000,410000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+176,2021,Niger,NER,2009,na,na,na,410000,410000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+176,2021,Niger,NER,2010,na,na,na,410000,410000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+176,2021,Niger,NER,2011,na,na,na,410000,410000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+176,2021,Niger,NER,2012,na,na,na,410000,410000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+176,2021,Niger,NER,2013,na,na,na,410000,410000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+176,2021,Niger,NER,2014,na,na,na,410000,410000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+176,2021,Niger,NER,2015,na,na,na,410000,410000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+166,2021,Republic of the Congo,COG,642,na,na,na,1500000,1155000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+166,2021,Republic of the Congo,COG,643,na,na,na,1500000,1155000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+166,2021,Republic of the Congo,COG,644,na,na,na,1500000,1155000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+166,2021,Republic of the Congo,COG,645,na,na,na,1500000,1155000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+166,2021,Republic of the Congo,COG,646,na,na,na,1500000,1155000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+166,2021,Republic of the Congo,COG,647,na,na,na,1500000,1155000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+166,2021,Republic of the Congo,COG,648,na,na,na,1500000,1155000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+166,2021,Republic of the Congo,COG,649,na,na,na,1500000,1155000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+166,2021,Republic of the Congo,COG,650,na,na,na,1500000,1155000,na,na,na,na,na,preventive,GAVI.A,na,0,0
+166,2021,Republic of the Congo,COG,651,na,na,na,1500000,1155000,na,na,na,na,na,preventive,GAVI.A,na,0,0
