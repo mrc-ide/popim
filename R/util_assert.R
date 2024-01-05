@@ -87,9 +87,20 @@ assert_scalar_0_to_1 <- function(x, name = deparse(substitute(x))) {
     assert_0_to_1(x, name)
 }
 
+assert_scalar_0_to_1_or_missing <- function(x, name = deparse(substitute(x))) {
+    assert_scalar(x, name)
+    assert_0_to_1_or_missing(x, name)
+}
+
 assert_scalar_non_negative <- function(x, name = deparse(substitute(x))) {
     assert_scalar(x, name)
     assert_non_negative(x, name)
+}
+
+assert_scalar_non_negative_or_missing <-
+    function(x, name = deparse(substitute(x))) {
+    assert_scalar(x, name)
+    assert_non_negative_or_missing(x, name)
 }
 
 assert_scalar_logical <- function(x, name = deparse(substitute(x))) {
