@@ -13,6 +13,7 @@ test_that("apply_vaccs correctly uses apply_vacc for a single vacc_activity", {
                            age_first = vacc$age_first,
                            age_last = vacc$age_last,
                            coverage = vacc$coverage,
+                           doses = NA,
                            targeting = vacc$targeting)
     pop_multi <- apply_vaccs(pop_df = pop, vaccs_df = vacc)
     
@@ -31,11 +32,13 @@ test_that("apply_vaccs gives the same result as apply_vacc used twice for two ac
                            age_first = vacc$age_first[1],
                            age_last = vacc$age_last[1],
                            coverage = vacc$coverage[1],
+                           doses = vacc$doses[1],
                            targeting = vacc$targeting[1])
     pop_sing <- apply_vacc(pop_df = pop_sing, region = "UK", year = vacc$year[2],
                            age_first = vacc$age_first[2],
                            age_last = vacc$age_last[2],
                            coverage = vacc$coverage[2],
+                           doses = vacc$doses[2],
                            targeting = vacc$targeting[2])
     pop_multi <- apply_vaccs(pop_df = pop, vaccs_df = vacc)
     

@@ -10,7 +10,8 @@ apply_vacc(
   year,
   age_first = 0,
   age_last = Inf,
-  coverage = 0,
+  coverage = double(),
+  doses = double(),
   targeting = "random"
 )
 }
@@ -29,6 +30,8 @@ function 'vip_population'}
 \item{coverage}{proportion of the population to be vaccinated in
 the activity}
 
+\item{doses}{number of doses available to vaccinate the target population}
+
 \item{targeting}{character to determine how successive activities are
 targeted. Valid values are "random", "correlated", "targeted".
 For targeting = "random" (the default), allocation of vaccine is
@@ -46,7 +49,11 @@ pop_df: the supplied population dataframe object with
 updated immunity to reflect the vaccination activity.
 }
 \description{
-Function to apply a single vaccination activity to the population
+If the vaccination activity has non-missing entries for both
+coverage and doses, the coverage is used - there is no test
+whether the coverage and doses information are consistent with the
+target population size in the vip_population object to which the
+vaccination activity is applied.
 }
 \author{
 Tini Garske

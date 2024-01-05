@@ -1,5 +1,11 @@
 ##' Function to apply a single vaccination activity to the population
 ##'
+##' If the vaccination activity has non-missing entries for both
+##' coverage and doses, the coverage is used - there is no test
+##' whether the coverage and doses information are consistent with the
+##' target population size in the vip_population object to which the
+##' vaccination activity is applied.
+##'
 ##' @param pop_df population dataframe object such as created by
 ##'     function 'vip_population'
 ##' @param region region of the vaccination activity
@@ -8,6 +14,7 @@
 ##' @param age_last age of the oldest age group targeted
 ##' @param coverage proportion of the population to be vaccinated in
 ##'     the activity
+##' @param doses number of doses available to vaccinate the target population
 ##' @param targeting character to determine how successive activities are
 ##'     targeted. Valid values are "random", "correlated", "targeted".
 ##'     For targeting = "random" (the default), allocation of vaccine is
@@ -24,14 +31,16 @@
 ##' @export
 ##' @author Tini Garske
 apply_vacc <- function(pop_df, region, year, age_first = 0, age_last = Inf,
-                       coverage = 0, targeting = "random") {
+                       coverage = double(), doses = double(),
+                       targeting = "random") {
 
     stopifnot(is_population(pop_df))
 
     assert_character(region)
     assert_scalar_wholenumber(age_first)
     assert_scalar_wholenumber(age_last)
-    assert_scalar_0_to_1(coverage)
+    assert_scalar_0_to_1_or_missing(coverage)
+    assert_scalar_non_negative_or_missing(doses)
 
     assert_non_negative(age_first)
     assert_non_negative(age_last - age_first)
@@ -39,6 +48,11 @@ apply_vacc <- function(pop_df, region, year, age_first = 0, age_last = Inf,
     assert_valid_targeting(targeting)
 
     cohorts <- year - (age_last:age_first)
+
+    if(is.na(coverage)) {
+        coverage = coverage_from_doses(pop_df, doses, region, year,
+                                       age_first, age_last)
+    }
 
     for(j in cohorts) {
         i_vec <- which(pop_df$region == region & pop_df$cohort == j &
@@ -78,6 +92,7 @@ apply_vaccs <- function(pop_df, vaccs_df) {
                              age_first = vaccs_df$age_first[i],
                              age_last = vaccs_df$age_last[i],
                              coverage = vaccs_df$coverage[i],
+                             doses = vaccs_df$doses[i],
                              targeting = vaccs_df$targeting[i])
     }
     pop_df
