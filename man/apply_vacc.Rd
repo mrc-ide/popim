@@ -11,7 +11,7 @@ apply_vacc(
   age_first = 0,
   age_last = Inf,
   coverage = double(),
-  doses = double(),
+  doses = NA_real_,
   targeting = "random"
 )
 }

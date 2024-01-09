@@ -31,7 +31,7 @@
 ##' @export
 ##' @author Tini Garske
 apply_vacc <- function(pop_df, region, year, age_first = 0, age_last = Inf,
-                       coverage = double(), doses = double(),
+                       coverage = double(), doses = NA_real_,
                        targeting = "random") {
 
     stopifnot(is_population(pop_df))
