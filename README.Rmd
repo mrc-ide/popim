@@ -185,6 +185,17 @@ plot_immunity(pop)
 
 ```
 
+The overall population immunity can be aggregated across ages using the function `calc_pop_immunity()`:
+
+```{r calc_pop_immunity}
+pop_agg <- calc_pop_immunity(pop)
+pop_agg
+
+ggplot(pop_agg, aes(x = year, y = immunity, col = region)) +
+    geom_point()
+
+```
+
 
 
 

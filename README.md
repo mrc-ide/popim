@@ -246,6 +246,34 @@ plot_immunity(pop)
 
 <img src="man/figures/README-plot_immunity_2-2.png" width="100%" />
 
+The overall population immunity can be aggregated across ages using the
+function `calc_pop_immunity()`:
+
+``` r
+pop_agg <- calc_pop_immunity(pop)
+pop_agg
+#> # A tibble: 302 × 4
+#> # Groups:   region [2]
+#>    region  year   pop_size immunity
+#>    <chr>  <int>      <dbl>    <dbl>
+#>  1 IND     1950 357021100.        0
+#>  2 IND     1951 364922360.        0
+#>  3 IND     1952 372997188         0
+#>  4 IND     1953 381227705         0
+#>  5 IND     1954 389731406         0
+#>  6 IND     1955 398577992.        0
+#>  7 IND     1956 407656597         0
+#>  8 IND     1957 416935400.        0
+#>  9 IND     1958 426295762.        0
+#> 10 IND     1959 435900352.        0
+#> # … with 292 more rows
+
+ggplot(pop_agg, aes(x = year, y = immunity, col = region)) +
+    geom_point()
+```
+
+<img src="man/figures/README-calc_pop_immunity-1.png" width="100%" />
+
 <!-- You'll still need to render `README.Rmd` regularly, to keep -->
 
 <!-- `README.md` up-to-date. `devtools::build_readme()` is handy for -->
