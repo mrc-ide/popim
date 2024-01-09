@@ -1,0 +1,5 @@
+"region","year","age_first","age_last","coverage","doses","targeting"
+"NGA",1971,0,100,NA,1496674,"random"
+"NGA",1974,0,100,NA,1100000,"random"
+"NGA",1987,0,100,NA,1.7e+07,"random"
+"NGA",1989,0,100,NA,1.4e+07,"random"
