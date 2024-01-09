@@ -55,3 +55,22 @@ assert_valid_targeting <- function(x, name = deparse(substitute(x))) {
                      name), call. = FALSE)
     }
 }
+
+##' Calculate the overall population immunity (aggregating over age)
+##' from the supplied vip_population object
+##'
+##' @param pop vip_population object for which the population size and
+##'     immunity will be aggregated over age.
+##' @return dataframe containing the vip_population aggregated by age.
+##' @author Tini Garske
+##' @export
+##' @importFrom rlang .data
+calc_pop_immunity <- function(pop) {
+    pop_no_age <- pop |> dplyr::group_by(.data$region, .data$year) |>
+        dplyr::summarise(pop_size = sum(.data$pop_size),
+                         n_immune = sum(.data$immunity * .data$pop_size)) |>
+        dplyr::mutate(immunity = .data$n_immune / .data$pop_size) |>
+        dplyr::select(-.data$n_immune)
+
+    pop_no_age
+}
