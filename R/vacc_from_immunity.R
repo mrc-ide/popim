@@ -62,3 +62,14 @@ vacc_from_immunity <- function(pop, targeting = "random") {
     ## aggregates compatible activities using the age_first and
     ## age_last option.
 }
+
+
+get_all_ages <- function(va) {
+
+    assert_vacc_activities(va)
+    ## va is a set of vaccination activities that could be combined into
+    ## one, as they share the region, year, targeting and coverage, but
+    ## target potentially different ages.
+    sapply(seq_len(nrow(va)), function(i) va$age_first[i]:va$age_last[i]) |>
+        unlist() |> sort()
+}
