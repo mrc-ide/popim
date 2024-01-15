@@ -91,9 +91,24 @@ get_consecutive_range <- function(ages) {
         age_min <- min(ages)
         age_max <- max(ages)
 
-        ind <- which(suppressWarnings(ages - (age_min:age_max) == 0))
+        tt <- table(factor(ages, levels = age_min:age_max))
 
-        list(range = range(ages[ind]), ages_res = ages[-ind])
+        a_mis <- which(tt == 0)[1]
+        if(is.na(a_mis)) {
+            my_range <- c(age_min, age_max)
+            tt <- tt - 1
+
+        } else {
+
+            my_range <- c(age_min, tt[a_mis-1] |> names() |> as.numeric())
+            tt[1:(a_mis-1)] <- tt[1:(a_mis-1)] - 1
+        }
+
+        ages_left <- sapply(seq_along(tt), function(i)
+            rep(names(tt)[i] |> as.numeric(), tt[i])) |>
+            unlist()
+
+        list(range = my_range, ages_res = ages_left)
     }
 
     age_ranges <- list()
