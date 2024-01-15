@@ -73,3 +73,35 @@ get_all_ages <- function(va) {
     sapply(seq_len(nrow(va)), function(i) va$age_first[i]:va$age_last[i]) |>
         unlist() |> sort()
 }
+
+get_consecutive_range <- function(ages) {
+
+    assert_non_negative(ages)
+    assert_wholenumber(ages)
+
+    ages <- sort(ages)
+
+    consecutive_start <- function(ages) {
+        ## ages is a non-negative integer vector of ages that are targeted
+        ## in a vaccination activity.
+
+        ## This function checks if these ages are consecutive, so can be
+        ## expressed as age_min:age_max
+
+        age_min <- min(ages)
+        age_max <- max(ages)
+
+        ind <- which(suppressWarnings(ages - (age_min:age_max) == 0))
+
+        list(range = range(ages[ind]), ages_res = ages[-ind])
+    }
+
+    age_ranges <- list()
+    while(length(ages) > 0) {
+        tmp <- consecutive_start(ages)
+        age_ranges[[length(age_ranges) + 1]] <- tmp$range
+        ages <- tmp$ages_res
+    }
+
+    age_ranges
+}
