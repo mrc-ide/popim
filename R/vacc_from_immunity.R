@@ -84,6 +84,15 @@ get_all_ages <- function(va) {
         unlist() |> sort()
 }
 
+##' Summarise the individual ages into one or more consecutive age ranges
+##'
+##' @param ages non-negative integer vector of individual ages to be
+##'     targeted in a vaccination activity.
+##' @return list of age ranges: The list elements are integer vectors
+##'     of length 2, giving the age_first and age_last of the age
+##'     range into which the ages can be aggregated. The length of the
+##'     list depends on the complexity of the input ages.
+##' @author Tini Garske
 get_consecutive_range <- function(ages) {
 
     assert_non_negative(ages)
@@ -93,7 +102,7 @@ get_consecutive_range <- function(ages) {
 
     consecutive_start <- function(ages) {
         ## ages is a non-negative integer vector of ages that are targeted
-        ## in a vaccination activity.
+        ## in a vaccination activity, as output by function get_all_ages.
 
         ## This function checks if these ages are consecutive, so can be
         ## expressed as age_min:age_max
