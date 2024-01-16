@@ -142,3 +142,54 @@ get_consecutive_range <- function(ages) {
 
     age_ranges
 }
+
+##' @importFrom rlang .data
+aggregate_vacc_activities <- function(vacc_act) {
+    n_digits <- 10
+
+    vacc_act <- vacc_act |>
+        dplyr::mutate(coverage = round(.data$coverage, n_digits)) |>
+        dplyr::group_by(.data$region, .data$year, .data$targeting,
+                        .data$coverage) |>
+        dplyr::arrange(.data$region, .data$year, .data$targeting,
+                       .data$coverage) |>
+        dplyr::mutate(id = dplyr::cur_group_id())
+
+    va_agg <- vacc_act |> dplyr::summarise(doses = sum(.data$doses),
+                                           id = mean(.data$id))
+    class(vacc_act) <- c("vip_vacc_activities", "data.frame")
+
+    vacc_ids <- vacc_act$id |> unique()
+    ages_list <- lapply(vacc_ids,
+                        function(i) get_all_ages(vacc_act |>
+                                                 dplyr::filter(.data$id == i)))
+
+    ranges_list <- lapply(seq_along(ages_list),
+                          function(i) get_consecutive_range(ages_list[[i]]))
+    if((depth <- list_depth(ranges_list)) != 2)
+        stop("ranges_list should have depth 2, but here it has %d.", depth)
+
+    n_ranges <- vapply(seq_along(ranges_list),
+                       function(i) length(ranges_list[[i]]), integer(1))
+
+    ranges_df <- data.frame(id = vacc_ids, n_ranges = n_ranges) |>
+        tidyr::uncount(n_ranges, .remove = FALSE, .id = "id2")
+
+    ranges_df <- do.call(rbind, unlist(ranges_list, recursive = FALSE)) |>
+        as.data.frame() |>
+        dplyr::rename(age_first = .data$V1, age_last = .data$V2) |>
+        cbind(ranges_df)
+
+    va_agg$n_ranges <- n_ranges
+    va_agg <- va_agg |>
+        dplyr::mutate(doses = ifelse(n_ranges == 1, .data$doses, NA)) |>
+        tidyr::uncount(.data$n_ranges, .id = "id2") |>
+        dplyr::left_join(ranges_df, by = c("id", "id2")) |>
+        dplyr::select(tidyselect::all_of(c("region", "year", "age_first",
+                                           "age_last", "coverage", "doses",
+                                           "targeting")))
+    class(va_agg) <- c("vip_vacc_activities", "data.frame")
+    validate_vacc_activities(va_agg)
+
+    va_agg
+}
