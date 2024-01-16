@@ -26,6 +26,8 @@
 ##' @importFrom rlang .data
 vacc_from_immunity <- function(pop, targeting = "random") {
 
+    n_digits <- 10 ## digits to be used to round coverage before sorting
+
     assert_valid_targeting(targeting)
     stopifnot(targeting == "random")
     
@@ -51,7 +53,8 @@ vacc_from_immunity <- function(pop, targeting = "random") {
         dplyr::select(tidyselect::all_of(c("region", "year", "age_first",
                                            "age_last", "coverage", "doses",
                                            "targeting"))) |>
-        dplyr::arrange(.data$region, .data$year, .data$age_first)
+        dplyr::arrange(.data$region, .data$year, .data$targeting,
+                       round(.data$coverage, n_digits), .data$age_first)
 
     class(vaccs) <- c("vip_vacc_activities", "data.frame")
     validate_vacc_activities(vaccs)
