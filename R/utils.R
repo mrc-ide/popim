@@ -18,3 +18,6 @@ dquote <- function(x) {
 pasteq <- function(x, sep = ", ") {
   paste(squote(x), collapse = ", ")
 }
+
+list_depth <- function(this)
+    ifelse(is.list(this), 1L + max(sapply(this, list_depth)), 0L)
