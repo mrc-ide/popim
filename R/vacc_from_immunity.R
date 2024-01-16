@@ -63,7 +63,17 @@ vacc_from_immunity <- function(pop, targeting = "random") {
     ## age_last option.
 }
 
-
+##' Expand the age range given by age_first and age_last into an
+##' integer vector giving each individual age group
+##'
+##' If the vip_vacc_activities object contains more than one row the
+##' rows are assumed to belong to the same campaign, but detail
+##' different age groups. The function will expand the age ranges to a
+##' vector that gives every single age cohort targeted.
+##'
+##' @param va object of class vip_vacc_activities
+##' @return integer vector of variable length
+##' @author Tini Garske
 get_all_ages <- function(va) {
 
     assert_vacc_activities(va)
