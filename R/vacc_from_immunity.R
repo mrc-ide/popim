@@ -155,8 +155,9 @@ aggregate_vacc_activities <- function(vacc_act) {
                        .data$coverage) |>
         dplyr::mutate(id = dplyr::cur_group_id())
 
-    va_agg <- vacc_act |> dplyr::summarise(doses = sum(.data$doses),
-                                           id = mean(.data$id))
+    va_agg <- vacc_act |>
+        dplyr::summarise(doses = sum(.data$doses), id = mean(.data$id)) |>
+        dplyr::ungroup()
     class(vacc_act) <- c("vip_vacc_activities", "data.frame")
 
     vacc_ids <- vacc_act$id |> unique()
