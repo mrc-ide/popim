@@ -43,10 +43,11 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
         dplyr::select(!tidyselect::any_of("year_next")) |>
         dplyr::mutate(immunity_diff = .data$immunity_next - .data$immunity,
                       pop_size_diff = .data$pop_size_next - .data$pop_size)|>
-        ## for random targeting:
-        dplyr::mutate(coverage = (.data$immunity_next - .data$immunity) /
-                          (1 - .data$immunity)) |>
-        dplyr::mutate(coverage = round(.data$coverage, digits = n_digits)) |>
+        dplyr::mutate(coverage =
+                          coverage_from_immunity_diff(.data$immunity,
+                                                      .data$immunity_next,
+                                                      targeting = targeting,
+                                                      n_digits = n_digits)) |>
         dplyr::mutate(doses = .data$pop_size * .data$coverage) |>
         dplyr::filter(.data$coverage > 0) |>
         dplyr::mutate(age_first = .data$age, age_last = .data$age,
@@ -62,6 +63,23 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
     validate_vacc_activities(vaccs)
 
     vaccs
+}
+
+coverage_from_immunity_diff <- function(imm_now, imm_next, targeting,
+                                        n_digits = 10) {
+
+    assert_valid_targeting(targeting)
+
+    if(targeting == "random") {
+        coverage <- (imm_next - imm_now) / (1 - imm_now)
+    } else if(targeting == "targeted") {
+        coverage <- imm_next - imm_now
+    } else if(targeting == "correlated") {
+        coverage <- ifelse(imm_next > imm_now, imm_next, 0)
+    }
+
+    coverage <- round(coverage, digits = n_digits)
+    coverage
 }
 
 ##' Expand the age range given by age_first and age_last into an
