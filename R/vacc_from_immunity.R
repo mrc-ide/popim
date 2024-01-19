@@ -19,14 +19,13 @@
 ##'     are to be inferred
 ##' @param targeting string to determine the assumption of how doses
 ##'     are allocated. Valid options are "random", "correlated",
-##'     "targeted". 
+##'     "targeted".
+##' @param n_digits number of digits to which the coverage is to be rounded.
 ##' @return vip_vacc_activites object
 ##' @export
 ##' @author Tini Garske
 ##' @importFrom rlang .data
-vacc_from_immunity <- function(pop, targeting = "random") {
-
-    n_digits <- 10 ## digits to be used to round coverage before sorting
+vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
 
     assert_population(pop)
     assert_valid_targeting(targeting)
@@ -45,8 +44,8 @@ vacc_from_immunity <- function(pop, targeting = "random") {
         dplyr::mutate(immunity_diff = .data$immunity_next - .data$immunity,
                       pop_size_diff = .data$pop_size_next - .data$pop_size)|>
         ## for random targeting:
-        dplyr::mutate(coverage = (.data$immunity_next - .data$immunity) /
-                          (1 - .data$immunity)) |>
+        dplyr::mutate(coverage = round((.data$immunity_next - .data$immunity) /
+                          (1 - .data$immunity)), n_digits) |>
         dplyr::mutate(doses = .data$pop_size * .data$coverage) |>
         dplyr::filter(.data$coverage > 0) |>
         dplyr::mutate(age_first = .data$age, age_last = .data$age,
@@ -58,9 +57,8 @@ vacc_from_immunity <- function(pop, targeting = "random") {
                        round(.data$coverage, n_digits), .data$age_first)
 
     class(vaccs) <- c("vip_vacc_activities", "data.frame")
-    validate_vacc_activities(vaccs)
 
-    vaccs <- aggregate_vacc_activities(vaccs)
+    vaccs <- aggregate_vacc_activities(vaccs, n_digits = n_digits)
     validate_vacc_activities(vaccs)
 
     vaccs
@@ -144,9 +142,7 @@ get_consecutive_range <- function(ages) {
 }
 
 ##' @importFrom rlang .data
-aggregate_vacc_activities <- function(vacc_act) {
-
-    n_digits <- 10
+aggregate_vacc_activities <- function(vacc_act, n_digits = 10) {
 
     assert_vacc_activities(vacc_act)
 

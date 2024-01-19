@@ -4,7 +4,7 @@
 \alias{vacc_from_immunity}
 \title{Infer vaccination activities from population}
 \usage{
-vacc_from_immunity(pop, targeting = "random")
+vacc_from_immunity(pop, targeting = "random", n_digits = 10)
 }
 \arguments{
 \item{pop}{vip_population object for which vaccination activities
@@ -13,6 +13,8 @@ are to be inferred}
 \item{targeting}{string to determine the assumption of how doses
 are allocated. Valid options are "random", "correlated",
 "targeted".}
+
+\item{n_digits}{number of digits to which the coverage is to be rounded.}
 }
 \value{
 vip_vacc_activites object
