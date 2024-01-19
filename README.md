@@ -274,6 +274,51 @@ ggplot(pop_agg, aes(x = year, y = immunity, col = region)) +
 
 <img src="man/figures/README-calc_pop_immunity-1.png" width="100%" />
 
+Given a `vip_population` object, the vaccination activities that would
+be needed to achieve the specified population immunity can be inferred
+with the function `vacc_from_immunity()`, given an assumption on the
+targeting method of the vaccination activities. Using this function on
+the population we have just constructed does indeed yield the original
+vaccination activities back:
+
+``` r
+
+vacc_act <- vacc_from_immunity(pop, targeting = "random")
+vacc_act
+#>    region year age_first age_last   coverage    doses targeting
+#> 1     NGA 1971         0       99 0.02633246  1496674    random
+#> 2     NGA 1974         0       99 0.01798622  1100000    random
+#> 3     NGA 1987         0       99 0.19308487 16999989    random
+#> 4     NGA 1989         0       99 0.15095306 13999990    random
+#> 5     NGA 1990         0        0 0.33085152  1252267    random
+#> 6     NGA 1991         0        0 0.31811556  1231267    random
+#> 7     NGA 1992         0        0 0.30624627  1214359    random
+#> 8     NGA 1993         0        0 0.29497841  1201231    random
+#> 9     NGA 1994         0        0 0.28479626  1192498    random
+#> 10    NGA 1995         0        0 0.27482056  1181349    random
+#> 11    NGA 1996         0        0 0.26462412  1163875    random
+#> 12    NGA 1997         0        0 0.25487501  1143137    random
+#> 13    NGA 1998         0        0 0.24554675  1122657    random
+#> 14    NGA 1999         0        0 0.23661858  1112862    random
+#> 15    NGA 2000         0        0 0.22802523  1110595    random
+#> 16    NGA 2001         0        0 0.21913782  1101837    random
+#> 17    NGA 2002         0        0 0.21065106  1090764    random
+#> 18    NGA 2003         0        0 0.20253629  1077450    random
+#> 19    NGA 2004         0        0 0.19473330  1060944    random
+#> 20    NGA 2005         0        0 0.19513761  1089823    random
+#> 21    NGA 2006         0        0 0.20060929  1149092    random
+#> 22    NGA 2007         0        0 0.20890546  1225697    random
+#> 23    NGA 2008         0        0 0.22028150  1326200    random
+#> 24    NGA 2009         0        0 0.22974189  1417495    random
+#> 25    NGA 2010         0        0 0.24589456  1549583    random
+#> 26    NGA 2011         0        0 0.26857787  1728120    random
+#> 27    NGA 2012         0        0 0.28491655  1866237    random
+#> 28    NGA 2013         0        0 0.30095890  1997462    random
+```
+
+Note that this is currently only implemented for the`random` targeting
+method.
+
 <!-- You'll still need to render `README.Rmd` regularly, to keep -->
 
 <!-- `README.md` up-to-date. `devtools::build_readme()` is handy for -->

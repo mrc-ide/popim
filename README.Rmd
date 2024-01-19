@@ -185,7 +185,8 @@ plot_immunity(pop)
 
 ```
 
-The overall population immunity can be aggregated across ages using the function `calc_pop_immunity()`:
+The overall population immunity can be aggregated across ages using
+the function `calc_pop_immunity()`:
 
 ```{r calc_pop_immunity}
 pop_agg <- calc_pop_immunity(pop)
@@ -196,12 +197,22 @@ ggplot(pop_agg, aes(x = year, y = immunity, col = region)) +
 
 ```
 
+Given a `vip_population` object, the vaccination activities that would
+be needed to achieve the specified population immunity can be inferred
+with the function `vacc_from_immunity()`, given an assumption on the
+targeting method of the vaccination activities. Using this function on
+the population we have just constructed does indeed yield the original
+vaccination activities back:
 
+```{r }
 
+vacc_act <- vacc_from_immunity(pop, targeting = "random")
+vacc_act
 
+```
 
-
-
+Note that this is currently only implemented for the`random` targeting
+method.
 
 <!-- You'll still need to render `README.Rmd` regularly, to keep -->
 <!-- `README.md` up-to-date. `devtools::build_readme()` is handy for -->
