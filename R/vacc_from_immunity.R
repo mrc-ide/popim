@@ -141,6 +141,21 @@ get_consecutive_range <- function(ages) {
     age_ranges
 }
 
+##' Aggregate matching vaccination activities across age groups
+##'
+##' The vaccination activities contained in the input dataset are
+##' matched by region, year, coverage and targeting method, and for
+##' any that match on these variables, the age range will be
+##' compressed into a (or several) consecutive age range, such that
+##' the same information is coded in fewer lines.
+##'
+##' @param vacc_act vip_vacc_activities object to be aggregated
+##' @param n_digits number of digits to which coverage is rounded
+##'     before coverages from different activities are matched.
+##' @return vip_vacc_activities object containing the same vaccination
+##'     activities as the input object, but where possible aggregated
+##'     into fewer lines
+##' @author Tini Garske
 ##' @importFrom rlang .data
 aggregate_vacc_activities <- function(vacc_act, n_digits = 10) {
 
