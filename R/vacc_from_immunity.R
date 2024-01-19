@@ -28,6 +28,7 @@ vacc_from_immunity <- function(pop, targeting = "random") {
 
     n_digits <- 10 ## digits to be used to round coverage before sorting
 
+    assert_population(pop)
     assert_valid_targeting(targeting)
     stopifnot(targeting == "random")
     
@@ -59,11 +60,10 @@ vacc_from_immunity <- function(pop, targeting = "random") {
     class(vaccs) <- c("vip_vacc_activities", "data.frame")
     validate_vacc_activities(vaccs)
 
+    vaccs <- aggregate_vacc_activities(vaccs)
+    validate_vacc_activities(vaccs)
+
     vaccs
-    ## this vip_vacc_activities object has individual entries for each
-    ## age group. To do: implement an aggregation function that
-    ## aggregates compatible activities using the age_first and
-    ## age_last option.
 }
 
 ##' Expand the age range given by age_first and age_last into an
@@ -145,7 +145,10 @@ get_consecutive_range <- function(ages) {
 
 ##' @importFrom rlang .data
 aggregate_vacc_activities <- function(vacc_act) {
+
     n_digits <- 10
+
+    assert_vacc_activities(vacc_act)
 
     vacc_act <- vacc_act |>
         dplyr::mutate(coverage = round(.data$coverage, n_digits)) |>
@@ -190,7 +193,6 @@ aggregate_vacc_activities <- function(vacc_act) {
                                            "age_last", "coverage", "doses",
                                            "targeting")))
     class(va_agg) <- c("vip_vacc_activities", "data.frame")
-    validate_vacc_activities(va_agg)
 
     va_agg
 }
