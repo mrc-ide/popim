@@ -316,9 +316,6 @@ vacc_act
 #> 28    NGA 2013         0        0 0.30095890  1997462    random
 ```
 
-Note that this is currently only implemented for the`random` targeting
-method.
-
 <!-- You'll still need to render `README.Rmd` regularly, to keep -->
 
 <!-- `README.md` up-to-date. `devtools::build_readme()` is handy for -->
