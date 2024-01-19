@@ -44,8 +44,9 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
         dplyr::mutate(immunity_diff = .data$immunity_next - .data$immunity,
                       pop_size_diff = .data$pop_size_next - .data$pop_size)|>
         ## for random targeting:
-        dplyr::mutate(coverage = round((.data$immunity_next - .data$immunity) /
-                          (1 - .data$immunity)), n_digits) |>
+        dplyr::mutate(coverage = (.data$immunity_next - .data$immunity) /
+                          (1 - .data$immunity)) |>
+        dplyr::mutate(coverage = round(.data$coverage, digits = n_digits)) |>
         dplyr::mutate(doses = .data$pop_size * .data$coverage) |>
         dplyr::filter(.data$coverage > 0) |>
         dplyr::mutate(age_first = .data$age, age_last = .data$age,
@@ -57,7 +58,6 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
                        round(.data$coverage, n_digits), .data$age_first)
 
     class(vaccs) <- c("vip_vacc_activities", "data.frame")
-
     vaccs <- aggregate_vacc_activities(vaccs, n_digits = n_digits)
     validate_vacc_activities(vaccs)
 
