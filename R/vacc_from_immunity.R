@@ -41,22 +41,13 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
 
     assert_population(pop)
     assert_valid_targeting(targeting)
-    
-    pop_next <- pop |>
-        dplyr::rename(year_next = .data$year, pop_size_next = .data$pop_size,
-               immunity_next = .data$immunity) |>
-        dplyr::select(!tidyselect::any_of("age"))
 
-    pop <- pop |> dplyr::mutate(year_next = .data$year + 1)
+    pop <- add_immunity_rate(pop)
 
-    vaccs <- dplyr::left_join(pop, pop_next,
-                              by = c("region", "cohort", "year_next")) |>
-        dplyr::select(!tidyselect::any_of("year_next")) |>
-        dplyr::mutate(immunity_diff = .data$immunity_next - .data$immunity,
-                      pop_size_diff = .data$pop_size_next - .data$pop_size)|>
+    vaccs <- pop |>
         dplyr::mutate(coverage =
                           coverage_from_immunity_diff(.data$immunity,
-                                                      .data$immunity_next,
+                                                      .data$immunity_diff,
                                                       targeting = targeting,
                                                       n_digits = n_digits)) |>
         dplyr::mutate(doses = .data$pop_size * .data$coverage) |>
@@ -78,17 +69,41 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
     vaccs
 }
 
-coverage_from_immunity_diff <- function(imm_now, imm_next, targeting,
+##' Add the rate of immunity change to a vip_population object
+##'
+##' @param pop vip_population_object
+##' @return the input vip_population object with an added column
+##'     `immunity_diff` that holds the difference in immunity between
+##'     the current and next year.
+##' @author Tini Garske
+##' @importFrom rlang .data
+add_immunity_rate <- function(pop) {
+    pop_next <- pop |>
+        dplyr::rename(year_next = .data$year,
+                      immunity_next = .data$immunity) |>
+        dplyr::select(!tidyselect::any_of(c("age", "pop_size")))
+
+    pop <- pop |> dplyr::mutate(year_next = .data$year + 1)
+
+    pop_out <- dplyr::left_join(pop, pop_next,
+                                by = c("region", "cohort", "year_next")) |>
+        dplyr::mutate(immunity_diff = .data$immunity_next - .data$immunity) |>
+        dplyr::select(!tidyselect::any_of(c("year_next", "immunity_next")))
+
+    pop_out
+}
+
+coverage_from_immunity_diff <- function(imm_now, imm_diff, targeting,
                                         n_digits = 10) {
 
     assert_valid_targeting(targeting)
 
     if(targeting == "random") {
-        coverage <- (imm_next - imm_now) / (1 - imm_now)
+        coverage <- (imm_diff) / (1 - imm_now)
     } else if(targeting == "targeted") {
-        coverage <- imm_next - imm_now
+        coverage <- imm_diff
     } else if(targeting == "correlated") {
-        coverage <- ifelse(imm_next > imm_now, imm_next, 0)
+        coverage <- ifelse(imm_diff > 0, imm_now + imm_diff, 0)
     }
 
     coverage <- round(coverage, digits = n_digits)
