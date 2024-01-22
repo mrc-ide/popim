@@ -14,7 +14,8 @@ are to be inferred}
 are allocated. Valid options are "random", "correlated",
 "targeted".}
 
-\item{n_digits}{number of digits to which the coverage is to be rounded.}
+\item{n_digits}{number of digits to which the coverage is to be
+rounded.}
 }
 \value{
 vip_vacc_activites object
@@ -36,6 +37,17 @@ first, while the option "correlated" models a situation of
 inequalities in access to vaccination - in this extreme cases, all
 previously vaccinated individuals will be vaccinated first, before
 any remaining doses are given to unvaccinated individuals.
+
+Note that this function will not return any potential vaccination
+activities that don't change the immunity, for instance if
+\code{targeting} is set to "correlated" and the coverage is too small
+to increase population immunity, or if the immunity prior to the
+activity was already at 1.
+
+The vaccination of the oldest age group in the population will
+also never be picked up as this age group will have aged out of
+the population (i.e., died) before the immunity is updated in the
+next year.
 }
 \author{
 Tini Garske

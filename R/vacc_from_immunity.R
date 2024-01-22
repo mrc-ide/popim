@@ -15,12 +15,24 @@
 ##' inequalities in access to vaccination - in this extreme cases, all
 ##' previously vaccinated individuals will be vaccinated first, before
 ##' any remaining doses are given to unvaccinated individuals.
+##'
+##' Note that this function will not return any potential vaccination
+##' activities that don't change the immunity, for instance if
+##' `targeting` is set to "correlated" and the coverage is too small
+##' to increase population immunity, or if the immunity prior to the
+##' activity was already at 1.
+##'
+##' The vaccination of the oldest age group in the population will
+##' also never be picked up as this age group will have aged out of
+##' the population (i.e., died) before the immunity is updated in the
+##' next year.
 ##' @param pop vip_population object for which vaccination activities
 ##'     are to be inferred
 ##' @param targeting string to determine the assumption of how doses
 ##'     are allocated. Valid options are "random", "correlated",
 ##'     "targeted".
-##' @param n_digits number of digits to which the coverage is to be rounded.
+##' @param n_digits number of digits to which the coverage is to be
+##'     rounded.
 ##' @return vip_vacc_activites object
 ##' @export
 ##' @author Tini Garske
@@ -29,7 +41,6 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
 
     assert_population(pop)
     assert_valid_targeting(targeting)
-    stopifnot(targeting == "random")
     
     pop_next <- pop |>
         dplyr::rename(year_next = .data$year, pop_size_next = .data$pop_size,
@@ -51,7 +62,7 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
         dplyr::mutate(doses = .data$pop_size * .data$coverage) |>
         dplyr::filter(.data$coverage > 0) |>
         dplyr::mutate(age_first = .data$age, age_last = .data$age,
-                      targeting = "random") |>
+                      targeting = targeting) |>
         dplyr::select(tidyselect::all_of(c("region", "year", "age_first",
                                            "age_last", "coverage", "doses",
                                            "targeting"))) |>
@@ -59,7 +70,9 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
                        round(.data$coverage, n_digits), .data$age_first)
 
     class(vaccs) <- c("vip_vacc_activities", "data.frame")
-    vaccs <- aggregate_vacc_activities(vaccs, n_digits = n_digits)
+    if(nrow(vaccs) > 1)
+        vaccs <- aggregate_vacc_activities(vaccs, n_digits = n_digits)
+    vaccs <- complete_vacc_activities(vaccs, pop)
     validate_vacc_activities(vaccs)
 
     vaccs
@@ -178,6 +191,12 @@ get_consecutive_range <- function(ages) {
 aggregate_vacc_activities <- function(vacc_act, n_digits = 10) {
 
     assert_vacc_activities(vacc_act)
+
+    if(nrow(vacc_act) < 2) {
+        message(sprintf("vacc_act has %d rows, no aggregation performed.",
+                        nrow(vacc_act)))
+        return(vacc_act)
+    }
 
     vacc_act <- vacc_act |>
         dplyr::mutate(coverage = round(.data$coverage, n_digits)) |>
