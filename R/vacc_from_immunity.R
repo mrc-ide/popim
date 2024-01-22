@@ -78,17 +78,26 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
 ##' @author Tini Garske
 ##' @importFrom rlang .data
 add_immunity_rate <- function(pop) {
+
+    a <- attributes(pop)
+
+    pop <- pop |> dplyr::select(!tidyselect::any_of("immunity_diff"))
+
     pop_next <- pop |>
         dplyr::rename(year_next = .data$year,
                       immunity_next = .data$immunity) |>
-        dplyr::select(!tidyselect::any_of(c("age", "pop_size")))
+        dplyr::select(tidyselect::all_of(c("region", "year_next", "cohort",
+                                           "immunity_next")))
 
     pop <- pop |> dplyr::mutate(year_next = .data$year + 1)
 
     pop_out <- dplyr::left_join(pop, pop_next,
                                 by = c("region", "cohort", "year_next")) |>
         dplyr::mutate(immunity_diff = .data$immunity_next - .data$immunity) |>
-        dplyr::select(!tidyselect::any_of(c("year_next", "immunity_next")))
+        dplyr::select(!tidyselect::all_of(c("year_next", "immunity_next")))
+
+    a$names <- names(pop_out)
+    attributes(pop_out) <- a
 
     pop_out
 }
