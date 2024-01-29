@@ -31,20 +31,23 @@ columns region, year, age, cohort, immunity and pop_size,
 where year and age cover the ranges given by the input
 parameters. Cohort = year - age and gives the year of
 birth. It is redundant but included for ease of
-handling. Immunity and pop_size are initialised as 0
-throughout the whole population.
+handling. Immunity and pop_size are initialised as 0 and NA,
+respectively, throughout the whole population.
 }
 \description{
-The "vip_population" object is a dataframe used to track
-vaccination coverage by age through time for a single
-location. The dataframe has at least the 5 columns region, year,
-age, cohort and immunity.
+The "vip_population" object is a dataframe that models an
+age-structured population through time, tracking population size
+and vaccine-induced immunity in the population.
 }
 \details{
-This function generates a such a dataframe.  Each age and year is
-tracked in a row and the proportion of the population that is
-immune is recorded. Immunity is initialised as 0 throughout by
-this function, and pop_size to NA_real_.
+This constructor sets up the population as fully susceptible
+(i.e., \code{immunity = 0}, with missing population size (i.e.,
+\code{pop_size = NA_real_}) throughout.
+
+A population with non-missing population size can be read in from
+a suitable file using \code{\link[=read_population]{read_population()}}, while vaccine induced
+immunity can be generated through applying vaccination activities
+to the population with \code{\link[=apply_vaccs]{apply_vaccs()}}.
 }
 \author{
 Tini Garske

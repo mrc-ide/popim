@@ -2,14 +2,14 @@
 % Please edit documentation in R/vip_population.R
 \name{read_population}
 \alias{read_population}
-\title{Reading population data from a .csv file}
+\title{Reading vip_population data from a .csv file}
 \usage{
 read_population(file)
 }
 \arguments{
-\item{file}{Name of the file from which the population data are to
-be read. If it does not contain an absolute path, the file
-name is relative to the current working directory.}
+\item{file}{Name of the .csv file from which the population data
+are to be read. If it does not contain an absolute path, the
+file name is relative to the current working directory.}
 }
 \value{
 object of class "vip_population", a dataframe with one row
@@ -22,17 +22,21 @@ the data fulfils the requirements for a "vip_population"
 object, and if so returns this object.
 }
 \details{
-The requirements are that the data contain the columns "region",
-"age", "year". Columns "pop_size" and "immunity" are optional. The
-columns will be coerced to character, integer, integer, numeric,
-double, respectively.  If the column "immunity" exists, it will be
-used to initialise the immunity data, if it doesn't exist,
-immunity will be initialised to zero. If colunn pop_size doesn't
-exist, it will be initialised to NA.
+The requirements are that the data contain the columns \code{region},
+\code{age}, \code{year} which will be coerced to character, integer,
+integer. Columns \code{pop_size} and \code{immunity} are optional; they will
+be coerced to numeric, and if missing will be initialised to 0 and
+NA, respectively be set to NA and 0, respectively.
 
-0 <= age
-0 <= immunity <= 1
-0 <= pop_size
+Limitations for values:
+\itemize{
+\item \code{age} must be non-negative integer
+\item \code{immunity} must be between 0 and 1 (inclusive)
+\item \code{pop_size} must be non-negative
+}
+}
+\seealso{
+\code{\link[utils:read.table]{utils::read.csv()}} which handles the reading of the .csv file.
 }
 \author{
 Tini Garske

@@ -1,14 +1,17 @@
 ##' Constructor of an object of the "vip_population" class
 ##'
-##' The "vip_population" object is a dataframe used to track
-##' vaccination coverage by age through time for a single
-##' location. The dataframe has at least the 5 columns region, year,
-##' age, cohort and immunity.
+##' The "vip_population" object is a dataframe that models an
+##' age-structured population through time, tracking population size
+##' and vaccine-induced immunity in the population.
 ##'
-##' This function generates a such a dataframe.  Each age and year is
-##' tracked in a row and the proportion of the population that is
-##' immune is recorded. Immunity is initialised as 0 throughout by
-##' this function, and pop_size to NA_real_.
+##' This constructor sets up the population as fully susceptible
+##' (i.e., `immunity = 0`, with missing population size (i.e.,
+##' `pop_size = NA_real_`) throughout.
+##'
+##' A population with non-missing population size can be read in from
+##' a suitable file using [read_population()], while vaccine induced
+##' immunity can be generated through applying vaccination activities
+##' to the population with [apply_vaccs()].
 ##' 
 ##' @param region character vector, list of regions considered.
 ##' @param year_min integer, first year to be considered.
@@ -22,8 +25,8 @@
 ##'     where year and age cover the ranges given by the input
 ##'     parameters. Cohort = year - age and gives the year of
 ##'     birth. It is redundant but included for ease of
-##'     handling. Immunity and pop_size are initialised as 0
-##'     throughout the whole population.
+##'     handling. Immunity and pop_size are initialised as 0 and NA,
+##'     respectively, throughout the whole population.
 ##' @export
 ##' @author Tini Garske
 vip_population <- function(region = character(),
@@ -66,30 +69,30 @@ vip_population <- function(region = character(),
     df
 }
 
-##' Reading population data from a .csv file
+##' Reading vip_population data from a .csv file
 ##'
 ##' Reads a population data from a .csv file, checks if
 ##' the data fulfils the requirements for a "vip_population"
 ##' object, and if so returns this object.
 ##'
-##' The requirements are that the data contain the columns "region",
-##' "age", "year". Columns "pop_size" and "immunity" are optional. The
-##' columns will be coerced to character, integer, integer, numeric,
-##' double, respectively.  If the column "immunity" exists, it will be
-##' used to initialise the immunity data, if it doesn't exist,
-##' immunity will be initialised to zero. If colunn pop_size doesn't
-##' exist, it will be initialised to NA.
+##' The requirements are that the data contain the columns `region`,
+##' `age`, `year` which will be coerced to character, integer,
+##' integer. Columns `pop_size` and `immunity` are optional; they will
+##' be coerced to numeric, and if missing will be initialised to 0 and
+##' NA, respectively be set to NA and 0, respectively.
 ##'
-##' 0 <= age
-##' 0 <= immunity <= 1
-##' 0 <= pop_size
+##' Limitations for values:
+##' * `age` must be non-negative integer
+##' * `immunity` must be between 0 and 1 (inclusive)
+##' * `pop_size` must be non-negative
 ##'
-##' @param file Name of the file from which the population data are to
-##'     be read. If it does not contain an absolute path, the file
-##'     name is relative to the current working directory.
+##' @param file Name of the .csv file from which the population data
+##'     are to be read. If it does not contain an absolute path, the
+##'     file name is relative to the current working directory.
 ##' @return object of class "vip_population", a dataframe with one row
 ##'     per birth cohort/year/region, with columns "region", "year",
 ##'     "age", "cohort", "immunity", "pop_size".
+##' @seealso [utils::read.csv()] which handles the reading of the .csv file.
 ##' @author Tini Garske
 ##' @export
 read_population <- function(file) {
