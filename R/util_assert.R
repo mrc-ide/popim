@@ -130,12 +130,6 @@ assert_population <- function(x, name = deparse(substitute(x))) {
              call. = FALSE)
 }
 
-assert_vip_pop_wide <- function(x, name = deparse(substitute(x))) {
-    if(!class(x) == "vip_population_wide")
-        stop(sprintf("'%s' must be of class 'vip_pop_wide'", name),
-             call. = FALSE)
-}
-
 assert_vacc_activities <- function(x, name = deparse(substitute(x))) {
     if(!all(class(x) == c("vip_vacc_activities", "data.frame")))
         stop(sprintf("'%s' must be of class 'vip_vacc_activities'", name),
