@@ -38,5 +38,13 @@ test_that("is_population rejects df with immunity outside (0, 1)", {
     df$immunity[5] <- 1.3
     expect_false(is_population(df))
 })
+
+test_that("is_population rejects when attributes are missing", {
+    df <- vip_population("UK", 2000, 2003, 0, 2)
+
+    attr(df, "region") <- NULL
+    expect_false(is_population(df))
+
+})
         
         

@@ -17,6 +17,8 @@ is_population <- function(x, tol = .Machine$double.eps^0.5) {
     ## This could be improved with sensible error messages in the
     ## assert_... style.
 
+    ## This isn't currently testing for consecutive age and year ranges etc.
+
     assert_population(x)
 
     if(!(ncol(x) >= 5 &&
@@ -46,6 +48,19 @@ is_population <- function(x, tol = .Machine$double.eps^0.5) {
         if(!is.numeric(x$pop_size)) return(FALSE)
         if(suppressWarnings(min(x$pop_size, na.rm = TRUE) < 0)) return(FALSE)
     }
+
+    ## testing attributes:
+    a <- attributes(x)
+
+    ## not all attributes are there...
+    if(!all(c("names", "class", "region",
+              "year_min", "year_max", "age_min", "age_max") %in% names(a)))
+        return(FALSE)
+
+    if(length(setdiff(x$region |> unique(), a$region)) > 0) return(FALSE)
+
+    if(!all(x$year |> range() == c(a$year_min, a$year_max))) return(FALSE)
+    if(!all(x$age  |> range() == c(a$age_min,  a$age_max)))  return(FALSE)
 
     TRUE
 }
