@@ -1,6 +1,6 @@
 test_that("vip_population generates a df that passes the is_population check", {
-    expect_equal(is_population(vip_population("UK", 2000, 2005)), TRUE)
-    expect_equal(is_population(vip_population("UK", 0, 100, 5, 10)), TRUE)
+    expect_true(is_population(vip_population("UK", 2000, 2005)))
+    expect_true(is_population(vip_population("UK", 0, 100, 5, 10)))
 })
 
 test_that("is_population rejects df with missing columns", {
