@@ -128,8 +128,9 @@ read_population <- function(file) {
 ##' Any further colunms are simply carried over into the vip_population object.
 ##'
 ##' @param df a dataframe with at least columns region, age, year and pop_size.
-##' @return an object of class vip_populaiton
+##' @return an object of class vip_population
 ##' @author Tini Garske
+##' @noRd
 convert_df_to_pop <- function(df) {
 
     assert_column_exists(df, "region")
