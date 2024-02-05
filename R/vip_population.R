@@ -135,7 +135,6 @@ convert_df_to_pop <- function(df) {
     assert_column_exists(df, "region")
     assert_column_exists(df, "age")
     assert_column_exists(df, "year")
-    assert_column_exists(df, "pop_size")
 
     if(!("pop_size" %in% names(df))) {
         df$pop_size <- NA
@@ -182,9 +181,13 @@ convert_df_to_pop <- function(df) {
     ## no guarantee that the input data are fully consecutive across
     ## all regions. If they aren't, this will generate missing data in
     ## the pop_size and immunity columns.
-    out <- vip_population(region, year_min, year_max, age_min, age_max) |>
+    out <- vip_population(region, year_min, year_max, age_min, age_max)
+    a <- attributes(out)
+
+    out <- out |>
         dplyr::select(!tidyselect::any_of(c("pop_size", "immunity"))) |>
         dplyr::left_join(df, by = c("region", "year", "age"))
+    attributes(out) <- a
 
     if(nrow(out) > nrow(df)) {
         warning(sprintf("Input dataframe has fewer rows than the vip_population generated from it (%d vs %d). This may be due to non-consecutive years or ages, or different year/age ranges for different regions.", nrow(df), nrow(out)))
