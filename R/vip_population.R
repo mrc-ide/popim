@@ -45,9 +45,8 @@ vip_population <- function(region = character(),
     assert_non_negative(age_max - age_min)
 
     df <- expand.grid(region = region, year = year_min:year_max,
-                      age = age_min:age_max, stringsAsFactors = FALSE)
-    attr(df, "out.attrs") <- NULL ## removing the spurious attributes
-                                  ## set by expand.grid
+                      age = age_min:age_max,
+                      KEEP.OUT.ATTRS = FALSE, stringsAsFactors = FALSE)
 
     ## easier handling via cohorts, defined by birth year:
     df$cohort <- df$year - df$age
