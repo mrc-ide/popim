@@ -20,10 +20,10 @@ vip_population(
 \item{year_max}{integer, last year to be considered.}
 
 \item{age_min}{integer, youngest age to be considered, defaults to
-0.}
+0. Must be non-negative.}
 
 \item{age_max}{integer, oldest age to be considered, defaults to
-100.}
+100. Must be non-negative, and >= age_min.}
 }
 \value{
 S3 object of class "vip_population": a dataframe with

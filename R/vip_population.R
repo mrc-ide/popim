@@ -17,9 +17,9 @@
 ##' @param year_min integer, first year to be considered.
 ##' @param year_max integer, last year to be considered.
 ##' @param age_min integer, youngest age to be considered, defaults to
-##'     0.
+##'     0. Must be non-negative.
 ##' @param age_max integer, oldest age to be considered, defaults to
-##'     100.
+##'     100. Must be non-negative, and >= age_min.
 ##' @return S3 object of class "vip_population": a dataframe with
 ##'     columns region, year, age, cohort, immunity and pop_size,
 ##'     where year and age cover the ranges given by the input
@@ -95,10 +95,12 @@ vip_population <- function(region = character(),
 ##' @param file Name of the .csv file from which the population data
 ##'     are to be read. If it does not contain an absolute path, the
 ##'     file name is relative to the current working directory.
-##' @return object of class "vip_population", a dataframe with one row
+##' @return An object of class "vip_population", a dataframe with one row
 ##'     per birth cohort/year/region, with columns "region", "year",
 ##'     "age", "cohort", "immunity", "pop_size".
-##' @seealso [utils::read.csv()] which handles the reading of the .csv file.
+##' @seealso [vip_population()] for details of the S3 class, and
+##'     [utils::read.csv()] which handles the reading of the .csv
+##'     file.
 ##' @author Tini Garske
 ##' @export
 vip_pop_from_file <- function(file) {
@@ -113,10 +115,11 @@ vip_pop_from_file <- function(file) {
     pop
 }
 
-##' Convert a dataframe to a vip_population object
+##' Generate a "vip_population" object from a dataframe
 ##'
-##' `convert_df_to_pop` converts a suitable dataframe to a vip
-##' population object and returns this object.
+##' Checks if the dataframe is suitable (i.e., contains appropriate
+##' columns and data ranges), and if so converts it to a
+##' "vip_population" object and returns this.
 ##'
 ##' The input dataframe has to have at least the columns region, age,
 ##' and year. The output vip_population object is generated via

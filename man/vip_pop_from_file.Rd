@@ -12,7 +12,7 @@ are to be read. If it does not contain an absolute path, the
 file name is relative to the current working directory.}
 }
 \value{
-object of class "vip_population", a dataframe with one row
+An object of class "vip_population", a dataframe with one row
 per birth cohort/year/region, with columns "region", "year",
 "age", "cohort", "immunity", "pop_size".
 }
@@ -36,7 +36,9 @@ Limitations for values:
 }
 }
 \seealso{
-\code{\link[utils:read.table]{utils::read.csv()}} which handles the reading of the .csv file.
+\code{\link[=vip_population]{vip_population()}} for details of the S3 class, and
+\code{\link[utils:read.table]{utils::read.csv()}} which handles the reading of the .csv
+file.
 }
 \author{
 Tini Garske
