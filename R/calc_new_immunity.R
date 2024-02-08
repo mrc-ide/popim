@@ -75,7 +75,7 @@ calc_pop_immunity <- function(pop) {
         dplyr::summarise(pop_size = sum(.data$pop_size),
                          n_immune = sum(.data$n_immune)) |>
         dplyr::mutate(immunity = .data$n_immune / .data$pop_size) |>
-        dplyr::select(!any_of("n_immune"))
+        dplyr::select(!tidyselect::any_of("n_immune"))
 
     pop_no_age
 }

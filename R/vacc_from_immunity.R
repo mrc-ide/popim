@@ -84,8 +84,8 @@ add_immunity_rate <- function(pop) {
     pop <- pop |> dplyr::select(!tidyselect::any_of("immunity_diff"))
 
     pop_next <- pop |>
-        dplyr::rename(year_next = all_of("year"),
-                      immunity_next = all_of("immunity")) |>
+        dplyr::rename(year_next = tidyselect::all_of("year"),
+                      immunity_next = tidyselect::all_of("immunity")) |>
         dplyr::select(tidyselect::all_of(c("region", "year_next", "cohort",
                                            "immunity_next")))
 
@@ -253,7 +253,8 @@ aggregate_vacc_activities <- function(vacc_act, n_digits = 10) {
 
     ranges_df <- do.call(rbind, unlist(ranges_list, recursive = FALSE)) |>
         as.data.frame() |>
-        dplyr::rename(age_first = all_of("V1"), age_last = all_of("V2")) |>
+        dplyr::rename(age_first = tidyselect::all_of("V1"),
+                      age_last = tidyselect::all_of("V2")) |>
         cbind(ranges_df)
 
     va_agg$n_ranges <- n_ranges
