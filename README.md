@@ -122,7 +122,7 @@ vaccination campaigns).
 
 ``` r
 
-pop <- read_population(file = "inst/extdata/pop_sample.csv")
+pop <- vip_pop_from_file(file = "inst/extdata/pop_sample.csv")
 ```
 
 We have read in population data for India (“IND”) and Nigeria (“NGA”)
@@ -266,7 +266,7 @@ pop_agg
 #>  8 IND     1957 416935400.        0
 #>  9 IND     1958 426295762.        0
 #> 10 IND     1959 435900352.        0
-#> # … with 292 more rows
+#> # ℹ 292 more rows
 
 ggplot(pop_agg, aes(x = year, y = immunity, col = region)) +
     geom_point()

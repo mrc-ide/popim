@@ -118,7 +118,7 @@ for mass vaccination campaigns).
 
 ```{r read_population}
 
-pop <- read_population(file = "inst/extdata/pop_sample.csv")
+pop <- vip_pop_from_file(file = "inst/extdata/pop_sample.csv")
 
 ```
 
@@ -209,9 +209,9 @@ vaccination activities back:
 vacc_act <- vacc_from_immunity(pop, targeting = "random")
 vacc_act
 
+
+
 ```
-
-
 
 <!-- You'll still need to render `README.Rmd` regularly, to keep -->
 <!-- `README.md` up-to-date. `devtools::build_readme()` is handy for -->

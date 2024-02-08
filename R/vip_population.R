@@ -9,7 +9,7 @@
 ##' `pop_size = NA_real_`) throughout.
 ##'
 ##' A population with non-missing population size can be read in from
-##' a suitable file using [read_population()], while vaccine induced
+##' a suitable file using [vip_pop_from_file()], while vaccine induced
 ##' immunity can be generated through applying vaccination activities
 ##' to the population with [apply_vaccs()].
 ##' 
@@ -94,7 +94,7 @@ vip_population <- function(region = character(),
 ##' @seealso [utils::read.csv()] which handles the reading of the .csv file.
 ##' @author Tini Garske
 ##' @export
-read_population <- function(file) {
+vip_pop_from_file <- function(file) {
 
     ## assert_file_exists(file)
     if(!file.exists(file))
@@ -102,7 +102,7 @@ read_population <- function(file) {
 
     df <- utils::read.csv(file, stringsAsFactors = FALSE)
 
-    pop <- convert_df_to_pop(df)
+    pop <- vip_pop_from_df(df)
     pop
 }
 
@@ -130,7 +130,7 @@ read_population <- function(file) {
 ##' @return an object of class vip_population
 ##' @author Tini Garske
 ##' @noRd
-convert_df_to_pop <- function(df) {
+vip_pop_from_df <- function(df) {
 
     assert_column_exists(df, "region")
     assert_column_exists(df, "age")

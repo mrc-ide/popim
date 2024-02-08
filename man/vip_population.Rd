@@ -45,7 +45,7 @@ This constructor sets up the population as fully susceptible
 \code{pop_size = NA_real_}) throughout.
 
 A population with non-missing population size can be read in from
-a suitable file using \code{\link[=read_population]{read_population()}}, while vaccine induced
+a suitable file using \code{\link[=vip_pop_from_file]{vip_pop_from_file()}}, while vaccine induced
 immunity can be generated through applying vaccination activities
 to the population with \code{\link[=apply_vaccs]{apply_vaccs()}}.
 }
