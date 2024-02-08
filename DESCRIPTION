@@ -4,7 +4,9 @@ Version: 0.0.1
 Authors@R: 
     person("Tini", "Garske", , "t.garske@imperial.ac.uk", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-8952-4710"))
-Description: What the package does (one paragraph).
+Description: Tools for setting up an age-structured population,
+    applying vaccination activities to it, and tracking
+    vaccine-induced immunity through time.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
