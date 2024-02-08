@@ -29,6 +29,13 @@
 ##'     respectively, throughout the whole population.
 ##' @export
 ##' @author Tini Garske
+##' @examples
+##' pop <- vip_population(region = "UK", year_min = 2000, year_max = 2010)
+##'
+##' pop <- vip_population(region = c("FRA", "UK"),
+##'                       year_min = 2000, year_max = 2010,
+##'                       age_min = 0, age_max = 80)
+##'
 vip_population <- function(region = character(),
                            year_min = integer(), year_max = integer(),
                            age_min = 0, age_max = 100) {

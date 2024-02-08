@@ -49,6 +49,14 @@ a suitable file using \code{\link[=vip_pop_from_file]{vip_pop_from_file()}}, whi
 immunity can be generated through applying vaccination activities
 to the population with \code{\link[=apply_vaccs]{apply_vaccs()}}.
 }
+\examples{
+pop <- vip_population(region = "UK", year_min = 2000, year_max = 2010)
+
+pop <- vip_population(region = c("FRA", "UK"),
+                      year_min = 2000, year_max = 2010,
+                      age_min = 0, age_max = 80)
+
+}
 \author{
 Tini Garske
 }
