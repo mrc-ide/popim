@@ -22,13 +22,53 @@ the data fulfils the requirements for a "vip_vacc_activities"
 object, and if so returns this object.
 }
 \details{
-The requirements are that the data contain the columns "year",
-"age_first", "age_last", "coverage" and "targeting", of types
-integer, integer, integer, double, character, respectively.
+The requirements are that the data contain the columns \code{region},
+\code{year}, \code{age_first}, \code{age_last}, \code{coverage} and \code{targeting}, of
+types character, integer, integer, integer, double, character,
+respectively.
 
 0 <= age_first <= age_last
 0 <= coverage <= 1
 targeting must be one of "random", "correlated", "targeted".
+
+Column \code{region} details the (geographical) region to which the
+vaccination activities are administered.
+
+Column \code{year} details the year in which the vaccination activities
+occur.
+
+Columns \code{age_first} and \code{age_last} give the age range targeted in
+each vaccination activity.
+
+Column \code{coverage} gives the proportion of the target population
+that will be vaccinated, while column \code{doses} gives the absolute
+number of doses used in the vaccination activity. For a given
+population size (which is not recorded in the
+"vip_vacc_activities" object generated here), these can be
+converted into each other, when both are given, they may be
+inconsistent with each other once applied to a specific
+"vip_population" object. The consistency between these two colums
+cannot be confirmed in without reference to a vip_population
+object, but this function requires that at least one of these is
+non-missing in each row.
+
+The column \code{targeting} defines how vaccine is allocated if there
+is pre-existing immunity in the population: For "random" targeting
+individuals are vaccinated irrespective of immunity status, so if
+prior to the vaccination activity the proportion immune was x,
+then a proportion x of the vaccine will be administered to already
+vaccinated individuals and therefore be wasted.
+
+For "correlated" targeting vaccine is administered first to those
+already immune before any susceptible individuals receive
+vaccine. This option models the case of unequal access to
+vaccination.
+
+For "targeted" targeting, vaccine will be given first to as yet
+non-immune individuals. This is the most effective use of
+vaccine. It may be realistic in the case of multi-year campaigns
+targeting different areas within the geographical region
+specified.
 }
 \author{
 Tini Garske
