@@ -29,11 +29,11 @@ is_population <- function(x, tol = .Machine$double.eps^0.5) {
          "immunity" %in% names(x)))
         return(FALSE)
 
-    if(class(x$region) != "character" ||
-       class(x$year) != "integer" ||
-       class(x$age) != "integer" ||
-       class(x$cohort) != "integer" ||
-       class(x$immunity) != "numeric")
+    if(!is.character(x$region) ||
+       !is.integer(x$year) ||
+       !is.integer(x$age) ||
+       !is.integer(x$cohort) ||
+       !is.numeric(x$immunity))
         return(FALSE)
 
     if(!(min(x$age) >= 0 &&
