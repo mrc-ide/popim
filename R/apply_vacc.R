@@ -118,7 +118,6 @@ apply_vaccs <- function(pop_df, vaccs_df) {
 ##'     proportion of the target population can be covered with the
 ##'     given number of doses.
 ##' @author Tini Garske
-##' @importFrom rlang .data
 coverage_from_doses <- function(pop_df, doses, region, year, age_first = 0,
                                 age_last = Inf) {
 
@@ -171,7 +170,6 @@ coverage_from_doses <- function(pop_df, doses, region, year, age_first = 0,
 ##'     doses will be needed to achieve the given coverage in the
 ##'     target population.
 ##' @author Tini Garske
-##' @importFrom rlang .data
 doses_from_coverage <- function(pop_df, coverage, region, year, age_first = 0, age_last = Inf) {
 
     stopifnot(is_population(pop_df))

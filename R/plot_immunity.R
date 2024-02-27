@@ -5,7 +5,6 @@
 ##' @return ggplot object
 ##' @export
 ##' @author Tini Garske
-##' @importFrom rlang .data
 plot_immunity <- function(pop_df) {
 
     assert_population(pop_df)

@@ -64,7 +64,6 @@ assert_valid_targeting <- function(x, name = deparse(substitute(x))) {
 ##' @return dataframe containing the vip_population aggregated by age.
 ##' @author Tini Garske
 ##' @export
-##' @importFrom rlang .data
 calc_pop_immunity <- function(pop) {
 
     assert_population(pop)
