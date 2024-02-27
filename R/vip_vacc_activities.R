@@ -1,7 +1,45 @@
-## low level constructor for a new "vip_vacc_activities" object from
-## the inputs provided. This is for internal use only, so doesn't
-## currently do any checks on the inputs - it may therefore fail
-## ungracefully, or generate an invalid object.
+##' Constructor of an object of class "vip_vacc_activites"
+##'
+##' The "vip_vacc_activities" object is a dataframe that holds
+##' information on vaccination activities that are typically meant to
+##' be applied to a "vip_population" object.
+##'
+##' The input parameters are the columns of the "vip_vacc_activities"
+##' object to be returned, they should be vectors of the same length,
+##' or will be recycled as appropriate by [data.frame()].
+##'
+##' @param region character vector: specifies the geographic region to
+##'     which each vaccination activities are to be administered.
+##' @param year integer vector: specifies the year in which the
+##'     vaccination activities take place.
+##' @param age_first,age_last non-negative integer vectors: specify
+##'     the age range targeted in the vaccination
+##'     activity. `age_first` <= `age_last for all entries.
+##' @param coverage numeric vector, 0 <= `coverage` <= 1 for all
+##'     entries. Specifies the proportion of the target population to
+##'     be immunised.
+##' @param doses numeric vector, non-negative. Specifies the number of
+##'     doses to be used in each vaccination activity.
+##' @param targeting character vector, permissible entries are
+##'     "random", "correlated", "targeted". Defines how vaccine is
+##'     allocated if there is pre-existing immunity in the population:
+##'     For "random" targeting individuals are vaccinated irrespective
+##'     of immunity status, so if prior to the vaccination activity
+##'     the proportion immune was x, then a proportion x of the
+##'     vaccine will be administered to already vaccinated individuals
+##'     and therefore be wasted. For "correlated" targeting vaccine is
+##'     administered first to those already immune before any
+##'     susceptible individuals receive vaccine. This option models
+##'     the case of unequal access to vaccination. For "targeted"
+##'     targeting, vaccine will be given first to as yet non-immune
+##'     individuals. This is the most effective use of vaccine. It may
+##'     be realistic in the case of multi-year campaigns targeting
+##'     different areas within the geographical region specified.
+##' @return S3 object of class "vip_vacc_activities": a dataframe with
+##'     columns `region`, `year`, `age_first`, `age_last`, `coverage`,
+##'     `doses`, `targeting`.
+##' @author Tini Garske
+##' @noRd
 new_vacc_activities <- function(region = character(), year = integer(),
                                 age_first = integer(), age_last = integer(),
                                 coverage = double(), doses = double(),
@@ -55,13 +93,53 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 ##' the data fulfils the requirements for a "vip_vacc_activities"
 ##' object, and if so returns this object.
 ##'
-##' The requirements are that the data contain the columns "year",
-##' "age_first", "age_last", "coverage" and "targeting", of types
-##' integer, integer, integer, double, character, respectively.
+##' The requirements are that the data contain the columns `region`,
+##' `year`, `age_first`, `age_last`, `coverage` and `targeting`, of
+##' types character, integer, integer, integer, double, character,
+##' respectively.
 ##'
 ##' 0 <= age_first <= age_last
 ##' 0 <= coverage <= 1
 ##' targeting must be one of "random", "correlated", "targeted".
+##'
+##' Column `region` details the (geographical) region to which the
+##' vaccination activities are administered.
+##'
+##' Column `year` details the year in which the vaccination activities
+##' occur.
+##'
+##' Columns `age_first` and `age_last` give the age range targeted in
+##' each vaccination activity.
+##'
+##' Column `coverage` gives the proportion of the target population
+##' that will be vaccinated, while column `doses` gives the absolute
+##' number of doses used in the vaccination activity. For a given
+##' population size (which is not recorded in the
+##' "vip_vacc_activities" object generated here), these can be
+##' converted into each other, when both are given, they may be
+##' inconsistent with each other once applied to a specific
+##' "vip_population" object. The consistency between these two colums
+##' cannot be confirmed in without reference to a vip_population
+##' object, but this function requires that at least one of these is
+##' non-missing in each row.
+##'
+##' The column `targeting` defines how vaccine is allocated if there
+##' is pre-existing immunity in the population: For "random" targeting
+##' individuals are vaccinated irrespective of immunity status, so if
+##' prior to the vaccination activity the proportion immune was x,
+##' then a proportion x of the vaccine will be administered to already
+##' vaccinated individuals and therefore be wasted.
+##'
+##' For "correlated" targeting vaccine is administered first to those
+##' already immune before any susceptible individuals receive
+##' vaccine. This option models the case of unequal access to
+##' vaccination.
+##'
+##' For "targeted" targeting, vaccine will be given first to as yet
+##' non-immune individuals. This is the most effective use of
+##' vaccine. It may be realistic in the case of multi-year campaigns
+##' targeting different areas within the geographical region
+##' specified.
 ##' 
 ##' @param file Name of the file from which the vaccination activities
 ##'     are to be read from. If it does not contain an absolute path,
@@ -88,9 +166,9 @@ read_vacc_activities <- function(file) {
 ##' Adding coverage or doses information (whichever is missing) to the
 ##' vip_vacc_activities object
 ##'
-##' For each line in the vip_vaccination_activities object the given
+##' For each line in the "vip_vacc_activities" object the given
 ##' information of coverage is converted to doses, or vice versa,
-##' using the target population size implied by the vip_population
+##' using the target population size implied by the "vip_population"
 ##' object supplied. If both coverage and doses are given for any
 ##' activity, the function checks if they are consistent with the
 ##' population size, and fails if there are any inconsistencies.
