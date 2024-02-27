@@ -6,7 +6,8 @@
 ##'
 ##' This constructor sets up the population as fully susceptible
 ##' (i.e., `immunity = 0`, with missing population size (i.e.,
-##' `pop_size = NA_real_`) throughout.
+##' `pop_size = NA_real_`) throughout. The parameters passed to the
+##' constructor are retained as attributes to the dataframe object.
 ##'
 ##' A population with non-missing population size can be read in from
 ##' a suitable file using [vip_pop_from_file()], while vaccine induced
