@@ -13,10 +13,10 @@ knitr::opts_chunk$set(
 )
 ```
 
-# vip
+# popim
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/mrc-ide/vip/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mrc-ide/vip/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/mrc-ide/popim/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mrc-ide/popim/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 **Vaccine Immunity Propagation**
@@ -29,29 +29,29 @@ target specific age groups.
 
 ## Installation
 
-You can install the development version of vip from
+You can install the development version of popim from
 [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("mrc-ide/vip")
+devtools::install_github("mrc-ide/popim")
 ```
 
 ## Example 1
 
-This package defines an S3 class `vip_population` which is a dataframe
+This package defines an S3 class `popim_population` which is a dataframe
 with at least the columns year, age, cohort (the year of birth for the
 individuals tracked in this row), and immunity (as a proportion of
 this cohort). Year, age and cohort are tracked as annual time steps
 and age groups.
 
 A basic, totally naive population dataframe can be setup using the
-function `vip_population()`:
+function `popim_population()`:
 
 ```{r example}
-library(vip)
+library(popim)
 
-pop <- vip_population(region = c("UK", "FRA"), year_min = 2000, year_max = 2010,
+pop <- popim_population(region = c("UK", "FRA"), year_min = 2000, year_max = 2010,
                         age_min = 0, age_max = 10)
 
 dim(pop)
@@ -62,7 +62,7 @@ This dataframe has 242 columns (2 regions x 11 age groups 0 - 10 x 11
 years 2000 - 2020).
 
 Next, we read in a file containing some vaccination activites into an
-object of the class `vip_vacc_activities`.
+object of the class `popim_vacc_activities`.
 
 ```{r read_vacc}
 
@@ -112,14 +112,14 @@ diagonal fashion.
 ## Example 2
 
 A more realistic scenario is to read in some real population data to
-set up the vip_population, and then apply some vaccination activities
+set up the popim_population, and then apply some vaccination activities
 to this. Information on the vaccination activities may be given in
 coverage (typical for routine infant vaccination) or doses (typical
 for mass vaccination campaigns).
 
 ```{r read_population}
 
-pop <- vip_pop_from_file(file = "inst/extdata/pop_sample.csv")
+pop <- popim_pop_from_file(file = "inst/extdata/pop_sample.csv")
 
 ```
 
@@ -198,7 +198,7 @@ ggplot(pop_agg, aes(x = year, y = immunity, col = region)) +
 
 ```
 
-Given a `vip_population` object, the vaccination activities that would
+Given a `popim_population` object, the vaccination activities that would
 be needed to achieve the specified population immunity can be inferred
 with the function `vacc_from_immunity()`, given an assumption on the
 targeting method of the vaccination activities. Using this function on

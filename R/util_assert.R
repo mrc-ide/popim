@@ -125,14 +125,14 @@ assert_is <- function(x, what, name = deparse(substitute(x))) {
 }
 
 assert_population <- function(x, name = deparse(substitute(x))) {
-    if(!inherits(x, "vip_population"))
-        stop(sprintf("'%s' must be of class 'vip_population'", name),
+    if(!inherits(x, "popim_population"))
+        stop(sprintf("'%s' must be of class 'popim_population'", name),
              call. = FALSE)
 }
 
 assert_vacc_activities <- function(x, name = deparse(substitute(x))) {
-    if(!inherits(x, "vip_vacc_activities"))
-        stop(sprintf("'%s' must be of class 'vip_vacc_activities'", name),
+    if(!inherits(x, "popim_vacc_activities"))
+        stop(sprintf("'%s' must be of class 'popim_vacc_activities'", name),
              call. = FALSE)
 }
 

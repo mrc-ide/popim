@@ -7,13 +7,13 @@
 aggregate_vacc_activities(vacc_act, n_digits = 10)
 }
 \arguments{
-\item{vacc_act}{vip_vacc_activities object to be aggregated}
+\item{vacc_act}{popim_vacc_activities object to be aggregated}
 
 \item{n_digits}{number of digits to which coverage is rounded
 before coverages from different activities are matched.}
 }
 \value{
-vip_vacc_activities object containing the same vaccination
+popim_vacc_activities object containing the same vaccination
 activities as the input object, but where possible aggregated
 into fewer lines
 }

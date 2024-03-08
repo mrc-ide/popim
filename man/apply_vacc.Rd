@@ -17,7 +17,7 @@ apply_vacc(
 }
 \arguments{
 \item{pop_df}{population dataframe object such as created by
-function 'vip_population'}
+function 'popim_population'}
 
 \item{region}{region of the vaccination activity}
 
@@ -52,7 +52,7 @@ updated immunity to reflect the vaccination activity.
 If the vaccination activity has non-missing entries for both
 coverage and doses, the coverage is used - there is no test
 whether the coverage and doses information are consistent with the
-target population size in the vip_population object to which the
+target population size in the popim_population object to which the
 vaccination activity is applied.
 }
 \author{

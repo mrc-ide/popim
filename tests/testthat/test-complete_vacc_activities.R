@@ -1,6 +1,6 @@
 test_that("complete_vacc_activities adds appropriate doses information for a single activity", {
     
-    pop <- vip_population(region = "UK", year_min = 2000, year_max = 2002,
+    pop <- popim_population(region = "UK", year_min = 2000, year_max = 2002,
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
@@ -15,7 +15,7 @@ test_that("complete_vacc_activities adds appropriate doses information for a sin
 
 test_that("complete_vacc_activities adds appropriate doses information for several activities", {
     
-    pop <- vip_population(region = "UK", year_min = 2000, year_max = 2002,
+    pop <- popim_population(region = "UK", year_min = 2000, year_max = 2002,
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
@@ -30,7 +30,7 @@ test_that("complete_vacc_activities adds appropriate doses information for sever
 
 test_that("complete_vacc_activities adds appropriate coverage information for a single activity", {
     
-    pop <- vip_population(region = "UK", year_min = 2000, year_max = 2002,
+    pop <- popim_population(region = "UK", year_min = 2000, year_max = 2002,
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
@@ -45,7 +45,7 @@ test_that("complete_vacc_activities adds appropriate coverage information for a 
 
 test_that("complete_vacc_activities adds appropriate coverage information for several activities", {
     
-    pop <- vip_population(region = "UK", year_min = 2000, year_max = 2002,
+    pop <- popim_population(region = "UK", year_min = 2000, year_max = 2002,
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
@@ -60,7 +60,7 @@ test_that("complete_vacc_activities adds appropriate coverage information for se
 
 test_that("complete_vacc_activities flags inconsistend coverage and doses information for a single activity", {
     
-    pop <- vip_population(region = "UK", year_min = 2000, year_max = 2002,
+    pop <- popim_population(region = "UK", year_min = 2000, year_max = 2002,
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
@@ -73,7 +73,7 @@ test_that("complete_vacc_activities flags inconsistend coverage and doses inform
 
 test_that("complete_vacc_activities adds appropriate coverage information for several activities", {
     
-    pop <- vip_population(region = "UK", year_min = 2000, year_max = 2002,
+    pop <- popim_population(region = "UK", year_min = 2000, year_max = 2002,
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
@@ -90,7 +90,7 @@ test_that("complete_vacc_activities adds appropriate coverage information for se
 
 test_that("complete_vacc_activities fails conflicting coverage/doses information for several activities", {
     
-    pop <- vip_population(region = "UK", year_min = 2000, year_max = 2002,
+    pop <- popim_population(region = "UK", year_min = 2000, year_max = 2002,
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 

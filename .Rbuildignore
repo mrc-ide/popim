@@ -2,6 +2,6 @@
 ^simple_example\.R$
 ^README\.Rmd$
 function_list\.ods
-vip goals and terminology\.docx
+popim goals and terminology\.docx
 inst/extdata/data-raw/*
 ^\.github$

@@ -8,8 +8,8 @@ given number of doses}
 coverage_from_doses(pop_df, doses, region, year, age_first = 0, age_last = Inf)
 }
 \arguments{
-\item{pop_df}{object of class vip_population such as created by
-function \code{vip_population}}
+\item{pop_df}{object of class popim_population such as created by
+function \code{popim_population}}
 
 \item{doses}{number of vaccine doses available for the vaccination
 activity}
