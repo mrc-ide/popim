@@ -1,4 +1,4 @@
-test_that("new_vacc_activities generates a valid vip_vacc_activities object for valid inputs", {
+test_that("new_vacc_activities generates a valid popim_vacc_activities object for valid inputs", {
     
     x <- new_vacc_activities(region = "UK", year = 2000,
                              age_first = 0, age_last = 5,

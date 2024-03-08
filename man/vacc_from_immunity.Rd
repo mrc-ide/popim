@@ -18,12 +18,12 @@ are allocated. Valid options are "random", "correlated",
 rounded.}
 }
 \value{
-vip_vacc_activites object
+popim_vacc_activites object
 }
 \description{
 Given a popim_population object and an assumption of how vaccine is
 targeted in a partially immune population, this function infers
-the vaccination activities that returns a vip_vacc_activities
+the vaccination activities that returns a popim_vacc_activities
 object that details the vaccination activities that have given
 rise to the specified population immunity.
 }

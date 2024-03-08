@@ -1,10 +1,10 @@
-##' Constructor of an object of class "vip_vacc_activites"
+##' Constructor of an object of class "popim_vacc_activites"
 ##'
-##' The "vip_vacc_activities" object is a dataframe that holds
+##' The "popim_vacc_activities" object is a dataframe that holds
 ##' information on vaccination activities that are typically meant to
 ##' be applied to a "popim_population" object.
 ##'
-##' The input parameters are the columns of the "vip_vacc_activities"
+##' The input parameters are the columns of the "popim_vacc_activities"
 ##' object to be returned, they should be vectors of the same length,
 ##' or will be recycled as appropriate by [data.frame()].
 ##'
@@ -35,7 +35,7 @@
 ##'     individuals. This is the most effective use of vaccine. It may
 ##'     be realistic in the case of multi-year campaigns targeting
 ##'     different areas within the geographical region specified.
-##' @return S3 object of class "vip_vacc_activities": a dataframe with
+##' @return S3 object of class "popim_vacc_activities": a dataframe with
 ##'     columns `region`, `year`, `age_first`, `age_last`, `coverage`,
 ##'     `doses`, `targeting`.
 ##' @author Tini Garske
@@ -48,7 +48,7 @@ new_vacc_activities <- function(region = character(), year = integer(),
     x <- data.frame(region = region, year = year,
                     age_first = age_first, age_last = age_last,
                     coverage = coverage, doses = doses, targeting = targeting)
-    class(x) <- c("vip_vacc_activities", "data.frame")
+    class(x) <- c("popim_vacc_activities", "data.frame")
 
     x
 }
@@ -90,7 +90,7 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 ##' Reading vaccination activities from a .csv file
 ##'
 ##' Reads a list of vaccination activities from a .csv file, checks if
-##' the data fulfils the requirements for a "vip_vacc_activities"
+##' the data fulfils the requirements for a "popim_vacc_activities"
 ##' object, and if so returns this object.
 ##'
 ##' The requirements are that the data contain the columns `region`,
@@ -115,7 +115,7 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 ##' that will be vaccinated, while column `doses` gives the absolute
 ##' number of doses used in the vaccination activity. For a given
 ##' population size (which is not recorded in the
-##' "vip_vacc_activities" object generated here), these can be
+##' "popim_vacc_activities" object generated here), these can be
 ##' converted into each other, when both are given, they may be
 ##' inconsistent with each other once applied to a specific
 ##' "popim_population" object. The consistency between these two colums
@@ -144,7 +144,7 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 ##' @param file Name of the file from which the vaccination activities
 ##'     are to be read from. If it does not contain an absolute path,
 ##'     the file name is relative to the current working directory.
-##' @return object of class "vip_vacc_activities", a dataframe with
+##' @return object of class "popim_vacc_activities", a dataframe with
 ##'     one row per vaccination activity, with columns "year",
 ##'     "age_first", "age_last", "coverage", "targeting".
 ##' @author Tini Garske
@@ -156,7 +156,7 @@ read_vacc_activities <- function(file) {
         stop(sprintf("%s does not exist", file), call. = FALSE)
 
     df <- utils::read.csv(file, stringsAsFactors = FALSE)
-    class(df) <- c("vip_vacc_activities", "data.frame")
+    class(df) <- c("popim_vacc_activities", "data.frame")
 
     validate_vacc_activities(df)
 
@@ -164,18 +164,18 @@ read_vacc_activities <- function(file) {
 }
 
 ##' Adding coverage or doses information (whichever is missing) to the
-##' vip_vacc_activities object
+##' popim_vacc_activities object
 ##'
-##' For each line in the "vip_vacc_activities" object the given
+##' For each line in the "popim_vacc_activities" object the given
 ##' information of coverage is converted to doses, or vice versa,
 ##' using the target population size implied by the "popim_population"
 ##' object supplied. If both coverage and doses are given for any
 ##' activity, the function checks if they are consistent with the
 ##' population size, and fails if there are any inconsistencies.
 ##'
-##' @param vaccs vip_vaccination_activities object
+##' @param vaccs popim_vacc_activities object
 ##' @param pop_df popim_population object
-##' @return vip_vaccination_activities object, updated to have both
+##' @return popim_vacc_activities object, updated to have both
 ##'     doses and coverage information
 ##' @author Tini Garske
 ##' @export

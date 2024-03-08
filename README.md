@@ -59,7 +59,7 @@ This dataframe has 242 columns (2 regions x 11 age groups 0 - 10 x 11
 years 2000 - 2020).
 
 Next, we read in a file containing some vaccination activites into an
-object of the class `vip_vacc_activities`.
+object of the class `popim_vacc_activities`.
 
 ``` r
 

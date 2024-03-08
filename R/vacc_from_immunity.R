@@ -2,7 +2,7 @@
 ##'
 ##' Given a popim_population object and an assumption of how vaccine is
 ##' targeted in a partially immune population, this function infers
-##' the vaccination activities that returns a vip_vacc_activities
+##' the vaccination activities that returns a popim_vacc_activities
 ##' object that details the vaccination activities that have given
 ##' rise to the specified population immunity.
 ##'
@@ -33,7 +33,7 @@
 ##'     "targeted".
 ##' @param n_digits number of digits to which the coverage is to be
 ##'     rounded.
-##' @return vip_vacc_activites object
+##' @return popim_vacc_activites object
 ##' @export
 ##' @author Tini Garske
 vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
@@ -59,7 +59,7 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
         dplyr::arrange(.data$region, .data$year, .data$targeting,
                        round(.data$coverage, n_digits), .data$age_first)
 
-    class(vaccs) <- c("vip_vacc_activities", "data.frame")
+    class(vaccs) <- c("popim_vacc_activities", "data.frame")
     if(nrow(vaccs) > 1)
         vaccs <- aggregate_vacc_activities(vaccs, n_digits = n_digits)
     vaccs <- complete_vacc_activities(vaccs, pop)
@@ -120,12 +120,12 @@ coverage_from_immunity_diff <- function(imm_now, imm_diff, targeting,
 ##' Expand the age range given by age_first and age_last into an
 ##' integer vector giving each individual age group
 ##'
-##' If the vip_vacc_activities object contains more than one row the
+##' If the popim_vacc_activities object contains more than one row the
 ##' rows are assumed to belong to the same campaign, but detail
 ##' different age groups. The function will expand the age ranges to a
 ##' vector that gives every single age cohort targeted.
 ##'
-##' @param va object of class vip_vacc_activities
+##' @param va object of class popim_vacc_activities
 ##' @return integer vector of variable length
 ##' @author Tini Garske
 get_all_ages <- function(va) {
@@ -202,10 +202,10 @@ get_consecutive_range <- function(ages) {
 ##' compressed into a (or several) consecutive age range, such that
 ##' the same information is coded in fewer lines.
 ##'
-##' @param vacc_act vip_vacc_activities object to be aggregated
+##' @param vacc_act popim_vacc_activities object to be aggregated
 ##' @param n_digits number of digits to which coverage is rounded
 ##'     before coverages from different activities are matched.
-##' @return vip_vacc_activities object containing the same vaccination
+##' @return popim_vacc_activities object containing the same vaccination
 ##'     activities as the input object, but where possible aggregated
 ##'     into fewer lines
 ##' @author Tini Garske
@@ -230,7 +230,7 @@ aggregate_vacc_activities <- function(vacc_act, n_digits = 10) {
     va_agg <- vacc_act |>
         dplyr::summarise(doses = sum(.data$doses), id = mean(.data$id)) |>
         dplyr::ungroup()
-    class(vacc_act) <- c("vip_vacc_activities", "data.frame")
+    class(vacc_act) <- c("popim_vacc_activities", "data.frame")
 
     vacc_ids <- vacc_act$id |> unique()
     ages_list <- lapply(vacc_ids,
@@ -262,7 +262,7 @@ aggregate_vacc_activities <- function(vacc_act, n_digits = 10) {
         dplyr::select(tidyselect::all_of(c("region", "year", "age_first",
                                            "age_last", "coverage", "doses",
                                            "targeting")))
-    class(va_agg) <- c("vip_vacc_activities", "data.frame")
+    class(va_agg) <- c("popim_vacc_activities", "data.frame")
 
     va_agg
 }
