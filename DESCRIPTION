@@ -1,5 +1,5 @@
-Package: vip
-Title: Run a Demographic Model of Vaccine Exposure Over Time
+Package: popim
+Title: POPulation IMmunity: Run a Demographic Model of Vaccine Exposure Over Time
 Version: 0.0.1
 Authors@R: 
     person("Tini", "Garske", , "t.garske@imperial.ac.uk", role = c("aut", "cre"),

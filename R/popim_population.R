@@ -1,6 +1,6 @@
-##' Constructor of an object of the "vip_population" class
+##' Constructor of an object of the "popim_population" class
 ##'
-##' The "vip_population" object is a dataframe that models an
+##' The "popim_population" object is a dataframe that models an
 ##' age-structured population through time, tracking population size
 ##' and vaccine-induced immunity in the population.
 ##'
@@ -21,7 +21,7 @@
 ##'     0. Must be non-negative.
 ##' @param age_max integer, oldest age to be considered, defaults to
 ##'     100. Must be non-negative, and >= age_min.
-##' @return S3 object of class "vip_population": a dataframe with
+##' @return S3 object of class "popim_population": a dataframe with
 ##'     columns region, year, age, cohort, immunity and pop_size,
 ##'     where year and age cover the ranges given by the input
 ##'     parameters. Cohort = year - age and gives the year of
@@ -31,13 +31,13 @@
 ##' @export
 ##' @author Tini Garske
 ##' @examples
-##' pop <- vip_population(region = "UK", year_min = 2000, year_max = 2010)
+##' pop <- popim_population(region = "UK", year_min = 2000, year_max = 2010)
 ##'
-##' pop <- vip_population(region = c("FRA", "UK"),
+##' pop <- popim_population(region = c("FRA", "UK"),
 ##'                       year_min = 2000, year_max = 2010,
 ##'                       age_min = 0, age_max = 80)
 ##'
-vip_population <- function(region = character(),
+popim_population <- function(region = character(),
                            year_min = integer(), year_max = integer(),
                            age_min = 0, age_max = 100) {
 
@@ -70,16 +70,16 @@ vip_population <- function(region = character(),
         year_max = year_max,
         age_min = age_min,
         age_max = age_max,
-        class = c("vip_population", "data.frame")
+        class = c("popim_population", "data.frame")
     )
 
     df
 }
 
-##' Reading vip_population data from a .csv file
+##' Reading popim_population data from a .csv file
 ##'
 ##' Reads a population data from a .csv file, checks if
-##' the data fulfils the requirements for a "vip_population"
+##' the data fulfils the requirements for a "popim_population"
 ##' object, and if so returns this object.
 ##'
 ##' The requirements are that the data contain the columns `region`,
@@ -96,10 +96,10 @@ vip_population <- function(region = character(),
 ##' @param file Name of the .csv file from which the population data
 ##'     are to be read. If it does not contain an absolute path, the
 ##'     file name is relative to the current working directory.
-##' @return An object of class "vip_population", a dataframe with one row
+##' @return An object of class "popim_population", a dataframe with one row
 ##'     per birth cohort/year/region, with columns "region", "year",
 ##'     "age", "cohort", "immunity", "pop_size".
-##' @seealso [vip_population()] for details of the S3 class, and
+##' @seealso [popim_population()] for details of the S3 class, and
 ##'     [utils::read.csv()] which handles the reading of the .csv
 ##'     file.
 ##' @author Tini Garske
@@ -116,14 +116,14 @@ vip_pop_from_file <- function(file) {
     pop
 }
 
-##' Generate a "vip_population" object from a dataframe
+##' Generate a "popim_population" object from a dataframe
 ##'
 ##' Checks if the dataframe is suitable (i.e., contains appropriate
 ##' columns and data ranges), and if so converts it to a
-##' "vip_population" object and returns this.
+##' "popim_population" object and returns this.
 ##'
 ##' The input dataframe has to have at least the columns region, age,
-##' and year. The output vip_population object is generated via
+##' and year. The output popim_population object is generated via
 ##' expand.grid to have consecutive year and age ranges that are
 ##' identical for all regions.
 ##'
@@ -135,10 +135,10 @@ vip_pop_from_file <- function(file) {
 ##' numeric, with values between 0 and 1. If it is missing, this
 ##' column is generated and initialised to 0.
 ##'
-##' Any further colunms are simply carried over into the vip_population object.
+##' Any further colunms are simply carried over into the popim_population object.
 ##'
 ##' @param df a dataframe with at least columns region, age, year and pop_size.
-##' @return an object of class vip_population
+##' @return an object of class popim_population
 ##' @author Tini Garske
 ##' @noRd
 vip_pop_from_df <- function(df) {
@@ -192,7 +192,7 @@ vip_pop_from_df <- function(df) {
     ## no guarantee that the input data are fully consecutive across
     ## all regions. If they aren't, this will generate missing data in
     ## the pop_size and immunity columns.
-    out <- vip_population(region, year_min, year_max, age_min, age_max)
+    out <- popim_population(region, year_min, year_max, age_min, age_max)
     a <- attributes(out)
 
     out <- out |>
@@ -201,13 +201,13 @@ vip_pop_from_df <- function(df) {
     attributes(out) <- a
 
     if(nrow(out) > nrow(df)) {
-        warning(sprintf("Input dataframe has fewer rows than the vip_population generated from it (%d vs %d). This may be due to non-consecutive years or ages, or different year/age ranges for different regions.", nrow(df), nrow(out)))
+        warning(sprintf("Input dataframe has fewer rows than the popim_population generated from it (%d vs %d). This may be due to non-consecutive years or ages, or different year/age ranges for different regions.", nrow(df), nrow(out)))
     } else if(nrow(out) < nrow(df)) {
-        stop(sprintf("Input dataframe has more rows than the vip_population generated from it (%d vs %d).", nrow(df), nrow(out)))
+        stop(sprintf("Input dataframe has more rows than the popim_population generated from it (%d vs %d).", nrow(df), nrow(out)))
     }
 
     if(!is_population(out)) {
-        stop(sprintf("cannot generate valid vip_population from file '%s'",
+        stop(sprintf("cannot generate valid popim_population from file '%s'",
                      file))
     }
 
