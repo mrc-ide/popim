@@ -1,5 +1,5 @@
 test_that("read_vacc_activities reads well", {
-    infile <- system.file("extdata/vacc_activities.csv", package = "vip")
+    infile <- system.file("extdata/vacc_activities.csv", package = "popim")
 
     ## reading a good file correctly
     vaccs <- read_vacc_activities(infile)

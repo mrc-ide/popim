@@ -1,5 +1,5 @@
 test_that("vip_pop_from_file() reads well", {
-    infile <- system.file("extdata/pop_sample.csv", package = "vip")
+    infile <- system.file("extdata/pop_sample.csv", package = "popim")
 
     ## reading a good file correctly
     pop <- vip_pop_from_file(infile)
