@@ -1,6 +1,6 @@
 test_that("apply_vaccs correctly uses apply_vacc for a single vacc_activity", {
     ## get a population object
-    pop <- vip_population(region = "UK", year_min = 2000, year_max = 2010,
+    pop <- popim_population(region = "UK", year_min = 2000, year_max = 2010,
                           age_min = 0, age_max = 10)
     ## get a vaccine object
     vacc <- new_vacc_activities(region = "UK", year = 2001,
@@ -21,7 +21,7 @@ test_that("apply_vaccs correctly uses apply_vacc for a single vacc_activity", {
 })
 test_that("apply_vaccs gives the same result as apply_vacc used twice for two activities", {
     ## get a population object
-    pop <- vip_population(region = "UK", year_min = 2000, year_max = 2010,
+    pop <- popim_population(region = "UK", year_min = 2000, year_max = 2010,
                           age_min = 0, age_max = 10)
     ## get a vaccine object
     vacc <- new_vacc_activities(region = "UK", year = c(2001, 2003),

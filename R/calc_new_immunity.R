@@ -57,11 +57,11 @@ assert_valid_targeting <- function(x, name = deparse(substitute(x))) {
 }
 
 ##' Calculate the overall population immunity (aggregating over age)
-##' from the supplied vip_population object
+##' from the supplied popim_population object
 ##'
-##' @param pop vip_population object for which the population size and
+##' @param pop popim_population object for which the population size and
 ##'     immunity will be aggregated over age.
-##' @return dataframe containing the vip_population aggregated by age.
+##' @return dataframe containing the popim_population aggregated by age.
 ##' @author Tini Garske
 ##' @export
 calc_pop_immunity <- function(pop) {

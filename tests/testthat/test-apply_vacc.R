@@ -1,6 +1,6 @@
 test_that("apply_vacc modifies the correct rows", {
 
-    df <- vip_population("UK", 2000, 2005, 0, 5)
+    df <- popim_population("UK", 2000, 2005, 0, 5)
     df <- apply_vacc(df, region = "UK", year = 2000,
                      age_first = 0, age_last = 0,
                      coverage = 0.2, doses = NA, targeting = "random")

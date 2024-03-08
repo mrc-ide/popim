@@ -3,20 +3,20 @@
 \name{calc_pop_immunity}
 \alias{calc_pop_immunity}
 \title{Calculate the overall population immunity (aggregating over age)
-from the supplied vip_population object}
+from the supplied popim_population object}
 \usage{
 calc_pop_immunity(pop)
 }
 \arguments{
-\item{pop}{vip_population object for which the population size and
+\item{pop}{popim_population object for which the population size and
 immunity will be aggregated over age.}
 }
 \value{
-dataframe containing the vip_population aggregated by age.
+dataframe containing the popim_population aggregated by age.
 }
 \description{
 Calculate the overall population immunity (aggregating over age)
-from the supplied vip_population object
+from the supplied popim_population object
 }
 \author{
 Tini Garske

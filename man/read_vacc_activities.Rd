@@ -47,8 +47,8 @@ population size (which is not recorded in the
 "vip_vacc_activities" object generated here), these can be
 converted into each other, when both are given, they may be
 inconsistent with each other once applied to a specific
-"vip_population" object. The consistency between these two colums
-cannot be confirmed in without reference to a vip_population
+"popim_population" object. The consistency between these two colums
+cannot be confirmed in without reference to a popim_population
 object, but this function requires that at least one of these is
 non-missing in each row.
 

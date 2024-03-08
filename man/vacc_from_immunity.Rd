@@ -7,7 +7,7 @@
 vacc_from_immunity(pop, targeting = "random", n_digits = 10)
 }
 \arguments{
-\item{pop}{vip_population object for which vaccination activities
+\item{pop}{popim_population object for which vaccination activities
 are to be inferred}
 
 \item{targeting}{string to determine the assumption of how doses
@@ -21,7 +21,7 @@ rounded.}
 vip_vacc_activites object
 }
 \description{
-Given a vip_population object and an assumption of how vaccine is
+Given a popim_population object and an assumption of how vaccine is
 targeted in a partially immune population, this function infers
 the vaccination activities that returns a vip_vacc_activities
 object that details the vaccination activities that have given

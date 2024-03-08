@@ -2,20 +2,20 @@
 % Please edit documentation in R/vacc_from_immunity.R
 \name{add_immunity_rate}
 \alias{add_immunity_rate}
-\title{Add the rate of immunity change to a vip_population object}
+\title{Add the rate of immunity change to a popim_population object}
 \usage{
 add_immunity_rate(pop)
 }
 \arguments{
-\item{pop}{vip_population_object}
+\item{pop}{popim_population_object}
 }
 \value{
-the input vip_population object with an added column
+the input popim_population object with an added column
 \code{immunity_diff} that holds the difference in immunity between
 the current and next year.
 }
 \description{
-Add the rate of immunity change to a vip_population object
+Add the rate of immunity change to a popim_population object
 }
 \author{
 Tini Garske

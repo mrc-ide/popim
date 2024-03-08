@@ -1,6 +1,6 @@
 test_that("calc_pop_immunity aggregates correctly over age", {
     ## a sample population with missing pop_size
-    pop <- vip_population(region = "UK", year_min = 2001, year_max = 2003,
+    pop <- popim_population(region = "UK", year_min = 2001, year_max = 2003,
                           age_min = 0, age_max = 4)
 
     pop_exp <- data.frame(region = "UK", year = 2001:2003,
@@ -9,7 +9,7 @@ test_that("calc_pop_immunity aggregates correctly over age", {
     
 
     ## a sample population with 0 immunity
-    pop <- vip_population(region = "UK", year_min = 2001, year_max = 2003,
+    pop <- popim_population(region = "UK", year_min = 2001, year_max = 2003,
                           age_min = 0, age_max = 4)
     pop$pop_size <- 100
 
@@ -30,7 +30,7 @@ test_that("calc_pop_immunity aggregates correctly over age", {
     expect_equal(pop |> calc_pop_immunity() |> as.data.frame(), pop_exp)
 
     ## a sample population with 2 regions
-    pop <- vip_population(region = c("FRA", "UK"),
+    pop <- popim_population(region = c("FRA", "UK"),
                           year_min = 2000, year_max = 2000,
                           age_min = 0, age_max = 4)
     pop$pop_size = 100

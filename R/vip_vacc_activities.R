@@ -2,7 +2,7 @@
 ##'
 ##' The "vip_vacc_activities" object is a dataframe that holds
 ##' information on vaccination activities that are typically meant to
-##' be applied to a "vip_population" object.
+##' be applied to a "popim_population" object.
 ##'
 ##' The input parameters are the columns of the "vip_vacc_activities"
 ##' object to be returned, they should be vectors of the same length,
@@ -118,8 +118,8 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 ##' "vip_vacc_activities" object generated here), these can be
 ##' converted into each other, when both are given, they may be
 ##' inconsistent with each other once applied to a specific
-##' "vip_population" object. The consistency between these two colums
-##' cannot be confirmed in without reference to a vip_population
+##' "popim_population" object. The consistency between these two colums
+##' cannot be confirmed in without reference to a popim_population
 ##' object, but this function requires that at least one of these is
 ##' non-missing in each row.
 ##'
@@ -168,13 +168,13 @@ read_vacc_activities <- function(file) {
 ##'
 ##' For each line in the "vip_vacc_activities" object the given
 ##' information of coverage is converted to doses, or vice versa,
-##' using the target population size implied by the "vip_population"
+##' using the target population size implied by the "popim_population"
 ##' object supplied. If both coverage and doses are given for any
 ##' activity, the function checks if they are consistent with the
 ##' population size, and fails if there are any inconsistencies.
 ##'
 ##' @param vaccs vip_vaccination_activities object
-##' @param pop_df vip_population object
+##' @param pop_df popim_population object
 ##' @return vip_vaccination_activities object, updated to have both
 ##'     doses and coverage information
 ##' @author Tini Garske

@@ -10,7 +10,7 @@ complete_vacc_activities(vaccs, pop_df)
 \arguments{
 \item{vaccs}{vip_vaccination_activities object}
 
-\item{pop_df}{vip_population object}
+\item{pop_df}{popim_population object}
 }
 \value{
 vip_vaccination_activities object, updated to have both
@@ -19,7 +19,7 @@ doses and coverage information
 \description{
 For each line in the "vip_vacc_activities" object the given
 information of coverage is converted to doses, or vice versa,
-using the target population size implied by the "vip_population"
+using the target population size implied by the "popim_population"
 object supplied. If both coverage and doses are given for any
 activity, the function checks if they are consistent with the
 population size, and fails if there are any inconsistencies.

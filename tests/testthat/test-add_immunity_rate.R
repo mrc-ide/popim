@@ -5,7 +5,7 @@ test_that("add_immunity_rate adds a column immunity_diff correctly", {
     year_max <- 2005
     age_min <- 0
     age_max <- 4
-    pop <- vip_population(region = "UK", year_min, year_max,
+    pop <- popim_population(region = "UK", year_min, year_max,
                           age_min, age_max)
     pop$pop_size <- 100
 
@@ -50,7 +50,7 @@ test_that("add_immunity_rate works when pop already has an immunity_diff column"
     year_max <- 2005
     age_min <- 0
     age_max <- 4
-    pop <- vip_population(region = "UK", year_min, year_max,
+    pop <- popim_population(region = "UK", year_min, year_max,
                           age_min, age_max)
 
     pop_1 <- add_immunity_rate(pop)

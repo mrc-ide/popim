@@ -3,11 +3,11 @@
 ##' If the vaccination activity has non-missing entries for both
 ##' coverage and doses, the coverage is used - there is no test
 ##' whether the coverage and doses information are consistent with the
-##' target population size in the vip_population object to which the
+##' target population size in the popim_population object to which the
 ##' vaccination activity is applied.
 ##'
 ##' @param pop_df population dataframe object such as created by
-##'     function 'vip_population'
+##'     function 'popim_population'
 ##' @param region region of the vaccination activity
 ##' @param year year of the vaccination activity
 ##' @param age_first age of the youngest age group targeted
@@ -71,11 +71,11 @@ apply_vacc <- function(pop_df, region, year, age_first = 0, age_last = Inf,
 ##'
 ##' Takes the vaccination activities listed in the input object
 ##' vaccs_df (a data.frame object of class vip_vacc_activities), and
-##' applies them to the vip_population object pop_df, then returns
+##' applies them to the popim_population object pop_df, then returns
 ##' that updated object.
 ##'
-##' @param pop_df object of class vip_population such as created by
-##'     function 'vip_population'
+##' @param pop_df object of class popim_population such as created by
+##'     function 'popim_population'
 ##' @param vaccs_df object of class 'vip_vacc_activities' such as
 ##'     created by reading from file with function
 ##'     'read_vacc_activities'
@@ -106,8 +106,8 @@ apply_vaccs <- function(pop_df, vaccs_df) {
 ##' given number of doses. The target population is the sum of the
 ##' population of the targeted age groups in the targeted region(s).
 ##'
-##' @param pop_df object of class vip_population such as created by
-##'     function `vip_population`
+##' @param pop_df object of class popim_population such as created by
+##'     function `popim_population`
 ##' @param doses number of vaccine doses available for the vaccination
 ##'     activity
 ##' @param region region to be targeted
@@ -158,8 +158,8 @@ coverage_from_doses <- function(pop_df, doses, region, year, age_first = 0,
 ##' is the sum of the population of the targeted age groups in the
 ##' targeted region(s).
 ##'
-##' @param pop_df object of class vip_population such as created by
-##'     function `vip_population`
+##' @param pop_df object of class popim_population such as created by
+##'     function `popim_population`
 ##' @param coverage proportion of the target population to be covered,
 ##'     0 <= coverage <= 1
 ##' @param region region to be targeted

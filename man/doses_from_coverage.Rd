@@ -15,8 +15,8 @@ doses_from_coverage(
 )
 }
 \arguments{
-\item{pop_df}{object of class vip_population such as created by
-function \code{vip_population}}
+\item{pop_df}{object of class popim_population such as created by
+function \code{popim_population}}
 
 \item{coverage}{proportion of the target population to be covered,
 0 <= coverage <= 1}

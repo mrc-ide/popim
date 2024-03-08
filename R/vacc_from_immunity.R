@@ -1,6 +1,6 @@
 ##' Infer vaccination activities from population
 ##'
-##' Given a vip_population object and an assumption of how vaccine is
+##' Given a popim_population object and an assumption of how vaccine is
 ##' targeted in a partially immune population, this function infers
 ##' the vaccination activities that returns a vip_vacc_activities
 ##' object that details the vaccination activities that have given
@@ -26,7 +26,7 @@
 ##' also never be picked up as this age group will have aged out of
 ##' the population (i.e., died) before the immunity is updated in the
 ##' next year.
-##' @param pop vip_population object for which vaccination activities
+##' @param pop popim_population object for which vaccination activities
 ##'     are to be inferred
 ##' @param targeting string to determine the assumption of how doses
 ##'     are allocated. Valid options are "random", "correlated",
@@ -68,10 +68,10 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
     vaccs
 }
 
-##' Add the rate of immunity change to a vip_population object
+##' Add the rate of immunity change to a popim_population object
 ##'
-##' @param pop vip_population_object
-##' @return the input vip_population object with an added column
+##' @param pop popim_population_object
+##' @return the input popim_population object with an added column
 ##'     `immunity_diff` that holds the difference in immunity between
 ##'     the current and next year.
 ##' @author Tini Garske

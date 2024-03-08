@@ -1,5 +1,5 @@
 test_that("doses_from_coverage returns the correct number of doses for sensible inputs", {
-    pop <- vip_population(region = c("UK", "FRA"),
+    pop <- popim_population(region = c("UK", "FRA"),
                           year_min = 2000, year_max = 2005,
                           age_min = 0, age_max = 3)
     pop$pop_size <- 100
@@ -20,7 +20,7 @@ test_that("doses_from_coverage returns the correct number of doses for sensible 
     })
 
 test_that("doses_from_coverage fails if the population object doesn't contain all targeted cohorts", {
-    pop <- vip_population(region = c("UK", "FRA"),
+    pop <- popim_population(region = c("UK", "FRA"),
                           year_min = 2000, year_max = 2005,
                           age_min = 0, age_max = 3)
     pop$pop_size <- 100
@@ -37,7 +37,7 @@ test_that("doses_from_coverage fails if the population object doesn't contain al
 })
 
 test_that("coses_from_coverage fails for silly input values", {
-    pop <- vip_population(region = c("UK", "FRA"),
+    pop <- popim_population(region = c("UK", "FRA"),
                           year_min = 2000, year_max = 2005,
                           age_min = 0, age_max = 3)
     pop$pop_size <- 100

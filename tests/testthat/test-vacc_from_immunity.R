@@ -1,6 +1,6 @@
 test_that("vacc_from_immunity returns the correct vacc_activities for random targeting", {
     
-    pop0 <- vip_population(region = "UK", year_min = 2000, year_max = 2005,
+    pop0 <- popim_population(region = "UK", year_min = 2000, year_max = 2005,
                           age_min = 0, age_max = 4)
     pop0$pop_size <- 100
     
@@ -68,7 +68,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for random tar
 
 test_that("vacc_from_immunity returns the correct vacc_activities for non-random targeting", {
 
-    pop0 <- vip_population(region = "UK", year_min = 2000, year_max = 2005,
+    pop0 <- popim_population(region = "UK", year_min = 2000, year_max = 2005,
                            age_min = 0, age_max = 4)
     pop0$pop_size <- 100
     
@@ -120,7 +120,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for non-random
 
 test_that("vacc_from_immunity behaves sensibly with no change in immunity", {
 
-    pop0 <- vip_population(region = "UK", year_min = 2000, year_max = 2005,
+    pop0 <- popim_population(region = "UK", year_min = 2000, year_max = 2005,
                            age_min = 0, age_max = 4)
     pop0$pop_size <- 100
 

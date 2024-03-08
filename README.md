@@ -1,10 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# vip
+# popim
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/mrc-ide/vip/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mrc-ide/vip/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 **Vaccine Immunity Propagation**
@@ -17,29 +18,29 @@ age groups.
 
 ## Installation
 
-You can install the development version of vip from
+You can install the development version of popim from
 [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("mrc-ide/vip")
+devtools::install_github("mrc-ide/popim")
 ```
 
 ## Example 1
 
-This package defines an S3 class `vip_population` which is a dataframe
+This package defines an S3 class `popim_population` which is a dataframe
 with at least the columns year, age, cohort (the year of birth for the
 individuals tracked in this row), and immunity (as a proportion of this
 cohort). Year, age and cohort are tracked as annual time steps and age
 groups.
 
 A basic, totally naive population dataframe can be setup using the
-function `vip_population()`:
+function `popim_population()`:
 
 ``` r
-library(vip)
+library(popim)
 
-pop <- vip_population(region = c("UK", "FRA"), year_min = 2000, year_max = 2010,
+pop <- popim_population(region = c("UK", "FRA"), year_min = 2000, year_max = 2010,
                         age_min = 0, age_max = 10)
 
 dim(pop)
@@ -115,7 +116,7 @@ fashion.
 ## Example 2
 
 A more realistic scenario is to read in some real population data to set
-up the vip\_population, and then apply some vaccination activities to
+up the popim\_population, and then apply some vaccination activities to
 this. Information on the vaccination activities may be given in coverage
 (typical for routine infant vaccination) or doses (typical for mass
 vaccination campaigns).
@@ -274,7 +275,7 @@ ggplot(pop_agg, aes(x = year, y = immunity, col = region)) +
 
 <img src="man/figures/README-calc_pop_immunity-1.png" width="100%" />
 
-Given a `vip_population` object, the vaccination activities that would
+Given a `popim_population` object, the vaccination activities that would
 be needed to achieve the specified population immunity can be inferred
 with the function `vacc_from_immunity()`, given an assumption on the
 targeting method of the vaccination activities. Using this function on

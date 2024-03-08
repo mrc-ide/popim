@@ -7,8 +7,8 @@
 apply_vaccs(pop_df, vaccs_df)
 }
 \arguments{
-\item{pop_df}{object of class vip_population such as created by
-function 'vip_population'}
+\item{pop_df}{object of class popim_population such as created by
+function 'popim_population'}
 
 \item{vaccs_df}{object of class 'vip_vacc_activities' such as
 created by reading from file with function
@@ -22,7 +22,7 @@ supplied in vaccs_df.
 \description{
 Takes the vaccination activities listed in the input object
 vaccs_df (a data.frame object of class vip_vacc_activities), and
-applies them to the vip_population object pop_df, then returns
+applies them to the popim_population object pop_df, then returns
 that updated object.
 }
 \author{
