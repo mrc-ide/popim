@@ -119,7 +119,7 @@ for mass vaccination campaigns).
 
 ```{r read_population}
 
-pop <- vip_pop_from_file(file = "inst/extdata/pop_sample.csv")
+pop <- popim_pop_from_file(file = "inst/extdata/pop_sample.csv")
 
 ```
 

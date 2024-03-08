@@ -10,7 +10,7 @@
 ##' constructor are retained as attributes to the dataframe object.
 ##'
 ##' A population with non-missing population size can be read in from
-##' a suitable file using [vip_pop_from_file()], while vaccine induced
+##' a suitable file using [popim_pop_from_file()], while vaccine induced
 ##' immunity can be generated through applying vaccination activities
 ##' to the population with [apply_vaccs()].
 ##' 
@@ -104,7 +104,7 @@ popim_population <- function(region = character(),
 ##'     file.
 ##' @author Tini Garske
 ##' @export
-vip_pop_from_file <- function(file) {
+popim_pop_from_file <- function(file) {
 
     ## assert_file_exists(file)
     if(!file.exists(file))
@@ -112,7 +112,7 @@ vip_pop_from_file <- function(file) {
 
     df <- utils::read.csv(file, stringsAsFactors = FALSE)
 
-    pop <- vip_pop_from_df(df)
+    pop <- popim_pop_from_df(df)
     pop
 }
 
@@ -141,7 +141,7 @@ vip_pop_from_file <- function(file) {
 ##' @return an object of class popim_population
 ##' @author Tini Garske
 ##' @noRd
-vip_pop_from_df <- function(df) {
+popim_pop_from_df <- function(df) {
 
     assert_column_exists(df, "region")
     assert_column_exists(df, "age")
