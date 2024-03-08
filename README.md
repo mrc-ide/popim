@@ -8,7 +8,7 @@
 [![R-CMD-check](https://github.com/mrc-ide/popim/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mrc-ide/popim/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-**Vaccine Immunity Propagation**
+**POPulation IMmunity**
 
 This repository contains functions to run a demographic model of vaccine
 exposure over time, tracking the vaccine-derived immunity by age through
