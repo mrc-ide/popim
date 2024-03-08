@@ -55,18 +55,18 @@
     <loc>/reference/plot_immunity.html</loc>
   </url>
   <url>
+    <loc>/reference/popim-package.html</loc>
+  </url>
+  <url>
+    <loc>/reference/popim_pop_from_file.html</loc>
+  </url>
+  <url>
+    <loc>/reference/popim_population.html</loc>
+  </url>
+  <url>
     <loc>/reference/read_vacc_activities.html</loc>
   </url>
   <url>
     <loc>/reference/vacc_from_immunity.html</loc>
-  </url>
-  <url>
-    <loc>/reference/vip-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/vip_pop_from_file.html</loc>
-  </url>
-  <url>
-    <loc>/reference/vip_population.html</loc>
   </url>
 </urlset>
