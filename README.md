@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/mrc-ide/vip/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mrc-ide/vip/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/mrc-ide/popim/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mrc-ide/popim/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 **Vaccine Immunity Propagation**
