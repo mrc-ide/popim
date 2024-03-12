@@ -13,8 +13,8 @@ file name is relative to the current working directory.}
 }
 \value{
 An object of class "popim_population", a dataframe with one row
-per birth cohort/year/region, with columns "region", "year",
-"age", "cohort", "immunity", "pop_size".
+per birth cohort/year/region, with columns \code{region}, \code{year},
+\code{age}, \code{cohort}, \code{immunity}, \code{pop_size}.
 }
 \description{
 Reads a population data from a .csv file, checks if
@@ -26,7 +26,8 @@ The requirements are that the data contain the columns \code{region},
 \code{age}, \code{year} which will be coerced to character, integer,
 integer. Columns \code{pop_size} and \code{immunity} are optional; they will
 be coerced to numeric, and if missing will be initialised to 0 and
-NA, respectively be set to NA and 0, respectively.
+NA, respectively be set to NA and 0, respectively. Any additional
+columns will be retained in the "popim_population" object.
 
 Limitations for values:
 \itemize{

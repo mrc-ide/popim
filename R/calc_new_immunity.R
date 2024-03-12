@@ -22,7 +22,7 @@
 #'     resulting in the sum of both coverages, though capped by 1
 #'     (full coverage).
 #' @return A scalar: combined coverage
-#'
+#' @noRd
 calc_new_immunity <- function(coverage, prev_immunity, targeting) {
 
     assert_scalar(coverage)

@@ -6,7 +6,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for random tar
     
     ## single vaccination activity, 1 age group, random targeting,
     ## going into completely naive population:
-    vaccs <- new_vacc_activities(region = "UK", year = 2001,
+    vaccs <- popim_vacc_activities(region = "UK", year = 2001,
                                  age_first = 0, age_last = 0,
                                  coverage = 0.5, doses = NA,
                                  targeting = "random")
@@ -32,7 +32,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for random tar
     ## vaccination of the last age group can never be detected: by the
     ## time the immunity is updated (next year), this age group has
     ## aged out of the population.
-    vaccs <- new_vacc_activities(region = "UK", year = 2001,
+    vaccs <- popim_vacc_activities(region = "UK", year = 2001,
                                  age_first = 0, age_last = 3,
                                  coverage = 0.5, doses = NA,
                                  targeting = "random")
@@ -53,7 +53,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for random tar
     expect_equal(va_out, vaccs)
 
     ## a campaign and routine in the same year:
-    vaccs <- new_vacc_activities(region = "UK", year = 2001,
+    vaccs <- popim_vacc_activities(region = "UK", year = 2001,
                                  age_first = c(0, 2), age_last = c(0, 3),
                                  coverage = 0.5, doses = NA,
                                  targeting = "random")
@@ -74,7 +74,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for non-random
     
     ## single vaccination activity, 1 age group, targeted targeting,
     ## going into completely naive population:
-    vaccs <- new_vacc_activities(region = "UK", year = 2001,
+    vaccs <- popim_vacc_activities(region = "UK", year = 2001,
                                  age_first = 0, age_last = 0,
                                  coverage = 0.3, doses = NA,
                                  targeting = "targeted")
@@ -96,7 +96,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for non-random
 
     ## single vaccination activity, 1 age group, correlated targeting,
     ## going into completely naive population:
-    vaccs <- new_vacc_activities(region = "UK", year = 2001,
+    vaccs <- popim_vacc_activities(region = "UK", year = 2001,
                                  age_first = 0, age_last = 0,
                                  coverage = 0.3, doses = NA,
                                  targeting = "correlated")
