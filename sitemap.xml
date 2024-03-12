@@ -16,19 +16,10 @@
     <loc>/index.html</loc>
   </url>
   <url>
-    <loc>/reference/add_immunity_rate.html</loc>
-  </url>
-  <url>
-    <loc>/reference/aggregate_vacc_activities.html</loc>
-  </url>
-  <url>
     <loc>/reference/apply_vacc.html</loc>
   </url>
   <url>
     <loc>/reference/apply_vaccs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/calc_new_immunity.html</loc>
   </url>
   <url>
     <loc>/reference/calc_pop_immunity.html</loc>
@@ -37,16 +28,7 @@
     <loc>/reference/complete_vacc_activities.html</loc>
   </url>
   <url>
-    <loc>/reference/coverage_from_doses.html</loc>
-  </url>
-  <url>
-    <loc>/reference/doses_from_coverage.html</loc>
-  </url>
-  <url>
     <loc>/reference/get_all_ages.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_consecutive_range.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
@@ -62,6 +44,9 @@
   </url>
   <url>
     <loc>/reference/popim_population.html</loc>
+  </url>
+  <url>
+    <loc>/reference/popim_vacc_activities.html</loc>
   </url>
   <url>
     <loc>/reference/read_vacc_activities.html</loc>

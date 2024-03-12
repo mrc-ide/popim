@@ -64,8 +64,8 @@ the file name is relative to the current working directory.</p></dd>
     
 
 <p>object of class "popim_vacc_activities", a dataframe with
-one row per vaccination activity, with columns "year",
-"age_first", "age_last", "coverage", "targeting".</p>
+one row per vaccination activity, with columns <code>year</code>,
+<code>age_first</code>, <code>age_last</code>, <code>coverage</code>, <code>targeting</code>.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -76,10 +76,10 @@ respectively.</p>
 <p>0 &lt;= age_first &lt;= age_last
 0 &lt;= coverage &lt;= 1
 targeting must be one of "random", "correlated", "targeted".</p>
-<p>Column <code>region</code> details the (geographical) region to which the
-vaccination activities are administered.</p>
-<p>Column <code>year</code> details the year in which the vaccination activities
-occur.</p>
+<p>Column <code>region</code> details the (geographical) region to which each
+vaccination activity is to be administered.</p>
+<p>Column <code>year</code> details the year in which each vaccination activity
+occurs.</p>
 <p>Columns <code>age_first</code> and <code>age_last</code> give the age range targeted in
 each vaccination activity.</p>
 <p>Column <code>coverage</code> gives the proportion of the target population
@@ -108,6 +108,12 @@ non-immune individuals. This is the most effective use of
 vaccine. It may be realistic in the case of multi-year campaigns
 targeting different areas within the geographical region
 specified.</p>
+    </div>
+    <div id="see-also">
+    <h2>See also</h2>
+    <div class="dont-index"><p><code><a href="popim_vacc_activities.html">popim_vacc_activities()</a></code> for details of the S3 class, and
+<code><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">utils::read.csv()</a></code> which handles the reading of the .csv
+file.</p></div>
     </div>
     <div id="author">
     <h2>Author</h2>
