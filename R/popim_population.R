@@ -2,7 +2,8 @@
 ##'
 ##' The "popim_population" object is a dataframe that models an
 ##' age-structured population through time, tracking population size
-##' and vaccine-induced immunity in the population.
+##' and vaccine-induced immunity in the population. The population may
+##' be spatially disaggregated into several regions.
 ##'
 ##' This constructor sets up the population as fully susceptible
 ##' (i.e., `immunity = 0`, with missing population size (i.e.,
@@ -22,12 +23,13 @@
 ##' @param age_max integer, oldest age to be considered, defaults to
 ##'     100. Must be non-negative, and >= age_min.
 ##' @return S3 object of class "popim_population": a dataframe with
-##'     columns region, year, age, cohort, immunity and pop_size,
-##'     where year and age cover the ranges given by the input
-##'     parameters. Cohort = year - age and gives the year of
-##'     birth. It is redundant but included for ease of
-##'     handling. Immunity and pop_size are initialised as 0 and NA,
-##'     respectively, throughout the whole population.
+##'     columns `region`, `year`, `age`, `cohort`, `immunity` and
+##'     `pop_size`. The first three cover the ranges given by the
+##'     input parameters. `cohort` gives the year of birth. It is
+##'     reduntant as it is calculated as `cohort = year - age`.  It is
+##'     included for ease of handling. Immunity and pop_size are
+##'     initialised as 0 and NA, respectively, throughout the whole
+##'     population.
 ##' @export
 ##' @author Tini Garske
 ##' @examples
@@ -86,7 +88,8 @@ popim_population <- function(region = character(),
 ##' `age`, `year` which will be coerced to character, integer,
 ##' integer. Columns `pop_size` and `immunity` are optional; they will
 ##' be coerced to numeric, and if missing will be initialised to 0 and
-##' NA, respectively be set to NA and 0, respectively.
+##' NA, respectively be set to NA and 0, respectively. Any additional
+##' columns will be retained in the "popim_population" object.
 ##'
 ##' Limitations for values:
 ##' * `age` must be non-negative integer
@@ -97,8 +100,8 @@ popim_population <- function(region = character(),
 ##'     are to be read. If it does not contain an absolute path, the
 ##'     file name is relative to the current working directory.
 ##' @return An object of class "popim_population", a dataframe with one row
-##'     per birth cohort/year/region, with columns "region", "year",
-##'     "age", "cohort", "immunity", "pop_size".
+##'     per birth cohort/year/region, with columns `region`, `year`,
+##'     `age`, `cohort`, `immunity`, `pop_size`.
 ##' @seealso [popim_population()] for details of the S3 class, and
 ##'     [utils::read.csv()] which handles the reading of the .csv
 ##'     file.
