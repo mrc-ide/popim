@@ -75,6 +75,7 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
 ##'     `immunity_diff` that holds the difference in immunity between
 ##'     the current and next year.
 ##' @author Tini Garske
+##' @noRd
 add_immunity_rate <- function(pop) {
 
     a <- attributes(pop)
@@ -147,6 +148,7 @@ get_all_ages <- function(va) {
 ##'     range into which the ages can be aggregated. The length of the
 ##'     list depends on the complexity of the input ages.
 ##' @author Tini Garske
+##' @noRd
 get_consecutive_range <- function(ages) {
 
     assert_non_negative(ages)
@@ -209,6 +211,7 @@ get_consecutive_range <- function(ages) {
 ##'     activities as the input object, but where possible aggregated
 ##'     into fewer lines
 ##' @author Tini Garske
+##' @noRd
 aggregate_vacc_activities <- function(vacc_act, n_digits = 10) {
 
     assert_vacc_activities(vacc_act)
