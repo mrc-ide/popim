@@ -2,20 +2,19 @@
 % Please edit documentation in R/apply_vacc.R
 \name{apply_vaccs}
 \alias{apply_vaccs}
-\title{Function to apply vaccination activities to a population}
+\title{Apply vaccination activities to a "popim_population" object}
 \usage{
 apply_vaccs(pop_df, vaccs_df)
 }
 \arguments{
-\item{pop_df}{object of class popim_population such as created by
-function 'popim_population'}
+\item{pop_df}{object of class "popim_population" such as created by
+function \code{\link[=popim_population]{popim_population()}}.}
 
-\item{vaccs_df}{object of class 'popim_vacc_activities' such as
-created by reading from file with function
-'read_vacc_activities'}
+\item{vaccs_df}{object of class "popim_vacc_activities" such as
+created by \code{\link[=popim_vacc_activities]{popim_vacc_activities()}}.}
 }
 \value{
-pop_df: the supplied population dataframe object with
+The supplied population dataframe object with
 updated immunity to reflect the vaccination activities
 supplied in vaccs_df.
 }
