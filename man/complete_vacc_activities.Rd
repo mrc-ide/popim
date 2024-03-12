@@ -8,13 +8,13 @@ popim_vacc_activities object}
 complete_vacc_activities(vaccs, pop_df)
 }
 \arguments{
-\item{vaccs}{popim_vacc_activities object}
+\item{vaccs}{"popim_vacc_activities" object}
 
-\item{pop_df}{popim_population object}
+\item{pop_df}{"popim_population" object}
 }
 \value{
-popim_vacc_activities object, updated to have both
-doses and coverage information
+The supplied object of class "popim_vacc_activities",
+updated to have both \code{doses} and \code{coverage} information.
 }
 \description{
 For each line in the "popim_vacc_activities" object the given

@@ -27,17 +27,19 @@ popim_population(
 }
 \value{
 S3 object of class "popim_population": a dataframe with
-columns region, year, age, cohort, immunity and pop_size,
-where year and age cover the ranges given by the input
-parameters. Cohort = year - age and gives the year of
-birth. It is redundant but included for ease of
-handling. Immunity and pop_size are initialised as 0 and NA,
-respectively, throughout the whole population.
+columns \code{region}, \code{year}, \code{age}, \code{cohort}, \code{immunity} and
+\code{pop_size}. The first three cover the ranges given by the
+input parameters. \code{cohort} gives the year of birth. It is
+reduntant as it is calculated as \code{cohort = year - age}.  It is
+included for ease of handling. Immunity and pop_size are
+initialised as 0 and NA, respectively, throughout the whole
+population.
 }
 \description{
 The "popim_population" object is a dataframe that models an
 age-structured population through time, tracking population size
-and vaccine-induced immunity in the population.
+and vaccine-induced immunity in the population. The population may
+be spatially disaggregated into several regions.
 }
 \details{
 This constructor sets up the population as fully susceptible

@@ -13,8 +13,8 @@ the file name is relative to the current working directory.}
 }
 \value{
 object of class "popim_vacc_activities", a dataframe with
-one row per vaccination activity, with columns "year",
-"age_first", "age_last", "coverage", "targeting".
+one row per vaccination activity, with columns \code{year},
+\code{age_first}, \code{age_last}, \code{coverage}, \code{targeting}.
 }
 \description{
 Reads a list of vaccination activities from a .csv file, checks if
@@ -31,11 +31,11 @@ respectively.
 0 <= coverage <= 1
 targeting must be one of "random", "correlated", "targeted".
 
-Column \code{region} details the (geographical) region to which the
-vaccination activities are administered.
+Column \code{region} details the (geographical) region to which each
+vaccination activity is to be administered.
 
-Column \code{year} details the year in which the vaccination activities
-occur.
+Column \code{year} details the year in which each vaccination activity
+occurs.
 
 Columns \code{age_first} and \code{age_last} give the age range targeted in
 each vaccination activity.
@@ -69,6 +69,11 @@ non-immune individuals. This is the most effective use of
 vaccine. It may be realistic in the case of multi-year campaigns
 targeting different areas within the geographical region
 specified.
+}
+\seealso{
+\code{\link[=popim_vacc_activities]{popim_vacc_activities()}} for details of the S3 class, and
+\code{\link[utils:read.table]{utils::read.csv()}} which handles the reading of the .csv
+file.
 }
 \author{
 Tini Garske

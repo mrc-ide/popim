@@ -9,9 +9,9 @@
 ##' or will be recycled as appropriate by [data.frame()].
 ##'
 ##' @param region character vector: specifies the geographic region to
-##'     which each vaccination activities are to be administered.
-##' @param year integer vector: specifies the year in which the
-##'     vaccination activities take place.
+##'     which each vaccination activity is to be administered.
+##' @param year integer vector: specifies the year in which each
+##'     vaccination activity takes place.
 ##' @param age_first,age_last non-negative integer vectors: specify
 ##'     the age range targeted in the vaccination
 ##'     activity. `age_first` <= `age_last for all entries.
@@ -39,8 +39,22 @@
 ##'     columns `region`, `year`, `age_first`, `age_last`, `coverage`,
 ##'     `doses`, `targeting`.
 ##' @author Tini Garske
-##' @noRd
-new_vacc_activities <- function(region = character(), year = integer(),
+##' @export
+##' @examples
+##' # setting up an empty class "popim_vacc_activities" object of the
+##' # correct structure:
+##' vacc <- popim_vacc_activities()
+##'
+##' # setting up a couple of specific vaccination activities
+##' vacc <- popim_vacc_activities(region = c("UK", "FRA"),
+##'                             year = c(2010, 2005),
+##'                             age_first = c(0, 0),
+##'                             age_last = c(0, 10),
+##'                             coverage = c(0.8, 0.5),
+##'                             doses = NA,
+##'                             targeting = "random")
+##'
+popim_vacc_activities <- function(region = character(), year = integer(),
                                 age_first = integer(), age_last = integer(),
                                 coverage = double(), doses = double(),
                                 targeting = character()) {
@@ -102,11 +116,11 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 ##' 0 <= coverage <= 1
 ##' targeting must be one of "random", "correlated", "targeted".
 ##'
-##' Column `region` details the (geographical) region to which the
-##' vaccination activities are administered.
+##' Column `region` details the (geographical) region to which each
+##' vaccination activity is to be administered.
 ##'
-##' Column `year` details the year in which the vaccination activities
-##' occur.
+##' Column `year` details the year in which each vaccination activity
+##' occurs.
 ##'
 ##' Columns `age_first` and `age_last` give the age range targeted in
 ##' each vaccination activity.
@@ -145,9 +159,12 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 ##'     are to be read from. If it does not contain an absolute path,
 ##'     the file name is relative to the current working directory.
 ##' @return object of class "popim_vacc_activities", a dataframe with
-##'     one row per vaccination activity, with columns "year",
-##'     "age_first", "age_last", "coverage", "targeting".
+##'     one row per vaccination activity, with columns `year`,
+##'     `age_first`, `age_last`, `coverage`, `targeting`.
 ##' @author Tini Garske
+##' @seealso [popim_vacc_activities()] for details of the S3 class, and
+##'     [utils::read.csv()] which handles the reading of the .csv
+##'     file.
 ##' @export
 read_vacc_activities <- function(file) {
 
@@ -173,10 +190,10 @@ read_vacc_activities <- function(file) {
 ##' activity, the function checks if they are consistent with the
 ##' population size, and fails if there are any inconsistencies.
 ##'
-##' @param vaccs popim_vacc_activities object
-##' @param pop_df popim_population object
-##' @return popim_vacc_activities object, updated to have both
-##'     doses and coverage information
+##' @param vaccs "popim_vacc_activities" object
+##' @param pop_df "popim_population" object
+##' @return The supplied object of class "popim_vacc_activities",
+##'     updated to have both `doses` and `coverage` information.
 ##' @author Tini Garske
 ##' @export
 complete_vacc_activities <- function(vaccs, pop_df) {
