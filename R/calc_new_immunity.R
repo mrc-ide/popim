@@ -1,26 +1,26 @@
-#' Function to combine two coverages for the same cohort
+#' Combine two coverages for the same cohort
 #'
 #' This function calculates the resulting coverage if coverages of
 #' two separate vaccination activities are combined, and returns this
 #' single value.
 #'
-#' @param coverage coverage value of the new campaign as a proportion
-#'     - needs to be between 0 and 1.
-#' @param prev_immunity pre-existing immunity of the cohort to be
-#'     vaccinated as a proportion. Can be a vector (e.g. for
-#'     calculation of resulting immunity in the same cohort forward in
-#'     time). All entries need to be between 0 and 1.
+#' @param coverage numeric between 0 and 1. Coverage value of the new
+#'     campaign as a proportion of the target population.
+#' @param prev_immunity numeric between 0 and 1. Pre-existing immunity
+#'     of the cohort to be vaccinated as a proportion. Can be a vector
+#'     (e.g. for calculation of resulting immunity in the same cohort
+#'     forward in time).
 #' @param targeting char to determine the assumption used to combine
 #'     coverages. Valid values are "random", "correlated", "targeted".
-#'     For targeting = "random" (the default), allocation of vaccine is
-#'     random within the population, therefore the resulting coverage
-#'     will be smaller than the sum of the coverages. For targeting =
-#'     "correlated", there is a 100% correlation between who will get
-#'     the vaccine in either vaccination activitiy, the resulting
-#'     coverage is simply the larger of the two inputs. For targeting =
-#'     "targeted", doses are targeted at unvaccinated people,
-#'     resulting in the sum of both coverages, though capped by 1
-#'     (full coverage).
+#'     For targeting = "random" (the default), allocation of vaccine
+#'     is random within the population, therefore the resulting
+#'     coverage will be smaller than the sum of the coverages. For
+#'     targeting = "correlated", there is a 100% correlation between
+#'     who will get the vaccine in either vaccination activitiy, the
+#'     resulting coverage is simply the larger of the two inputs. For
+#'     targeting = "targeted", doses are targeted at unvaccinated
+#'     people, resulting in the sum of both coverages, though capped
+#'     by 1 (full coverage).
 #' @return A scalar: combined coverage
 #' @noRd
 calc_new_immunity <- function(coverage, prev_immunity, targeting) {
@@ -57,9 +57,9 @@ assert_valid_targeting <- function(x, name = deparse(substitute(x))) {
 }
 
 ##' Calculate the overall population immunity (aggregating over age)
-##' from the supplied popim_population object
+##' from the supplied "popim_population" object
 ##'
-##' @param pop popim_population object for which the population size and
+##' @param pop "popim_population" object for which the population size and
 ##'     immunity will be aggregated over age.
 ##' @return dataframe containing the popim_population aggregated by age.
 ##' @author Tini Garske

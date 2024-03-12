@@ -1,4 +1,7 @@
-##' Function to apply a single vaccination activity to the population
+##' Apply a single vaccination activity to a "popim_population" object
+##'
+##' The vaccination activity is defined by the input parameters of the
+##' function.
 ##'
 ##' If the vaccination activity has non-missing entries for both
 ##' coverage and doses, the coverage is used - there is no test
@@ -6,29 +9,30 @@
 ##' target population size in the popim_population object to which the
 ##' vaccination activity is applied.
 ##'
-##' @param pop_df population dataframe object such as created by
-##'     function 'popim_population'
-##' @param region region of the vaccination activity
-##' @param year year of the vaccination activity
-##' @param age_first age of the youngest age group targeted
-##' @param age_last age of the oldest age group targeted
-##' @param coverage proportion of the population to be vaccinated in
-##'     the activity
-##' @param doses number of doses available to vaccinate the target population
-##' @param targeting character to determine how successive activities are
-##'     targeted. Valid values are "random", "correlated", "targeted".
-##'     For targeting = "random" (the default), allocation of vaccine is
-##'     random within the population, therefore the resulting coverage
-##'     will be smaller than the sum of the coverages. For targeting =
-##'     "correlated", there is a 100% correlation between who will get
-##'     the vaccine in either vaccination activitiy, the resulting
-##'     coverage is simply the larger of the two inputs. For targeting =
-##'     "targeted", doses are targeted at unvaccinated people,
-##'     resulting in the sum of both coverages, though capped by 1
-##'     (full coverage).
-##' @return pop_df: the supplied population dataframe object with
+##' @param pop_df "popim_population" dataframe object such as created
+##'     by function [popim_population()]
+##' @param region character, region of the vaccination activity
+##' @param year integer, year of the vaccination activity
+##' @param age_first,age_last non-negative integer with `age_last` >=
+##'     `age_first`. Age range targeted
+##' @param coverage numeric, 0 <= `coverage` <= 1. Proportion of the
+##'     target population to be vaccinated in the activity.
+##' @param doses numeric, non-negative. Number of doses available to
+##'     vaccinate the target population.
+##' @param targeting character, determines how successive activities
+##'     are targeted. Valid values are "random", "correlated",
+##'     "targeted".  For `targeting` = "random" (the default),
+##'     allocation of vaccine is random within the population,
+##'     therefore the resulting coverage will be smaller than the sum
+##'     of the coverages. For `targeting` = "correlated", there is a
+##'     100% correlation between who will get the vaccine in either
+##'     vaccination activitiy, the resulting coverage is simply the
+##'     larger of the two inputs. For `targeting` = "targeted", doses
+##'     are targeted at unvaccinated people, resulting in the sum of
+##'     both coverages, though capped by 1 (full coverage).
+##' @return The supplied population dataframe object with
 ##'     updated immunity to reflect the vaccination activity.
-##' @export
+##' @noRd
 ##' @author Tini Garske
 apply_vacc <- function(pop_df, region, year, age_first = 0, age_last = Inf,
                        coverage = double(), doses = NA_real_,
@@ -67,19 +71,18 @@ apply_vacc <- function(pop_df, region, year, age_first = 0, age_last = Inf,
     }
     pop_df
 }
-##' Function to apply vaccination activities to a population
+##' Apply vaccination activities to a "popim_population" object
 ##'
 ##' Takes the vaccination activities listed in the input object
 ##' vaccs_df (a data.frame object of class popim_vacc_activities), and
 ##' applies them to the popim_population object pop_df, then returns
 ##' that updated object.
 ##'
-##' @param pop_df object of class popim_population such as created by
-##'     function 'popim_population'
-##' @param vaccs_df object of class 'popim_vacc_activities' such as
-##'     created by reading from file with function
-##'     'read_vacc_activities'
-##' @return pop_df: the supplied population dataframe object with
+##' @param pop_df object of class "popim_population" such as created by
+##'     function [popim_population()].
+##' @param vaccs_df object of class "popim_vacc_activities" such as
+##'     created by [popim_vacc_activities()].
+##' @return The supplied population dataframe object with
 ##'     updated immunity to reflect the vaccination activities
 ##'     supplied in vaccs_df.
 ##' @export
@@ -160,16 +163,15 @@ coverage_from_doses <- function(pop_df, doses, region, year, age_first = 0,
 ##' targeted region(s).
 ##'
 ##' @param pop_df object of class popim_population such as created by
-##'     function `popim_population`
+##'     [popim_population()].
 ##' @param coverage proportion of the target population to be covered,
-##'     0 <= coverage <= 1
-##' @param region region to be targeted
-##' @param year year of vaccination activity
-##' @param age_first youngest age group to be targeted
-##' @param age_last oldest age group to be targeted
-##' @return doses: a non-negative number between indicating how many
-##'     doses will be needed to achieve the given coverage in the
-##'     target population.
+##'     0 <= `coverage` <= 1.
+##' @param region region to be targeted.
+##' @param year year of vaccination activity.
+##' @param age_first youngest age group to be targeted.
+##' @param age_last oldest age group to be targeted.
+##' @return A non-negative number indicating how many doses will be
+##'     needed to achieve the given coverage in the target population.
 ##' @author Tini Garske
 ##' @noRd
 doses_from_coverage <- function(pop_df, coverage, region, year, age_first = 0, age_last = Inf) {

@@ -7,25 +7,26 @@
 vacc_from_immunity(pop, targeting = "random", n_digits = 10)
 }
 \arguments{
-\item{pop}{popim_population object for which vaccination activities
-are to be inferred}
+\item{pop}{"popim_population" object for which vaccination activities
+are to be inferred.}
 
-\item{targeting}{string to determine the assumption of how doses
+\item{targeting}{character, determines the assumption of how doses
 are allocated. Valid options are "random", "correlated",
 "targeted".}
 
 \item{n_digits}{number of digits to which the coverage is to be
-rounded.}
+rounded, defaults to 10.}
 }
 \value{
 popim_vacc_activites object
 }
 \description{
-Given a popim_population object and an assumption of how vaccine is
-targeted in a partially immune population, this function infers
-the vaccination activities that returns a popim_vacc_activities
-object that details the vaccination activities that have given
-rise to the specified population immunity.
+Given a "popim_population" object and an assumption of how vaccine
+is targeted in a partially immune population, this function infers
+the vaccination activities that have given rise to the specified
+population immunity. When there is ambiguity (e.g., due to
+subsequent campaigns achieving full coverage), the minimum
+coverage/doses needed will be returned.
 }
 \details{
 Default is the targeting option "random", which assumes that
