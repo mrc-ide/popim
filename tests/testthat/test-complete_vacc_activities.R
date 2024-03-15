@@ -8,7 +8,7 @@ test_that("complete_vacc_activities adds appropriate doses information for a sin
                                  age_last = 0, coverage = 0.5, doses = NA,
                                  targeting = "random")
 
-    vaccs <- complete_vacc_activities(vaccs = vaccs, pop_df = pop)
+    vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop)
 
     expect_equal(50, vaccs$doses)
 })
@@ -23,7 +23,7 @@ test_that("complete_vacc_activities adds appropriate doses information for sever
                                  age_last = 0, coverage = 0.5, doses = NA,
                                  targeting = "random")
 
-    vaccs <- complete_vacc_activities(vaccs = vaccs, pop_df = pop)
+    vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop)
 
     expect_equal(rep(50, 3), vaccs$doses)
 })
@@ -38,7 +38,7 @@ test_that("complete_vacc_activities adds appropriate coverage information for a 
                                  age_last = 0, coverage = NA, doses = 100,
                                  targeting = "random")
 
-    vaccs <- complete_vacc_activities(vaccs = vaccs, pop_df = pop)
+    vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop)
 
     expect_equal(1, vaccs$coverage)
 })
@@ -53,7 +53,7 @@ test_that("complete_vacc_activities adds appropriate coverage information for se
                                  age_last = 0, coverage = NA, doses = 100,
                                  targeting = "random")
 
-    vaccs <- complete_vacc_activities(vaccs = vaccs, pop_df = pop)
+    vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop)
 
     expect_equal(rep(1, 3), vaccs$coverage)
 })
@@ -68,7 +68,7 @@ test_that("complete_vacc_activities flags inconsistend coverage and doses inform
                                  age_last = 0, coverage = 0.5, doses = 100,
                                  targeting = "random")
 
-    expect_error(vaccs <- complete_vacc_activities(vaccs = vaccs, pop_df = pop))
+    expect_error(vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop))
 })
 
 test_that("complete_vacc_activities adds appropriate coverage information for several activities", {
@@ -82,7 +82,7 @@ test_that("complete_vacc_activities adds appropriate coverage information for se
                                  doses = c(50, 50, NA),
                                  targeting = "random")
 
-    vaccs <- complete_vacc_activities(vaccs = vaccs, pop_df = pop)
+    vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop)
 
     expect_equal(rep(0.5, 3), vaccs$coverage)
     expect_equal(rep(50, 3), vaccs$doses)
@@ -99,5 +99,5 @@ test_that("complete_vacc_activities fails conflicting coverage/doses information
                                  doses = c(50, 50, NA),
                                  targeting = "random")
 
-    expect_error(vaccs <- complete_vacc_activities(vaccs = vaccs, pop_df = pop))
+    expect_error(vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop))
 })

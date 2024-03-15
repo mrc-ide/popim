@@ -4,24 +4,24 @@
 \alias{apply_vaccs}
 \title{Apply vaccination activities to a \code{popim_population} object}
 \usage{
-apply_vaccs(pop_df, vaccs_df)
+apply_vaccs(pop, vaccs_df)
 }
 \arguments{
-\item{pop_df}{object of class \code{popim_population} such as created by
-function \code{\link[=popim_population]{popim_population()}}.}
+\item{pop}{An object of class \code{popim_population} such as
+created by \code{\link[=popim_population]{popim_population()}}.}
 
-\item{vaccs_df}{object of class \code{popim_vacc_activities} such as
+\item{vaccs_df}{An object of class \code{popim_vacc_activities} such as
 created by \code{\link[=popim_vacc_activities]{popim_vacc_activities()}}.}
 }
 \value{
-The supplied population dataframe object with
-updated immunity to reflect the vaccination activities
-supplied in vaccs_df.
+The input \code{popim_population} class object \code{pop} with
+updated column \code{immunity} to reflect the vaccination
+activities supplied in \code{vaccs_df}.
 }
 \description{
 Takes the vaccination activities listed in the input object
 vaccs_df (a data.frame object of class popim_vacc_activities), and
-applies them to the popim_population object pop_df, then returns
+applies them to the popim_population object pop, then returns
 that updated object.
 }
 \author{

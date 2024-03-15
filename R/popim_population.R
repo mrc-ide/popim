@@ -5,8 +5,21 @@
 ##' and vaccine-induced immunity in the population. The population may
 ##' be spatially disaggregated into several regions.
 ##'
+##' An object of S3 class `popim_population` is a dataframe that
+##' contains the columns
+##' * `region`: character. 
+##' * `year`: integer.
+##' * `age`: integer, non-negative.
+##' * `cohort`: integer. This is redundant, equals `year` - `age`,
+##'    and only included for ease of handling.
+##' * `immunity`: numeric, between 0 and 1 (inclusive). Proportion of
+##'    the cohort that is immune due to vaccination. Initialised to 0
+##'    by the constructor `popim_population()`.
+##' * `pop_size`: numeric, non-negative. Size of the cohort.
+##'    Initialised to NA_real by the constructor `popim_population()`.
+##'
 ##' This constructor sets up the population as fully susceptible
-##' (i.e., `immunity = 0`, with missing population size (i.e.,
+##' (i.e., `immunity = 0`), with missing population size (i.e.,
 ##' `pop_size = NA_real_`) throughout. The parameters passed to the
 ##' constructor are retained as attributes to the dataframe object.
 ##'
@@ -22,7 +35,7 @@
 ##'     0. Must be non-negative.
 ##' @param age_max integer, oldest age to be considered, defaults to
 ##'     100. Must be non-negative, and >= age_min.
-##' @return S3 object of class `popim_population`: a dataframe with
+##' @return An object of class `popim_population`. This is a dataframe with
 ##'     columns `region`, `year`, `age`, `cohort`, `immunity` and
 ##'     `pop_size`. The first three cover the ranges given by the
 ##'     input parameters. `cohort` gives the year of birth. It is

@@ -2,15 +2,15 @@
 % Please edit documentation in R/popim_vacc_activities.R
 \name{complete_vacc_activities}
 \alias{complete_vacc_activities}
-\title{Add coverage or doses information (whichever is missing) to the
-popim_vacc_activities object}
+\title{Add coverage or doses information to the input
+\code{popim_vacc_activities} object}
 \usage{
-complete_vacc_activities(vaccs, pop_df)
+complete_vacc_activities(vaccs, pop)
 }
 \arguments{
 \item{vaccs}{\code{popim_vacc_activities} object}
 
-\item{pop_df}{\code{popim_population} object}
+\item{pop}{\code{popim_population} object}
 }
 \value{
 The supplied object of class \code{popim_vacc_activities},

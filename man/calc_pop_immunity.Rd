@@ -2,21 +2,20 @@
 % Please edit documentation in R/calc_new_immunity.R
 \name{calc_pop_immunity}
 \alias{calc_pop_immunity}
-\title{Calculate the overall population immunity (aggregating over age)
-from the supplied \code{popim_population} object}
+\title{Aggregate the population immunity over age}
 \usage{
 calc_pop_immunity(pop)
 }
 \arguments{
-\item{pop}{\code{popim_population} object for which the population size and
+\item{pop}{A \code{popim_population} object for which the population size and
 immunity will be aggregated over age.}
 }
 \value{
-dataframe containing the popim_population aggregated by age.
+A dataframe containing the \code{popim_population} aggregated by age.
 }
 \description{
 Calculate the overall population immunity (aggregating over age)
-from the supplied \code{popim_population} object
+from the supplied \code{popim_population} object.
 }
 \author{
 Tini Garske

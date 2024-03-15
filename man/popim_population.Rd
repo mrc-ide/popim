@@ -26,7 +26,7 @@ popim_population(
 100. Must be non-negative, and >= age_min.}
 }
 \value{
-S3 object of class \code{popim_population}: a dataframe with
+An object of class \code{popim_population}. This is a dataframe with
 columns \code{region}, \code{year}, \code{age}, \code{cohort}, \code{immunity} and
 \code{pop_size}. The first three cover the ranges given by the
 input parameters. \code{cohort} gives the year of birth. It is
@@ -42,8 +42,23 @@ and vaccine-induced immunity in the population. The population may
 be spatially disaggregated into several regions.
 }
 \details{
+An object of S3 class \code{popim_population} is a dataframe that
+contains the columns
+\itemize{
+\item \code{region}: character.
+\item \code{year}: integer.
+\item \code{age}: integer, non-negative.
+\item \code{cohort}: integer. This is redundant, equals \code{year} - \code{age},
+and only included for ease of handling.
+\item \code{immunity}: numeric, between 0 and 1 (inclusive). Proportion of
+the cohort that is immune due to vaccination. Initialised to 0
+by the constructor \code{popim_population()}.
+\item \code{pop_size}: numeric, non-negative. Size of the cohort.
+Initialised to NA_real by the constructor \code{popim_population()}.
+}
+
 This constructor sets up the population as fully susceptible
-(i.e., \code{immunity = 0}, with missing population size (i.e.,
+(i.e., \code{immunity = 0}), with missing population size (i.e.,
 \code{pop_size = NA_real_}) throughout. The parameters passed to the
 constructor are retained as attributes to the dataframe object.
 

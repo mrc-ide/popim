@@ -1,26 +1,38 @@
-##' Plot the vaccine-derived immunity of a `popim_population` object
+##' Plot the immunity or population size of a `popim_population` object
 ##'
 ##' @details The population is displayed in a grid showing the cohorts
 ##'     through time. Time is shown on the x-axis, age on the y-axis,
 ##'     such that a particular cohort tracks along diagonally from
 ##'     bottom left to top right. If there are several regions, these
-##'     are shown as separate facets. The colour in each cell
-##'     corresponds to the proportion of the cohort that is immune.
+##'     are shown as separate facets.
 ##'
-##' @param pop_df `popim_population` object such as created by
-##'     [popim_population()]
-##' @return ggplot object
+##' The colour in each cell corresponds to:
+##' * for `plot_immunity()`: the proportion of each cohort that is
+##'   immune, therefore varying between 0 and 1.
+##' * for `plot_pop_size()`: the size of each cohort.
+##'
+##' As the returned object is a regular `ggplot` object, it can be
+##' further modified with the ususal `ggplot2` syntax.
+##'
+##'
+##' @param pop `popim_population` object such as created by
+##'     [popim_population()].
+##' @return A ggplot object.
+##' @name plotting
+NULL
+
+##' @rdname plotting
 ##' @export
 ##' @author Tini Garske
-plot_immunity <- function(pop_df) {
+plot_immunity <- function(pop) {
 
-    assert_population(pop_df)
+    assert_population(pop)
     
     pal <- MetBrewer::met.brewer("VanGogh3", 5, "discrete")
     ## might want to get rid of this dependency and implement the
     ## option to pass a colour scheme
 
-    g <- ggplot2::ggplot(pop_df) +
+    g <- ggplot2::ggplot(pop) +
         ggplot2::aes(x = .data$year, y = .data$age, fill = .data$immunity) +
         ggplot2::geom_tile() +
         ggplot2::facet_wrap(~region) +
@@ -33,27 +45,17 @@ plot_immunity <- function(pop_df) {
     return(g)
 }
 
-##' Plot the population size of a `popim_population` object
-##'
-##' @details The population is displayed in a grid showing the cohorts
-##'     through time. Time is shown on the x-axis, age on the y-axis,
-##'     such that a particular cohort tracks along diagonally from
-##'     bottom left to top right. If there are several regions, these
-##'     are shown as separate facets. The colour in each cell
-##'     corresponds to the number of people in the cohort. 
-##' @param pop_df `popim_population` object such as created by
-##'     [popim_population()]
-##' @return ggplot object
+##' @rdname plotting
 ##' @author Tini Garske
 ##' @export
-plot_pop_size <- function(pop_df) {
-    assert_population(pop_df)
+plot_pop_size <- function(pop) {
+    assert_population(pop)
     
     pal <- MetBrewer::met.brewer("VanGogh3", 5, "discrete")
     ## might want to get rid of this dependency and implement the
     ## option to pass a colour scheme
 
-    g <- ggplot2::ggplot(pop_df) +
+    g <- ggplot2::ggplot(pop) +
         ggplot2::aes(x = .data$year, y = .data$age, fill = .data$pop_size) +
         ggplot2::geom_tile() +
         ggplot2::facet_wrap(~region) +

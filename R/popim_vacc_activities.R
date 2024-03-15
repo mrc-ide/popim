@@ -180,8 +180,8 @@ read_vacc_activities <- function(file) {
     df
 }
 
-##' Add coverage or doses information (whichever is missing) to the
-##' popim_vacc_activities object
+##' Add coverage or doses information to the input
+##' `popim_vacc_activities` object
 ##'
 ##' For each line in the `popim_vacc_activities` object the given
 ##' information of coverage is converted to doses, or vice versa,
@@ -191,20 +191,20 @@ read_vacc_activities <- function(file) {
 ##' population size, and fails if there are any inconsistencies.
 ##'
 ##' @param vaccs `popim_vacc_activities` object
-##' @param pop_df `popim_population` object
+##' @param pop `popim_population` object
 ##' @return The supplied object of class `popim_vacc_activities`,
 ##'     updated to have both `doses` and `coverage` information.
 ##' @author Tini Garske
 ##' @export
-complete_vacc_activities <- function(vaccs, pop_df) {
+complete_vacc_activities <- function(vaccs, pop) {
     validate_vacc_activities(vaccs)
-    stopifnot(is_population(pop_df))
+    stopifnot(is_population(pop))
 
     ## double check coverage and doses are compatible:
     ii <- which(!is.na(vaccs$coverage) & !is.na(vaccs$doses))
     if(length(ii) > 0) {
         new_doses <- sapply(ii, function(i)
-            doses_from_coverage(pop_df, vaccs$coverage[i], vaccs$region[i],
+            doses_from_coverage(pop, vaccs$coverage[i], vaccs$region[i],
                                 vaccs$year[i],
                                 vaccs$age_first[i], vaccs$age_last[i]))
 
@@ -214,7 +214,7 @@ complete_vacc_activities <- function(vaccs, pop_df) {
     ii <- which(is.na(vaccs$coverage))
     if(length(ii) > 0) {
         vaccs$coverage[ii] <- sapply(ii, function(i)
-            coverage_from_doses(pop_df, vaccs$doses[i], vaccs$region[i],
+            coverage_from_doses(pop, vaccs$doses[i], vaccs$region[i],
                                 vaccs$year[i],
                                 vaccs$age_first[i], vaccs$age_last[i]))
     }
@@ -223,7 +223,7 @@ complete_vacc_activities <- function(vaccs, pop_df) {
     ii <- which(is.na(vaccs$doses))
     if(length(ii) > 0) {
         vaccs$doses[ii] <- sapply(ii, function(i)
-            doses_from_coverage(pop_df, vaccs$coverage[i], vaccs$region[i],
+            doses_from_coverage(pop, vaccs$coverage[i], vaccs$region[i],
                                 vaccs$year[i],
                                 vaccs$age_first[i], vaccs$age_last[i]))
     }
