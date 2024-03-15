@@ -2,7 +2,7 @@
 % Please edit documentation in R/popim_population.R
 \name{popim_population}
 \alias{popim_population}
-\title{Constructor of an object of the "popim_population" class}
+\title{Constructor of an object of the \code{popim_population} class}
 \usage{
 popim_population(
   region = character(),
@@ -26,7 +26,7 @@ popim_population(
 100. Must be non-negative, and >= age_min.}
 }
 \value{
-S3 object of class "popim_population": a dataframe with
+An object of class \code{popim_population}. This is a dataframe with
 columns \code{region}, \code{year}, \code{age}, \code{cohort}, \code{immunity} and
 \code{pop_size}. The first three cover the ranges given by the
 input parameters. \code{cohort} gives the year of birth. It is
@@ -36,21 +36,36 @@ initialised as 0 and NA, respectively, throughout the whole
 population.
 }
 \description{
-The "popim_population" object is a dataframe that models an
+The \code{popim_population} object is a dataframe that models an
 age-structured population through time, tracking population size
 and vaccine-induced immunity in the population. The population may
 be spatially disaggregated into several regions.
 }
 \details{
+An object of S3 class \code{popim_population} is a dataframe that
+contains the columns
+\itemize{
+\item \code{region}: character.
+\item \code{year}: integer.
+\item \code{age}: integer, non-negative.
+\item \code{cohort}: integer. This is redundant, equals \code{year} - \code{age},
+and only included for ease of handling.
+\item \code{immunity}: numeric, between 0 and 1 (inclusive). Proportion of
+the cohort that is immune due to vaccination. Initialised to 0
+by the constructor \code{popim_population()}.
+\item \code{pop_size}: numeric, non-negative. Size of the cohort.
+Initialised to NA_real by the constructor \code{popim_population()}.
+}
+
 This constructor sets up the population as fully susceptible
-(i.e., \code{immunity = 0}, with missing population size (i.e.,
+(i.e., \code{immunity = 0}), with missing population size (i.e.,
 \code{pop_size = NA_real_}) throughout. The parameters passed to the
 constructor are retained as attributes to the dataframe object.
 
 A population with non-missing population size can be read in from
-a suitable file using \code{\link[=popim_pop_from_file]{popim_pop_from_file()}}, while vaccine induced
+a suitable file using \code{\link[=read_popim_pop]{read_popim_pop()}}, while vaccine induced
 immunity can be generated through applying vaccination activities
-to the population with \code{\link[=apply_vaccs]{apply_vaccs()}}.
+to the population with \code{\link[=apply_vacc]{apply_vacc()}}.
 }
 \examples{
 pop <- popim_population(region = "UK", year_min = 2000, year_max = 2010)

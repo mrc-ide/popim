@@ -8,13 +8,13 @@ integer vector giving each individual age group}
 get_all_ages(va)
 }
 \arguments{
-\item{va}{object of class "popim_vacc_activities"}
+\item{va}{object of class \code{popim_vacc_activities}}
 }
 \value{
 integer vector of variable length
 }
 \description{
-If the "popim_vacc_activities" object contains more than one row the
+If the \code{popim_vacc_activities} object contains more than one row the
 rows are assumed to belong to the same campaign, but detail
 different age groups. The function will expand the age ranges to a
 vector that gives every single age cohort targeted.

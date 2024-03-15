@@ -2,24 +2,24 @@
 % Please edit documentation in R/popim_vacc_activities.R
 \name{complete_vacc_activities}
 \alias{complete_vacc_activities}
-\title{Adding coverage or doses information (whichever is missing) to the
-popim_vacc_activities object}
+\title{Add coverage or doses information to the input
+\code{popim_vacc_activities} object}
 \usage{
-complete_vacc_activities(vaccs, pop_df)
+complete_vacc_activities(vaccs, pop)
 }
 \arguments{
-\item{vaccs}{"popim_vacc_activities" object}
+\item{vaccs}{\code{popim_vacc_activities} object}
 
-\item{pop_df}{"popim_population" object}
+\item{pop}{\code{popim_population} object}
 }
 \value{
-The supplied object of class "popim_vacc_activities",
+The supplied object of class \code{popim_vacc_activities},
 updated to have both \code{doses} and \code{coverage} information.
 }
 \description{
-For each line in the "popim_vacc_activities" object the given
+For each line in the \code{popim_vacc_activities} object the given
 information of coverage is converted to doses, or vice versa,
-using the target population size implied by the "popim_population"
+using the target population size implied by the \code{popim_population}
 object supplied. If both coverage and doses are given for any
 activity, the function checks if they are consistent with the
 population size, and fails if there are any inconsistencies.

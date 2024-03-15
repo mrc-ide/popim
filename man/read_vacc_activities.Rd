@@ -2,7 +2,7 @@
 % Please edit documentation in R/popim_vacc_activities.R
 \name{read_vacc_activities}
 \alias{read_vacc_activities}
-\title{Reading vaccination activities from a .csv file}
+\title{Read vaccination activities from a .csv file}
 \usage{
 read_vacc_activities(file)
 }
@@ -12,13 +12,13 @@ are to be read from. If it does not contain an absolute path,
 the file name is relative to the current working directory.}
 }
 \value{
-object of class "popim_vacc_activities", a dataframe with
+object of class \code{popim_vacc_activities}, a dataframe with
 one row per vaccination activity, with columns \code{year},
 \code{age_first}, \code{age_last}, \code{coverage}, \code{targeting}.
 }
 \description{
 Reads a list of vaccination activities from a .csv file, checks if
-the data fulfils the requirements for a "popim_vacc_activities"
+the data fulfils the requirements for a \code{popim_vacc_activities}
 object, and if so returns this object.
 }
 \details{
@@ -44,10 +44,10 @@ Column \code{coverage} gives the proportion of the target population
 that will be vaccinated, while column \code{doses} gives the absolute
 number of doses used in the vaccination activity. For a given
 population size (which is not recorded in the
-"popim_vacc_activities" object generated here), these can be
+\code{popim_vacc_activities} object generated here), these can be
 converted into each other, when both are given, they may be
 inconsistent with each other once applied to a specific
-"popim_population" object. The consistency between these two colums
+\code{popim_population} object. The consistency between these two colums
 cannot be confirmed in without reference to a popim_population
 object, but this function requires that at least one of these is
 non-missing in each row.

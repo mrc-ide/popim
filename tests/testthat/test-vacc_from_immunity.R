@@ -12,7 +12,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for random tar
                                  targeting = "random")
     vaccs <- complete_vacc_activities(vaccs, pop0)
 
-    pop <- apply_vaccs(pop0, vaccs)
+    pop <- apply_vacc(pop0, vaccs)
     va_out <- vacc_from_immunity(pop, targeting = "random", n_digits = 10)
 
     expect_equal(va_out, vaccs)
@@ -21,7 +21,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for random tar
     pop <- pop0
     pop$immunity <- 0.5
 
-    pop <- apply_vaccs(pop, vaccs)
+    pop <- apply_vacc(pop, vaccs)
     va_out <- vacc_from_immunity(pop, targeting = "random", n_digits = 10)
 
     expect_equal(va_out, vaccs)
@@ -38,7 +38,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for random tar
                                  targeting = "random")
     vaccs <- complete_vacc_activities(vaccs, pop0)
     
-    pop <- apply_vaccs(pop0, vaccs)
+    pop <- apply_vacc(pop0, vaccs)
     va_out <- vacc_from_immunity(pop, targeting = "random", n_digits = 10)
 
     expect_equal(va_out, vaccs)
@@ -47,7 +47,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for random tar
     pop <- pop0
     pop$immunity <- 0.3
 
-    pop <- apply_vaccs(pop, vaccs)
+    pop <- apply_vacc(pop, vaccs)
     va_out <- vacc_from_immunity(pop, targeting = "random", n_digits = 10)
 
     expect_equal(va_out, vaccs)
@@ -59,7 +59,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for random tar
                                  targeting = "random")
     vaccs <- complete_vacc_activities(vaccs, pop0)
     
-    pop <- apply_vaccs(pop0, vaccs)
+    pop <- apply_vacc(pop0, vaccs)
     va_out <- vacc_from_immunity(pop, targeting = "random", n_digits = 10)
 
     expect_equal(va_out, vaccs)
@@ -80,7 +80,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for non-random
                                  targeting = "targeted")
     vaccs <- complete_vacc_activities(vaccs, pop0)
 
-    pop <- apply_vaccs(pop0, vaccs)
+    pop <- apply_vacc(pop0, vaccs)
     va_out <- vacc_from_immunity(pop, targeting = "targeted", n_digits = 10)
 
     expect_equal(va_out, vaccs)
@@ -89,7 +89,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for non-random
     pop <- pop0
     pop$immunity <- 0.3
 
-    pop <- apply_vaccs(pop, vaccs)
+    pop <- apply_vacc(pop, vaccs)
     va_out <- vacc_from_immunity(pop, targeting = "targeted", n_digits = 10)
 
     expect_equal(va_out, vaccs)
@@ -102,7 +102,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for non-random
                                  targeting = "correlated")
     vaccs <- complete_vacc_activities(vaccs, pop0)
 
-    pop <- apply_vaccs(pop0, vaccs)
+    pop <- apply_vacc(pop0, vaccs)
     va_out <- vacc_from_immunity(pop, targeting = "correlated", n_digits = 10)
 
     expect_equal(va_out, vaccs)
@@ -111,7 +111,7 @@ test_that("vacc_from_immunity returns the correct vacc_activities for non-random
     pop <- pop0
     pop$immunity <- 0.2
 
-    pop <- apply_vaccs(pop, vaccs)
+    pop <- apply_vacc(pop, vaccs)
     va_out <- vacc_from_immunity(pop, targeting = "correlated", n_digits = 10)
 
     expect_equal(va_out, vaccs)

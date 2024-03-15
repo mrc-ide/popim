@@ -1,10 +1,10 @@
-##' Constructor of an object of class "popim_vacc_activites"
+##' Constructor of an object of the `popim_vacc_activites` class
 ##'
-##' The "popim_vacc_activities" object is a dataframe that holds
+##' The `popim_vacc_activities` object is a dataframe that holds
 ##' information on vaccination activities that are typically meant to
-##' be applied to a "popim_population" object.
+##' be applied to a `popim_population` object.
 ##'
-##' The input parameters are the columns of the "popim_vacc_activities"
+##' The input parameters are the columns of the `popim_vacc_activities`
 ##' object to be returned, they should be vectors of the same length,
 ##' or will be recycled as appropriate by [data.frame()].
 ##'
@@ -35,13 +35,13 @@
 ##'     individuals. This is the most effective use of vaccine. It may
 ##'     be realistic in the case of multi-year campaigns targeting
 ##'     different areas within the geographical region specified.
-##' @return S3 object of class "popim_vacc_activities": a dataframe with
+##' @return S3 object of class `popim_vacc_activities`: a dataframe with
 ##'     columns `region`, `year`, `age_first`, `age_last`, `coverage`,
 ##'     `doses`, `targeting`.
 ##' @author Tini Garske
 ##' @export
 ##' @examples
-##' # setting up an empty class "popim_vacc_activities" object of the
+##' # setting up an empty class `popim_vacc_activities` object of the
 ##' # correct structure:
 ##' vacc <- popim_vacc_activities()
 ##'
@@ -101,10 +101,10 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 
 }
 
-##' Reading vaccination activities from a .csv file
+##' Read vaccination activities from a .csv file
 ##'
 ##' Reads a list of vaccination activities from a .csv file, checks if
-##' the data fulfils the requirements for a "popim_vacc_activities"
+##' the data fulfils the requirements for a `popim_vacc_activities`
 ##' object, and if so returns this object.
 ##'
 ##' The requirements are that the data contain the columns `region`,
@@ -129,10 +129,10 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 ##' that will be vaccinated, while column `doses` gives the absolute
 ##' number of doses used in the vaccination activity. For a given
 ##' population size (which is not recorded in the
-##' "popim_vacc_activities" object generated here), these can be
+##' `popim_vacc_activities` object generated here), these can be
 ##' converted into each other, when both are given, they may be
 ##' inconsistent with each other once applied to a specific
-##' "popim_population" object. The consistency between these two colums
+##' `popim_population` object. The consistency between these two colums
 ##' cannot be confirmed in without reference to a popim_population
 ##' object, but this function requires that at least one of these is
 ##' non-missing in each row.
@@ -158,7 +158,7 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 ##' @param file Name of the file from which the vaccination activities
 ##'     are to be read from. If it does not contain an absolute path,
 ##'     the file name is relative to the current working directory.
-##' @return object of class "popim_vacc_activities", a dataframe with
+##' @return object of class `popim_vacc_activities`, a dataframe with
 ##'     one row per vaccination activity, with columns `year`,
 ##'     `age_first`, `age_last`, `coverage`, `targeting`.
 ##' @author Tini Garske
@@ -180,31 +180,31 @@ read_vacc_activities <- function(file) {
     df
 }
 
-##' Adding coverage or doses information (whichever is missing) to the
-##' popim_vacc_activities object
+##' Add coverage or doses information to the input
+##' `popim_vacc_activities` object
 ##'
-##' For each line in the "popim_vacc_activities" object the given
+##' For each line in the `popim_vacc_activities` object the given
 ##' information of coverage is converted to doses, or vice versa,
-##' using the target population size implied by the "popim_population"
+##' using the target population size implied by the `popim_population`
 ##' object supplied. If both coverage and doses are given for any
 ##' activity, the function checks if they are consistent with the
 ##' population size, and fails if there are any inconsistencies.
 ##'
-##' @param vaccs "popim_vacc_activities" object
-##' @param pop_df "popim_population" object
-##' @return The supplied object of class "popim_vacc_activities",
+##' @param vaccs `popim_vacc_activities` object
+##' @param pop `popim_population` object
+##' @return The supplied object of class `popim_vacc_activities`,
 ##'     updated to have both `doses` and `coverage` information.
 ##' @author Tini Garske
 ##' @export
-complete_vacc_activities <- function(vaccs, pop_df) {
+complete_vacc_activities <- function(vaccs, pop) {
     validate_vacc_activities(vaccs)
-    stopifnot(is_population(pop_df))
+    stopifnot(is_population(pop))
 
     ## double check coverage and doses are compatible:
     ii <- which(!is.na(vaccs$coverage) & !is.na(vaccs$doses))
     if(length(ii) > 0) {
         new_doses <- sapply(ii, function(i)
-            doses_from_coverage(pop_df, vaccs$coverage[i], vaccs$region[i],
+            doses_from_coverage(pop, vaccs$coverage[i], vaccs$region[i],
                                 vaccs$year[i],
                                 vaccs$age_first[i], vaccs$age_last[i]))
 
@@ -214,7 +214,7 @@ complete_vacc_activities <- function(vaccs, pop_df) {
     ii <- which(is.na(vaccs$coverage))
     if(length(ii) > 0) {
         vaccs$coverage[ii] <- sapply(ii, function(i)
-            coverage_from_doses(pop_df, vaccs$doses[i], vaccs$region[i],
+            coverage_from_doses(pop, vaccs$doses[i], vaccs$region[i],
                                 vaccs$year[i],
                                 vaccs$age_first[i], vaccs$age_last[i]))
     }
@@ -223,7 +223,7 @@ complete_vacc_activities <- function(vaccs, pop_df) {
     ii <- which(is.na(vaccs$doses))
     if(length(ii) > 0) {
         vaccs$doses[ii] <- sapply(ii, function(i)
-            doses_from_coverage(pop_df, vaccs$coverage[i], vaccs$region[i],
+            doses_from_coverage(pop, vaccs$coverage[i], vaccs$region[i],
                                 vaccs$year[i],
                                 vaccs$age_first[i], vaccs$age_last[i]))
     }

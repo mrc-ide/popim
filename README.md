@@ -63,8 +63,8 @@ object of the class `popim_vacc_activities`.
 
 ``` r
 
-vaccs <- read_vacc_activities("inst/extdata/vacc_activities.csv")
-vaccs
+vacc <- read_vacc_activities("inst/extdata/vacc_activities.csv")
+vacc
 #>   region year age_first age_last coverage doses targeting
 #> 1     UK 1998         0       10     0.50    NA    random
 #> 2     UK 2005         0        0     0.50    NA    random
@@ -87,7 +87,7 @@ We now apply these vaccination activities sequentially to the population
 using the function `apply_vaccs()`.
 
 ``` r
-pop <- apply_vaccs(pop, vaccs)
+pop <- apply_vacc(pop, vacc)
 ```
 
 The resulting vaccine-derived immunity of the population can be
@@ -123,7 +123,7 @@ vaccination campaigns).
 
 ``` r
 
-pop <- popim_pop_from_file(file = "inst/extdata/pop_sample.csv")
+pop <- read_popim_pop(file = "inst/extdata/pop_sample.csv")
 ```
 
 We have read in population data for India (“IND”) and Nigeria (“NGA”)
@@ -233,7 +233,7 @@ activities.
 
 ``` r
 
-pop <- apply_vaccs(pop, campaigns)
+pop <- apply_vacc(pop, campaigns)
 plot_immunity(pop)
 ```
 
@@ -241,7 +241,7 @@ plot_immunity(pop)
 
 ``` r
 
-pop <- apply_vaccs(pop, routine)
+pop <- apply_vacc(pop, routine)
 plot_immunity(pop)
 ```
 
