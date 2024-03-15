@@ -2,7 +2,7 @@
 % Please edit documentation in R/popim_vacc_activities.R
 \name{complete_vacc_activities}
 \alias{complete_vacc_activities}
-\title{Adding coverage or doses information (whichever is missing) to the
+\title{Add coverage or doses information (whichever is missing) to the
 popim_vacc_activities object}
 \usage{
 complete_vacc_activities(vaccs, pop_df)

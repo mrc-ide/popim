@@ -2,7 +2,7 @@
 % Please edit documentation in R/popim_vacc_activities.R
 \name{read_vacc_activities}
 \alias{read_vacc_activities}
-\title{Reading vaccination activities from a .csv file}
+\title{Read vaccination activities from a .csv file}
 \usage{
 read_vacc_activities(file)
 }

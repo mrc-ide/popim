@@ -2,7 +2,7 @@
 % Please edit documentation in R/popim_population.R
 \name{read_popim_pop}
 \alias{read_popim_pop}
-\title{Reading popim_population data from a .csv file}
+\title{Read popim_population data from a .csv file}
 \usage{
 read_popim_pop(file)
 }

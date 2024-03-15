@@ -1,22 +1,22 @@
-test_that("df_to_popim_pop successfully converts a good dataframe", {
+test_that("as_popim_pop successfully converts a good dataframe", {
 
     df <- expand.grid(region = c("UK", "FRA"), age = 0:5, year = 2000:2002,
                       stringsAsFactors = FALSE)
     df$pop_size <- 0
 
-    expect_no_error(pop <- df_to_popim_pop(df))
+    expect_no_error(pop <- as_popim_pop(df))
     expect_true(is_population(pop))
 
 })
 
-test_that("df_to_popim_pop fails or warns when given a bad dataframe", {
+test_that("as_popim_pop fails or warns when given a bad dataframe", {
 
     ## df with missing column:
     df <- expand.grid(region = c("UK", "FRA"), age = 0:5,
                       stringsAsFactors = FALSE)
     df$pop_size <- 0
 
-    expect_error(df_to_popim_pop(df))
+    expect_error(as_popim_pop(df))
 
 
     ## df with different time scope for different regions:
@@ -27,13 +27,13 @@ test_that("df_to_popim_pop fails or warns when given a bad dataframe", {
     df <- rbind(df1, df2)
     df$pop_size <- 0
 
-    expect_warning(pop <- df_to_popim_pop(df))
+    expect_warning(pop <- as_popim_pop(df))
 
 
     ## df with duplicated rows:
     df <- expand.grid(region = c("UK", "UK", "FRA"), age = 0:5, year = 2000:2002,
                       stringsAsFactors = FALSE)
     df$pop_size <- 1:nrow(df)
-    expect_error(pop <- df_to_popim_pop(df))
+    expect_error(pop <- as_popim_pop(df))
 
 })

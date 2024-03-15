@@ -115,7 +115,7 @@ read_popim_pop <- function(file) {
 
     df <- utils::read.csv(file, stringsAsFactors = FALSE)
 
-    pop <- df_to_popim_pop(df)
+    pop <- as_popim_pop(df)
     pop
 }
 
@@ -144,7 +144,7 @@ read_popim_pop <- function(file) {
 ##' @return an object of class "popim_population"
 ##' @author Tini Garske
 ##' @noRd
-df_to_popim_pop <- function(df) {
+as_popim_pop <- function(df) {
 
     assert_column_exists(df, "region")
     assert_column_exists(df, "age")
