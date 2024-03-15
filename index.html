@@ -97,8 +97,8 @@
 <p>Next, we read in a file containing some vaccination activites into an object of the class <code>popim_vacc_activities</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">vaccs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_vacc_activities.html">read_vacc_activities</a></span><span class="op">(</span><span class="st">"inst/extdata/vacc_activities.csv"</span><span class="op">)</span></span>
-<span><span class="va">vaccs</span></span>
+<span><span class="va">vacc</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_vacc_activities.html">read_vacc_activities</a></span><span class="op">(</span><span class="st">"inst/extdata/vacc_activities.csv"</span><span class="op">)</span></span>
+<span><span class="va">vacc</span></span>
 <span><span class="co">#&gt;   region year age_first age_last coverage doses targeting</span></span>
 <span><span class="co">#&gt; 1     UK 1998         0       10     0.50    NA    random</span></span>
 <span><span class="co">#&gt; 2     UK 2005         0        0     0.50    NA    random</span></span>
@@ -108,14 +108,14 @@
 <span><span class="co">#&gt; 6     UK 2009         0        0     0.90    NA    random</span></span>
 <span><span class="co">#&gt; 7     UK 2010         0        0     0.95    NA    random</span></span></code></pre></div>
 <p>All vaccination activities target the UK. The first is a campaign targeting all age groups of our dummy population, which took place 2 years before the dawn of time. As immunity is assumed not to wane, the effects of this are still there, and therefore the functions here keep track of this. The remaining vaccination activities are routine vaccination of infants (restricted to age 0) with an increasing population of the target cohort to be vaccinated.</p>
-<p>We now apply these vaccination activities sequentially to the population using the function <code><a href="reference/apply_vaccs.html">apply_vaccs()</a></code>.</p>
+<p>We now apply these vaccination activities sequentially to the population using the function <code>apply_vaccs()</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/apply_vaccs.html">apply_vaccs</a></span><span class="op">(</span><span class="va">pop</span>, <span class="va">vaccs</span><span class="op">)</span></span></code></pre></div>
-<p>The resulting vaccine-derived immunity of the population can be visualised with the function <code><a href="reference/plot_immunity.html">plot_immunity()</a></code>. This is based on ggplot2, and the returned graph object can be further modified - here in order to achieve tick marks that suit the data better.</p>
+<code class="sourceCode R"><span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/apply_vacc.html">apply_vacc</a></span><span class="op">(</span><span class="va">pop</span>, <span class="va">vacc</span><span class="op">)</span></span></code></pre></div>
+<p>The resulting vaccine-derived immunity of the population can be visualised with the function <code><a href="reference/plotting.html">plot_immunity()</a></code>. This is based on ggplot2, and the returned graph object can be further modified - here in order to achieve tick marks that suit the data better.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span> <span class="co">## needed to amend the plot returned from plot_population()</span></span>
 <span></span>
-<span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/plot_immunity.html">plot_immunity</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span>
+<span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/plotting.html">plot_immunity</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span>
 <span><span class="va">g</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">2000</span>, <span class="fl">2010</span>, by <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">10</span>, by <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-plot_immunity-1.png" width="100%"></p>
@@ -127,7 +127,7 @@
 <p>A more realistic scenario is to read in some real population data to set up the popim_population, and then apply some vaccination activities to this. Information on the vaccination activities may be given in coverage (typical for routine infant vaccination) or doses (typical for mass vaccination campaigns).</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/popim_pop_from_file.html">popim_pop_from_file</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"inst/extdata/pop_sample.csv"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_popim_pop.html">read_popim_pop</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"inst/extdata/pop_sample.csv"</span><span class="op">)</span></span></code></pre></div>
 <p>We have read in population data for India (“IND”) and Nigeria (“NGA”) for the period from 1950 to 2100. The age range covered is 0 to 100 year, and the population is set up as fully unvaccinated:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
@@ -211,13 +211,13 @@
 <p>We now apply first the campaigns, then the routine vaccination to the population, and visualise the resulting population immunity. Note that we can use either the original or completed versions of the vaccination activities.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/apply_vaccs.html">apply_vaccs</a></span><span class="op">(</span><span class="va">pop</span>, <span class="va">campaigns</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/plot_immunity.html">plot_immunity</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/apply_vacc.html">apply_vacc</a></span><span class="op">(</span><span class="va">pop</span>, <span class="va">campaigns</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/plotting.html">plot_immunity</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-plot_immunity_2-1.png" width="100%"></p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/apply_vaccs.html">apply_vaccs</a></span><span class="op">(</span><span class="va">pop</span>, <span class="va">routine</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/plot_immunity.html">plot_immunity</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/apply_vacc.html">apply_vacc</a></span><span class="op">(</span><span class="va">pop</span>, <span class="va">routine</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/plotting.html">plot_immunity</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-plot_immunity_2-2.png" width="100%"></p>
 <p>The overall population immunity can be aggregated across ages using the function <code><a href="reference/calc_pop_immunity.html">calc_pop_immunity()</a></code>:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">

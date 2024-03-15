@@ -16,7 +16,7 @@
     <loc>/index.html</loc>
   </url>
   <url>
-    <loc>/reference/apply_vaccs.html</loc>
+    <loc>/reference/apply_vacc.html</loc>
   </url>
   <url>
     <loc>/reference/calc_pop_immunity.html</loc>
@@ -31,22 +31,19 @@
     <loc>/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/plot_immunity.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_pop_size.html</loc>
+    <loc>/reference/plotting.html</loc>
   </url>
   <url>
     <loc>/reference/popim-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/popim_pop_from_file.html</loc>
   </url>
   <url>
     <loc>/reference/popim_population.html</loc>
   </url>
   <url>
     <loc>/reference/popim_vacc_activities.html</loc>
+  </url>
+  <url>
+    <loc>/reference/read_popim_pop.html</loc>
   </url>
   <url>
     <loc>/reference/read_vacc_activities.html</loc>
