@@ -26,7 +26,7 @@
 ##' A population with non-missing population size can be read in from
 ##' a suitable file using [read_popim_pop()], while vaccine induced
 ##' immunity can be generated through applying vaccination activities
-##' to the population with [apply_vaccs()].
+##' to the population with [apply_vacc()].
 ##' 
 ##' @param region character vector, list of regions considered.
 ##' @param year_min integer, first year to be considered.

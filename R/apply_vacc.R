@@ -34,7 +34,7 @@
 ##'     updated immunity to reflect the vaccination activity.
 ##' @noRd
 ##' @author Tini Garske
-apply_vacc <- function(pop, region, year, age_first = 0, age_last = Inf,
+apply_vacc_1 <- function(pop, region, year, age_first = 0, age_last = Inf,
                        coverage = double(), doses = NA_real_,
                        targeting = "random") {
 
@@ -80,23 +80,23 @@ apply_vacc <- function(pop, region, year, age_first = 0, age_last = Inf,
 ##'
 ##' @param pop An object of class `popim_population` such as
 ##'     created by [popim_population()].
-##' @param vaccs_df An object of class `popim_vacc_activities` such as
+##' @param vacc An object of class `popim_vacc_activities` such as
 ##'     created by [popim_vacc_activities()].
 ##' @return The input `popim_population` class object `pop` with
 ##'     updated column `immunity` to reflect the vaccination
-##'     activities supplied in `vaccs_df`.
+##'     activities supplied in `vacc`.
 ##' @export
 ##' @author Tini Garske
-apply_vaccs <- function(pop, vaccs_df) {
-    for(i in seq_len(nrow(vaccs_df))) {
+apply_vacc <- function(pop, vacc) {
+    for(i in seq_len(nrow(vacc))) {
 
-        pop <- apply_vacc(pop, vaccs_df$region[i],
-                             vaccs_df$year[i],
-                             age_first = vaccs_df$age_first[i],
-                             age_last = vaccs_df$age_last[i],
-                             coverage = vaccs_df$coverage[i],
-                             doses = vaccs_df$doses[i],
-                             targeting = vaccs_df$targeting[i])
+        pop <- apply_vacc_1(pop, vacc$region[i],
+                             vacc$year[i],
+                             age_first = vacc$age_first[i],
+                             age_last = vacc$age_last[i],
+                             coverage = vacc$coverage[i],
+                             doses = vacc$doses[i],
+                             targeting = vacc$targeting[i])
     }
     pop
 }

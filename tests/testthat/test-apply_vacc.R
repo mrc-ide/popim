@@ -1,7 +1,7 @@
-test_that("apply_vacc modifies the correct rows", {
+test_that("apply_vacc_1 modifies the correct rows", {
 
     df <- popim_population("UK", 2000, 2005, 0, 5)
-    df <- apply_vacc(df, region = "UK", year = 2000,
+    df <- apply_vacc_1(df, region = "UK", year = 2000,
                      age_first = 0, age_last = 0,
                      coverage = 0.2, doses = NA, targeting = "random")
 
@@ -12,7 +12,7 @@ test_that("apply_vacc modifies the correct rows", {
     expect_equal(df[df$immunity > 0,], ee1, ignore_attr = TRUE)
 
     ## adding a previous campaign on top:
-    df <- apply_vacc(df, region = "UK", year = 1996,
+    df <- apply_vacc_1(df, region = "UK", year = 1996,
                      age_first = 0, age_last = 5,
                      coverage = 0.5, doses = NA, targeting = "random")
 

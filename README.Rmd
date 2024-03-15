@@ -66,8 +66,8 @@ object of the class `popim_vacc_activities`.
 
 ```{r read_vacc}
 
-vaccs <- read_vacc_activities("inst/extdata/vacc_activities.csv")
-vaccs
+vacc <- read_vacc_activities("inst/extdata/vacc_activities.csv")
+vacc
 
 ```
 
@@ -83,7 +83,7 @@ We now apply these vaccination activities sequentially to the
 population using the function `apply_vaccs()`.
 
 ```{r apply_vacc}
-pop <- apply_vaccs(pop, vaccs)
+pop <- apply_vacc(pop, vacc)
 
 ```
 
@@ -178,10 +178,10 @@ vaccination activities.
 
 ```{r plot_immunity_2}
 
-pop <- apply_vaccs(pop, campaigns)
+pop <- apply_vacc(pop, campaigns)
 plot_immunity(pop)
 
-pop <- apply_vaccs(pop, routine)
+pop <- apply_vacc(pop, routine)
 plot_immunity(pop)
 
 ```

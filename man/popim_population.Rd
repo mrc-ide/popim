@@ -65,7 +65,7 @@ constructor are retained as attributes to the dataframe object.
 A population with non-missing population size can be read in from
 a suitable file using \code{\link[=read_popim_pop]{read_popim_pop()}}, while vaccine induced
 immunity can be generated through applying vaccination activities
-to the population with \code{\link[=apply_vaccs]{apply_vaccs()}}.
+to the population with \code{\link[=apply_vacc]{apply_vacc()}}.
 }
 \examples{
 pop <- popim_population(region = "UK", year_min = 2000, year_max = 2010)
