@@ -1,4 +1,4 @@
-##' Apply a single vaccination activity to a "popim_population" object
+##' Apply a single vaccination activity to a `popim_population` object
 ##'
 ##' The vaccination activity is defined by the input parameters of the
 ##' function.
@@ -9,7 +9,7 @@
 ##' target population size in the popim_population object to which the
 ##' vaccination activity is applied.
 ##'
-##' @param pop_df "popim_population" dataframe object such as created
+##' @param pop_df `popim_population` dataframe object such as created
 ##'     by function [popim_population()]
 ##' @param region character, region of the vaccination activity
 ##' @param year integer, year of the vaccination activity
@@ -71,16 +71,16 @@ apply_vacc <- function(pop_df, region, year, age_first = 0, age_last = Inf,
     }
     pop_df
 }
-##' Apply vaccination activities to a "popim_population" object
+##' Apply vaccination activities to a `popim_population` object
 ##'
 ##' Takes the vaccination activities listed in the input object
 ##' vaccs_df (a data.frame object of class popim_vacc_activities), and
 ##' applies them to the popim_population object pop_df, then returns
 ##' that updated object.
 ##'
-##' @param pop_df object of class "popim_population" such as created by
+##' @param pop_df object of class `popim_population` such as created by
 ##'     function [popim_population()].
-##' @param vaccs_df object of class "popim_vacc_activities" such as
+##' @param vaccs_df object of class `popim_vacc_activities` such as
 ##'     created by [popim_vacc_activities()].
 ##' @return The supplied population dataframe object with
 ##'     updated immunity to reflect the vaccination activities

@@ -12,13 +12,13 @@ are to be read. If it does not contain an absolute path, the
 file name is relative to the current working directory.}
 }
 \value{
-An object of class "popim_population", a dataframe with one row
+An object of class \code{popim_population}, a dataframe with one row
 per birth cohort/year/region, with columns \code{region}, \code{year},
 \code{age}, \code{cohort}, \code{immunity}, \code{pop_size}.
 }
 \description{
 Reads a population data from a .csv file, checks if
-the data fulfils the requirements for a "popim_population"
+the data fulfils the requirements for a \code{popim_population}
 object, and if so returns this object.
 }
 \details{
@@ -27,7 +27,7 @@ The requirements are that the data contain the columns \code{region},
 integer. Columns \code{pop_size} and \code{immunity} are optional; they will
 be coerced to numeric, and if missing will be initialised to 0 and
 NA, respectively be set to NA and 0, respectively. Any additional
-columns will be retained in the "popim_population" object.
+columns will be retained in the \code{popim_population} object.
 
 Limitations for values:
 \itemize{

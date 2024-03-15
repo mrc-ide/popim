@@ -2,19 +2,19 @@
 % Please edit documentation in R/plotting.R
 \name{plot_immunity}
 \alias{plot_immunity}
-\title{Plot the vaccine-derived immunity of a "popim_population" object}
+\title{Plot the vaccine-derived immunity of a \code{popim_population} object}
 \usage{
 plot_immunity(pop_df)
 }
 \arguments{
-\item{pop_df}{"popim_population" object such as created by
+\item{pop_df}{\code{popim_population} object such as created by
 \code{\link[=popim_population]{popim_population()}}}
 }
 \value{
 ggplot object
 }
 \description{
-Plot the vaccine-derived immunity of a "popim_population" object
+Plot the vaccine-derived immunity of a \code{popim_population} object
 }
 \details{
 The population is displayed in a grid showing the cohorts

@@ -2,19 +2,19 @@
 % Please edit documentation in R/plotting.R
 \name{plot_pop_size}
 \alias{plot_pop_size}
-\title{Plot the population size of a popim_population" object}
+\title{Plot the population size of a \code{popim_population} object}
 \usage{
 plot_pop_size(pop_df)
 }
 \arguments{
-\item{pop_df}{"popim_population" object such as created by
+\item{pop_df}{\code{popim_population} object such as created by
 \code{\link[=popim_population]{popim_population()}}}
 }
 \value{
 ggplot object
 }
 \description{
-Plot the population size of a popim_population" object
+Plot the population size of a \code{popim_population} object
 }
 \details{
 The population is displayed in a grid showing the cohorts

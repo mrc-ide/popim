@@ -1,4 +1,4 @@
-##' Plot the vaccine-derived immunity of a "popim_population" object
+##' Plot the vaccine-derived immunity of a `popim_population` object
 ##'
 ##' @details The population is displayed in a grid showing the cohorts
 ##'     through time. Time is shown on the x-axis, age on the y-axis,
@@ -7,7 +7,7 @@
 ##'     are shown as separate facets. The colour in each cell
 ##'     corresponds to the proportion of the cohort that is immune.
 ##'
-##' @param pop_df "popim_population" object such as created by
+##' @param pop_df `popim_population` object such as created by
 ##'     [popim_population()]
 ##' @return ggplot object
 ##' @export
@@ -33,7 +33,7 @@ plot_immunity <- function(pop_df) {
     return(g)
 }
 
-##' Plot the population size of a popim_population" object
+##' Plot the population size of a `popim_population` object
 ##'
 ##' @details The population is displayed in a grid showing the cohorts
 ##'     through time. Time is shown on the x-axis, age on the y-axis,
@@ -41,7 +41,7 @@ plot_immunity <- function(pop_df) {
 ##'     bottom left to top right. If there are several regions, these
 ##'     are shown as separate facets. The colour in each cell
 ##'     corresponds to the number of people in the cohort. 
-##' @param pop_df "popim_population" object such as created by
+##' @param pop_df `popim_population` object such as created by
 ##'     [popim_population()]
 ##' @return ggplot object
 ##' @author Tini Garske

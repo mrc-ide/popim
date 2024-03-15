@@ -1,6 +1,6 @@
 ##' Infer vaccination activities from population
 ##'
-##' Given a "popim_population" object and an assumption of how vaccine
+##' Given a `popim_population` object and an assumption of how vaccine
 ##' is targeted in a partially immune population, this function infers
 ##' the vaccination activities that have given rise to the specified
 ##' population immunity. When there is ambiguity (e.g., due to
@@ -27,7 +27,7 @@
 ##' also never be picked up as this age group will have aged out of
 ##' the population (i.e., died) before the immunity is updated in the
 ##' next year.
-##' @param pop "popim_population" object for which vaccination activities
+##' @param pop `popim_population` object for which vaccination activities
 ##'     are to be inferred.
 ##' @param targeting character, determines the assumption of how doses
 ##'     are allocated. Valid options are "random", "correlated",
@@ -69,10 +69,10 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
     vaccs
 }
 
-##' Add the rate of immunity change to a "popim_population" object
+##' Add the rate of immunity change to a `popim_population` object
 ##'
-##' @param pop "popim_population" object
-##' @return the input "popim_population" object with an added column
+##' @param pop `popim_population` object
+##' @return the input `popim_population` object with an added column
 ##'     `immunity_diff` that holds the difference in immunity between
 ##'     the current and next year.
 ##' @author Tini Garske
@@ -122,12 +122,12 @@ coverage_from_immunity_diff <- function(imm_now, imm_diff, targeting,
 ##' Expand the age range given by age_first and age_last into an
 ##' integer vector giving each individual age group
 ##'
-##' If the "popim_vacc_activities" object contains more than one row the
+##' If the `popim_vacc_activities` object contains more than one row the
 ##' rows are assumed to belong to the same campaign, but detail
 ##' different age groups. The function will expand the age ranges to a
 ##' vector that gives every single age cohort targeted.
 ##'
-##' @param va object of class "popim_vacc_activities"
+##' @param va object of class `popim_vacc_activities`
 ##' @return integer vector of variable length
 ##' @author Tini Garske
 get_all_ages <- function(va) {

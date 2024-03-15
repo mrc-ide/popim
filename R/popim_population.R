@@ -1,6 +1,6 @@
-##' Constructor of an object of the "popim_population" class
+##' Constructor of an object of the `popim_population` class
 ##'
-##' The "popim_population" object is a dataframe that models an
+##' The `popim_population` object is a dataframe that models an
 ##' age-structured population through time, tracking population size
 ##' and vaccine-induced immunity in the population. The population may
 ##' be spatially disaggregated into several regions.
@@ -22,7 +22,7 @@
 ##'     0. Must be non-negative.
 ##' @param age_max integer, oldest age to be considered, defaults to
 ##'     100. Must be non-negative, and >= age_min.
-##' @return S3 object of class "popim_population": a dataframe with
+##' @return S3 object of class `popim_population`: a dataframe with
 ##'     columns `region`, `year`, `age`, `cohort`, `immunity` and
 ##'     `pop_size`. The first three cover the ranges given by the
 ##'     input parameters. `cohort` gives the year of birth. It is
@@ -81,7 +81,7 @@ popim_population <- function(region = character(),
 ##' Read popim_population data from a .csv file
 ##'
 ##' Reads a population data from a .csv file, checks if
-##' the data fulfils the requirements for a "popim_population"
+##' the data fulfils the requirements for a `popim_population`
 ##' object, and if so returns this object.
 ##'
 ##' The requirements are that the data contain the columns `region`,
@@ -89,7 +89,7 @@ popim_population <- function(region = character(),
 ##' integer. Columns `pop_size` and `immunity` are optional; they will
 ##' be coerced to numeric, and if missing will be initialised to 0 and
 ##' NA, respectively be set to NA and 0, respectively. Any additional
-##' columns will be retained in the "popim_population" object.
+##' columns will be retained in the `popim_population` object.
 ##'
 ##' Limitations for values:
 ##' * `age` must be non-negative integer
@@ -99,7 +99,7 @@ popim_population <- function(region = character(),
 ##' @param file Name of the .csv file from which the population data
 ##'     are to be read. If it does not contain an absolute path, the
 ##'     file name is relative to the current working directory.
-##' @return An object of class "popim_population", a dataframe with one row
+##' @return An object of class `popim_population`, a dataframe with one row
 ##'     per birth cohort/year/region, with columns `region`, `year`,
 ##'     `age`, `cohort`, `immunity`, `pop_size`.
 ##' @seealso [popim_population()] for details of the S3 class, and
@@ -119,11 +119,11 @@ read_popim_pop <- function(file) {
     pop
 }
 
-##' Generate a "popim_population" object from a dataframe
+##' Generate a `popim_population` object from a dataframe
 ##'
 ##' Checks if the dataframe is suitable (i.e., contains appropriate
 ##' columns and data ranges), and if so converts it to a
-##' "popim_population" object and returns this.
+##' `popim_population` object and returns this.
 ##'
 ##' The input dataframe has to have at least the columns region, age,
 ##' and year. The output popim_population object is generated via
@@ -141,7 +141,7 @@ read_popim_pop <- function(file) {
 ##' Any further colunms are simply carried over into the popim_population object.
 ##'
 ##' @param df a dataframe with at least columns region, age, year and pop_size.
-##' @return an object of class "popim_population"
+##' @return an object of class `popim_population`
 ##' @author Tini Garske
 ##' @noRd
 as_popim_pop <- function(df) {

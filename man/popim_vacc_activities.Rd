@@ -2,7 +2,7 @@
 % Please edit documentation in R/popim_vacc_activities.R
 \name{popim_vacc_activities}
 \alias{popim_vacc_activities}
-\title{Constructor of an object of class "popim_vacc_activites"}
+\title{Constructor of an object of the \code{popim_vacc_activites} class}
 \usage{
 popim_vacc_activities(
   region = character(),
@@ -49,22 +49,22 @@ be realistic in the case of multi-year campaigns targeting
 different areas within the geographical region specified.}
 }
 \value{
-S3 object of class "popim_vacc_activities": a dataframe with
+S3 object of class \code{popim_vacc_activities}: a dataframe with
 columns \code{region}, \code{year}, \code{age_first}, \code{age_last}, \code{coverage},
 \code{doses}, \code{targeting}.
 }
 \description{
-The "popim_vacc_activities" object is a dataframe that holds
+The \code{popim_vacc_activities} object is a dataframe that holds
 information on vaccination activities that are typically meant to
-be applied to a "popim_population" object.
+be applied to a \code{popim_population} object.
 }
 \details{
-The input parameters are the columns of the "popim_vacc_activities"
+The input parameters are the columns of the \code{popim_vacc_activities}
 object to be returned, they should be vectors of the same length,
 or will be recycled as appropriate by \code{\link[=data.frame]{data.frame()}}.
 }
 \examples{
-# setting up an empty class "popim_vacc_activities" object of the
+# setting up an empty class `popim_vacc_activities` object of the
 # correct structure:
 vacc <- popim_vacc_activities()
 
