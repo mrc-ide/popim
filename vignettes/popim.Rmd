@@ -1,0 +1,91 @@
+---
+title: "popim"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{popim}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(popim)
+```
+
+The intention of the package `popim` is to provide tools to easily
+evaluate and track the POPulation IMmunity of an age-structured
+population that results from vaccination. Given that vaccination has
+long lasting effects, this requires tracking the status of the
+population through time.
+
+## Data structures
+
+To this end the package defines two S3 classes to store data in an
+appropriate format. Both classes are dataframes, but have additional
+requirements such as certain columns that must be present, and the
+format and range of these columns.
+
+### S3 class `popim_population`
+
+#### The dataframe
+
+The mandatory columns are:
+
+* `region`: character. The population of interest may be spatially
+  disaggregated into separate geographical regions (e.g., countries or
+  subnational administrative regions). This column holds a string that
+  identifies which region each entry refers to.
+* `year`: integer. The population is tracked through time using annual
+  time steps.
+* `age`: integer, non-negative. The age-structure of the population is
+  tracked in annual age groups.
+* `cohort`: integer. This column is redundant as it equals `year` -
+  `age`, and therefore refers to the year in which this cohort was
+  born. It is included for ease of handling.
+* `immunity`: numeric, between 0 and 1 (inclusive). Gives the
+  proportion of each cohort that is immune due to past vaccination.
+* `pop_size`: numeric, non-negative. Number of people in any given age
+  group and year. To facilitate using common units such as thousands
+  this is not limited to integer values. It is however up to the user
+  to ensure that such units are used consistently.
+  
+| column | type and range | explanation |
+|--------|----------------|-------------|
+| `region` | character | The population of interest may be spatiall disaggregated into separate geographical regions (e.g., countries or subnational administrative regions). This column holds a string that identifies which region each entry refers to. |
+| `year` | integer | The population is tracked through time using annual time steps. |
+| `age` | integer, non-negative | The age-structure of the population is tracked in annual age groups. |
+| `cohort` | integer | This column is redundant as it equals `year` - `age`, and therefore refers to the year in which this cohort was born. It is included for ease of handling. |
+| `immunity` | numeric, between 0 and 1, inclusive | Gives the proportion of each cohort that is immune due to past vaccination. |
+| `pop_size` | numeric, non-negative | Number of people in any given age group and year. To facilitate using common units such as thousands this is not limited to integer values. It is however up to the user to ensure that such units are used consistently. |
+
+
+
+#### Class attributes
+
+
+#### Create and validate objects of this class
+
+
+### S3 class `popim_vacc_activities`
+
+#### The dataframe
+
+The mandatory columns are:
+
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+
+#### Class attributes
+
+
+#### Create and validate objects of this class
+
+
