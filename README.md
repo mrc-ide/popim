@@ -123,7 +123,7 @@ vaccination campaigns).
 
 ``` r
 
-pop <- popim_pop_from_file(file = "inst/extdata/pop_sample.csv")
+pop <- read_popim_pop(file = "inst/extdata/pop_sample.csv")
 ```
 
 We have read in population data for India (“IND”) and Nigeria (“NGA”)

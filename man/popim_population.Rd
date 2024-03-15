@@ -48,7 +48,7 @@ This constructor sets up the population as fully susceptible
 constructor are retained as attributes to the dataframe object.
 
 A population with non-missing population size can be read in from
-a suitable file using \code{\link[=popim_pop_from_file]{popim_pop_from_file()}}, while vaccine induced
+a suitable file using \code{\link[=read_popim_pop]{read_popim_pop()}}, while vaccine induced
 immunity can be generated through applying vaccination activities
 to the population with \code{\link[=apply_vaccs]{apply_vaccs()}}.
 }
