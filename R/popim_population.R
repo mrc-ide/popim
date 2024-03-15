@@ -78,7 +78,7 @@ popim_population <- function(region = character(),
     df
 }
 
-##' Reading popim_population data from a .csv file
+##' Read popim_population data from a .csv file
 ##'
 ##' Reads a population data from a .csv file, checks if
 ##' the data fulfils the requirements for a "popim_population"

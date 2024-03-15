@@ -101,7 +101,7 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 
 }
 
-##' Reading vaccination activities from a .csv file
+##' Read vaccination activities from a .csv file
 ##'
 ##' Reads a list of vaccination activities from a .csv file, checks if
 ##' the data fulfils the requirements for a "popim_vacc_activities"
@@ -180,7 +180,7 @@ read_vacc_activities <- function(file) {
     df
 }
 
-##' Adding coverage or doses information (whichever is missing) to the
+##' Add coverage or doses information (whichever is missing) to the
 ##' popim_vacc_activities object
 ##'
 ##' For each line in the "popim_vacc_activities" object the given
