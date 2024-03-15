@@ -19,10 +19,10 @@ updated column \code{immunity} to reflect the vaccination
 activities supplied in \code{vacc}.
 }
 \description{
-Takes the vaccination activities listed in the input object
-vaccs_df (a data.frame object of class popim_vacc_activities), and
-applies them to the popim_population object pop, then returns
-that updated object.
+Applies the vaccination activities listed in the input object
+\code{vacc} (a data.frame object of class \code{popim_vacc_activities}) to
+the \code{popim_population} object pop, then returns that updated
+object.
 }
 \author{
 Tini Garske

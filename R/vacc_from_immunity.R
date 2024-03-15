@@ -130,6 +130,7 @@ coverage_from_immunity_diff <- function(imm_now, imm_diff, targeting,
 ##' @param va object of class `popim_vacc_activities`
 ##' @return integer vector of variable length
 ##' @author Tini Garske
+##' @noRd
 get_all_ages <- function(va) {
 
     assert_vacc_activities(va)
