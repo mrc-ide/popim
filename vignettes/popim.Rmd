@@ -89,11 +89,11 @@ also retain the input parameters of the basic constructer
 
 #### Create, modify and validate objects of this class
 
-create: [popim_population()], [`read_popim_pop()`], `as_popim_pop()`
+create: `popim_population()`, `read_popim_pop()`, `as_popim_pop()`
 
-modify: [apply_vacc()]
+modify: `apply_vacc()`
 
-validate: [is_population()]
+validate: `is_population()`
 
 
 
@@ -146,10 +146,38 @@ attributes.
 
 #### Create and validate objects of this class
 
-create: [popim_vacc_activities()], [read_vacc_activities()],
-[as_vacc_activities()], [vacc_from_immunity()]
+create: `popim_vacc_activities()`, `read_vacc_activities()`,
+`as_vacc_activities()`, `vacc_from_immunity()`
 
-modify: [complete_vacc_activities()]
+modify: `complete_vacc_activities()`
 
-validate: [is_vacc_activities()]
+validate: `validate_vacc_activities()`
+
+## Primary functionality
+
+Once objects holding data on the population and vaccination activities
+have been set up, the primary functionality provided by `popim` is to
+apply the vaccination activities to the population to evaluate the
+population immunity by age over time that results from the given
+vaccination activities, which is done with the function
+`apply_vacc()`.
+
+using coverage information by preference, doses if coverage isn't available.
+
+put coverage into birth cohort from year of vaccination into the
+future (no waning immunity), other assumptions: 100% effectiveness of
+the vaccine, 0 wastage.
+
+If pre-existing immunity: explain targeting.
+
+### The inverse
+
+`vacc_from_immunity()`
+
+
+## Summary & Visualisation
+
+`calc_pop_immunity()`
+
+`plot_pop_size()`, `plot_immunity()`
 
