@@ -2,6 +2,7 @@
 
 export(apply_vacc)
 export(as_popim_pop)
+export(as_vacc_activities)
 export(calc_pop_immunity)
 export(complete_vacc_activities)
 export(plot_immunity)

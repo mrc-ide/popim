@@ -138,9 +138,9 @@ read_popim_pop <- function(file) {
 ##' columns and data ranges), and if so converts it to a
 ##' `popim_population` object and returns this.
 ##'
-##' The input dataframe has to have at least the columns region, age,
-##' and year. The output popim_population object is generated via
-##' expand.grid to have consecutive year and age ranges that are
+##' The input dataframe has to have at least the columns `region`,
+##' `age`, and `year`. The output popim_population object is generated
+##' via expand.grid to have consecutive year and age ranges that are
 ##' identical for all regions.
 ##'
 ##' If the input dataframe contains a column `pop_size`, this must be
@@ -151,9 +151,11 @@ read_popim_pop <- function(file) {
 ##' numeric, with values between 0 and 1. If it is missing, this
 ##' column is generated and initialised to 0.
 ##'
-##' Any further colunms are simply carried over into the popim_population object.
+##' Any further colunms are simply carried over into the
+##' popim_population object.
 ##'
-##' @param df a dataframe with at least columns region, age, year and pop_size.
+##' @param df a dataframe with at least columns region, age, year and
+##'     pop_size.
 ##' @return an object of class `popim_population`
 ##' @author Tini Garske
 ##' @export

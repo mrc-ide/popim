@@ -4,13 +4,13 @@ test_that("complete_vacc_activities adds appropriate doses information for a sin
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
-    vaccs <- popim_vacc_activities(region = "UK", year = 2000, age_first = 0,
+    vacc <- popim_vacc_activities(region = "UK", year = 2000, age_first = 0,
                                  age_last = 0, coverage = 0.5, doses = NA,
                                  targeting = "random")
 
-    vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop)
+    vacc <- complete_vacc_activities(vacc = vacc, pop = pop)
 
-    expect_equal(50, vaccs$doses)
+    expect_equal(50, vacc$doses)
 })
 
 test_that("complete_vacc_activities adds appropriate doses information for several activities", {
@@ -19,13 +19,13 @@ test_that("complete_vacc_activities adds appropriate doses information for sever
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
-    vaccs <- popim_vacc_activities(region = "UK", year = 2000:2002, age_first = 0,
+    vacc <- popim_vacc_activities(region = "UK", year = 2000:2002, age_first = 0,
                                  age_last = 0, coverage = 0.5, doses = NA,
                                  targeting = "random")
 
-    vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop)
+    vacc <- complete_vacc_activities(vacc = vacc, pop = pop)
 
-    expect_equal(rep(50, 3), vaccs$doses)
+    expect_equal(rep(50, 3), vacc$doses)
 })
 
 test_that("complete_vacc_activities adds appropriate coverage information for a single activity", {
@@ -34,13 +34,13 @@ test_that("complete_vacc_activities adds appropriate coverage information for a 
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
-    vaccs <- popim_vacc_activities(region = "UK", year = 2000, age_first = 0,
+    vacc <- popim_vacc_activities(region = "UK", year = 2000, age_first = 0,
                                  age_last = 0, coverage = NA, doses = 100,
                                  targeting = "random")
 
-    vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop)
+    vacc <- complete_vacc_activities(vacc = vacc, pop = pop)
 
-    expect_equal(1, vaccs$coverage)
+    expect_equal(1, vacc$coverage)
 })
 
 test_that("complete_vacc_activities adds appropriate coverage information for several activities", {
@@ -49,13 +49,13 @@ test_that("complete_vacc_activities adds appropriate coverage information for se
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
-    vaccs <- popim_vacc_activities(region = "UK", year = 2000:2002, age_first = 0,
+    vacc <- popim_vacc_activities(region = "UK", year = 2000:2002, age_first = 0,
                                  age_last = 0, coverage = NA, doses = 100,
                                  targeting = "random")
 
-    vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop)
+    vacc <- complete_vacc_activities(vacc = vacc, pop = pop)
 
-    expect_equal(rep(1, 3), vaccs$coverage)
+    expect_equal(rep(1, 3), vacc$coverage)
 })
 
 test_that("complete_vacc_activities flags inconsistend coverage and doses information for a single activity", {
@@ -64,11 +64,11 @@ test_that("complete_vacc_activities flags inconsistend coverage and doses inform
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
-    vaccs <- popim_vacc_activities(region = "UK", year = 2000, age_first = 0,
+    vacc <- popim_vacc_activities(region = "UK", year = 2000, age_first = 0,
                                  age_last = 0, coverage = 0.5, doses = 100,
                                  targeting = "random")
 
-    expect_error(vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop))
+    expect_error(vacc <- complete_vacc_activities(vacc = vacc, pop = pop))
 })
 
 test_that("complete_vacc_activities adds appropriate coverage information for several activities", {
@@ -77,15 +77,15 @@ test_that("complete_vacc_activities adds appropriate coverage information for se
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
-    vaccs <- popim_vacc_activities(region = "UK", year = 2000:2002, age_first = 0,
+    vacc <- popim_vacc_activities(region = "UK", year = 2000:2002, age_first = 0,
                                  age_last = 0, coverage = c(NA, 0.5,0.5),
                                  doses = c(50, 50, NA),
                                  targeting = "random")
 
-    vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop)
+    vacc <- complete_vacc_activities(vacc = vacc, pop = pop)
 
-    expect_equal(rep(0.5, 3), vaccs$coverage)
-    expect_equal(rep(50, 3), vaccs$doses)
+    expect_equal(rep(0.5, 3), vacc$coverage)
+    expect_equal(rep(50, 3), vacc$doses)
 })
 
 test_that("complete_vacc_activities fails conflicting coverage/doses information for several activities", {
@@ -94,10 +94,10 @@ test_that("complete_vacc_activities fails conflicting coverage/doses information
                           age_min = 0, age_max = 5)
     pop$pop_size <- 100
 
-    vaccs <- popim_vacc_activities(region = "UK", year = 2000:2002, age_first = 0,
+    vacc <- popim_vacc_activities(region = "UK", year = 2000:2002, age_first = 0,
                                  age_last = 0, coverage = c(NA, 0.8,0.5),
                                  doses = c(50, 50, NA),
                                  targeting = "random")
 
-    expect_error(vaccs <- complete_vacc_activities(vaccs = vaccs, pop = pop))
+    expect_error(vacc <- complete_vacc_activities(vacc = vacc, pop = pop))
 })

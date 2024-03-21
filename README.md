@@ -84,7 +84,7 @@ vaccination of infants (restricted to age 0) with an increasing
 population of the target cohort to be vaccinated.
 
 We now apply these vaccination activities sequentially to the population
-using the function `apply_vaccs()`.
+using the function `apply_vacc()`.
 
 ``` r
 pop <- apply_vacc(pop, vacc)
