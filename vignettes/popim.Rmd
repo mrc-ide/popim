@@ -151,7 +151,7 @@ create: `popim_vacc_activities()`, `read_vacc_activities()`,
 
 modify: `complete_vacc_activities()`
 
-validate: `is_vacc_activities()`
+validate: `validate_vacc_activities()`
 
 ## Primary functionality
 
@@ -162,5 +162,22 @@ population immunity by age over time that results from the given
 vaccination activities, which is done with the function
 `apply_vacc()`.
 
+using coverage information by preference, doses if coverage isn't available.
 
-## Visualisation
+put coverage into birth cohort from year of vaccination into the
+future (no waning immunity), other assumptions: 100% effectiveness of
+the vaccine, 0 wastage.
+
+If pre-existing immunity: explain targeting.
+
+### The inverse
+
+`vacc_from_immunity()`
+
+
+## Summary & Visualisation
+
+`calc_pop_immunity()`
+
+`plot_pop_size()`, `plot_immunity()`
+
