@@ -153,3 +153,14 @@ modify: [complete_vacc_activities()]
 
 validate: [is_vacc_activities()]
 
+## Primary functionality
+
+Once objects holding data on the population and vaccination activities
+have been set up, the primary functionality provided by `popim` is to
+apply the vaccination activities to the population to evaluate the
+population immunity by age over time that results from the given
+vaccination activities, which is done with the function
+[apply_vacc()].
+
+
+## Visualisation
