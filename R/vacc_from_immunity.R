@@ -44,7 +44,7 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
 
     pop <- add_immunity_rate(pop)
 
-    vaccs <- pop |>
+    vacc <- pop |>
         dplyr::mutate(coverage =
                           coverage_from_immunity_diff(.data$immunity,
                                                       .data$immunity_diff,
@@ -60,13 +60,13 @@ vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
         dplyr::arrange(.data$region, .data$year, .data$targeting,
                        round(.data$coverage, n_digits), .data$age_first)
 
-    class(vaccs) <- c("popim_vacc_activities", "data.frame")
-    if(nrow(vaccs) > 1)
-        vaccs <- aggregate_vacc_activities(vaccs, n_digits = n_digits)
-    vaccs <- complete_vacc_activities(vaccs, pop)
-    validate_vacc_activities(vaccs)
+    class(vacc) <- c("popim_vacc_activities", "data.frame")
+    if(nrow(vacc) > 1)
+        vacc <- aggregate_vacc_activities(vacc, n_digits = n_digits)
+    vacc <- complete_vacc_activities(vacc, pop)
+    validate_vacc_activities(vacc)
 
-    vaccs
+    vacc
 }
 
 ##' Add the rate of immunity change to a `popim_population` object
@@ -206,7 +206,7 @@ get_consecutive_range <- function(ages) {
 ##' compressed into a (or several) consecutive age range, such that
 ##' the same information is coded in fewer lines.
 ##'
-##' @param vacc_act popim_vacc_activities object to be aggregated
+##' @param vacc popim_vacc_activities object to be aggregated
 ##' @param n_digits number of digits to which coverage is rounded
 ##'     before coverages from different activities are matched.
 ##' @return popim_vacc_activities object containing the same vaccination
@@ -214,17 +214,17 @@ get_consecutive_range <- function(ages) {
 ##'     into fewer lines
 ##' @author Tini Garske
 ##' @noRd
-aggregate_vacc_activities <- function(vacc_act, n_digits = 10) {
+aggregate_vacc_activities <- function(vacc, n_digits = 10) {
 
-    assert_vacc_activities(vacc_act)
+    assert_vacc_activities(vacc)
 
-    if(nrow(vacc_act) < 2) {
-        message(sprintf("vacc_act has %d rows, no aggregation performed.",
-                        nrow(vacc_act)))
-        return(vacc_act)
+    if(nrow(vacc) < 2) {
+        message(sprintf("vacc has %d rows, no aggregation performed.",
+                        nrow(vacc)))
+        return(vacc)
     }
 
-    vacc_act <- vacc_act |>
+    vacc <- vacc |>
         dplyr::mutate(coverage = round(.data$coverage, n_digits)) |>
         dplyr::group_by(.data$region, .data$year, .data$targeting,
                         .data$coverage) |>
@@ -232,14 +232,14 @@ aggregate_vacc_activities <- function(vacc_act, n_digits = 10) {
                        .data$coverage) |>
         dplyr::mutate(id = dplyr::cur_group_id())
 
-    va_agg <- vacc_act |>
+    va_agg <- vacc |>
         dplyr::summarise(doses = sum(.data$doses), id = mean(.data$id)) |>
         dplyr::ungroup()
-    class(vacc_act) <- c("popim_vacc_activities", "data.frame")
+    class(vacc) <- c("popim_vacc_activities", "data.frame")
 
-    vacc_ids <- vacc_act$id |> unique()
+    vacc_ids <- vacc$id |> unique()
     ages_list <- lapply(vacc_ids,
-                        function(i) get_all_ages(vacc_act |>
+                        function(i) get_all_ages(vacc |>
                                                  dplyr::filter(.data$id == i)))
 
     ranges_list <- lapply(seq_along(ages_list),

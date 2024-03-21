@@ -5,10 +5,10 @@
 \title{Add coverage or doses information to the input
 \code{popim_vacc_activities} object}
 \usage{
-complete_vacc_activities(vaccs, pop)
+complete_vacc_activities(vacc, pop)
 }
 \arguments{
-\item{vaccs}{\code{popim_vacc_activities} object}
+\item{vacc}{\code{popim_vacc_activities} object}
 
 \item{pop}{\code{popim_population} object}
 }

@@ -190,43 +190,43 @@ read_vacc_activities <- function(file) {
 ##' activity, the function checks if they are consistent with the
 ##' population size, and fails if there are any inconsistencies.
 ##'
-##' @param vaccs `popim_vacc_activities` object
+##' @param vacc `popim_vacc_activities` object
 ##' @param pop `popim_population` object
 ##' @return The supplied object of class `popim_vacc_activities`,
 ##'     updated to have both `doses` and `coverage` information.
 ##' @author Tini Garske
 ##' @export
-complete_vacc_activities <- function(vaccs, pop) {
-    validate_vacc_activities(vaccs)
+complete_vacc_activities <- function(vacc, pop) {
+    validate_vacc_activities(vacc)
     stopifnot(is_population(pop))
 
     ## double check coverage and doses are compatible:
-    ii <- which(!is.na(vaccs$coverage) & !is.na(vaccs$doses))
+    ii <- which(!is.na(vacc$coverage) & !is.na(vacc$doses))
     if(length(ii) > 0) {
         new_doses <- sapply(ii, function(i)
-            doses_from_coverage(pop, vaccs$coverage[i], vaccs$region[i],
-                                vaccs$year[i],
-                                vaccs$age_first[i], vaccs$age_last[i]))
+            doses_from_coverage(pop, vacc$coverage[i], vacc$region[i],
+                                vacc$year[i],
+                                vacc$age_first[i], vacc$age_last[i]))
 
-        stopifnot(isTRUE(all.equal(vaccs$doses[ii], new_doses)))
+        stopifnot(isTRUE(all.equal(vacc$doses[ii], new_doses)))
     }
     ## missing coverage:
-    ii <- which(is.na(vaccs$coverage))
+    ii <- which(is.na(vacc$coverage))
     if(length(ii) > 0) {
-        vaccs$coverage[ii] <- sapply(ii, function(i)
-            coverage_from_doses(pop, vaccs$doses[i], vaccs$region[i],
-                                vaccs$year[i],
-                                vaccs$age_first[i], vaccs$age_last[i]))
+        vacc$coverage[ii] <- sapply(ii, function(i)
+            coverage_from_doses(pop, vacc$doses[i], vacc$region[i],
+                                vacc$year[i],
+                                vacc$age_first[i], vacc$age_last[i]))
     }
 
     ## missing doses:
-    ii <- which(is.na(vaccs$doses))
+    ii <- which(is.na(vacc$doses))
     if(length(ii) > 0) {
-        vaccs$doses[ii] <- sapply(ii, function(i)
-            doses_from_coverage(pop, vaccs$coverage[i], vaccs$region[i],
-                                vaccs$year[i],
-                                vaccs$age_first[i], vaccs$age_last[i]))
+        vacc$doses[ii] <- sapply(ii, function(i)
+            doses_from_coverage(pop, vacc$coverage[i], vacc$region[i],
+                                vacc$year[i],
+                                vacc$age_first[i], vacc$age_last[i]))
     }
 
-    vaccs
+    vacc
 }
