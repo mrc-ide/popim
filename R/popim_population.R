@@ -156,7 +156,7 @@ read_popim_pop <- function(file) {
 ##' @param df a dataframe with at least columns region, age, year and pop_size.
 ##' @return an object of class `popim_population`
 ##' @author Tini Garske
-##' @noRd
+##' @export
 as_popim_pop <- function(df) {
 
     assert_column_exists(df, "region")
