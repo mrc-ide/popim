@@ -33,6 +33,9 @@ format and range of these columns.
 
 ### S3 class `popim_population`
 
+The class `popim_population` is designed to hold information on a
+population of interest.
+
 #### The dataframe
 
 The dataframe holds information on the population size and immunity
@@ -97,23 +100,56 @@ validate: [is_population()]
 
 ### S3 class `popim_vacc_activities`
 
+The class `popim_vacc_activities` is designed to hold information on
+vaccination activities that have occurred or are planned in the
+population of interest. Each row of the dataframe relates to one
+vaccination activity.
+
 #### The dataframe
 
 The mandatory columns are:
 
-| column      | type and range          | explanation |
-|-------------|-------------------------|-------------|
-| `region`    | character               |             |
-| `year`      | integer                 |             |
-| `age_first` | integer, non-negative   |             |
-| `age_last`  | integer \ge `age_first` |             |
-| `coverage`  | numeric, between 0 and 1, inclusive | |
-| `doses`     | numeric, non-negative   |             |
-| `targeting` | character: one of `"random"`, `"correlated"`, `"targeted"` |  |
+* `region`: The region in which the vaccination activity takes
+  place. While this is a free character field, when applied to a
+  population, this must match a region that occurs in the population.
+* `year`: year during which the vaccination activity takes place.
+* `age_first`: youngest age group to be targeted.
+* `age_last`: oldest age group to be targeted.
+* `coverage`: proportion of the target population to be immunised.
+* `doses`: number of doses used in the vaccination activity.
+* `targeting`: determines how doses are allocated when there is
+  pre-existing immunity in the population.
+
+*to do: details of coverage/doses, include assumptions of non-waning,
+100% effectiveness, no wastage.*
+
+*to do: explain targeting.*
+
+
+
+
+| column      | type      | range             |
+|-------------|-----------|-------------------|
+| `region`    | character |                   |
+| `year`      | integer   |                   |
+| `age_first` | integer   | non-negative      |
+| `age_last`  | integer   | $\ge$ `age_first` |
+| `coverage`  | numeric   | [0, 1]            |
+| `doses`     | numeric   | non-negative      |
+| `targeting` | character | `"random"`, `"correlated"`, `"targeted"` |
 
 #### Class attributes
 
+As this is a subclass of dataframe, it has the same attributes as a
+dataframe (`names`, `class` and `row_names`), and no additional
+attributes.
 
 #### Create and validate objects of this class
 
+create: [popim_vacc_activities()], [read_vacc_activities()],
+[as_vacc_activities()], [vacc_from_immunity()]
+
+modify: [complete_vacc_activities()]
+
+validate: [is_vacc_activities()]
 
