@@ -186,10 +186,10 @@ in this population.</li>
 <div class="section level4">
 <h4 id="create-modify-and-validate-objects-of-this-class">Create, modify and validate objects of this class<a class="anchor" aria-label="anchor" href="#create-modify-and-validate-objects-of-this-class"></a>
 </h4>
-<p>create: [popim_population()], [<code><a href="../reference/read_popim_pop.html">read_popim_pop()</a></code>],
-<code><a href="../reference/as_popim_pop.html">as_popim_pop()</a></code></p>
-<p>modify: [apply_vacc()]</p>
-<p>validate: [is_population()]</p>
+<p>create: <code><a href="../reference/popim_population.html">popim_population()</a></code>,
+<code><a href="../reference/read_popim_pop.html">read_popim_pop()</a></code>, <code><a href="../reference/as_popim_pop.html">as_popim_pop()</a></code></p>
+<p>modify: <code><a href="../reference/apply_vacc.html">apply_vacc()</a></code></p>
+<p>validate: <code>is_population()</code></p>
 </div>
 </div>
 <div class="section level3">
@@ -288,12 +288,40 @@ dataframe (<code>names</code>, <code>class</code> and
 <div class="section level4">
 <h4 id="create-and-validate-objects-of-this-class">Create and validate objects of this class<a class="anchor" aria-label="anchor" href="#create-and-validate-objects-of-this-class"></a>
 </h4>
-<p>create: [popim_vacc_activities()], [read_vacc_activities()],
-[as_vacc_activities()], [vacc_from_immunity()]</p>
-<p>modify: [complete_vacc_activities()]</p>
-<p>validate: [is_vacc_activities()]</p>
+<p>create: <code><a href="../reference/popim_vacc_activities.html">popim_vacc_activities()</a></code>,
+<code><a href="../reference/read_vacc_activities.html">read_vacc_activities()</a></code>, <code><a href="../reference/as_vacc_activities.html">as_vacc_activities()</a></code>,
+<code><a href="../reference/vacc_from_immunity.html">vacc_from_immunity()</a></code></p>
+<p>modify: <code><a href="../reference/complete_vacc_activities.html">complete_vacc_activities()</a></code></p>
+<p>validate: <code>validate_vacc_activities()</code></p>
 </div>
 </div>
+</div>
+<div class="section level2">
+<h2 id="primary-functionality">Primary functionality<a class="anchor" aria-label="anchor" href="#primary-functionality"></a>
+</h2>
+<p>Once objects holding data on the population and vaccination
+activities have been set up, the primary functionality provided by
+<code>popim</code> is to apply the vaccination activities to the
+population to evaluate the population immunity by age over time that
+results from the given vaccination activities, which is done with the
+function <code><a href="../reference/apply_vacc.html">apply_vacc()</a></code>.</p>
+<p>using coverage information by preference, doses if coverage isn’t
+available.</p>
+<p>put coverage into birth cohort from year of vaccination into the
+future (no waning immunity), other assumptions: 100% effectiveness of
+the vaccine, 0 wastage.</p>
+<p>If pre-existing immunity: explain targeting.</p>
+<div class="section level3">
+<h3 id="the-inverse">The inverse<a class="anchor" aria-label="anchor" href="#the-inverse"></a>
+</h3>
+<p><code><a href="../reference/vacc_from_immunity.html">vacc_from_immunity()</a></code></p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="summary-visualisation">Summary &amp; Visualisation<a class="anchor" aria-label="anchor" href="#summary-visualisation"></a>
+</h2>
+<p><code><a href="../reference/calc_pop_immunity.html">calc_pop_immunity()</a></code></p>
+<p><code><a href="../reference/plotting.html">plot_pop_size()</a></code>, <code><a href="../reference/plotting.html">plot_immunity()</a></code></p>
 </div>
   </div>
 
