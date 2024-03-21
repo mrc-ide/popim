@@ -10,6 +10,12 @@
     <loc>/LICENSE.html</loc>
   </url>
   <url>
+    <loc>/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>/articles/popim.html</loc>
+  </url>
+  <url>
     <loc>/authors.html</loc>
   </url>
   <url>
@@ -17,6 +23,9 @@
   </url>
   <url>
     <loc>/reference/apply_vacc.html</loc>
+  </url>
+  <url>
+    <loc>/reference/as_popim_pop.html</loc>
   </url>
   <url>
     <loc>/reference/calc_pop_immunity.html</loc>
