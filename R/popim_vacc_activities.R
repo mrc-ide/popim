@@ -173,10 +173,31 @@ read_vacc_activities <- function(file) {
         stop(sprintf("%s does not exist", file), call. = FALSE)
 
     df <- utils::read.csv(file, stringsAsFactors = FALSE)
+    df <- as_vacc_activities(df)
+    df
+}
+
+##' Generate a `popim_vacc_activites object from a dataframe
+##'
+##' Checks if the dataframe is suitable (i.e., contains appropriate
+##' columns and data ranges), and if so converts it to a
+##' `popim_vacc_activities` object and returns this.
+##'
+##' The input dataframe has to have at least teh columns `region`,
+##' `year`, `age_first`, `age_last`, `coverage`, `doses` and
+##' `targeting`. Any further columns are simply carried over into the
+##' `popim_vacc_activities` object.
+##'
+##' @param df dataframe to be converted to class
+##'     `popim_vacc_activities`
+##' @return an object of class `popim_vacc_activities`
+##' @author Tini Garske
+##' @seealso [popim_vacc_activities()] for details of the S3 class.
+##' @export
+as_vacc_activities <- function(df) {
+
     class(df) <- c("popim_vacc_activities", "data.frame")
-
     validate_vacc_activities(df)
-
     df
 }
 

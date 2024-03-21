@@ -7,7 +7,8 @@
 as_popim_pop(df)
 }
 \arguments{
-\item{df}{a dataframe with at least columns region, age, year and pop_size.}
+\item{df}{a dataframe with at least columns region, age, year and
+pop_size.}
 }
 \value{
 an object of class \code{popim_population}
@@ -18,9 +19,9 @@ columns and data ranges), and if so converts it to a
 \code{popim_population} object and returns this.
 }
 \details{
-The input dataframe has to have at least the columns region, age,
-and year. The output popim_population object is generated via
-expand.grid to have consecutive year and age ranges that are
+The input dataframe has to have at least the columns \code{region},
+\code{age}, and \code{year}. The output popim_population object is generated
+via expand.grid to have consecutive year and age ranges that are
 identical for all regions.
 
 If the input dataframe contains a column \code{pop_size}, this must be
@@ -31,7 +32,8 @@ If the input dataframe contains a colum \code{immunity}, this must be
 numeric, with values between 0 and 1. If it is missing, this
 column is generated and initialised to 0.
 
-Any further colunms are simply carried over into the popim_population object.
+Any further colunms are simply carried over into the
+popim_population object.
 }
 \author{
 Tini Garske
