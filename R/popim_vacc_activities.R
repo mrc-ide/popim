@@ -183,7 +183,7 @@ read_vacc_activities <- function(file) {
 ##' columns and data ranges), and if so converts it to a
 ##' `popim_vacc_activities` object and returns this.
 ##'
-##' The input dataframe has to have at least teh columns `region`,
+##' The input dataframe has to have at least the columns `region`,
 ##' `year`, `age_first`, `age_last`, `coverage`, `doses` and
 ##' `targeting`. Any further columns are simply carried over into the
 ##' `popim_vacc_activities` object.
