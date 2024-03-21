@@ -57,7 +57,8 @@ columns and data ranges), and if so converts it to a
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>df</dt>
-<dd><p>a dataframe with at least columns region, age, year and pop_size.</p></dd>
+<dd><p>a dataframe with at least columns region, age, year and
+pop_size.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -70,9 +71,9 @@ columns and data ranges), and if so converts it to a
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>The input dataframe has to have at least the columns region, age,
-and year. The output popim_population object is generated via
-expand.grid to have consecutive year and age ranges that are
+    <p>The input dataframe has to have at least the columns <code>region</code>,
+<code>age</code>, and <code>year</code>. The output popim_population object is generated
+via expand.grid to have consecutive year and age ranges that are
 identical for all regions.</p>
 <p>If the input dataframe contains a column <code>pop_size</code>, this must be
 numeric and non-negative. If it is missing, this column is
@@ -80,7 +81,8 @@ generated and initialised to NA.</p>
 <p>If the input dataframe contains a colum <code>immunity</code>, this must be
 numeric, with values between 0 and 1. If it is missing, this
 column is generated and initialised to 0.</p>
-<p>Any further colunms are simply carried over into the popim_population object.</p>
+<p>Any further colunms are simply carried over into the
+popim_population object.</p>
     </div>
     <div id="author">
     <h2>Author</h2>

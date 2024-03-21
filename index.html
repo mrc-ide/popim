@@ -111,7 +111,7 @@
 <span><span class="co">#&gt; 6     UK 2009         0        0     0.90    NA    random</span></span>
 <span><span class="co">#&gt; 7     UK 2010         0        0     0.95    NA    random</span></span></code></pre></div>
 <p>All vaccination activities target the UK. The first is a campaign targeting all age groups of our dummy population, which took place 2 years before the dawn of time. As immunity is assumed not to wane, the effects of this are still there, and therefore the functions here keep track of this. The remaining vaccination activities are routine vaccination of infants (restricted to age 0) with an increasing population of the target cohort to be vaccinated.</p>
-<p>We now apply these vaccination activities sequentially to the population using the function <code>apply_vaccs()</code>.</p>
+<p>We now apply these vaccination activities sequentially to the population using the function <code><a href="reference/apply_vacc.html">apply_vacc()</a></code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/apply_vacc.html">apply_vacc</a></span><span class="op">(</span><span class="va">pop</span>, <span class="va">vacc</span><span class="op">)</span></span></code></pre></div>
 <p>The resulting vaccine-derived immunity of the population can be visualised with the function <code><a href="reference/plotting.html">plot_immunity()</a></code>. This is based on ggplot2, and the returned graph object can be further modified - here in order to achieve tick marks that suit the data better.</p>
