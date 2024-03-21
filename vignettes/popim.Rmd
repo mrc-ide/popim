@@ -35,41 +35,64 @@ format and range of these columns.
 
 #### The dataframe
 
+The dataframe holds information on the population size and immunity
+status of the population through time. The population is disaggregated
+into 1-year age groups, and potentially several spatial regions. Each
+row refers to a particular (1 year) birth cohort in a given location
+and year.
+
 The mandatory columns are:
 
-* `region`: character. The population of interest may be spatially
+* `region`: The population of interest may be spatially
   disaggregated into separate geographical regions (e.g., countries or
   subnational administrative regions). This column holds a string that
   identifies which region each entry refers to.
-* `year`: integer. The population is tracked through time using annual
-  time steps.
-* `age`: integer, non-negative. The age-structure of the population is
-  tracked in annual age groups.
-* `cohort`: integer. This column is redundant as it equals `year` -
-  `age`, and therefore refers to the year in which this cohort was
-  born. It is included for ease of handling.
-* `immunity`: numeric, between 0 and 1 (inclusive). Gives the
-  proportion of each cohort that is immune due to past vaccination.
-* `pop_size`: numeric, non-negative. Number of people in any given age
-  group and year. To facilitate using common units such as thousands
-  this is not limited to integer values. It is however up to the user
-  to ensure that such units are used consistently.
+* `year`: The population is tracked through time using annual time
+  steps.
+* `age`: The age-structure of the population is tracked in annual age
+  groups.
+* `cohort`: This column is redundant as it equals `year` - `age`, and
+  therefore refers to the year in which this cohort was born. It is
+  included for ease of handling.
+* `immunity`: Gives the proportion of each cohort that is immune due
+  to past vaccination.
+* `pop_size`: Number of people in any given age group and year. To
+  facilitate using common units such as thousands this is not limited
+  to integer values. It is however up to the user to ensure that such
+  units are used consistently.
   
-| column | type and range | explanation |
-|--------|----------------|-------------|
-| `region` | character | The population of interest may be spatiall disaggregated into separate geographical regions (e.g., countries or subnational administrative regions). This column holds a string that identifies which region each entry refers to. |
-| `year` | integer | The population is tracked through time using annual time steps. |
-| `age` | integer, non-negative | The age-structure of the population is tracked in annual age groups. |
-| `cohort` | integer | This column is redundant as it equals `year` - `age`, and therefore refers to the year in which this cohort was born. It is included for ease of handling. |
-| `immunity` | numeric, between 0 and 1, inclusive | Gives the proportion of each cohort that is immune due to past vaccination. |
-| `pop_size` | numeric, non-negative | Number of people in any given age group and year. To facilitate using common units such as thousands this is not limited to integer values. It is however up to the user to ensure that such units are used consistently. |
+| column     | type      | range          |
+|------------|-----------|----------------|
+| `region`   | character |                |
+| `year`     | integer   |                |
+| `age`      | integer   | non-negative   |
+| `cohort`   | integer   | `year` - `age` |
+| `immunity` | numeric   | [0, 1]         |
+| `pop_size` | numeric   | non-negative   |
 
 
 
 #### Class attributes
 
+In addition to the attributes that every dataframe has (`names`,
+`class`, `row.names`), the objects of the `popim_population` class
+also retain the input parameters of the basic constructer
+`popim_population()`:
 
-#### Create and validate objects of this class
+* `region`: a character vector of all regions in this object,
+* `year_min` and `year_max`: the range of years, and
+* `age_min` and `age_max`: the age range covered in this population.
+
+
+#### Create, modify and validate objects of this class
+
+create: [popim_population()], [`read_popim_pop()`], `as_popim_pop()`
+
+modify: [apply_vacc()]
+
+validate: [is_population()]
+
+
 
 
 ### S3 class `popim_vacc_activities`
@@ -78,10 +101,15 @@ The mandatory columns are:
 
 The mandatory columns are:
 
-* Item 1
-* Item 2
-    + Item 2a
-    + Item 2b
+| column      | type and range          | explanation |
+|-------------|-------------------------|-------------|
+| `region`    | character               |             |
+| `year`      | integer                 |             |
+| `age_first` | integer, non-negative   |             |
+| `age_last`  | integer \ge `age_first` |             |
+| `coverage`  | numeric, between 0 and 1, inclusive | |
+| `doses`     | numeric, non-negative   |             |
+| `targeting` | character: one of `"random"`, `"correlated"`, `"targeted"` |  |
 
 #### Class attributes
 
