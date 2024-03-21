@@ -89,11 +89,11 @@ also retain the input parameters of the basic constructer
 
 #### Create, modify and validate objects of this class
 
-create: [popim_population()], [`read_popim_pop()`], `as_popim_pop()`
+create: `popim_population()`, `read_popim_pop()`, `as_popim_pop()`
 
-modify: [apply_vacc()]
+modify: `apply_vacc()`
 
-validate: [is_population()]
+validate: `is_population()`
 
 
 
@@ -146,12 +146,12 @@ attributes.
 
 #### Create and validate objects of this class
 
-create: [popim_vacc_activities()], [read_vacc_activities()],
-[as_vacc_activities()], [vacc_from_immunity()]
+create: `popim_vacc_activities()`, `read_vacc_activities()`,
+`as_vacc_activities()`, `vacc_from_immunity()`
 
-modify: [complete_vacc_activities()]
+modify: `complete_vacc_activities()`
 
-validate: [is_vacc_activities()]
+validate: `is_vacc_activities()`
 
 ## Primary functionality
 
@@ -160,7 +160,7 @@ have been set up, the primary functionality provided by `popim` is to
 apply the vaccination activities to the population to evaluate the
 population immunity by age over time that results from the given
 vaccination activities, which is done with the function
-[apply_vacc()].
+`apply_vacc()`.
 
 
 ## Visualisation
