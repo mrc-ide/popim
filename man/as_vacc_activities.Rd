@@ -19,7 +19,7 @@ columns and data ranges), and if so converts it to a
 \code{popim_vacc_activities} object and returns this.
 }
 \details{
-The input dataframe has to have at least teh columns \code{region},
+The input dataframe has to have at least the columns \code{region},
 \code{year}, \code{age_first}, \code{age_last}, \code{coverage}, \code{doses} and
 \code{targeting}. Any further columns are simply carried over into the
 \code{popim_vacc_activities} object.
