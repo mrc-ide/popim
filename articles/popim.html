@@ -225,9 +225,6 @@ activity.</li>
 <code>targeting</code>: determines how doses are allocated when
 there is pre-existing immunity in the population.</li>
 </ul>
-<p><em>to do: details of coverage/doses, include assumptions of
-non-waning, 100% effectiveness, no wastage.</em></p>
-<p><em>to do: explain targeting.</em></p>
 <table class="table">
 <thead><tr class="header">
 <th>column</th>
@@ -277,6 +274,11 @@ non-waning, 100% effectiveness, no wastage.</em></p>
 </tr>
 </tbody>
 </table>
+<div class="section level5">
+<h5 id="relationship-between-coverage-doses-and-target-population">Relationship between coverage, doses and target population<a class="anchor" aria-label="anchor" href="#relationship-between-coverage-doses-and-target-population"></a>
+</h5>
+<p><em>to do</em></p>
+</div>
 </div>
 <div class="section level4">
 <h4 id="class-attributes-1">Class attributes<a class="anchor" aria-label="anchor" href="#class-attributes-1"></a>
@@ -297,7 +299,8 @@ dataframe (<code>names</code>, <code>class</code> and
 </div>
 </div>
 <div class="section level2">
-<h2 id="primary-functionality">Primary functionality<a class="anchor" aria-label="anchor" href="#primary-functionality"></a>
+<h2 id="primary-functionality-applying-vaccination-activities-to-a-population">Primary functionality: applying vaccination activities to a
+population<a class="anchor" aria-label="anchor" href="#primary-functionality-applying-vaccination-activities-to-a-population"></a>
 </h2>
 <p>Once objects holding data on the population and vaccination
 activities have been set up, the primary functionality provided by
@@ -305,12 +308,121 @@ activities have been set up, the primary functionality provided by
 population to evaluate the population immunity by age over time that
 results from the given vaccination activities, which is done with the
 function <code><a href="../reference/apply_vacc.html">apply_vacc()</a></code>.</p>
-<p>using coverage information by preference, doses if coverage isn’t
-available.</p>
-<p>put coverage into birth cohort from year of vaccination into the
-future (no waning immunity), other assumptions: 100% effectiveness of
-the vaccine, 0 wastage.</p>
-<p>If pre-existing immunity: explain targeting.</p>
+<div class="section level3">
+<h3 id="assumptions-when-applying-vaccination-activities-to-the-population">Assumptions when applying vaccination activities to the
+population<a class="anchor" aria-label="anchor" href="#assumptions-when-applying-vaccination-activities-to-the-population"></a>
+</h3>
+<ul>
+<li>100% vaccine effectiveness</li>
+<li>is no wastage of doses</li>
+<li>no waning immunity</li>
+<li>mortality is independent of immunity status</li>
+</ul>
+<p>While the first two are clearly unrealistic assumptions, if there is
+a constant vaccine effectiveness (&lt;100%), or a constant wastage
+factor, the results can easily be scaled up by these constant factors to
+obtain more realistic values for vaccine demand.</p>
+<p>For a potentially deadly disease one would expect that mortality due
+to the disease would be strongly correlated with immunity status,
+however, even the most devastating outbreaks typically only affect a
+small part of the population, and therefore all-cause mortality will be
+much less impacted by mortality due to the specific disease. This means
+that this assumption is closer to reality than it might appear at
+first.</p>
+<p>Waning immunity is a potentially important factor to consider for
+many vaccines, particularly when looking at the long term benefits of
+vaccination. However, allowing for this is currently not
+implemented.</p>
+</div>
+<div class="section level3">
+<h3 id="description-of-the-algorithm">Description of the algorithm<a class="anchor" aria-label="anchor" href="#description-of-the-algorithm"></a>
+</h3>
+<p>The vaccination activities object has columns for
+<code>coverage</code>, the proportion ofthe target population that will
+be vaccinated, and <code>doses</code>, the number of vaccine doses to be
+administered in the activity. Given a target population size this is
+redundant (and potentially conflicting) information. The function
+<code><a href="../reference/apply_vacc.html">apply_vacc()</a></code> will always use <code>coverage</code>
+information in preference over <code>doses</code>, if this is
+non-missing. If <code>coverage</code> is missing, the target population
+size (based on the population size of the region and age groups
+targeted) will be calculated and the corresponding <code>coverage</code>
+calculated as <code>doses</code> / <code>target_population</code>.</p>
+<div class="section level4">
+<h4 id="vaccinating-a-cohort-with-no-previous-immunity">Vaccinating a cohort with no previous immunity<a class="anchor" aria-label="anchor" href="#vaccinating-a-cohort-with-no-previous-immunity"></a>
+</h4>
+<p>When vaccination is applied to a particular birth cohort that has no
+immunity, the result is simply that the proportion of the cohort
+receiving the vaccine will be immune from the time of the vaccination
+onwards, i.e., the immunity for this cohort will be set to equal the
+coverage of the vaccination activity in question. Due to the annual time
+step, vaccination is assumed to take effect at the end of the year in
+which it is implemented, so the immunity is updated from the next year
+onwards.</p>
+</div>
+<div class="section level4">
+<h4 id="vaccinating-a-cohort-with-previous-immunity">Vaccinating a cohort with previous immunity<a class="anchor" aria-label="anchor" href="#vaccinating-a-cohort-with-previous-immunity"></a>
+</h4>
+<p>When a vaccination activity is applied to a cohort that has some
+previous immunity, we need to make some assumptions about who will be
+vaccinated in the new activity. There are 3 different options
+implemented which are governed by the parameter <code>targeting</code>,
+one of the input parameters to the function <code><a href="../reference/apply_vacc.html">apply_vacc()</a></code>.
+This parameter can take the values <code>"targeted"</code>,
+<code>"random"</code> or <code>"correlated"</code>.</p>
+<div class="section level5">
+<h5 id="targeted-targeting">
+<code>"targeted"</code> targeting<a class="anchor" aria-label="anchor" href="#targeted-targeting"></a>
+</h5>
+<p>The most effective way to implement a new vaccination activity is to
+use <code>"targeted"</code> targeting, meaning that the vaccine is
+targeted at previously non-immunised individuals. This means that the
+new immunity of after the vaccination activity is simply the sum of the
+previous immunity and the coverage of the current vaccination activity
+(capped by 1 which indicates complete immunity):</p>
+<p><span class="math display">\[
+\rm{immunity}_{\rm new} =
+\min(\rm{immunity}_{\rm prev} + \rm{coverage}, 1)
+\]</span></p>
+<p>While this is not a realistic assumption in many settings, it can be
+useful for instance in multi-year campaigns that target the same region
+(but possibly proceed sub-region by sub-region) over several years. This
+multi-year campaign would be coded as separate vaccination activities
+for each year, using the option <code>targeting</code> =
+<code>"targeted"</code>.</p>
+</div>
+<div class="section level5">
+<h5 id="random-targeting">
+<code>"random"</code> targeting<a class="anchor" aria-label="anchor" href="#random-targeting"></a>
+</h5>
+<p>A reasonable first assumption might be to use <code>targeting</code>
+= <code>"random"</code>, meaning that individuals will receive
+vaccination irrespective of their previous immunity status.</p>
+<p><span class="math display">\[
+\rm{immunity}_{\rm new} =
+\rm{coverage} + \rm{immunity}_{\rm prev} -
+\rm{coverage}*\rm{immunity}_{\rm prev}
+\]</span></p>
+</div>
+<div class="section level5">
+<h5 id="correlated-targeting">
+<code>"correlated"</code> targeting<a class="anchor" aria-label="anchor" href="#correlated-targeting"></a>
+</h5>
+<p>On the opposite end of the spectrum is the most pessimistic
+assumption that might apply in situations where there is unequal access
+to vaccination: under <code>"correlated"</code> targeting, people who
+have previously been immunised get vaccinated first in the new
+vaccination activity, and those previously not immune will only receive
+any vaccine if the new coverage extends further:</p>
+<p><span class="math display">\[
+\rm{immunity}_{\rm new} =
+\max(\rm{immunity}_{\rm prev}, \rm{coverage})
+\]</span></p>
+<p>Note that the order in which vaccination activities are applied to a
+population does not matter.</p>
+</div>
+</div>
+</div>
 <div class="section level3">
 <h3 id="the-inverse">The inverse<a class="anchor" aria-label="anchor" href="#the-inverse"></a>
 </h3>
