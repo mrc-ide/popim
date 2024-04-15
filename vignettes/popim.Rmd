@@ -79,7 +79,7 @@ The mandatory columns are:
 
 In addition to the attributes that every dataframe has (`names`,
 `class`, `row.names`), the objects of the `popim_population` class
-also retain the input parameters of the basic constructer
+also retain the input parameters of the basic constructor
 `popim_population()`:
 
 * `region`: a character vector of all regions in this object,
@@ -137,7 +137,7 @@ The mandatory columns are:
 #### Class attributes
 
 As this is a subclass of dataframe, it has the same attributes as a
-dataframe (`names`, `class` and `row_names`), and no additional
+dataframe (`names`, `class` and `row_names`). It has no additional
 attributes.
 
 #### Create and validate objects of this class
@@ -161,7 +161,7 @@ vaccination activities, which is done with the function
 ### Assumptions when applying vaccination activities to the population
 
 * 100% vaccine effectiveness
-* is no wastage of doses
+* no wastage of doses
 * no waning immunity
 * mortality is independent of immunity status
 
@@ -185,7 +185,7 @@ vaccination. However, allowing for this is currently not implemented.
 ### Description of the algorithm
 
 The vaccination activities object has columns for `coverage`, the
-proportion ofthe target population that will be vaccinated, and
+proportion of the target population that will be vaccinated, and
 `doses`, the number of vaccine doses to be administered in the
 activity. Given a target population size this is redundant (and
 potentially conflicting) information. The function `apply_vacc()` will
@@ -222,7 +222,7 @@ use `"targeted"` targeting, meaning that the vaccine is targeted at
 previously non-immunised individuals. This means that the new immunity
 of after the vaccination activity is simply the sum of the previous
 immunity and the coverage of the current vaccination activity (capped
-by 1 which indicates complete immunity):
+by 1 which indicates complete immunity of the cohort in question):
 
 $$
 \rm{immunity}_{\rm new} =
@@ -239,7 +239,8 @@ activities for each year, using the option `targeting` = `"targeted"`.
 
 A reasonable first assumption might be to use `targeting` =
 `"random"`, meaning that individuals will receive vaccination
-irrespective of their previous immunity status.
+irrespective of their previous immunity status. The immunity after the
+new campaign is applied is calculated according to
 
 $$
 \rm{immunity}_{\rm new} =
@@ -264,7 +265,7 @@ $$
 
 
 Note that the order in which vaccination activities are applied to a
-population does not matter.
+population does not matter under any of the `targeting` assumptions.
 
 
 
