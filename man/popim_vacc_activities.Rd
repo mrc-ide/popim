@@ -23,7 +23,7 @@ vaccination activity takes place.}
 
 \item{age_first, age_last}{non-negative integer vectors: specify
 the age range targeted in the vaccination
-activity. \code{age_first} <= `age_last for all entries.}
+activity. \code{age_first} <= \code{age_last} for all entries.}
 
 \item{coverage}{numeric vector, 0 <= \code{coverage} <= 1 for all
 entries. Specifies the proportion of the target population to

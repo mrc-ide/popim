@@ -14,7 +14,7 @@
 ##'     vaccination activity takes place.
 ##' @param age_first,age_last non-negative integer vectors: specify
 ##'     the age range targeted in the vaccination
-##'     activity. `age_first` <= `age_last for all entries.
+##'     activity. `age_first` <= `age_last` for all entries.
 ##' @param coverage numeric vector, 0 <= `coverage` <= 1 for all
 ##'     entries. Specifies the proportion of the target population to
 ##'     be immunised.
@@ -177,7 +177,7 @@ read_vacc_activities <- function(file) {
     df
 }
 
-##' Generate a `popim_vacc_activites object from a dataframe
+##' Generate a `popim_vacc_activites` object from a dataframe
 ##'
 ##' Checks if the dataframe is suitable (i.e., contains appropriate
 ##' columns and data ranges), and if so converts it to a

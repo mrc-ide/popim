@@ -71,12 +71,15 @@ apply_vacc_1 <- function(pop, region, year, age_first = 0, age_last = Inf,
     }
     pop
 }
-##' Apply vaccination activities to a `popim_population` object
+##' Apply vaccination activities to a population object
 ##'
-##' Applies the vaccination activities listed in the input object
-##' `vacc` (a data.frame object of class `popim_vacc_activities`) to
-##' the `popim_population` object pop, then returns that updated
-##' object.
+##' `apply_vacc()` applies the vaccination activities listed in the
+##' input object `vacc` (a data.frame object of class
+##' `popim_vacc_activities`) to the `popim_population` object `pop`,
+##' then returns the updated population object `pop`.
+##'
+##' ```{r, child = "man/rmd/apply.Rmd"}
+##' ```
 ##'
 ##' @param pop An object of class `popim_population` such as
 ##'     created by [popim_population()].

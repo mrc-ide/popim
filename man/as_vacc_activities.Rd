@@ -2,7 +2,7 @@
 % Please edit documentation in R/popim_vacc_activities.R
 \name{as_vacc_activities}
 \alias{as_vacc_activities}
-\title{Generate a `popim_vacc_activites object from a dataframe}
+\title{Generate a \code{popim_vacc_activites} object from a dataframe}
 \usage{
 as_vacc_activities(df)
 }

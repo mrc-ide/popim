@@ -118,7 +118,9 @@ The mandatory columns are:
 * `coverage`: proportion of the target population to be immunised.
 * `doses`: number of doses used in the vaccination activity.
 * `targeting`: determines how doses are allocated when there is
-  pre-existing immunity in the population.
+  pre-existing immunity in the population, see
+  [below](#vaccinating-a-cohort-with-previous-immunity) for a
+  description of the different `targeting` methods.
 
 | column      | type      | range             |
 |-------------|-----------|-------------------|
@@ -162,127 +164,8 @@ validate: `validate_vacc_activities()` *(currently not exported)*
 
 ## Primary functionality: applying vaccination activities to a population
 
-Once objects holding data on the population and vaccination activities
-have been set up, the primary functionality provided by `popim` is to
-apply the vaccination activities to the population to evaluate the
-population immunity by age over time that results from the given
-vaccination activities, which is done with the function
-`apply_vacc()`.
-
-### Assumptions when applying vaccination activities to the population
-
-* 100% vaccine effectiveness
-* no wastage of doses
-* no waning immunity
-* mortality is independent of immunity status
-
-While the first two are clearly unrealistic assumptions, if there is a
-constant vaccine effectiveness (<100%), or a constant wastage factor,
-the results can easily be scaled up by these constant factors to
-obtain more realistic values for vaccine demand.
-
-For a potentially deadly disease one would expect that mortality due
-to the disease would be strongly correlated with immunity status,
-however, even the most devastating outbreaks typically only affect a
-small part of the population, and therefore all-cause mortality will
-be much less impacted by mortality due to the specific disease. This
-means that this assumption is closer to reality than it might appear
-at first.
-
-Waning immunity is a potentially important factor to consider for many
-vaccines, particularly when looking at the long term benefits of
-vaccination. However, allowing for this is currently not implemented.
-
-### Description of the algorithm
-
-The vaccination activities object has columns for `coverage`, the
-proportion of the target population that will be vaccinated, and
-`doses`, the number of vaccine doses to be administered in the
-activity. Given a target population size this is redundant (and
-potentially conflicting) information. The function `apply_vacc()` will
-always use `coverage` information in preference over `doses`, if this
-is non-missing. If `coverage` is missing, the target population size
-(based on the population size of the region and age groups targeted)
-will be calculated and the corresponding `coverage` calculated as
-`doses` / `target_population`.
-
-#### Vaccinating a cohort with no previous immunity
-
-When vaccination is applied to a particular birth cohort that has no
-immunity, the result is simply that the proportion of the cohort
-receiving the vaccine will be immune from the time of the vaccination
-onwards, i.e., the immunity for this cohort will be set to equal the
-coverage of the vaccination activity in question. Due to the annual
-time step, vaccination is assumed to take effect at the end of the
-year in which it is implemented, so the immunity is updated from the
-next year onwards.
-
-#### Vaccinating a cohort with previous immunity
-
-When a vaccination activity is applied to a cohort that has some
-previous immunity, we need to make some assumptions about who will be
-vaccinated in the new activity. There are 3 different options
-implemented which are governed by the parameter `targeting`, one of
-the input parameters to the function `apply_vacc()`. This parameter
-can take the values `"targeted"`, `"random"` or `"correlated"`.
-
-##### `"targeted"` targeting
-
-The most effective way to implement a new vaccination activity is to
-use `"targeted"` targeting, meaning that the vaccine is targeted at
-previously non-immunised individuals. This means that the new immunity
-of after the vaccination activity is simply the sum of the previous
-immunity and the coverage of the current vaccination activity (capped
-by 1 which indicates complete immunity of the cohort in question):
-
-$$
-\rm{immunity}_{\rm new} =
-\min(\rm{immunity}_{\rm prev} + \rm{coverage}, 1)
-$$
-
-While this is not a realistic assumption in many settings, it can be
-useful for instance in multi-year campaigns that target the same
-region (but possibly proceed sub-region by sub-region) over several
-years. This multi-year campaign would be coded as separate vaccination
-activities for each year, using the option `targeting` = `"targeted"`.
-
-##### `"random"` targeting
-
-A reasonable first assumption might be to use `targeting` =
-`"random"`, meaning that individuals will receive vaccination
-irrespective of their previous immunity status. The immunity after the
-new campaign is applied is calculated according to
-
-$$
-\rm{immunity}_{\rm new} =
-\rm{coverage} + \rm{immunity}_{\rm prev} -
-\rm{coverage}*\rm{immunity}_{\rm prev}
-$$
-
-##### `"correlated"` targeting
-
-On the opposite end of the spectrum is the most pessimistic assumption
-that might apply in situations where there is unequal access to
-vaccination: under `"correlated"` targeting, people who have
-previously been immunised get vaccinated first in the new vaccination
-activity, and those previously not immune will only receive any
-vaccine if the new coverage extends further:
-
-$$
-\rm{immunity}_{\rm new} =
-\max(\rm{immunity}_{\rm prev}, \rm{coverage})
-$$
-
-
-
-Note that the order in which vaccination activities are applied to a
-population does not matter under any of the `targeting` assumptions.
-
-
-
-
-
-
+```{r, child = "../man/rmd/apply.Rmd"}
+```
 
 
 ### The inverse
