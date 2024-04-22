@@ -93,7 +93,7 @@ create: `popim_population()`, `read_popim_pop()`, `as_popim_pop()`
 
 modify: `apply_vacc()`
 
-validate: `is_population()`
+validate: `is_population()` *(currently not exported)*
 
 
 
@@ -132,7 +132,18 @@ The mandatory columns are:
 
 ##### Relationship between coverage, doses and target population
 
-*to do*
+If the target population size is known, the information on coverage
+and doses is redundant (and potentially conflicting) as coverage =
+doses / target population size. However, the `popim_vacc_activities`
+object does not store information on population size, this is held in
+the `popim_population` object to which the vaccination activities will
+be applied, so this potential conflict cannot be detected in a
+`popim_vacc_activities` object in isolation. The validator for this
+class, `validate_vacc_activities()`, checks that the required columns
+exist and are of correct data type and range (where applicatble). It
+also currently requires that at least one of `coverage` and `doses` is
+non-missing in each column. *(This behaviour is maybe not sensible as
+inconsistent with the other columns?)*
 
 #### Class attributes
 
@@ -147,7 +158,7 @@ create: `popim_vacc_activities()`, `read_vacc_activities()`,
 
 modify: `complete_vacc_activities()`
 
-validate: `validate_vacc_activities()`
+validate: `validate_vacc_activities()` *(currently not exported)*
 
 ## Primary functionality: applying vaccination activities to a population
 
