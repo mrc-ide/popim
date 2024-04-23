@@ -164,8 +164,16 @@ validate: `validate_vacc_activities()` *(currently not exported)*
 
 ## Primary functionality: applying vaccination activities to a population
 
-```{r, child = "../man/rmd/apply.Rmd"}
+```{r, results = "asis"}
+child_env <- new.env()
+child_env$type <- "vignette"
+
+res <- knitr::knit_child("../man/rmd/apply.Rmd", envir = child_env, quiet = TRUE)
+
+cat(res, sep = "\n")
+
 ```
+
 
 
 ### The inverse

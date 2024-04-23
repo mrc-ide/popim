@@ -78,7 +78,12 @@ apply_vacc_1 <- function(pop, region, year, age_first = 0, age_last = Inf,
 ##' `popim_vacc_activities`) to the `popim_population` object `pop`,
 ##' then returns the updated population object `pop`.
 ##'
-##' ```{r, child = "man/rmd/apply.Rmd"}
+##' ```{r, echo = FALSE, results = "asis"}
+##' child_env <- new.env()
+##' child_env$type <- "doc"
+##' res <- knitr::knit_child("man/rmd/apply.Rmd",
+##' envir = child_env, quiet = TRUE)
+##' cat(res, sep = "\n")
 ##' ```
 ##'
 ##' @param pop An object of class `popim_population` such as

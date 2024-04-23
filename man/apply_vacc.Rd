@@ -98,10 +98,7 @@ of after the vaccination activity is simply the sum of the previous
 immunity and the coverage of the current vaccination activity (capped
 by 1 which indicates complete immunity of the cohort in question):
 
-$$
-\rm{immunity}\emph{{\rm new} =
-\min(\rm{immunity}}{\rm prev} + \rm{coverage}, 1)
-$$
+immunity_{new} = min(immunity_{prev} + coverage, 1)
 
 While this is not a realistic assumption in many settings, it can be
 useful for instance in multi-year campaigns that target the same
@@ -117,11 +114,8 @@ A reasonable first assumption might be to use \code{targeting} =
 irrespective of their previous immunity status. The immunity after the
 new campaign is applied is calculated according to
 
-$$
-\rm{immunity}\emph{{\rm new} =
-\rm{coverage} + \rm{immunity}}{\rm prev} -
-\rm{coverage}*\rm{immunity}_{\rm prev}
-$$
+immunity_{new} = coverage + immunity_{prev}
+- coverage * immunity_{prev}
 }
 
 \subsection{\code{"correlated"} targeting}{
@@ -133,10 +127,7 @@ previously been immunised get vaccinated first in the new vaccination
 activity, and those previously not immune will only receive any
 vaccine if the new coverage extends further:
 
-$$
-\rm{immunity}\emph{{\rm new} =
-\max(\rm{immunity}}{\rm prev}, \rm{coverage})
-$$
+immunity_{new} = max(immunity_{prev}, coverage)
 
 Note that the order in which vaccination activities are applied to a
 population does not matter under any of the \code{targeting} assumptions.
