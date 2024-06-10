@@ -63,14 +63,15 @@ coverage/doses needed will be returned.</p>
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>pop</dt>
-<dd><p><code>popim_population</code> object for which vaccination activities
-are to be inferred.</p></dd>
+<dd><p><code>popim_population</code> object for which vaccination
+activities are to be inferred.</p></dd>
 
 
 <dt>targeting</dt>
 <dd><p>character, determines the assumption of how doses
-are allocated. Valid options are "random", "correlated",
-"targeted".</p></dd>
+are allocated. Valid options are "random" (the default),
+"correlated", "targeted", see <code><a href="apply_vacc.html">apply_vacc()</a></code> for details of
+these options.</p></dd>
 
 
 <dt>n_digits</dt>
@@ -104,6 +105,10 @@ activity was already at 1.</p>
 also never be picked up as this age group will have aged out of
 the population (i.e., died) before the immunity is updated in the
 next year.</p>
+    </div>
+    <div id="see-also">
+    <h2>See also</h2>
+    <div class="dont-index"><p><code><a href="apply_vacc.html">apply_vacc()</a></code></p></div>
     </div>
     <div id="author">
     <h2>Author</h2>

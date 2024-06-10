@@ -69,8 +69,6 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">popim</span><span class="op">)</span></span></code></pre></div>
 <p>The intention of the package <code>popim</code> is to provide tools
 to easily evaluate and track the POPulation IMmunity of an
 age-structured population that results from vaccination. Given that
@@ -318,13 +316,6 @@ exported)</em></p>
 <h2 id="primary-functionality-applying-vaccination-activities-to-a-population">Primary functionality: applying vaccination activities to a
 population<a class="anchor" aria-label="anchor" href="#primary-functionality-applying-vaccination-activities-to-a-population"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">child_env</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html" class="external-link">new.env</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">child_env</span><span class="op">$</span><span class="va">type</span> <span class="op">&lt;-</span> <span class="st">"vignette"</span></span>
-<span></span>
-<span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/knit_child.html" class="external-link">knit_child</a></span><span class="op">(</span><span class="st">"../man/rmd/apply.Rmd"</span>, envir <span class="op">=</span> <span class="va">child_env</span>, quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="va">res</span>, sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span></code></pre></div>
 <p>Once objects holding data on the population and vaccination
 activities have been set up, the primary functionality provided by
 <code>popim</code> is to apply the vaccination activities to the
