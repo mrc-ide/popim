@@ -7,12 +7,13 @@
 vacc_from_immunity(pop, targeting = "random", n_digits = 10)
 }
 \arguments{
-\item{pop}{\code{popim_population} object for which vaccination activities
-are to be inferred.}
+\item{pop}{\code{popim_population} object for which vaccination
+activities are to be inferred.}
 
 \item{targeting}{character, determines the assumption of how doses
-are allocated. Valid options are "random", "correlated",
-"targeted".}
+are allocated. Valid options are "random" (the default),
+"correlated", "targeted", see \code{\link[=apply_vacc]{apply_vacc()}} for details of
+these options.}
 
 \item{n_digits}{number of digits to which the coverage is to be
 rounded, defaults to 10.}
@@ -49,6 +50,9 @@ The vaccination of the oldest age group in the population will
 also never be picked up as this age group will have aged out of
 the population (i.e., died) before the immunity is updated in the
 next year.
+}
+\seealso{
+\code{\link[=apply_vacc]{apply_vacc()}}
 }
 \author{
 Tini Garske

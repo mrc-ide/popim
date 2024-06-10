@@ -27,14 +27,16 @@
 ##' also never be picked up as this age group will have aged out of
 ##' the population (i.e., died) before the immunity is updated in the
 ##' next year.
-##' @param pop `popim_population` object for which vaccination activities
-##'     are to be inferred.
+##' @param pop `popim_population` object for which vaccination
+##'     activities are to be inferred.
 ##' @param targeting character, determines the assumption of how doses
-##'     are allocated. Valid options are "random", "correlated",
-##'     "targeted".
+##'     are allocated. Valid options are "random" (the default),
+##'     "correlated", "targeted", see [apply_vacc()] for details of
+##'     these options.
 ##' @param n_digits number of digits to which the coverage is to be
 ##'     rounded, defaults to 10.
 ##' @return popim_vacc_activites object
+##' @seealso [apply_vacc()]
 ##' @export
 ##' @author Tini Garske
 vacc_from_immunity <- function(pop, targeting = "random", n_digits = 10) {
