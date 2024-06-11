@@ -45,6 +45,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/technical_doc.html">popim technical documentation</a>
+    </li>
+  </ul>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
 </div>
@@ -69,438 +81,312 @@
 
     
     
-<p>The intention of the package <code>popim</code> is to provide tools
-to easily evaluate and track the POPulation IMmunity of an
-age-structured population that results from vaccination. Given that
-vaccination has long lasting effects, this requires tracking the status
-of the population through time.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">popim</span><span class="op">)</span></span></code></pre></div>
+<p><strong>POPulation IMmunity</strong></p>
+<p>This repository contains functions to run a demographic model of
+vaccine exposure over time, tracking the vaccine-derived immunity by age
+through time, following implementation of one or more vaccination
+activities that can target the population as a whole or selectively
+target specific age groups.</p>
 <div class="section level2">
-<h2 id="data-structures">Data structures<a class="anchor" aria-label="anchor" href="#data-structures"></a>
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>To this end the package defines two S3 classes to store data in an
-appropriate format. Both classes are dataframes, but have additional
-requirements such as certain columns that must be present, and the
-format and range of these columns.</p>
-<div class="section level3">
-<h3 id="s3-class-popim_population">S3 class <code>popim_population</code><a class="anchor" aria-label="anchor" href="#s3-class-popim_population"></a>
-</h3>
-<p>The class <code>popim_population</code> is designed to hold
-information on a population of interest.</p>
-<div class="section level4">
-<h4 id="the-dataframe">The dataframe<a class="anchor" aria-label="anchor" href="#the-dataframe"></a>
-</h4>
-<p>The dataframe holds information on the population size and immunity
-status of the population through time. The population is disaggregated
-into 1-year age groups, and potentially several spatial regions. Each
-row refers to a particular (1 year) birth cohort in a given location and
-year.</p>
-<p>The mandatory columns are:</p>
-<ul>
-<li>
-<code>region</code>: The population of interest may be spatially
-disaggregated into separate geographical regions (e.g., countries or
-subnational administrative regions). This column holds a string that
-identifies which region each entry refers to.</li>
-<li>
-<code>year</code>: The population is tracked through time using
-annual time steps.</li>
-<li>
-<code>age</code>: The age-structure of the population is tracked in
-annual age groups.</li>
-<li>
-<code>cohort</code>: This column is redundant as it equals
-<code>year</code> - <code>age</code>, and therefore refers to the year
-in which this cohort was born. It is included for ease of handling.</li>
-<li>
-<code>immunity</code>: Gives the proportion of each cohort that is
-immune due to past vaccination.</li>
-<li>
-<code>pop_size</code>: Number of people in any given age group and
-year. To facilitate using common units such as thousands this is not
-limited to integer values. It is however up to the user to ensure that
-such units are used consistently.</li>
-</ul>
-<table class="table">
-<thead><tr class="header">
-<th>column</th>
-<th>type</th>
-<th>range</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><code>region</code></td>
-<td>character</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><code>year</code></td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><code>age</code></td>
-<td>integer</td>
-<td>non-negative</td>
-</tr>
-<tr class="even">
-<td><code>cohort</code></td>
-<td>integer</td>
-<td>
-<code>year</code> - <code>age</code>
-</td>
-</tr>
-<tr class="odd">
-<td><code>immunity</code></td>
-<td>numeric</td>
-<td>[0, 1]</td>
-</tr>
-<tr class="even">
-<td><code>pop_size</code></td>
-<td>numeric</td>
-<td>non-negative</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section level4">
-<h4 id="class-attributes">Class attributes<a class="anchor" aria-label="anchor" href="#class-attributes"></a>
-</h4>
-<p>In addition to the attributes that every dataframe has
-(<code>names</code>, <code>class</code>, <code>row.names</code>), the
-objects of the <code>popim_population</code> class also retain the input
-parameters of the basic constructor <code><a href="../reference/popim_population.html">popim_population()</a></code>:</p>
-<ul>
-<li>
-<code>region</code>: a character vector of all regions in this
-object,</li>
-<li>
-<code>year_min</code> and <code>year_max</code>: the range of years,
-and</li>
-<li>
-<code>age_min</code> and <code>age_max</code>: the age range covered
-in this population.</li>
-</ul>
-</div>
-<div class="section level4">
-<h4 id="create-modify-and-validate-objects-of-this-class">Create, modify and validate objects of this class<a class="anchor" aria-label="anchor" href="#create-modify-and-validate-objects-of-this-class"></a>
-</h4>
-<p>create: <code><a href="../reference/popim_population.html">popim_population()</a></code>,
-<code><a href="../reference/read_popim_pop.html">read_popim_pop()</a></code>, <code><a href="../reference/as_popim_pop.html">as_popim_pop()</a></code></p>
-<p>modify: <code><a href="../reference/apply_vacc.html">apply_vacc()</a></code></p>
-<p>validate: <code>is_population()</code> <em>(currently not
-exported)</em></p>
-</div>
-</div>
-<div class="section level3">
-<h3 id="s3-class-popim_vacc_activities">S3 class <code>popim_vacc_activities</code><a class="anchor" aria-label="anchor" href="#s3-class-popim_vacc_activities"></a>
-</h3>
-<p>The class <code>popim_vacc_activities</code> is designed to hold
-information on vaccination activities that have occurred or are planned
-in the population of interest. Each row of the dataframe relates to one
-vaccination activity.</p>
-<div class="section level4">
-<h4 id="the-dataframe-1">The dataframe<a class="anchor" aria-label="anchor" href="#the-dataframe-1"></a>
-</h4>
-<p>The mandatory columns are:</p>
-<ul>
-<li>
-<code>region</code>: The region in which the vaccination activity
-takes place. While this is a free character field, when applied to a
-population, this must match a region that occurs in the population.</li>
-<li>
-<code>year</code>: year during which the vaccination activity takes
-place.</li>
-<li>
-<code>age_first</code>: youngest age group to be targeted.</li>
-<li>
-<code>age_last</code>: oldest age group to be targeted.</li>
-<li>
-<code>coverage</code>: proportion of the target population to be
-immunised.</li>
-<li>
-<code>doses</code>: number of doses used in the vaccination
-activity.</li>
-<li>
-<code>targeting</code>: determines how doses are allocated when
-there is pre-existing immunity in the population, see <a href="#vaccinating-a-cohort-with-previous-immunity">below</a> for a
-description of the different <code>targeting</code> methods.</li>
-</ul>
-<table class="table">
-<thead><tr class="header">
-<th>column</th>
-<th>type</th>
-<th>range</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><code>region</code></td>
-<td>character</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><code>year</code></td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><code>age_first</code></td>
-<td>integer</td>
-<td>non-negative</td>
-</tr>
-<tr class="even">
-<td><code>age_last</code></td>
-<td>integer</td>
-<td>
-<span class="math inline">\(\ge\)</span> <code>age_first</code>
-</td>
-</tr>
-<tr class="odd">
-<td><code>coverage</code></td>
-<td>numeric</td>
-<td>[0, 1]</td>
-</tr>
-<tr class="even">
-<td><code>doses</code></td>
-<td>numeric</td>
-<td>non-negative</td>
-</tr>
-<tr class="odd">
-<td><code>targeting</code></td>
-<td>character</td>
-<td>
-<code>"random"</code>, <code>"correlated"</code>,
-<code>"targeted"</code>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="section level5">
-<h5 id="relationship-between-coverage-doses-and-target-population">Relationship between coverage, doses and target population<a class="anchor" aria-label="anchor" href="#relationship-between-coverage-doses-and-target-population"></a>
-</h5>
-<p>If the target population size is known, the information on coverage
-and doses is redundant (and potentially conflicting) as coverage = doses
-/ target population size. However, the
-<code>popim_vacc_activities</code> object does not store information on
-population size, this is held in the <code>popim_population</code>
-object to which the vaccination activities will be applied, so this
-potential conflict cannot be detected in a
-<code>popim_vacc_activities</code> object in isolation. The validator
-for this class, <code>validate_vacc_activities()</code>, checks that the
-required columns exist and are of correct data type and range (where
-applicatble). It also currently requires that at least one of
-<code>coverage</code> and <code>doses</code> is non-missing in each
-column. <em>(This behaviour is maybe not sensible as inconsistent with
-the other columns?)</em></p>
-</div>
-</div>
-<div class="section level4">
-<h4 id="class-attributes-1">Class attributes<a class="anchor" aria-label="anchor" href="#class-attributes-1"></a>
-</h4>
-<p>As this is a subclass of dataframe, it has the same attributes as a
-dataframe (<code>names</code>, <code>class</code> and
-<code>row_names</code>). It has no additional attributes.</p>
-</div>
-<div class="section level4">
-<h4 id="create-and-validate-objects-of-this-class">Create and validate objects of this class<a class="anchor" aria-label="anchor" href="#create-and-validate-objects-of-this-class"></a>
-</h4>
-<p>create: <code><a href="../reference/popim_vacc_activities.html">popim_vacc_activities()</a></code>,
-<code><a href="../reference/read_vacc_activities.html">read_vacc_activities()</a></code>, <code><a href="../reference/as_vacc_activities.html">as_vacc_activities()</a></code>,
-<code><a href="../reference/vacc_from_immunity.html">vacc_from_immunity()</a></code></p>
-<p>modify: <code><a href="../reference/complete_vacc_activities.html">complete_vacc_activities()</a></code></p>
-<p>validate: <code>validate_vacc_activities()</code> <em>(currently not
-exported)</em></p>
-</div>
-</div>
+<p>You can install the development version of popim from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"mrc-ide/popim"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="primary-functionality-applying-vaccination-activities-to-a-population">Primary functionality: applying vaccination activities to a
-population<a class="anchor" aria-label="anchor" href="#primary-functionality-applying-vaccination-activities-to-a-population"></a>
+<h2 id="example-1-a-simple-population-without-specified-population-size">Example 1: A simple population without specified population
+size<a class="anchor" aria-label="anchor" href="#example-1-a-simple-population-without-specified-population-size"></a>
 </h2>
-<p>Once objects holding data on the population and vaccination
-activities have been set up, the primary functionality provided by
-<code>popim</code> is to apply the vaccination activities to the
-population to evaluate the population immunity by age over time that
-results from the given vaccination activities, which is done with the
-function <code><a href="../reference/apply_vacc.html">apply_vacc()</a></code>.</p>
 <div class="section level3">
-<h3 id="assumptions-when-applying-vaccination-activities-to-the-population">Assumptions when applying vaccination activities to the
-population<a class="anchor" aria-label="anchor" href="#assumptions-when-applying-vaccination-activities-to-the-population"></a>
+<h3 id="population-setup">Population setup<a class="anchor" aria-label="anchor" href="#population-setup"></a>
 </h3>
-<ul>
-<li>100% vaccine effectiveness</li>
-<li>no wastage of doses</li>
-<li>no waning immunity</li>
-<li>mortality is independent of immunity status</li>
-</ul>
-<p>While the first two are clearly unrealistic assumptions, if there is
-a constant vaccine effectiveness (&lt;100%), or a constant wastage
-factor, the results can easily be scaled up by these constant factors to
-obtain more realistic values for vaccine demand.</p>
-<p>For a potentially deadly disease one would expect that mortality due
-to the disease would be strongly correlated with immunity status,
-however, even the most devastating outbreaks typically only affect a
-small part of the population, and therefore all-cause mortality will be
-much less impacted by mortality due to the specific disease. This means
-that this assumption is closer to reality than it might appear at
-first.</p>
-<p>Waning immunity is a potentially important factor to consider for
-many vaccines, particularly when looking at the long term benefits of
-vaccination. However, allowing for this is currently not
-implemented.</p>
+<p>This package defines an S3 class <code>popim_population</code> which
+is a dataframe with at least the columns year, age, cohort (the year of
+birth for the individuals tracked in this row), and immunity (as a
+proportion of this cohort). Year, age and cohort are tracked as annual
+time steps and age groups.</p>
+<p>A basic, totally naive population dataframe can be setup using the
+function <code><a href="../reference/popim_population.html">popim_population()</a></code>:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">popim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/popim_population.html">popim_population</a></span><span class="op">(</span>region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"UK"</span>, <span class="st">"FRA"</span><span class="op">)</span>, year_min <span class="op">=</span> <span class="fl">2000</span>, year_max <span class="op">=</span> <span class="fl">2010</span>,</span>
+<span>                        age_min <span class="op">=</span> <span class="fl">0</span>, age_max <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 242   6</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   region year age cohort immunity pop_size</span></span>
+<span><span class="co">#&gt; 1     UK 2000   0   2000        0       NA</span></span>
+<span><span class="co">#&gt; 2    FRA 2000   0   2000        0       NA</span></span>
+<span><span class="co">#&gt; 3     UK 2001   0   2001        0       NA</span></span>
+<span><span class="co">#&gt; 4    FRA 2001   0   2001        0       NA</span></span>
+<span><span class="co">#&gt; 5     UK 2002   0   2002        0       NA</span></span>
+<span><span class="co">#&gt; 6    FRA 2002   0   2002        0       NA</span></span></code></pre></div>
+<p>This dataframe has 242 columns (2 regions x 11 age groups 0 - 10 x 11
+years 2000 - 2020).</p>
 </div>
 <div class="section level3">
-<h3 id="description-of-the-algorithm">Description of the algorithm<a class="anchor" aria-label="anchor" href="#description-of-the-algorithm"></a>
+<h3 id="add-vaccination-activities">Add vaccination activities<a class="anchor" aria-label="anchor" href="#add-vaccination-activities"></a>
 </h3>
-<p>The vaccination activities object has columns for
-<code>coverage</code>, the proportion of the target population that will
-be vaccinated, and <code>doses</code>, the number of vaccine doses to be
-administered in the activity. Given a target population size this is
-redundant (and potentially conflicting) information. The function
-<code><a href="../reference/apply_vacc.html">apply_vacc()</a></code> will always use <code>coverage</code>
-information in preference over <code>doses</code>, if this is
-non-missing. If <code>coverage</code> is missing, the target population
-size (based on the population size of the region and age groups
-targeted) will be calculated and the corresponding <code>coverage</code>
-calculated as <code>doses</code> / <code>target_population</code>.</p>
-<p>While the function <code><a href="../reference/apply_vacc.html">apply_vacc()</a></code> will calculate the
-coverage if it is missing with respect to the target population size,
-without modifying the input <code>popim_vacc_activities</code> object,
-the function <code><a href="../reference/complete_vacc_activities.html">complete_vacc_activities()</a></code> will fill in
-missing coverage and doses information from the other, and check for
-inconsistencies in activities that have both data on
-<code>coverage</code> and <code>doses</code>. This is done with respect
-to a particular <code>popim_population</code> object which contains the
-relevant population sizes.</p>
-<div class="section level4">
-<h4 id="vaccinating-a-cohort-with-no-previous-immunity">Vaccinating a cohort with no previous immunity<a class="anchor" aria-label="anchor" href="#vaccinating-a-cohort-with-no-previous-immunity"></a>
-</h4>
-<p>When vaccination is applied to a particular birth cohort that has no
-immunity, the result is simply that the proportion of the cohort
-receiving the vaccine will be immune from the time of the vaccination
-onwards, i.e., the immunity for this cohort will be set to equal the
-coverage of the vaccination activity in question. Due to the annual time
-step, vaccination is assumed to take effect at the end of the year in
-which it is implemented, so the immunity is updated from the next year
-onwards.</p>
+<p>Next, we read in a file containing some vaccination activites into an
+object of the class <code>popim_vacc_activities</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">vacc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_vacc_activities.html">read_vacc_activities</a></span><span class="op">(</span><span class="st">"../inst/extdata/vacc_activities.csv"</span><span class="op">)</span></span>
+<span><span class="va">vacc</span></span>
+<span><span class="co">#&gt;   region year age_first age_last coverage doses targeting</span></span>
+<span><span class="co">#&gt; 1     UK 1998         0       10     0.50    NA    random</span></span>
+<span><span class="co">#&gt; 2     UK 2005         0        0     0.50    NA    random</span></span>
+<span><span class="co">#&gt; 3     UK 2006         0        0     0.60    NA    random</span></span>
+<span><span class="co">#&gt; 4     UK 2007         0        0     0.70    NA    random</span></span>
+<span><span class="co">#&gt; 5     UK 2008         0        0     0.80    NA    random</span></span>
+<span><span class="co">#&gt; 6     UK 2009         0        0     0.90    NA    random</span></span>
+<span><span class="co">#&gt; 7     UK 2010         0        0     0.95    NA    random</span></span></code></pre></div>
+<p>All vaccination activities target the UK. The first is a campaign
+targeting all age groups of our dummy population, which took place 2
+years before the dawn of time. As immunity is assumed not to wane, the
+effects of this are still there, and therefore the functions here keep
+track of this. The remaining vaccination activities are routine
+vaccination of infants (restricted to age 0) with an increasing
+population of the target cohort to be vaccinated.</p>
+<p>We now apply these vaccination activities sequentially to the
+population using the function <code><a href="../reference/apply_vacc.html">apply_vacc()</a></code>.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/apply_vacc.html">apply_vacc</a></span><span class="op">(</span><span class="va">pop</span>, <span class="va">vacc</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level4">
-<h4 id="vaccinating-a-cohort-with-previous-immunity">Vaccinating a cohort with previous immunity<a class="anchor" aria-label="anchor" href="#vaccinating-a-cohort-with-previous-immunity"></a>
-</h4>
-<p>When a vaccination activity is applied to a cohort that has some
-previous immunity, we need to make some assumptions about who will be
-vaccinated in the new activity. There are 3 different options
-implemented which are governed by the parameter <code>targeting</code>,
-one of the input parameters to the function <code><a href="../reference/apply_vacc.html">apply_vacc()</a></code>.
-This parameter can take the values <code>"targeted"</code>,
-<code>"random"</code> or <code>"correlated"</code>.</p>
-<div class="section level5">
-<h5 id="targeted-targeting">
-<code>"targeted"</code> targeting<a class="anchor" aria-label="anchor" href="#targeted-targeting"></a>
-</h5>
-<p>The most effective way to implement a new vaccination activity is to
-use <code>"targeted"</code> targeting, meaning that the vaccine is
-targeted at previously non-immunised individuals. This means that the
-new immunity of after the vaccination activity is simply the sum of the
-previous immunity and the coverage of the current vaccination activity
-(capped by 1 which indicates complete immunity of the cohort in
-question):</p>
-<p><span class="math display">\[\rm{immunity}_{\rm new} =
-\min(\rm{immunity}_{\rm prev} + \rm{coverage}, 1)\]</span></p>
-<p>While this is not a realistic assumption in many settings, it can be
-useful for instance in multi-year campaigns that target the same region
-(but possibly proceed sub-region by sub-region) over several years. This
-multi-year campaign would be coded as separate vaccination activities
-for each year, using the option <code>targeting</code> =
-<code>"targeted"</code>.</p>
-</div>
-<div class="section level5">
-<h5 id="random-targeting">
-<code>"random"</code> targeting<a class="anchor" aria-label="anchor" href="#random-targeting"></a>
-</h5>
-<p>A reasonable first assumption might be to use <code>targeting</code>
-= <code>"random"</code>, meaning that individuals will receive
-vaccination irrespective of their previous immunity status. The immunity
-after the new campaign is applied is calculated according to</p>
-<p><span class="math display">\[
-\rm{immunity}_{\rm new} =
-\rm{coverage} + \rm{immunity}_{\rm prev} -
-\rm{coverage}*\rm{immunity}_{\rm prev}\]</span></p>
-</div>
-<div class="section level5">
-<h5 id="correlated-targeting">
-<code>"correlated"</code> targeting<a class="anchor" aria-label="anchor" href="#correlated-targeting"></a>
-</h5>
-<p>On the opposite end of the spectrum is the most pessimistic
-assumption that might apply in situations where there is unequal access
-to vaccination: under <code>"correlated"</code> targeting, people who
-have previously been immunised get vaccinated first in the new
-vaccination activity, and those previously not immune will only receive
-any vaccine if the new coverage extends further:</p>
-<p><span class="math display">\[
-\rm{immunity}_{\rm new} =
-\max(\rm{immunity}_{\rm prev}, \rm{coverage})\]</span></p>
-<p>Note that the order in which vaccination activities are applied to a
-population does not matter under any of the <code>targeting</code>
-assumptions.</p>
-</div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="the-inverse-inferring-vaccination-activities-from-a-population">The inverse: inferring vaccination activities from a population<a class="anchor" aria-label="anchor" href="#the-inverse-inferring-vaccination-activities-from-a-population"></a>
-</h3>
-<p>It is not possible to infer the vaccination activities that have
-given rise to a particular immunity profile of a population by age and
-over time: The same profile can be reached with different
-<code>targeting</code> choices (where different <code>targeting</code>
-choices will require different amount of vaccine). Furthermore, if there
-are cohorts that reached 100% immunity, there may have been double
-vaccination of some individuals that left no trace in the immunity
-profile. However, the function <code><a href="../reference/vacc_from_immunity.html">vacc_from_immunity()</a></code> does
-infer the vaccination activities from a population immunity profile as
-far as possible, returning an obejct of class
-<code>popim_vacc_activities</code>.</p>
-<p>To this end, in addition to passing the <code>popim_population</code>
-object of interest, the user needs to specify a <code>targeting</code>
-option (which will be assumed for all vaccination activities that are
-identified). The inferred vaccination activities will be the minimal
-activities possible to give rise to the observed immunity profile given
-the <code>targeting</code> option supplied.</p>
-</div>
-</div>
-<div class="section level2">
-<h2 id="population-summary-visualisation">Population summary &amp; visualisation<a class="anchor" aria-label="anchor" href="#population-summary-visualisation"></a>
-</h2>
-<p>An object of class <code>popim_population</code> holds a somewhat
-complex dataset recording population size, age distribution and immunity
-status through time, and potentially disaggregated into various
-geographical regions. To facilitate interpretation of this kind of data,
-there are a couple of functions to aggregate and visualise these
-objects.</p>
 <div class="section level3">
 <h3 id="visualisation">Visualisation<a class="anchor" aria-label="anchor" href="#visualisation"></a>
 </h3>
-<p>The functions <code><a href="../reference/plotting.html">plot_pop_size()</a></code> and
-<code><a href="../reference/plotting.html">plot_immunity()</a></code> serve to plot the age-disaggregated
-population size and immunity through time in a grid where year and age
-are plotted on the x- and y-axis, respectively. The size of the cohort
-or proportion of the cohort that is immune is indicated by the colour of
-the grid cell. If there are several regions, these will be shown in
-separate panels.</p>
-<p>The implementation of these plot functions is based on ggplot2, and
-therefore the returned plot objects can be further modified using the
-ggplot2 syntax.</p>
+<p>The resulting vaccine-derived immunity of the population can be
+visualised with the function <code><a href="../reference/plotting.html">plot_immunity()</a></code>. This is based
+on ggplot2, and the returned graph object can be further modified - here
+in order to achieve tick marks that suit the data better.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span> <span class="co">## needed to amend the plot returned from plot_population()</span></span>
+<span></span>
+<span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/plotting.html">plot_immunity</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span>
+<span><span class="va">g</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">2000</span>, <span class="fl">2010</span>, by <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">10</span>, by <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="popim_files/figure-html/plot_immunity-1.png" width="100%"></p>
+<p>As all vaccination activities target the “UK”, the population in
+“FRA” has no immunity at all. In the “UK”, the top left corner it shows
+the immunity remaining in the older age groups from the initial
+campaign, while the infant vaccination from 2005 onwards results in
+immuity in the lower right corner - and the increasing coverage
+highlights how cohorts age through time and therefore move through the
+plot in a diagonal fashion.</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="example-2-a-population-with-specified-size-and-age-distribution">Example 2: A population with specified size and age
+distribution<a class="anchor" aria-label="anchor" href="#example-2-a-population-with-specified-size-and-age-distribution"></a>
+</h2>
+<div class="section level3">
+<h3 id="population-setup-1">Population setup<a class="anchor" aria-label="anchor" href="#population-setup-1"></a>
+</h3>
+<p>A more realistic scenario is to read in some real population data to
+set up the popim_population, and then apply some vaccination activities
+to this. Information on the vaccination activities may be given in
+coverage (typical for routine infant vaccination) or doses (typical for
+mass vaccination campaigns).</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_popim_pop.html">read_popim_pop</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"../inst/extdata/pop_sample.csv"</span><span class="op">)</span></span></code></pre></div>
+<p>We have read in population data for India (“IND”) and Nigeria (“NGA”)
+for the period from 1950 to 2100. The age range covered is 0 to 100
+year, and the population is set up as fully unvaccinated:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 30502     6</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   region year age cohort immunity pop_size</span></span>
+<span><span class="co">#&gt; 1    IND 1950   0   1950        0 13505495</span></span>
+<span><span class="co">#&gt; 2    NGA 1950   0   1950        0  1438816</span></span>
+<span><span class="co">#&gt; 3    IND 1951   0   1951        0 13860960</span></span>
+<span><span class="co">#&gt; 4    NGA 1951   0   1951        0  1505894</span></span>
+<span><span class="co">#&gt; 5    IND 1952   0   1952        0 14233779</span></span>
+<span><span class="co">#&gt; 6    NGA 1952   0   1952        0  1535000</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">pop</span><span class="op">$</span><span class="va">region</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;   IND   NGA </span></span>
+<span><span class="co">#&gt; 15251 15251</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/range.html" class="external-link">range</a></span><span class="op">(</span><span class="va">pop</span><span class="op">$</span><span class="va">year</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 1950 2100</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/range.html" class="external-link">range</a></span><span class="op">(</span><span class="va">pop</span><span class="op">$</span><span class="va">age</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1]   0 100</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="aggregation-over-age">Aggregation over age<a class="anchor" aria-label="anchor" href="#aggregation-over-age"></a>
+<h3 id="add-vaccination-activities-1">Add vaccination activities<a class="anchor" aria-label="anchor" href="#add-vaccination-activities-1"></a>
 </h3>
-<p>While the age structure of a population’s immunity profile is
-important to understand how immunity is likely to develop through time,
-for the purposes of understanding how well a population is protected at
-any point in time, often the overall proportion immune is of greater
-interest. This can be calculated using the function
-<code><a href="../reference/calc_pop_immunity.html">calc_pop_immunity()</a></code> which will aggregate the population
-over age and return a dataframe with the whole population immunity over
-time and geographical region.</p>
+<p>Now we read in some vaccination activities for Nigeria: some
+campaigns targeting all age groups, and some routine vaccination
+targeting only infants:</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">campaigns</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_vacc_activities.html">read_vacc_activities</a></span><span class="op">(</span><span class="st">"../inst/extdata/vacc_campaigns_NGA.csv"</span><span class="op">)</span></span>
+<span><span class="va">campaigns</span></span>
+<span><span class="co">#&gt;   region year age_first age_last coverage    doses targeting</span></span>
+<span><span class="co">#&gt; 1    NGA 1971         0      100       NA  1496674    random</span></span>
+<span><span class="co">#&gt; 2    NGA 1974         0      100       NA  1100000    random</span></span>
+<span><span class="co">#&gt; 3    NGA 1987         0      100       NA 17000000    random</span></span>
+<span><span class="co">#&gt; 4    NGA 1989         0      100       NA 14000000    random</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">routine</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_vacc_activities.html">read_vacc_activities</a></span><span class="op">(</span><span class="st">"../inst/extdata/vacc_routine_NGA.csv"</span><span class="op">)</span></span>
+<span><span class="va">routine</span></span>
+<span><span class="co">#&gt;    region year age_first age_last  coverage doses targeting</span></span>
+<span><span class="co">#&gt; 1     NGA 1990         0        0 0.3308515    NA    random</span></span>
+<span><span class="co">#&gt; 2     NGA 1991         0        0 0.3181156    NA    random</span></span>
+<span><span class="co">#&gt; 3     NGA 1992         0        0 0.3062463    NA    random</span></span>
+<span><span class="co">#&gt; 4     NGA 1993         0        0 0.2949784    NA    random</span></span>
+<span><span class="co">#&gt; 5     NGA 1994         0        0 0.2847963    NA    random</span></span>
+<span><span class="co">#&gt; 6     NGA 1995         0        0 0.2748206    NA    random</span></span>
+<span><span class="co">#&gt; 7     NGA 1996         0        0 0.2646241    NA    random</span></span>
+<span><span class="co">#&gt; 8     NGA 1997         0        0 0.2548750    NA    random</span></span>
+<span><span class="co">#&gt; 9     NGA 1998         0        0 0.2455467    NA    random</span></span>
+<span><span class="co">#&gt; 10    NGA 1999         0        0 0.2366186    NA    random</span></span>
+<span><span class="co">#&gt; 11    NGA 2000         0        0 0.2280252    NA    random</span></span>
+<span><span class="co">#&gt; 12    NGA 2001         0        0 0.2191378    NA    random</span></span>
+<span><span class="co">#&gt; 13    NGA 2002         0        0 0.2106511    NA    random</span></span>
+<span><span class="co">#&gt; 14    NGA 2003         0        0 0.2025363    NA    random</span></span>
+<span><span class="co">#&gt; 15    NGA 2004         0        0 0.1947333    NA    random</span></span>
+<span><span class="co">#&gt; 16    NGA 2005         0        0 0.1951376    NA    random</span></span>
+<span><span class="co">#&gt; 17    NGA 2006         0        0 0.2006093    NA    random</span></span>
+<span><span class="co">#&gt; 18    NGA 2007         0        0 0.2089055    NA    random</span></span>
+<span><span class="co">#&gt; 19    NGA 2008         0        0 0.2202815    NA    random</span></span>
+<span><span class="co">#&gt; 20    NGA 2009         0        0 0.2297419    NA    random</span></span>
+<span><span class="co">#&gt; 21    NGA 2010         0        0 0.2458946    NA    random</span></span>
+<span><span class="co">#&gt; 22    NGA 2011         0        0 0.2685779    NA    random</span></span>
+<span><span class="co">#&gt; 23    NGA 2012         0        0 0.2849166    NA    random</span></span>
+<span><span class="co">#&gt; 24    NGA 2013         0        0 0.3009589    NA    random</span></span></code></pre></div>
+<p>Note that in this dataset the extent of the campaigns is given in the
+number of vaccine doses administered (assuming no wastage, so this
+equates to the number of people vaccinated), while the routine
+vaccination is given as coverage, i.e., the proportion of the targeted
+age cohort to be vaccinated.</p>
+<p>If we know the population size that is targeted, we can convert
+between doses and coverage, and there is a function
+<code><a href="../reference/complete_vacc_activities.html">complete_vacc_activities()</a></code> to fill in whichever one is
+missing:</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">campaigns_complete</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/complete_vacc_activities.html">complete_vacc_activities</a></span><span class="op">(</span><span class="va">campaigns</span>, <span class="va">pop</span><span class="op">)</span></span>
+<span><span class="va">campaigns_complete</span></span>
+<span><span class="co">#&gt;   region year age_first age_last   coverage    doses targeting</span></span>
+<span><span class="co">#&gt; 1    NGA 1971         0      100 0.02633246  1496674    random</span></span>
+<span><span class="co">#&gt; 2    NGA 1974         0      100 0.01798622  1100000    random</span></span>
+<span><span class="co">#&gt; 3    NGA 1987         0      100 0.19308487 17000000    random</span></span>
+<span><span class="co">#&gt; 4    NGA 1989         0      100 0.15095306 14000000    random</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">routine_complete</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/complete_vacc_activities.html">complete_vacc_activities</a></span><span class="op">(</span><span class="va">routine</span>, <span class="va">pop</span><span class="op">)</span></span>
+<span><span class="va">routine_complete</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   region year age_first age_last  coverage   doses targeting</span></span>
+<span><span class="co">#&gt; 1    NGA 1990         0        0 0.3308515 1252267    random</span></span>
+<span><span class="co">#&gt; 2    NGA 1991         0        0 0.3181156 1231267    random</span></span>
+<span><span class="co">#&gt; 3    NGA 1992         0        0 0.3062463 1214359    random</span></span>
+<span><span class="co">#&gt; 4    NGA 1993         0        0 0.2949784 1201231    random</span></span>
+<span><span class="co">#&gt; 5    NGA 1994         0        0 0.2847963 1192498    random</span></span>
+<span><span class="co">#&gt; 6    NGA 1995         0        0 0.2748206 1181349    random</span></span></code></pre></div>
+<p>We now apply first the campaigns, then the routine vaccination to the
+population, and visualise the resulting population immunity. Note that
+we can use either the original or completed versions of the vaccination
+activities.</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/apply_vacc.html">apply_vacc</a></span><span class="op">(</span><span class="va">pop</span>, <span class="va">campaigns</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/plotting.html">plot_immunity</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span></code></pre></div>
+<p><img src="popim_files/figure-html/plot_immunity_2-1.png" width="100%"></p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/apply_vacc.html">apply_vacc</a></span><span class="op">(</span><span class="va">pop</span>, <span class="va">routine</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/plotting.html">plot_immunity</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span></code></pre></div>
+<p><img src="popim_files/figure-html/plot_immunity_2-2.png" width="100%"></p>
+</div>
+<div class="section level3">
+<h3 id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
+</h3>
+<p>The overall population immunity can be aggregated across ages using
+the function <code><a href="../reference/calc_pop_immunity.html">calc_pop_immunity()</a></code>:</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pop_agg</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calc_pop_immunity.html">calc_pop_immunity</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span>
+<span><span class="va">pop_agg</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 302 × 4</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Groups:   region [2]</span></span></span>
+<span><span class="co">#&gt;    region  year   pop_size immunity</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> IND     <span style="text-decoration: underline;">1</span>950 357<span style="text-decoration: underline;">021</span>100.        0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> IND     <span style="text-decoration: underline;">1</span>951 364<span style="text-decoration: underline;">922</span>360.        0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> IND     <span style="text-decoration: underline;">1</span>952 372<span style="text-decoration: underline;">997</span>188         0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> IND     <span style="text-decoration: underline;">1</span>953 381<span style="text-decoration: underline;">227</span>705         0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> IND     <span style="text-decoration: underline;">1</span>954 389<span style="text-decoration: underline;">731</span>406         0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> IND     <span style="text-decoration: underline;">1</span>955 398<span style="text-decoration: underline;">577</span>992.        0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> IND     <span style="text-decoration: underline;">1</span>956 407<span style="text-decoration: underline;">656</span>597         0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> IND     <span style="text-decoration: underline;">1</span>957 416<span style="text-decoration: underline;">935</span>400.        0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> IND     <span style="text-decoration: underline;">1</span>958 426<span style="text-decoration: underline;">295</span>762.        0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> IND     <span style="text-decoration: underline;">1</span>959 435<span style="text-decoration: underline;">900</span>352.        0</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 292 more rows</span></span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">pop_agg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">immunity</span>, col <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="popim_files/figure-html/calc_pop_immunity-1.png" width="100%"></p>
+</div>
+<div class="section level3">
+<h3 id="infer-vaccination-activities-from-popim_population-object">Infer vaccination activities from <code>popim_population</code>
+object<a class="anchor" aria-label="anchor" href="#infer-vaccination-activities-from-popim_population-object"></a>
+</h3>
+<p>Given a <code>popim_population</code> object, the vaccination
+activities that would be needed to achieve the specified population
+immunity can be inferred with the function
+<code><a href="../reference/vacc_from_immunity.html">vacc_from_immunity()</a></code>, given an assumption on the targeting
+method of the vaccination activities. Using this function on the
+population we have just constructed does indeed yield the original
+vaccination activities back:</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">vacc_act</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/vacc_from_immunity.html">vacc_from_immunity</a></span><span class="op">(</span><span class="va">pop</span>, targeting <span class="op">=</span> <span class="st">"random"</span><span class="op">)</span></span>
+<span><span class="va">vacc_act</span></span>
+<span><span class="co">#&gt;    region year age_first age_last   coverage    doses targeting</span></span>
+<span><span class="co">#&gt; 1     NGA 1971         0       99 0.02633246  1496674    random</span></span>
+<span><span class="co">#&gt; 2     NGA 1974         0       99 0.01798622  1100000    random</span></span>
+<span><span class="co">#&gt; 3     NGA 1987         0       99 0.19308487 16999989    random</span></span>
+<span><span class="co">#&gt; 4     NGA 1989         0       99 0.15095306 13999990    random</span></span>
+<span><span class="co">#&gt; 5     NGA 1990         0        0 0.33085152  1252267    random</span></span>
+<span><span class="co">#&gt; 6     NGA 1991         0        0 0.31811556  1231267    random</span></span>
+<span><span class="co">#&gt; 7     NGA 1992         0        0 0.30624627  1214359    random</span></span>
+<span><span class="co">#&gt; 8     NGA 1993         0        0 0.29497841  1201231    random</span></span>
+<span><span class="co">#&gt; 9     NGA 1994         0        0 0.28479626  1192498    random</span></span>
+<span><span class="co">#&gt; 10    NGA 1995         0        0 0.27482056  1181349    random</span></span>
+<span><span class="co">#&gt; 11    NGA 1996         0        0 0.26462412  1163875    random</span></span>
+<span><span class="co">#&gt; 12    NGA 1997         0        0 0.25487501  1143137    random</span></span>
+<span><span class="co">#&gt; 13    NGA 1998         0        0 0.24554675  1122657    random</span></span>
+<span><span class="co">#&gt; 14    NGA 1999         0        0 0.23661858  1112862    random</span></span>
+<span><span class="co">#&gt; 15    NGA 2000         0        0 0.22802523  1110595    random</span></span>
+<span><span class="co">#&gt; 16    NGA 2001         0        0 0.21913782  1101837    random</span></span>
+<span><span class="co">#&gt; 17    NGA 2002         0        0 0.21065106  1090764    random</span></span>
+<span><span class="co">#&gt; 18    NGA 2003         0        0 0.20253629  1077450    random</span></span>
+<span><span class="co">#&gt; 19    NGA 2004         0        0 0.19473330  1060944    random</span></span>
+<span><span class="co">#&gt; 20    NGA 2005         0        0 0.19513761  1089823    random</span></span>
+<span><span class="co">#&gt; 21    NGA 2006         0        0 0.20060929  1149092    random</span></span>
+<span><span class="co">#&gt; 22    NGA 2007         0        0 0.20890546  1225697    random</span></span>
+<span><span class="co">#&gt; 23    NGA 2008         0        0 0.22028150  1326200    random</span></span>
+<span><span class="co">#&gt; 24    NGA 2009         0        0 0.22974189  1417495    random</span></span>
+<span><span class="co">#&gt; 25    NGA 2010         0        0 0.24589456  1549583    random</span></span>
+<span><span class="co">#&gt; 26    NGA 2011         0        0 0.26857787  1728120    random</span></span>
+<span><span class="co">#&gt; 27    NGA 2012         0        0 0.28491655  1866237    random</span></span>
+<span><span class="co">#&gt; 28    NGA 2013         0        0 0.30095890  1997462    random</span></span></code></pre></div>
 </div>
 </div>
   </div>
