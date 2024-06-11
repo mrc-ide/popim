@@ -1,0 +1,236 @@
+---
+title: "popim technical documentation"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{popim technical documentation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  echo = FALSE
+)
+```
+
+```{r setup}
+library(popim)
+```
+
+The intention of the package `popim` is to provide tools to easily
+evaluate and track the POPulation IMmunity of an age-structured
+population that results from vaccination. Given that vaccination has
+long lasting effects, this requires tracking the status of the
+population through time.
+
+## Data structures
+
+To this end the package defines two S3 classes to store data in an
+appropriate format. Both classes are dataframes, but have additional
+requirements such as certain columns that must be present, and the
+format and range of these columns.
+
+### S3 class `popim_population`
+
+The class `popim_population` is designed to hold information on a
+population of interest.
+
+#### The dataframe
+
+The dataframe holds information on the population size and immunity
+status of the population through time. The population is disaggregated
+into 1-year age groups, and potentially several spatial regions. Each
+row refers to a particular (1 year) birth cohort in a given location
+and year.
+
+The mandatory columns are:
+
+* `region`: The population of interest may be spatially
+  disaggregated into separate geographical regions (e.g., countries or
+  subnational administrative regions). This column holds a string that
+  identifies which region each entry refers to.
+* `year`: The population is tracked through time using annual time
+  steps.
+* `age`: The age-structure of the population is tracked in annual age
+  groups.
+* `cohort`: This column is redundant as it equals `year` - `age`, and
+  therefore refers to the year in which this cohort was born. It is
+  included for ease of handling.
+* `immunity`: Gives the proportion of each cohort that is immune due
+  to past vaccination.
+* `pop_size`: Number of people in any given age group and year. To
+  facilitate using common units such as thousands this is not limited
+  to integer values. It is however up to the user to ensure that such
+  units are used consistently.
+  
+| column     | type      | range          |
+|------------|-----------|----------------|
+| `region`   | character |                |
+| `year`     | integer   |                |
+| `age`      | integer   | non-negative   |
+| `cohort`   | integer   | `year` - `age` |
+| `immunity` | numeric   | [0, 1]         |
+| `pop_size` | numeric   | non-negative   |
+
+
+
+#### Class attributes
+
+In addition to the attributes that every dataframe has (`names`,
+`class`, `row.names`), the objects of the `popim_population` class
+also retain the input parameters of the basic constructor
+`popim_population()`:
+
+* `region`: a character vector of all regions in this object,
+* `year_min` and `year_max`: the range of years, and
+* `age_min` and `age_max`: the age range covered in this population.
+
+
+#### Create, modify and validate objects of this class
+
+create: `popim_population()`, `read_popim_pop()`, `as_popim_pop()`
+
+modify: `apply_vacc()`
+
+validate: `is_population()` *(currently not exported)*
+
+
+
+
+### S3 class `popim_vacc_activities`
+
+The class `popim_vacc_activities` is designed to hold information on
+vaccination activities that have occurred or are planned in the
+population of interest. Each row of the dataframe relates to one
+vaccination activity.
+
+#### The dataframe
+
+The mandatory columns are:
+
+* `region`: The region in which the vaccination activity takes
+  place. While this is a free character field, when applied to a
+  population, this must match a region that occurs in the population.
+* `year`: year during which the vaccination activity takes place.
+* `age_first`: youngest age group to be targeted.
+* `age_last`: oldest age group to be targeted.
+* `coverage`: proportion of the target population to be immunised.
+* `doses`: number of doses used in the vaccination activity.
+* `targeting`: determines how doses are allocated when there is
+  pre-existing immunity in the population, see
+  [below](#vaccinating-a-cohort-with-previous-immunity) for a
+  description of the different `targeting` methods.
+
+| column      | type      | range             |
+|-------------|-----------|-------------------|
+| `region`    | character |                   |
+| `year`      | integer   |                   |
+| `age_first` | integer   | non-negative      |
+| `age_last`  | integer   | $\ge$ `age_first` |
+| `coverage`  | numeric   | [0, 1]            |
+| `doses`     | numeric   | non-negative      |
+| `targeting` | character | `"random"`, `"correlated"`, `"targeted"` |
+
+##### Relationship between coverage, doses and target population
+
+If the target population size is known, the information on coverage
+and doses is redundant (and potentially conflicting) as coverage =
+doses / target population size. However, the `popim_vacc_activities`
+object does not store information on population size, this is held in
+the `popim_population` object to which the vaccination activities will
+be applied, so this potential conflict cannot be detected in a
+`popim_vacc_activities` object in isolation. The validator for this
+class, `validate_vacc_activities()`, checks that the required columns
+exist and are of correct data type and range (where applicatble). It
+also currently requires that at least one of `coverage` and `doses` is
+non-missing in each column. *(This behaviour is maybe not sensible as
+inconsistent with the other columns?)*
+
+#### Class attributes
+
+As this is a subclass of dataframe, it has the same attributes as a
+dataframe (`names`, `class` and `row_names`). It has no additional
+attributes.
+
+#### Create and validate objects of this class
+
+create: `popim_vacc_activities()`, `read_vacc_activities()`,
+`as_vacc_activities()`, `vacc_from_immunity()`
+
+modify: `complete_vacc_activities()`
+
+validate: `validate_vacc_activities()` *(currently not exported)*
+
+## Primary functionality: applying vaccination activities to a population
+
+```{r, results = "asis"}
+child_env <- new.env()
+child_env$type <- "vignette"
+
+res <- knitr::knit_child("../man/rmd/apply.Rmd", envir = child_env, quiet = TRUE)
+
+cat(res, sep = "\n")
+
+```
+
+
+
+### The inverse: inferring vaccination activities from a population
+
+It is not possible to infer the vaccination activities that have given
+rise to a particular immunity profile of a population by age and over
+time: The same profile can be reached with different `targeting`
+choices (where different `targeting` choices will require different
+amount of vaccine). Furthermore, if there are cohorts that reached
+100\% immunity, there may have been double vaccination of some
+individuals that left no trace in the immunity profile. However, the
+function `vacc_from_immunity()` does infer the vaccination activities
+from a population immunity profile as far as possible, returning an
+obejct of class `popim_vacc_activities`.
+
+To this end, in addition to passing the `popim_population` object of
+interest, the user needs to specify a `targeting` option (which will
+be assumed for all vaccination activities that are identified). The
+inferred vaccination activities will be the minimal activities
+possible to give rise to the observed immunity profile given the
+`targeting` option supplied.
+
+
+## Population summary & visualisation
+
+An object of class `popim_population` holds a somewhat complex dataset
+recording population size, age distribution and immunity status
+through time, and potentially disaggregated into various geographical
+regions. To facilitate interpretation of this kind of data, there are
+a couple of functions to aggregate and visualise these objects.
+
+### Visualisation
+
+The functions `plot_pop_size()` and `plot_immunity()` serve to plot
+the age-disaggregated population size and immunity through time in a
+grid where year and age are plotted on the x- and y-axis,
+respectively. The size of the cohort or proportion of the cohort that
+is immune is indicated by the colour of the grid cell. If there are
+several regions, these will be shown in separate panels.
+
+The implementation of these plot functions is based on ggplot2, and
+therefore the returned plot objects can be further modified using the
+ggplot2 syntax.
+
+### Aggregation over age
+
+While the age structure of a population's immunity profile is
+important to understand how immunity is likely to develop through
+time, for the purposes of understanding how well a population is
+protected at any point in time, often the overall proportion immune is
+of greater interest. This can be calculated using the function
+`calc_pop_immunity()` which will aggregate the population over age and
+return a dataframe with the whole population immunity over time and
+geographical region.
+
+
+
+
+
