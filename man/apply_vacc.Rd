@@ -69,6 +69,15 @@ is non-missing. If \code{coverage} is missing, the target population size
 (based on the population size of the region and age groups targeted)
 will be calculated and the corresponding \code{coverage} calculated as
 \code{doses} / \code{target_population}.
+
+While the function \code{apply_vacc()} will calculate the coverage if it is
+missing with respect to the target population size, without modifying
+the input \code{popim_vacc_activities} object, the function
+\code{complete_vacc_activities()} will fill in missing coverage and doses
+information from the other, and check for inconsistencies in
+activities that have both data on \code{coverage} and \code{doses}. This is done
+with respect to a particular \code{popim_population} object which contains
+the relevant population sizes.
 \subsection{Vaccinating a cohort with no previous immunity}{
 
 When vaccination is applied to a particular birth cohort that has no

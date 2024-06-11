@@ -42,6 +42,15 @@ is non-missing. If `coverage` is missing, the target population size
 will be calculated and the corresponding `coverage` calculated as
 `doses` / `target_population`.
 
+While the function `apply_vacc()` will calculate the coverage if it is
+missing with respect to the target population size, without modifying
+the input `popim_vacc_activities` object, the function
+`complete_vacc_activities()` will fill in missing coverage and doses
+information from the other, and check for inconsistencies in
+activities that have both data on `coverage` and `doses`. This is done
+with respect to a particular `popim_population` object which contains
+the relevant population sizes.
+
 #### Vaccinating a cohort with no previous immunity
 
 When vaccination is applied to a particular birth cohort that has no

@@ -177,14 +177,60 @@ cat(res, sep = "\n")
 
 
 
-### The inverse
+### The inverse: inferring vaccination activities from a population
 
-`vacc_from_immunity()`
+It is not possible to infer the vaccination activities that have given
+rise to a particular immunity profile of a population by age and over
+time: The same profile can be reached with different `targeting`
+choices (where different `targeting` choices will require different
+amount of vaccine). Furthermore, if there are cohorts that reached
+100\% immunity, there may have been double vaccination of some
+individuals that left no trace in the immunity profile. However, the
+function `vacc_from_immunity()` does infer the vaccination activities
+from a population immunity profile as far as possible, returning an
+obejct of class `popim_vacc_activities`.
+
+To this end, in addition to passing the `popim_population` object of
+interest, the user needs to specify a `targeting` option (which will
+be assumed for all vaccination activities that are identified). The
+inferred vaccination activities will be the minimal activities
+possible to give rise to the observed immunity profile given the
+`targeting` option supplied.
 
 
-## Summary & Visualisation
+## Population summary & visualisation
 
-`calc_pop_immunity()`
+An object of class `popim_population` holds a somewhat complex dataset
+recording population size, age distribution and immunity status
+through time, and potentially disaggregated into various geographical
+regions. To facilitate interpretation of this kind of data, there are
+a couple of functions to aggregate and visualise these objects.
 
-`plot_pop_size()`, `plot_immunity()`
+### Visualisation
+
+The functions `plot_pop_size()` and `plot_immunity()` serve to plot
+the age-disaggregated population size and immunity through time in a
+grid where year and age are plotted on the x- and y-axis,
+respectively. The size of the cohort or proportion of the cohort that
+is immune is indicated by the colour of the grid cell. If there are
+several regions, these will be shown in separate panels.
+
+The implementation of these plot functions is based on ggplot2, and
+therefore the returned plot objects can be further modified using the
+ggplot2 syntax.
+
+### Aggregation over age
+
+While the age structure of a population's immunity profile is
+important to understand how immunity is likely to develop through
+time, for the purposes of understanding how well a population is
+protected at any point in time, often the overall proportion immune is
+of greater interest. This can be calculated using the function
+`calc_pop_immunity()` which will aggregate the population over age and
+return a dataframe with the whole population immunity over time and
+geographical region.
+
+
+
+
 

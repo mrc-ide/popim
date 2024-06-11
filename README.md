@@ -26,7 +26,9 @@ You can install the development version of popim from
 devtools::install_github("mrc-ide/popim")
 ```
 
-## Example 1
+## Example 1: A simple population without specified population size
+
+### Population setup
 
 This package defines an S3 class `popim_population` which is a dataframe
 with at least the columns year, age, cohort (the year of birth for the
@@ -57,6 +59,8 @@ head(pop)
 
 This dataframe has 242 columns (2 regions x 11 age groups 0 - 10 x 11
 years 2000 - 2020).
+
+### Add vaccination activities
 
 Next, we read in a file containing some vaccination activites into an
 object of the class `popim_vacc_activities`.
@@ -90,6 +94,8 @@ using the function `apply_vacc()`.
 pop <- apply_vacc(pop, vacc)
 ```
 
+### Visualisation
+
 The resulting vaccine-derived immunity of the population can be
 visualised with the function `plot_immunity()`. This is based on
 ggplot2, and the returned graph object can be further modified - here in
@@ -113,7 +119,9 @@ lower right corner - and the increasing coverage highlights how cohorts
 age through time and therefore move through the plot in a diagonal
 fashion.
 
-## Example 2
+## Example 2: A population with specified size and age distribution
+
+### Population setup
 
 A more realistic scenario is to read in some real population data to set
 up the popim\_population, and then apply some vaccination activities to
@@ -152,6 +160,8 @@ range(pop$year)
 range(pop$age)
 #> [1]   0 100
 ```
+
+### Add vaccination activities
 
 Now we read in some vaccination activities for Nigeria: some campaigns
 targeting all age groups, and some routine vaccination targeting only
@@ -247,6 +257,8 @@ plot_immunity(pop)
 
 <img src="man/figures/README-plot_immunity_2-2.png" width="100%" />
 
+### Summary
+
 The overall population immunity can be aggregated across ages using the
 function `calc_pop_immunity()`:
 
@@ -274,6 +286,8 @@ ggplot(pop_agg, aes(x = year, y = immunity, col = region)) +
 ```
 
 <img src="man/figures/README-calc_pop_immunity-1.png" width="100%" />
+
+### Infer vaccination activities from `popim_population` object
 
 Given a `popim_population` object, the vaccination activities that would
 be needed to achieve the specified population immunity can be inferred
