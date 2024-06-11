@@ -362,6 +362,15 @@ non-missing. If <code>coverage</code> is missing, the target population
 size (based on the population size of the region and age groups
 targeted) will be calculated and the corresponding <code>coverage</code>
 calculated as <code>doses</code> / <code>target_population</code>.</p>
+<p>While the function <code><a href="../reference/apply_vacc.html">apply_vacc()</a></code> will calculate the
+coverage if it is missing with respect to the target population size,
+without modifying the input <code>popim_vacc_activities</code> object,
+the function <code><a href="../reference/complete_vacc_activities.html">complete_vacc_activities()</a></code> will fill in
+missing coverage and doses information from the other, and check for
+inconsistencies in activities that have both data on
+<code>coverage</code> and <code>doses</code>. This is done with respect
+to a particular <code>popim_population</code> object which contains the
+relevant population sizes.</p>
 <div class="section level4">
 <h4 id="vaccinating-a-cohort-with-no-previous-immunity">Vaccinating a cohort with no previous immunity<a class="anchor" aria-label="anchor" href="#vaccinating-a-cohort-with-no-previous-immunity"></a>
 </h4>
@@ -437,16 +446,62 @@ assumptions.</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="the-inverse">The inverse<a class="anchor" aria-label="anchor" href="#the-inverse"></a>
+<h3 id="the-inverse-inferring-vaccination-activities-from-a-population">The inverse: inferring vaccination activities from a population<a class="anchor" aria-label="anchor" href="#the-inverse-inferring-vaccination-activities-from-a-population"></a>
 </h3>
-<p><code><a href="../reference/vacc_from_immunity.html">vacc_from_immunity()</a></code></p>
+<p>It is not possible to infer the vaccination activities that have
+given rise to a particular immunity profile of a population by age and
+over time: The same profile can be reached with different
+<code>targeting</code> choices (where different <code>targeting</code>
+choices will require different amount of vaccine). Furthermore, if there
+are cohorts that reached 100% immunity, there may have been double
+vaccination of some individuals that left no trace in the immunity
+profile. However, the function <code><a href="../reference/vacc_from_immunity.html">vacc_from_immunity()</a></code> does
+infer the vaccination activities from a population immunity profile as
+far as possible, returning an obejct of class
+<code>popim_vacc_activities</code>.</p>
+<p>To this end, in addition to passing the <code>popim_population</code>
+object of interest, the user needs to specify a <code>targeting</code>
+option (which will be assumed for all vaccination activities that are
+identified). The inferred vaccination activities will be the minimal
+activities possible to give rise to the observed immunity profile given
+the <code>targeting</code> option supplied.</p>
 </div>
 </div>
 <div class="section level2">
-<h2 id="summary-visualisation">Summary &amp; Visualisation<a class="anchor" aria-label="anchor" href="#summary-visualisation"></a>
+<h2 id="population-summary-visualisation">Population summary &amp; visualisation<a class="anchor" aria-label="anchor" href="#population-summary-visualisation"></a>
 </h2>
-<p><code><a href="../reference/calc_pop_immunity.html">calc_pop_immunity()</a></code></p>
-<p><code><a href="../reference/plotting.html">plot_pop_size()</a></code>, <code><a href="../reference/plotting.html">plot_immunity()</a></code></p>
+<p>An object of class <code>popim_population</code> holds a somewhat
+complex dataset recording population size, age distribution and immunity
+status through time, and potentially disaggregated into various
+geographical regions. To facilitate interpretation of this kind of data,
+there are a couple of functions to aggregate and visualise these
+objects.</p>
+<div class="section level3">
+<h3 id="visualisation">Visualisation<a class="anchor" aria-label="anchor" href="#visualisation"></a>
+</h3>
+<p>The functions <code><a href="../reference/plotting.html">plot_pop_size()</a></code> and
+<code><a href="../reference/plotting.html">plot_immunity()</a></code> serve to plot the age-disaggregated
+population size and immunity through time in a grid where year and age
+are plotted on the x- and y-axis, respectively. The size of the cohort
+or proportion of the cohort that is immune is indicated by the colour of
+the grid cell. If there are several regions, these will be shown in
+separate panels.</p>
+<p>The implementation of these plot functions is based on ggplot2, and
+therefore the returned plot objects can be further modified using the
+ggplot2 syntax.</p>
+</div>
+<div class="section level3">
+<h3 id="aggregation-over-age">Aggregation over age<a class="anchor" aria-label="anchor" href="#aggregation-over-age"></a>
+</h3>
+<p>While the age structure of a population’s immunity profile is
+important to understand how immunity is likely to develop through time,
+for the purposes of understanding how well a population is protected at
+any point in time, often the overall proportion immune is of greater
+interest. This can be calculated using the function
+<code><a href="../reference/calc_pop_immunity.html">calc_pop_immunity()</a></code> which will aggregate the population
+over age and return a dataframe with the whole population immunity over
+time and geographical region.</p>
+</div>
 </div>
   </div>
 

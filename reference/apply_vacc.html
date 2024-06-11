@@ -119,7 +119,15 @@ always use <code>coverage</code> information in preference over <code>doses</cod
 is non-missing. If <code>coverage</code> is missing, the target population size
 (based on the population size of the region and age groups targeted)
 will be calculated and the corresponding <code>coverage</code> calculated as
-<code>doses</code> / <code>target_population</code>.</p><div class="section">
+<code>doses</code> / <code>target_population</code>.</p>
+<p>While the function <code>apply_vacc()</code> will calculate the coverage if it is
+missing with respect to the target population size, without modifying
+the input <code>popim_vacc_activities</code> object, the function
+<code><a href="complete_vacc_activities.html">complete_vacc_activities()</a></code> will fill in missing coverage and doses
+information from the other, and check for inconsistencies in
+activities that have both data on <code>coverage</code> and <code>doses</code>. This is done
+with respect to a particular <code>popim_population</code> object which contains
+the relevant population sizes.</p><div class="section">
 <h4 id="vaccinating-a-cohort-with-no-previous-immunity">Vaccinating a cohort with no previous immunity<a class="anchor" aria-label="anchor" href="#vaccinating-a-cohort-with-no-previous-immunity"></a></h4>
 
 
