@@ -70,6 +70,10 @@ vaccine. It may be realistic in the case of multi-year campaigns
 targeting different areas within the geographical region
 specified.
 }
+\examples{
+filename <- system.file("extdata", "vacc_activities.csv", package = "popim")
+vacc <- read_vacc_activities(filename)
+}
 \seealso{
 \code{\link[=popim_vacc_activities]{popim_vacc_activities()}} for details of the S3 class, and
 \code{\link[utils:read.table]{utils::read.csv()}} which handles the reading of the .csv

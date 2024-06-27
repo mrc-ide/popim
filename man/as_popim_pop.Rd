@@ -35,6 +35,11 @@ column is generated and initialised to 0.
 Any further colunms are simply carried over into the
 popim_population object.
 }
+\examples{
+## set up a minimal dataframe to convert to a popim_population object:
+df <- expand.grid(region = "UK", age = 0:3, year = 2000:2004, stringsAsFactors = FALSE)
+pop <- as_popim_pop(df)
+}
 \author{
 Tini Garske
 }

@@ -95,6 +95,17 @@ apply_vacc_1 <- function(pop, region, year, age_first = 0, age_last = Inf,
 ##'     activities supplied in `vacc`.
 ##' @export
 ##' @author Tini Garske
+##' @examples
+##' ## set up population and vaccination activities:
+##' pop <- popim_population(region = "UK", year_min = 2000, year_max = 2005,
+##'                         age_min = 0, age_max = 10)
+##' vacc <- popim_vacc_activities(region = "UK", year = c(2001, 2002),
+##'                               age_first = 0, age_last = 0,
+##'                               coverage = 0.8, doses = NA,
+##'                               targeting = "random")
+##'
+##' ## update the population immunity based on the vaccination activities:
+##' pop <- apply_vacc(pop, vacc)
 apply_vacc <- function(pop, vacc) {
     for(i in seq_len(nrow(vacc))) {
 

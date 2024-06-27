@@ -45,7 +45,7 @@
 ##' # correct structure:
 ##' vacc <- popim_vacc_activities()
 ##'
-##' # setting up a couple of specific vaccination activities
+##' # setting up a two specific vaccination activities
 ##' vacc <- popim_vacc_activities(region = c("UK", "FRA"),
 ##'                             year = c(2010, 2005),
 ##'                             age_first = c(0, 0),
@@ -166,6 +166,9 @@ validate_vacc_activities <- function(x, name = deparse(substitute(x))) {
 ##'     [utils::read.csv()] which handles the reading of the .csv
 ##'     file.
 ##' @export
+##' @examples
+##' filename <- system.file("extdata", "vacc_activities.csv", package = "popim")
+##' vacc <- read_vacc_activities(filename)
 read_vacc_activities <- function(file) {
 
     ## assert_file_exists(file)
@@ -194,6 +197,12 @@ read_vacc_activities <- function(file) {
 ##' @author Tini Garske
 ##' @seealso [popim_vacc_activities()] for details of the S3 class.
 ##' @export
+##' @examples
+##' df <- data.frame(region = "UK", year = c(2000, 2002),
+##'                  age_first = 0, age_last = 0,
+##'                  coverage = 0.8, doses = NA,
+##'                  targeting = "random")
+##' vacc <- as_vacc_activities(df)
 as_vacc_activities <- function(df) {
 
     class(df) <- c("popim_vacc_activities", "data.frame")
