@@ -2,7 +2,6 @@ test_that("as_popim_pop successfully converts a good dataframe", {
 
     df <- expand.grid(region = c("UK", "FRA"), age = 0:5, year = 2000:2002,
                       stringsAsFactors = FALSE)
-    df$pop_size <- 0
 
     expect_no_error(pop <- as_popim_pop(df))
     expect_true(is_population(pop))

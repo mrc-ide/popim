@@ -162,6 +162,10 @@ read_popim_pop <- function(file) {
 ##' @return an object of class `popim_population`
 ##' @author Tini Garske
 ##' @export
+##' @examples
+##' ## set up a minimal dataframe to convert to a popim_population object:
+##' df <- expand.grid(region = "UK", age = 0:3, year = 2000:2004, stringsAsFactors = FALSE)
+##' pop <- as_popim_pop(df)
 as_popim_pop <- function(df) {
 
     assert_column_exists(df, "region")
@@ -169,7 +173,7 @@ as_popim_pop <- function(df) {
     assert_column_exists(df, "year")
 
     if(!("pop_size" %in% names(df))) {
-        df$pop_size <- NA
+        df$pop_size <- NA_real_
     }
 
     if(!("immunity" %in% names(df))) {
