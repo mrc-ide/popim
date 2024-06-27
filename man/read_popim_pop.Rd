@@ -36,6 +36,10 @@ Limitations for values:
 \item \code{pop_size} must be non-negative
 }
 }
+\examples{
+filename <- system.file("extdata", "pop_sample.csv", package = "popim")
+pop <- read_popim_pop(file = filename)
+}
 \seealso{
 \code{\link[=popim_population]{popim_population()}} for details of the S3 class, and
 \code{\link[utils:read.table]{utils::read.csv()}} which handles the reading of the .csv

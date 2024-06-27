@@ -120,6 +120,9 @@ popim_population <- function(region = character(),
 ##'     file.
 ##' @author Tini Garske
 ##' @export
+##' @examples
+##' filename <- system.file("extdata", "pop_sample.csv", package = "popim")
+##' pop <- read_popim_pop(file = filename)
 read_popim_pop <- function(file) {
 
     ## assert_file_exists(file)
