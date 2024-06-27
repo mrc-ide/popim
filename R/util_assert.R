@@ -57,7 +57,8 @@ assert_0_to_1_or_missing <- function(x, name = deparse(substitute(x))) {
 
 assert_non_negative <- function(x, name = deparse(substitute(x))) {
     assert_numeric(x, name)
-    if(any(x < 0)) {
+    y <- any(x < 0, na.rm = TRUE)
+    if((is.na(y) || y)) {
         stop(sprintf("'%s' must be non-negative", name), call. = FALSE)
     }
 }
