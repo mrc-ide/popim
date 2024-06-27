@@ -51,6 +51,23 @@ also never be picked up as this age group will have aged out of
 the population (i.e., died) before the immunity is updated in the
 next year.
 }
+\examples{
+## set up population and vaccination activities:
+pop <- popim_population(region = "UK", year_min = 2000, year_max = 2005,
+                        age_min = 0, age_max = 10)
+pop$pop_size <- 100
+vacc <- popim_vacc_activities(region = "UK", year = c(2001, 2002),
+                              age_first = 0, age_last = 0,
+                              coverage = 0.8, doses = NA,
+                              targeting = "random")
+
+## update the population immunity based on the vaccination activities:
+pop <- apply_vacc(pop, vacc)
+
+## get the vaccination activities that have created the population
+## immunity - this should match the input `vacc`
+vacc_out <- vacc_from_immunity(pop, targeting = "random")
+}
 \seealso{
 \code{\link[=apply_vacc]{apply_vacc()}}
 }
