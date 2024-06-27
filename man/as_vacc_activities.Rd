@@ -24,6 +24,13 @@ The input dataframe has to have at least the columns \code{region},
 \code{targeting}. Any further columns are simply carried over into the
 \code{popim_vacc_activities} object.
 }
+\examples{
+df <- data.frame(region = "UK", year = c(2000, 2002),
+                 age_first = 0, age_last = 0,
+                 coverage = 0.8, doses = NA,
+                 targeting = "random")
+vacc <- as_vacc_activities(df)
+}
 \seealso{
 \code{\link[=popim_vacc_activities]{popim_vacc_activities()}} for details of the S3 class.
 }

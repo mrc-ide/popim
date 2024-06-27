@@ -197,6 +197,12 @@ read_vacc_activities <- function(file) {
 ##' @author Tini Garske
 ##' @seealso [popim_vacc_activities()] for details of the S3 class.
 ##' @export
+##' @examples
+##' df <- data.frame(region = "UK", year = c(2000, 2002),
+##'                  age_first = 0, age_last = 0,
+##'                  coverage = 0.8, doses = NA,
+##'                  targeting = "random")
+##' vacc <- as_vacc_activities(df)
 as_vacc_activities <- function(df) {
 
     class(df) <- c("popim_vacc_activities", "data.frame")
