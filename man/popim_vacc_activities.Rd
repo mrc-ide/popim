@@ -68,7 +68,7 @@ or will be recycled as appropriate by \code{\link[=data.frame]{data.frame()}}.
 # correct structure:
 vacc <- popim_vacc_activities()
 
-# setting up a couple of specific vaccination activities
+# setting up a two specific vaccination activities
 vacc <- popim_vacc_activities(region = c("UK", "FRA"),
                             year = c(2010, 2005),
                             age_first = c(0, 0),
