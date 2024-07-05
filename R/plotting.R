@@ -78,8 +78,7 @@ plot_pop_size <- function(pop) {
         ggplot2::geom_tile() +
         ggplot2::facet_wrap(~region) +
         ggplot2::scale_fill_gradient(low = "white",
-                                     high = pal[5],
-                                     limits = c(0,1)) +
+                                     high = pal[5]) +
         ggplot2::labs(x = "year", y = "age", fill = "population size") +
         ggplot2::theme_minimal()
     
