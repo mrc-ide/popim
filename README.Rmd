@@ -38,8 +38,8 @@ You can install the development version of popim from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("mrc-ide/popim")
+# Install `popim` in R:
+install.packages('popim',repos = c('https://mrc-ide.r-universe.dev', 'https://cloud.r-project.org'))
 ```
 
 <!-- You'll still need to render `README.Rmd` regularly, to keep -->
