@@ -1,0 +1,61 @@
+---
+title: "Useful data sources"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(popim)
+library(dplyr)
+```
+When using the the `popim` package it can be useful to initialise
+populations and vaccination activities with realistic data.
+
+## Population data
+
+The age strucutred population size through time is a heavy data
+requirement, but the 
+[UN World Population Prospects](https://population.un.org/wpp/) has
+population data in the right format for use with popim.
+
+There is an API that can be accessed programmatically from R, but I
+haven't managed to get this to work yet.
+
+However, country-based population size by single-year age group can be
+downloaded in .csv file format at
+https://population.un.org/wpp/Download/Standard/CSV/ . The most relevant files are: 
+
+WPP2022_PopulationBySingleAgeSex_Medium_1950-2021.zip
+WPP2022_PopulationBySingleAgeSex_Medium_2022-2100.zip
+
+```{r}
+my_countries <- c("IND", "NGA")
+
+pop <- read.csv("inst/extdata/hide/WPP2022_Population1JanuaryBySingleAgeSex_Medium_1950-2021.csv", stringsAsFactors = FALSE)
+pop2 <- read.csv("inst/extdata/hide/WPP2022_Population1JanuaryBySingleAgeSex_Medium_2022-2100.csv", stringsAsFactors = FALSE)
+
+drop_unwpp_cols <- function(dat, countries) {
+    dat |> filter(ISO3_code %in% countries) |>
+    select(ISO3_code, Time, AgeGrpStart, PopTotal) |>
+    rename(region = ISO3_code, year = Time, age = AgeGrpStart,
+           pop_size = PopTotal)
+}
+
+pop <- drop_unwpp_cols(pop, my_countries)
+pop2 <- drop_unwpp_cols(pop2, my_countries)
+
+pop <- rbind(pop, pop2)
+rm(pop2)
+
+pop <- as_popim_pop(pop)
+
+plot_pop_size(pop)
+
+
+```
+## Vaccination data
