@@ -24,6 +24,22 @@ object supplied. If both coverage and doses are given for any
 activity, the function checks if they are consistent with the
 population size, and fails if there are any inconsistencies.
 }
+\examples{
+## set up some vaccination activities:
+vacc <- popim_vacc_activities(region = "UK", year = 2001:2003,
+                              age_first = 0, age_last = 0,
+                              coverage = c(0.8, 0.8, NA),
+                              doses = c(NA, NA, 60),
+                              targeting = "random")
+## set up a population to which these activities shall apply:
+pop <- popim_population(region = "UK", year_min = 2000, year_max = 2005,
+                        age_min = 0, age_max = 10)
+pop$pop_size <- 100 ## cohort size of 100 for all cohorts
+
+## fill in missing coverage/doses information based on population size:
+vacc <- complete_vacc_activities(vacc, pop)
+
+}
 \author{
 Tini Garske
 }

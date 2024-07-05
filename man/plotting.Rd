@@ -37,6 +37,25 @@ immune, therefore varying between 0 and 1.
 As the returned object is a regular \code{ggplot} object, it can be
 further modified with the ususal \code{ggplot2} syntax.
 }
+\examples{
+## set up population and vaccination activities:
+pop <- popim_population(region = "UK", year_min = 2000, year_max = 2005,
+                        age_min = 0, age_max = 10)
+vacc <- popim_vacc_activities(region = "UK", year = c(2001, 2002),
+                              age_first = 0, age_last = 0,
+                              coverage = 0.8, doses = NA,
+                              targeting = "random")
+
+## update the population immunity based on the vaccination activities:
+pop <- apply_vacc(pop, vacc)
+
+## plot the population size by age and time:
+plot_pop_size(pop)
+
+## plot the population immunity by age and time:
+plot_immunity(pop)
+
+}
 \author{
 Tini Garske
 }
