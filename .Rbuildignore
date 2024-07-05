@@ -1,8 +1,8 @@
 ^LICENSE\.md$
 ^simple_example\.R$
 ^README\.Rmd$
-function_list\.ods
-popim goals and terminology\.docx
-inst/extdata/data-raw/*
-inst/extdata/hide/*
+^function_list\.ods$
+^popim goals and terminology\.docx$
+^inst/extdata/data-raw/*
+^inst/extdata/hide/*
 ^\.github$
