@@ -57,9 +57,9 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_immunity</span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_immunity</span><span class="op">(</span><span class="va">pop</span>, cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"whitesmoke"</span>, <span class="st">"midnightblue"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">plot_pop_size</span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">plot_pop_size</span><span class="op">(</span><span class="va">pop</span>, rel <span class="op">=</span> <span class="cn">FALSE</span>, cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"whitesmoke"</span>, <span class="st">"midnightblue"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -69,6 +69,18 @@
 <dl><dt id="arg-pop">pop<a class="anchor" aria-label="anchor" href="#arg-pop"></a></dt>
 <dd><p><code>popim_population</code> object such as created by
 <code><a href="popim_population.html">popim_population()</a></code>.</p></dd>
+
+
+<dt id="arg-cols">cols<a class="anchor" aria-label="anchor" href="#arg-cols"></a></dt>
+<dd><p>vector of 2 colours to be used to generate the
+(continuous) colour palette for plotting. Defaults to
+<code>c("whitesmoke", "midnightblue")</code>.</p></dd>
+
+
+<dt id="arg-rel">rel<a class="anchor" aria-label="anchor" href="#arg-rel"></a></dt>
+<dd><p>logical to indicate whether to use relative or absolute
+population size in <code>plot_pop_size()</code>. Defaults to FALSE
+(plotting absolute population size).</p></dd>
 
 </dl></div>
     <div id="value">
