@@ -6,13 +6,21 @@
 \alias{plot_pop_size}
 \title{Plot the immunity or population size of a \code{popim_population} object}
 \usage{
-plot_immunity(pop)
+plot_immunity(pop, cols = c("whitesmoke", "midnightblue"))
 
-plot_pop_size(pop)
+plot_pop_size(pop, rel = FALSE, cols = c("whitesmoke", "midnightblue"))
 }
 \arguments{
 \item{pop}{\code{popim_population} object such as created by
 \code{\link[=popim_population]{popim_population()}}.}
+
+\item{cols}{vector of 2 colours to be used to generate the
+(continuous) colour palette for plotting. Defaults to
+\code{c("whitesmoke", "midnightblue")}.}
+
+\item{rel}{logical to indicate whether to use relative or absolute
+population size in \code{plot_pop_size()}. Defaults to FALSE
+(plotting absolute population size).}
 }
 \value{
 A ggplot object.

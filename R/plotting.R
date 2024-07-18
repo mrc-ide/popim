@@ -17,6 +17,12 @@
 ##'
 ##' @param pop `popim_population` object such as created by
 ##'     [popim_population()].
+##' @param rel logical to indicate whether to use relative or absolute
+##'     population size in `plot_pop_size()`. Defaults to FALSE
+##'     (plotting absolute population size).
+##' @param cols vector of 2 colours to be used to generate the
+##'     (continuous) colour palette for plotting. Defaults to
+##'     `c("whitesmoke", "midnightblue")`.
 ##' @return A ggplot object.
 ##' @name plotting
 NULL
@@ -42,20 +48,15 @@ NULL
 ##' ## plot the population immunity by age and time:
 ##' plot_immunity(pop)
 ##'
-plot_immunity <- function(pop) {
+plot_immunity <- function(pop, cols = c("whitesmoke", "midnightblue")) {
 
     assert_population(pop)
     
-    pal <- MetBrewer::met.brewer("VanGogh3", 5, "discrete")
-    ## might want to get rid of this dependency and implement the
-    ## option to pass a colour scheme
-
     g <- ggplot2::ggplot(pop) +
         ggplot2::aes(x = .data$year, y = .data$age, fill = .data$immunity) +
         ggplot2::geom_tile() +
         ggplot2::facet_wrap(~region) +
-        ggplot2::scale_fill_gradient(low = "white",
-                                     high = pal[5],
+        ggplot2::scale_fill_gradient(low = cols[1], high = cols[2],
                                      limits = c(0,1)) +
         ggplot2::labs(x = "year", y = "age", fill = "immunity") +
         ggplot2::theme_minimal()
@@ -66,12 +67,9 @@ plot_immunity <- function(pop) {
 ##' @rdname plotting
 ##' @author Tini Garske
 ##' @export
-plot_pop_size <- function(pop, rel = FALSE) {
+plot_pop_size <- function(pop, rel = FALSE,
+                          cols = c("whitesmoke", "midnightblue")) {
     assert_population(pop)
-    
-    pal <- MetBrewer::met.brewer("VanGogh3", 5, "discrete")
-    ## might want to get rid of this dependency and implement the
-    ## option to pass a colour scheme
 
     if(rel) pop <- normalise_pop_size(pop)
 
@@ -83,8 +81,7 @@ plot_pop_size <- function(pop, rel = FALSE) {
 
     g <- g + ggplot2::geom_tile() +
         ggplot2::facet_wrap(~region) +
-        ggplot2::scale_fill_gradient(low = "white",
-                                     high = pal[5]) +
+        ggplot2::scale_fill_gradient(low = cols[1], high = cols[2]) +
         ggplot2::labs(x = "year", y = "age", fill = "population size") +
         ggplot2::theme_minimal()
 
