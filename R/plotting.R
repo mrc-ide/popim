@@ -101,7 +101,7 @@ normalise_pop_size <- function(pop) {
 
     pop_norm <- pop |> dplyr::left_join(pop_max, by = "region") |>
         dplyr::mutate(pop_max = .data$pop_size / .data$pop_max) |>
-        dplyr::rename(pop_rel = .data$pop_max)
+        dplyr::rename(pop_rel = "pop_max")
 
     return(pop_norm)
 }
