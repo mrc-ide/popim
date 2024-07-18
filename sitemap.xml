@@ -1,66 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/articles/popim.html</loc>
-  </url>
-  <url>
-    <loc>/articles/technical_doc.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/apply_vacc.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_popim_pop.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_vacc_activities.html</loc>
-  </url>
-  <url>
-    <loc>/reference/calc_pop_immunity.html</loc>
-  </url>
-  <url>
-    <loc>/reference/complete_vacc_activities.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotting.html</loc>
-  </url>
-  <url>
-    <loc>/reference/popim-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/popim_population.html</loc>
-  </url>
-  <url>
-    <loc>/reference/popim_vacc_activities.html</loc>
-  </url>
-  <url>
-    <loc>/reference/read_popim_pop.html</loc>
-  </url>
-  <url>
-    <loc>/reference/read_vacc_activities.html</loc>
-  </url>
-  <url>
-    <loc>/reference/vacc_from_immunity.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/LICENSE-text.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/articles/index.html</loc></url>
+<url><loc>/articles/popim.html</loc></url>
+<url><loc>/articles/technical_doc.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/reference/apply_vacc.html</loc></url>
+<url><loc>/reference/as_popim_pop.html</loc></url>
+<url><loc>/reference/as_vacc_activities.html</loc></url>
+<url><loc>/reference/calc_pop_immunity.html</loc></url>
+<url><loc>/reference/complete_vacc_activities.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/plotting.html</loc></url>
+<url><loc>/reference/popim-package.html</loc></url>
+<url><loc>/reference/popim_population.html</loc></url>
+<url><loc>/reference/popim_vacc_activities.html</loc></url>
+<url><loc>/reference/read_popim_pop.html</loc></url>
+<url><loc>/reference/read_vacc_activities.html</loc></url>
+<url><loc>/reference/vacc_from_immunity.html</loc></url>
 </urlset>
+
