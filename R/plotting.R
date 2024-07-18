@@ -66,21 +66,45 @@ plot_immunity <- function(pop) {
 ##' @rdname plotting
 ##' @author Tini Garske
 ##' @export
-plot_pop_size <- function(pop) {
+plot_pop_size <- function(pop, rel = FALSE) {
     assert_population(pop)
     
     pal <- MetBrewer::met.brewer("VanGogh3", 5, "discrete")
     ## might want to get rid of this dependency and implement the
     ## option to pass a colour scheme
 
+    if(rel) pop <- normalise_pop_size(pop)
+
     g <- ggplot2::ggplot(pop) +
-        ggplot2::aes(x = .data$year, y = .data$age, fill = .data$pop_size) +
-        ggplot2::geom_tile() +
+        ggplot2::aes(x = .data$year, y = .data$age)
+
+    if(rel) g <- g + ggplot2::aes(fill = .data$pop_rel)
+    else    g <- g + ggplot2::aes(fill = .data$pop_size)
+
+    g <- g + ggplot2::geom_tile() +
         ggplot2::facet_wrap(~region) +
         ggplot2::scale_fill_gradient(low = "white",
                                      high = pal[5]) +
         ggplot2::labs(x = "year", y = "age", fill = "population size") +
         ggplot2::theme_minimal()
+
+    if(rel) g <- g + ggplot2::theme(legend.position = "none")
     
     return(g)
+}
+
+normalise_pop_size <- function(pop) {
+    assert_population(pop)
+
+    pop_tot <- pop |> dplyr::group_by(.data$region, .data$year) |>
+        dplyr::summarise(pop_tot = sum(.data$pop_size))
+
+    pop_max <- pop_tot |>
+        dplyr::summarise(pop_max = max(.data$pop_tot))
+
+    pop_norm <- pop |> dplyr::left_join(pop_max, by = "region") |>
+        dplyr::mutate(pop_max = .data$pop_size / .data$pop_max) |>
+        dplyr::rename(pop_rel = .data$pop_max)
+
+    return(pop_norm)
 }
