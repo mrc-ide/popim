@@ -28,21 +28,51 @@ haven't managed to get this to work yet.
 
 However, country-based population size by single-year age group can be
 downloaded in .csv file format at
-https://population.un.org/wpp/Download/Standard/CSV/ . The most relevant files are: 
+https://population.un.org/wpp/Download/Standard/CSV/ . The most
+relevant files are:
 
 WPP2022_PopulationBySingleAgeSex_Medium_1950-2021.zip
 WPP2022_PopulationBySingleAgeSex_Medium_2022-2100.zip
 
 ```{r}
-my_countries <- c("IND", "NGA")
 
-pop <- read.csv("inst/extdata/hide/WPP2022_Population1JanuaryBySingleAgeSex_Medium_1950-2021.csv", stringsAsFactors = FALSE)
-pop2 <- read.csv("inst/extdata/hide/WPP2022_Population1JanuaryBySingleAgeSex_Medium_2022-2100.csv", stringsAsFactors = FALSE)
+pop <- read.csv("inst/extdata/hide/WPP2022_Population1JanuaryBySingleAgeSex_Medium_1950-2021.csv", stringsAsFactors = FALSE, na.strings = "<NA>")
+pop2 <- read.csv("inst/extdata/hide/WPP2022_Population1JanuaryBySingleAgeSex_Medium_2022-2100.csv", stringsAsFactors = FALSE, na.strings = "<NA>")
+
+## extracting some meta-information on geographical regions available:
+regions <- pop |> select(ISO3_code:Location) |> unique()
+
+## What types of regions are there?
+LocationTypes <- regions |> group_by(LocTypeID, LocTypeName) |> count()
+
+geo_regions <- regions |> filter(LocTypeID == 2) |>
+    select(SDMX_code, LocTypeID, LocTypeName, Location)
+
+dev_group <- regions |> filter(LocTypeID == 5) |>
+    select(SDMX_code, LocTypeID, LocTypeName, Location)
+
+SDG_region <- regions |> filter(LocTypeID == 12) |>
+    select(SDMX_code, LocTypeID, LocTypeName, Location)
+
+Income_group <- regions |> filter(LocTypeID == 13) |>
+    select(SDMX_code, LocTypeID, LocTypeName, Location)
+
+## What countries are available?
+countries <- regions |> filter(LocTypeID == 4) |>
+    select(ISO3_code, ISO2_code, SDMX_code, Location) |>
+    arrange(SDMX_code)
+
+
+
+
+
+## setting up a popim_population from the UNWPP data:
+my_countries <- c("India", "Nigeria") ## selecting by `Location`
 
 drop_unwpp_cols <- function(dat, countries) {
-    dat |> filter(ISO3_code %in% countries) |>
-    select(ISO3_code, Time, AgeGrpStart, PopTotal) |>
-    rename(region = ISO3_code, year = Time, age = AgeGrpStart,
+    dat |> filter(Location %in% countries) |>
+    select(Location, Time, AgeGrpStart, PopTotal) |>
+    rename(region = Location, year = Time, age = AgeGrpStart,
            pop_size = PopTotal)
 }
 
@@ -55,6 +85,8 @@ rm(pop2)
 pop <- as_popim_pop(pop)
 
 plot_pop_size(pop)
+plot_pop_size(pop, rel = TRUE) ## relative population size, to
+                               ## highlight the age structure
 
 
 ```
