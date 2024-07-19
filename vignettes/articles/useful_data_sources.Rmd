@@ -31,13 +31,17 @@ downloaded in .csv file format at
 https://population.un.org/wpp/Download/Standard/CSV/ . The most
 relevant files are:
 
-WPP2022_PopulationBySingleAgeSex_Medium_1950-2021.zip
-WPP2022_PopulationBySingleAgeSex_Medium_2022-2100.zip
+WPP2024_PopulationBySingleAgeSex_Medium_1950-2023.zip
+WPP2024_PopulationBySingleAgeSex_Medium_2024-2100.zip
 
 ```{r}
 
-pop <- read.csv("inst/extdata/hide/WPP2022_Population1JanuaryBySingleAgeSex_Medium_1950-2021.csv", stringsAsFactors = FALSE, na.strings = "<NA>")
-pop2 <- read.csv("inst/extdata/hide/WPP2022_Population1JanuaryBySingleAgeSex_Medium_2022-2100.csv", stringsAsFactors = FALSE, na.strings = "<NA>")
+pop <- read.csv("inst/extdata/hide/WPP2024_Population1JanuaryBySingleAgeSex_Medium_1950-2023.csv",
+                stringsAsFactors = FALSE, na.strings = "<NA>",
+                encoding = "UTF-8")
+pop2 <- read.csv("inst/extdata/hide/WPP2024_Population1JanuaryBySingleAgeSex_Medium_2024-2100.csv",
+                 stringsAsFactors = FALSE, na.strings = "<NA>",
+                 encoding = "UTF-8")
 
 ## extracting some meta-information on geographical regions available:
 regions <- pop |> select(ISO3_code:Location) |> unique()
