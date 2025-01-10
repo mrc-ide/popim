@@ -39,7 +39,10 @@ The colour in each cell corresponds to:
 \itemize{
 \item for \code{plot_immunity()}: the proportion of each cohort that is
 immune, therefore varying between 0 and 1.
-\item for \code{plot_pop_size()}: the size of each cohort.
+\item for \code{plot_pop_size(rel = FALSE)}: the absolute size of each cohort.
+\item for \code{plot_pop_size(rel = TRUE)}: the cohort size divided by the
+maximum total population size (aggregated across all cohorts)
+reached at any point in time for each region in question.
 }
 
 As the returned object is a regular \code{ggplot} object, it can be
@@ -57,11 +60,36 @@ vacc <- popim_vacc_activities(region = "UK", year = c(2001, 2002),
 ## update the population immunity based on the vaccination activities:
 pop <- apply_vacc(pop, vacc)
 
+## plot the population immunity by age and time:
+plot_immunity(pop)
+
+## adding some population size manually:
+##  adding some population size manually:
+pop$pop_size <- pop$cohort - 1990
+
 ## plot the population size by age and time:
 plot_pop_size(pop)
 
-## plot the population immunity by age and time:
+##-----------------------------------------------------------------------
+## setting up a population with multiple regions:
+pop <- popim_population(region = c("A", "B"),
+                        year_min = 2000, year_max = 2005,
+                        age_min = 0, age_max = 10)
+pop$pop_size <- pop$cohort - 1990
+pop$pop_size[pop$region == "A"] <- 5 * pop$pop_size[pop$region == "A"]
+
+## adding some vaccination activities:
+vacc <- popim_vacc_activities(region = c("A", "A", "B"),
+                              year = c(2001, 2002, 2003),
+                              age_first = c(0,0,0), age_last = c(0,0,10),
+                              coverage = 0.8, doses = NA,
+                              targeting = "random")
+pop <- apply_vacc(pop, vacc)
+
 plot_immunity(pop)
+
+plot_pop_size(pop)
+plot_pop_size(pop, rel = TRUE)
 
 }
 \author{
