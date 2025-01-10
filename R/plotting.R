@@ -9,7 +9,10 @@
 ##' The colour in each cell corresponds to:
 ##' * for `plot_immunity()`: the proportion of each cohort that is
 ##'   immune, therefore varying between 0 and 1.
-##' * for `plot_pop_size()`: the size of each cohort.
+##' * for `plot_pop_size(rel = FALSE)`: the absolute size of each cohort.
+##' * for `plot_pop_size(rel = TRUE)`: the cohort size divided by the
+##'   maximum total population size (aggregated across all cohorts)
+##'   reached at any point in time for each region in question.
 ##'
 ##' As the returned object is a regular `ggplot` object, it can be
 ##' further modified with the ususal `ggplot2` syntax.
@@ -19,7 +22,7 @@
 ##'     [popim_population()].
 ##' @param rel logical to indicate whether to use relative or absolute
 ##'     population size in `plot_pop_size()`. Defaults to FALSE
-##'     (plotting absolute population size).
+##'     (plotting absolute population size). 
 ##' @param cols vector of 2 colours to be used to generate the
 ##'     (continuous) colour palette for plotting. Defaults to
 ##'     `c("whitesmoke", "midnightblue")`.

@@ -39,7 +39,10 @@ The colour in each cell corresponds to:
 \itemize{
 \item for \code{plot_immunity()}: the proportion of each cohort that is
 immune, therefore varying between 0 and 1.
-\item for \code{plot_pop_size()}: the size of each cohort.
+\item for \code{plot_pop_size(rel = FALSE)}: the absolute size of each cohort.
+\item for \code{plot_pop_size(rel = TRUE)}: the cohort size divided by the
+maximum total population size (aggregated across all cohorts)
+reached at any point in time for each region in question.
 }
 
 As the returned object is a regular \code{ggplot} object, it can be
