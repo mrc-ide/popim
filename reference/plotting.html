@@ -96,7 +96,10 @@ bottom left to top right. If there are several regions, these
 are shown as separate facets.</p>
 <p>The colour in each cell corresponds to:</p><ul><li><p>for <code>plot_immunity()</code>: the proportion of each cohort that is
 immune, therefore varying between 0 and 1.</p></li>
-<li><p>for <code>plot_pop_size()</code>: the size of each cohort.</p></li>
+<li><p>for <code>plot_pop_size(rel = FALSE)</code>: the absolute size of each cohort.</p></li>
+<li><p>for <code>plot_pop_size(rel = TRUE)</code>: the cohort size divided by the
+maximum total population size (aggregated across all cohorts)
+reached at any point in time for each region in question.</p></li>
 </ul><p>As the returned object is a regular <code>ggplot</code> object, it can be
 further modified with the ususal <code>ggplot2</code> syntax.</p>
     </div>
@@ -168,7 +171,7 @@ further modified with the ususal <code>ggplot2</code> syntax.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
       </footer></div>
