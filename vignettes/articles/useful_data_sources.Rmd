@@ -48,6 +48,7 @@ regions <- pop |> select(ISO3_code:Location) |> unique()
 
 ## What types of regions are there?
 LocationTypes <- regions |> group_by(LocTypeID, LocTypeName) |> count()
+LocationTypes
 
 geo_regions <- regions |> filter(LocTypeID == 2) |>
     select(SDMX_code, LocTypeID, LocTypeName, Location)
@@ -59,6 +60,9 @@ SDG_region <- regions |> filter(LocTypeID == 12) |>
     select(SDMX_code, LocTypeID, LocTypeName, Location)
 
 Income_group <- regions |> filter(LocTypeID == 13) |>
+    select(SDMX_code, LocTypeID, LocTypeName, Location)
+
+na_group <- regions |> filter(is.na(LocTypeID)) |>
     select(SDMX_code, LocTypeID, LocTypeName, Location)
 
 ## What countries are available?
