@@ -6,3 +6,7 @@
 ^inst/extdata/data-raw/*
 ^inst/extdata/hide/*
 ^\.github$
+^vignettes/articles$
+^data-raw$
+^doc$
+^Meta$
