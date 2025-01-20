@@ -3,9 +3,8 @@
 ##' A list of the countries and country codes available in the UNWPP
 ##' population size data by single age in .csv format, useful for
 ##' initialising `popim_population` objects. The .csv files can be
-##' downloaded at
-##' <https://population.un.org/wpp/Download/Standard/CSV/>.
-##' 
+##' downloaded at <https://population.un.org/dataportal/>.
+##'
 ##' @format `unwpp_countries`
 ##' A data frame with 237 rows and 4 columns.
 ##' \describe{
@@ -14,5 +13,5 @@
 ##'   \item{ISO2_code}{2-letter ISO country code}
 ##'   \item{SDMX_code}{SDMX country code}
 ##' }
-##' @source <https://population.un.org/wpp/Download/Standard/CSV/>
+##' @source <https://population.un.org/dataportal/>
 "unwpp_countries"

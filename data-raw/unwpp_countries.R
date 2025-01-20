@@ -1,6 +1,6 @@
-dat <- read.csv("inst/extdata/hide/WPP2024_Population1JanuaryBySingleAgeSex_Medium_1950-2023.csv",
-                stringsAsFactors = FALSE, na.strings = "<NA>",
-                fileEncoding = "UTF-8", encoding = "UTF-8")
+## File downloaded on 20 Jan 2025 from
+## "https://population.un.org/wpp/downloads?folder=Standard%20Projections&group=CSV%20format"
+dat <- readr::read_csv("data-raw/WPP2024_TotalPopulationBySex.csv.gz", na = c(""))
 ## need to specify na.strings as "NA" is the ISO2 code for Namibia,
 ## which I don't want to be interpreted as NA.
 
