@@ -46,25 +46,23 @@ the object `unwpp_countries`:
 ```{r}
 data(unwpp_countries)
 
-ls()
-
-##dim(unwpp_countries)
-##head(unwpp_countries)
+dim(unwpp_countries)
+head(unwpp_countries)
 
 ```
 
 Here we focus on Nigeria (NGA) and India (IND) as an example, having
 downloaded the relevant dataset in .csv format from the UNWPP Data
-Portal.
+Portal. Here we have restricted the period to 2001 to 2030 for a more
+moderate file size.
+
 
 ```{r}
 
-getwd()
-pop <- read.csv("../../inst/extdata/WPP2024_Population1JanuaryBySingleAgeSex_Medium_1950-2023_IND_NGA.csv",
+pop <- read.csv("WPP2024_Population1JanuaryBySingleAgeSex_Medium_2001-2030_IND_NGA.csv",
                 stringsAsFactors = FALSE, na.strings = "<NA>",
                 encoding = "UTF-8")
 
-## only keep relevant columns, and convert to the popim_pop format:
 my_countries <- c("India", "Nigeria")
 
 
@@ -96,4 +94,4 @@ plotting relative population sizes:
 plot_pop_size(pop, rel = TRUE)
 ```
 
-## Vaccination data
+<!-- ## Vaccination data -->
