@@ -15,7 +15,7 @@ A data frame with 237 rows and 4 columns.
 }
 }
 \source{
-\url{https://population.un.org/wpp/Download/Standard/CSV/}
+\url{https://population.un.org/wpp/downloads?folder=Standard\%20Projections&group=CSV\%20format}
 }
 \usage{
 unwpp_countries
@@ -24,7 +24,6 @@ unwpp_countries
 A list of the countries and country codes available in the UNWPP
 population size data by single age in .csv format, useful for
 initialising \code{popim_population} objects. The .csv files can be
-downloaded at
-\url{https://population.un.org/wpp/Download/Standard/CSV/}.
+downloaded at \url{https://population.un.org/wpp/downloads?folder=Standard\%20Projections&group=CSV\%20format}.
 }
 \keyword{datasets}
